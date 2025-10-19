@@ -1,4 +1,4 @@
-# Roman Mednitzer — Public Profile (OSINT-free)
+# Roman Mednitzer — Public Profile
 
 Files:
 - `index.html` — condensed, employer-agnostic profile (city-level only) with embedded JSON-LD.
