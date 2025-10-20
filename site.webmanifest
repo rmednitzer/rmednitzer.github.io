@@ -1,0 +1,35 @@
+{
+  "name": "Roman Mednitzer \u2014 Public Profile",
+  "short_name": "R. Mednitzer",
+  "description": "Public professional profile of Roman Mednitzer \u2014 IT Infrastructure & Operations (Linux, HPC, AI Infrastructure, SRE)",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/profile_roman-mednitzer.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
