@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Roman Mednitzer — IT Infrastructure & Operations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
@@ -15,180 +15,142 @@
 
   <!-- Canonical & Identity -->
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <link rel="me" href="https://www.linkedin.com/in/rmednitzer">
-  <link rel="me" href="https://github.com/rmednitzer">
-  <link rel="author" href="mailto:r.mednitzer@outlook.com">
-  <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo">
+  <meta name="description" content="Vienna-based IT Infrastructure & Operations engineer. Linux, virtualization, storage, containers, observability, security, backup/DR.">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="color-scheme" content="dark light">
 
   <!-- Open Graph -->
-  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="profile">
-  <meta property="og:site_name" content="Roman Mednitzer">
-  <meta property="og:title" content="Roman Mednitzer — Public Profile">
-  <meta property="og:description" content="IT Infrastructure, AI Infrastructure & Operations, Linux Systems">
+  <meta property="og:title" content="Roman Mednitzer — IT Infrastructure & Operations">
+  <meta property="og:description" content="IT Infrastructure & Operations · Linux · virtualization · storage · containers · observability · security · backup/DR.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
-  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
-  <meta property="og:image:alt" content="Portrait of Roman Mednitzer">
-  <meta property="og:image:width" content="768">
-  <meta property="og:image:height" content="768">
-
-  <!-- OG Profile details & Icons -->
-  <meta property="profile:first_name" content="Roman">
-  <meta property="profile:last_name" content="Mednitzer">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roman Mednitzer — Public Profile">
-  <meta name="twitter:description" content="IT Infrastructure, AI Infrastructure & Operations, Linux Systems">
-  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
-  <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
+  <meta name="twitter:title" content="Roman Mednitzer — IT Infrastructure & Operations">
+  <meta name="twitter:description" content="IT Infrastructure & Operations · Linux · virtualization · storage · containers · observability · security · backup/DR.">
 
-  <!-- Performance hints -->
-  <link rel="preload" as="image" href="profile_roman-mednitzer.png" imagesrcset="profile_roman-mednitzer.png 1x" imagesizes="144px">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230b0f14'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
 
   <style>
-    :root { --fg:#e5e7eb; --bg:#0b0f14; --muted:#9aa4af; --accent:#0d9488; }
-    @media (prefers-color-scheme: light) { :root { --fg:#111827; --bg:#ffffff; --muted:#6b7280; --accent:#0d9488; } }
+    :root { --fg:#e5e7eb; --bg:#0b0f14; --muted:#9aa4af; --accent:#0d9488; --card:rgba(255,255,255,.04); --border:rgba(255,255,255,.12); }
+    @media (prefers-color-scheme: light) { :root { --fg:#111827; --bg:#ffffff; --muted:#6b7280; --accent:#0d9488; --card:#ffffff; --border:rgba(17,24,39,.08);} }
+    *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
+    main{max-width:900px;margin:0 auto;padding:2rem 1rem 4rem;line-height:1.6}
+    header{display:flex;flex-direction:column;gap:.25rem}
+    h1,h2{margin:.6em 0 .3em}
+    .lead{font-size:1.05rem;color:var(--muted)}
+    .card{border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.2rem;background:var(--card)}
+    .kw{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:.2rem .6rem;margin:.25rem;font-size:.85em;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
     .note{color:var(--muted);font-size:.95em}
-    .card{border:1px solid color-mix(in oklab, var(--fg) 10%, transparent);border-radius:12px;padding:1rem;margin-top:1.2rem;background:color-mix(in oklab, var(--fg) 2%, transparent)}
-    main{max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.6}
-    h1,h2{margin-top:1.2em}
-    ul{padding-left:1.2em}
-    .kw{display:inline-flex;border:1px solid color-mix(in oklab, var(--fg) 15%, transparent);border-radius:6px;padding:.15rem .5rem;margin:.2rem;font-size:.85em}
-    .avatar{display:block;margin:.75rem 0 0 0;width:144px;height:144px;border-radius:9999px;border:1px solid color-mix(in oklab, var(--fg) 15%, transparent);object-fit:cover;box-shadow:0 1px 8px rgba(0,0,0,.25)}
-    @media (prefers-color-scheme: light){ .avatar{border-color:rgba(0,0,0,.08)} }
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:var(--bg);color:var(--fg);border:1px solid var(--accent);border-radius:8px;z-index:1000}
-    @media (prefers-reduced-motion: reduce){ *, *::before, *::after{transition:none!important;animation:none!important} }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <a class="sr-only" href="#content">Skip to content</a>
   <main id="content" role="main">
-    <header role="banner" aria-labelledby="name">
-      <h1 id="name">Roman Mednitzer</h1>
-      <img class="avatar" fetchpriority="high" alt="Portrait of Roman Mednitzer" loading="lazy" decoding="async" width="144" height="144" src="profile_roman-mednitzer.png" sizes="(max-width: 600px) 144px, 144px">
-      <p>Vienna, AT · IT Infrastructure &amp; AI Operations</p>
-      <p class="note">Public Profile</p>
+    <header>
+      <h1>Roman Mednitzer</h1>
+      <p class="lead">Vienna, AT · Principal IT Infrastructure & Operations Engineer</p>
+      <p class="note">Canonical public profile · facts-first</p>
     </header>
 
-    <section class="card" aria-labelledby="profiles">
-      <h2 id="profiles">Authoritative Profiles</h2>
-      <ul>
-        <li>LinkedIn — <a href="https://www.linkedin.com/in/rmednitzer" rel="me noopener">linkedin.com/in/rmednitzer</a></li>
-        <li>GitHub — <a href="https://github.com/rmednitzer" rel="me noopener">github.com/rmednitzer</a></li>
-      </ul>
+    <section class="card" aria-labelledby="bio-h">
+      <h2 id="bio-h">About</h2>
+      <p>I run and improve IT infrastructure. Linux‑first (Ubuntu LTS), virtualization (Proxmox, VMware), storage (ZFS, Ceph), and container platforms (Kubernetes). I focus on availability, security, backup/DR, observability, and safe change patterns. Work spans on‑prem and hybrid environments. Interests include reliability engineering and practical automation.</p>
     </section>
 
-    <section class="card" aria-labelledby="about">
-      <h2 id="about">About</h2>
-      <p>With over a decade in IT infrastructure and operations, I deliver robust computing environments built for performance, security, and continuity. I specialize in systems reliability, Linux lifecycle management, virtualization, storage, and data protection. I design resilient platforms and combine reliability engineering with secure, recoverable operations across container, virtualization, and storage layers.</p>
-    </section>
-
-    <section class="card" aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <address>
-        Email: <a href="mailto:r.mednitzer@outlook.com">r.mednitzer@outlook.com</a>
-      </address>
-    </section>
-
-    <section class="card" aria-labelledby="orgs">
-      <h2 id="orgs">Organizations</h2>
-      <ul>
-        <li>OCG — Austrian Computer Society · Member</li>
-        <li>IEEE — Institute of Electrical and Electronics Engineers · Member</li>
-      </ul>
-    </section>
-
-    <section class="card" aria-labelledby="keywords">
-      <h2 id="keywords">Keywords</h2>
+    <section class="card" aria-labelledby="keywords-h">
+      <h2 id="keywords-h">Keywords</h2>
       <p>
-        <span class="kw">Linux</span><span class="kw">Linux Hardening</span><span class="kw">Linux Administration</span><span class="kw">Reliability engineering</span><span class="kw">SRE</span><span class="kw">Kubernetes</span><span class="kw">Slurm</span><span class="kw">Proxmox</span><span class="kw">VMware</span><span class="kw">Ceph</span><span class="kw">ZFS</span><span class="kw">Terraform</span><span class="kw">Ansible</span><span class="kw">Prometheus</span><span class="kw">Grafana</span><span class="kw">ELK/Elastic</span><span class="kw">CI/CD</span><span class="kw">Backup and Disaster Recovery</span><span class="kw">High availability</span><span class="kw">Load balancing</span><span class="kw">IAM</span><span class="kw">Database replication</span><span class="kw">Zero-downtime upgrades</span><span class="kw">Security hardening</span><span class="kw">ISO 27001</span><span class="kw">NIS2</span><span class="kw">AI Infrastructure</span><span class="kw">MLOps</span><span class="kw">Machine Learning</span><span class="kw">Artificial Intelligence</span><span class="kw">AI Reliability</span><span class="kw">Sovereign Compute</span>
+        <span class="kw">Systems Reliability & Operations</span>
+        <span class="kw">Compute & Virtualization Infrastructure</span>
+        <span class="kw">Virtualization (Proxmox · VMware / Broadcom)</span>
+        <span class="kw">Storage & Data Protection</span>
+        <span class="kw">Container Platforms & Orchestration</span>
+        <span class="kw">Infrastructure as Code (Terraform · Ansible)</span>
+        <span class="kw">Kubernetes</span>
+        <span class="kw">Slurm</span>
+        <span class="kw">Ceph</span>
+        <span class="kw">ZFS</span>
+        <span class="kw">Observability (Prometheus · Grafana · ELK)</span>
+        <span class="kw">CI/CD</span>
+        <span class="kw">High Availability</span>
+        <span class="kw">Backup & DR</span>
+        <span class="kw">Load Balancing</span>
+        <span class="kw">IAM</span>
+        <span class="kw">Database Replication</span>
+        <span class="kw">Zero-downtime Upgrades</span>
+        <span class="kw">Security Hardening</span>
+        <span class="kw">ISO 27001</span>
+        <span class="kw">NIS2</span>
+        <span class="kw">Azure</span>
+        <span class="kw">AWS</span>
+        <span class="kw">GCP</span>
+        <span class="kw">GPU / HPC (AMD · NVIDIA)</span>
+        <span class="kw">Mellanox Fabric</span>
       </p>
     </section>
 
-    <footer class="note">© <span id="year"></span> Roman Mednitzer</footer>
+    <div class="grid">
+      <section class="card" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <p>Email (relay): <a rel="me" href="mailto:r.mednitzer@ieee.org">r.mednitzer@ieee.org</a></p>
+        <p>Profiles: <a rel="me" href="https://www.linkedin.com/in/rmednitzer">LinkedIn</a> · <a rel="me" href="https://github.com/rmednitzer">GitHub</a></p>
+      </section>
+
+      <section class="card" aria-labelledby="now-h">
+        <h2 id="now-h">Now / Focus</h2>
+        <p>On‑prem & hybrid modernization · storage resiliency & QoS · platform reliability · routine lifecycle & security maintenance.</p>
+      </section>
+    </div>
+
+    <footer class="note" role="contentinfo">© <span id="y"></span> Roman Mednitzer — Canonical public profile</footer>
   </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://rmednitzer.github.io/#person",
-        "name": "Roman Mednitzer",
-        "givenName": "Roman",
-        "additionalName": "Matthias",
-        "familyName": "Mednitzer",
-        "alternateName": "Aki",
-        "occupation": "Senior IT Infrastructure & Operations Engineer",
-        "description": "Designs and operates reliable, secure, and recoverable computing platforms across Linux, Kubernetes, virtualization, storage, and AI infrastructure with an architectural, discipline-driven approach.",
-        "image": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
-        "url": "https://rmednitzer.github.io/",
-        "email": "mailto:r.mednitzer@outlook.com",
-        "address": {"@type":"PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},
-        "areaServed": ["AT","EU"],
-        "knowsLanguage": ["de","en"],
-        "knowsAbout": [
-          "Linux",
-          "Linux Hardening",
-          "Linux Administration",
-          "AI Infrastructure",
-          "Machine Learning Operations (MLOps)",
-          "Sovereign Compute",
-          "Data Resilience",
-          "Artificial Intelligence",
-          "Machine Learning",
-          "AI Reliability Engineering",
-          "Cloud-Native AI Platforms"
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/rmednitzer",
-          "https://github.com/rmednitzer"
-        ],
-        "memberOf": [
-          {
-            "@type": "ProgramMembership",
-            "programName": "Member",
-            "startDate": "2025-04-01",
-            "hostingOrganization": {"@type": "Organization","name": "Austrian Computer Society (OCG)","sameAs": "https://www.ocg.at/en"}
-          },
-          {
-            "@type": "ProgramMembership",
-            "programName": "Member",
-            "startDate": "2013-03-01",
-            "hostingOrganization": {"@type": "Organization","name": "Institute of Electrical and Electronics Engineers (IEEE)","sameAs": "https://www.ieee.org/"}
-          }
-        ],
-        "worksFor": {"@type":"Organization","name":"Kwizda Holding GmbH","url":"https://www.kwizda.at/"}
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://rmednitzer.github.io/#website",
-        "url": "https://rmednitzer.github.io/",
-        "name": "Roman Mednitzer — Public Profile",
-        "publisher": {"@id": "https://rmednitzer.github.io/#person"}
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://rmednitzer.github.io/#webpage",
-        "url": "https://rmednitzer.github.io/",
-        "name": "Roman Mednitzer — Public Profile",
-        "isPartOf": {"@id": "https://rmednitzer.github.io/#website"},
-        "about": {"@id": "https://rmednitzer.github.io/#person"},
-        "primaryImageOfPage": {"@type": "ImageObject","url": "https://rmednitzer.github.io/profile_roman-mednitzer.png","width": 768,"height": 768}
-      }
+    "@type": "Person",
+    "name": "Roman Mednitzer",
+    "jobTitle": "IT Infrastructure & Operations Engineer",
+    "description": "IT Infrastructure & Operations. Linux, virtualization, storage, containers, observability, security, backup/DR.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Vienna", "addressCountry": "AT" },
+    "areaServed": "EU",
+    "email": "mailto:r.mednitzer@ieee.org",
+    "sameAs": [
+      "https://www.linkedin.com/in/rmednitzer",
+      "https://github.com/rmednitzer"
+    ],
+    "knowsAbout": [
+      "Systems Reliability Engineering","Infrastructure & Operations","Kubernetes","Slurm","Ceph","ZFS","Terraform","Ansible","Observability","Prometheus","Grafana","ELK","High Availability","Disaster Recovery","Zero-downtime Upgrades","Identity and Access Management","Load Balancing","Database Replication","Security Hardening","CI/CD","ISO 27001","NIS2","Azure","AWS","GCP","GPU / HPC (AMD · NVIDIA)","Mellanox Fabric","Proxmox","VMware / Broadcom Virtualization"
     ]
   }
   </script>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Roman Mednitzer — IT Infrastructure & Operations",
+    "url": "https://rmednitzer.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://rmednitzer.github.io/?q={query}",
+      "query-input": "required name=query"
+    }
+  }
   </script>
 </body>
 </html>
