@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0b0f14">
   <meta name="color-scheme" content="dark light">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Roman Mednitzer — IT Infrastructure & Operations">
   <meta property="og:description" content="IT Infrastructure & Operations · Linux · Virtualization · Containers · Storage · Observability · Security · Backup/DR.">
@@ -18,27 +18,23 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
   <meta property="og:image:alt" content="Portrait of Roman Mednitzer">
-  <meta property="og:image:width" content="768">
-  <meta property="og:image:height" content="768">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer — IT Infrastructure & Operations">
   <meta name="twitter:description" content="IT Infrastructure & Operations · Linux · Virtualization · Containers · Storage · Observability · Security · Backup/DR.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230b0f14'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>"> href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230b0f14'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230b0f14'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
 
   <style>
-    :root { --fg:#e5e7eb; --bg:#0b0f14; --muted:#9aa4af; --accent:#0d9488; --card:rgba(255,255,255,.04); --border:rgba(255,255,255,.12); }
-    @media (prefers-color-scheme: light) { :root { --fg:#111827; --bg:#ffffff; --muted:#6b7280; --accent:#0d9488; --card:#ffffff; --border:rgba(17,24,39,.08);} }
+    :root { --fg:#e5e7eb; --bg:#0b0f14; --muted:#9aa4af; --accent:#0d9488; --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.15); }
+    @media (prefers-color-scheme: light) { :root { --fg:#111827; --bg:#ffffff; --muted:#6b7280; --accent:#0d9488; --card:#ffffff; --border:rgba(17,24,39,.12);} }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    main{max-width:900px;margin:0 auto;padding:2rem 1rem 4rem;line-height:1.6}
-    header{display:flex;flex-direction:column;gap:.25rem}
+    main{max-width:900px;margin:0 auto;padding:2rem 1rem 4rem}
+    header{display:flex;flex-direction:column;gap:.5rem}
     h1,h2{margin:.6em 0 .3em}
     .lead{font-size:1.05rem;color:var(--muted)}
     .card{border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.2rem;background:var(--card)}
@@ -47,7 +43,7 @@
     @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
     .note{color:var(--muted);font-size:.95em}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  .avatar{display:block;margin:.75rem 0 0;width:144px;height:144px;border-radius:9999px;border:1px solid var(--border);object-fit:cover}
+    .avatar{display:block;margin:.5rem 0 0;width:144px;height:144px;border-radius:9999px;border:1px solid var(--border);object-fit:cover}
   </style>
 </head>
 <body>
@@ -57,12 +53,12 @@
       <h1>Roman Mednitzer</h1>
       <img class="avatar" src="profile_roman-mednitzer.png" alt="Portrait of Roman Mednitzer" width="144" height="144" loading="lazy" decoding="async">
       <p class="lead">Vienna, AT · IT Infrastructure &amp; Operations Engineer</p>
-      <p class="note">Canonical public profile · facts-first</p>
+      <p class="note">Canonical public profile</p>
     </header>
 
     <section class="card" aria-labelledby="bio-h">
       <h2 id="bio-h">About</h2>
-      <p>I run and improve IT infrastructure across virtualization (Proxmox, VMware), storage (ZFS, Ceph), and container platforms (Kubernetes). I focus on availability, security, backup/DR, observability, and safe change patterns. Work spans on‑prem and hybrid environments. Interests include Reliability Engineering and practical automation.</p>
+      <p>I run and improve IT infrastructure across Virtualization (Proxmox, VMware), Storage (ZFS, Ceph), and Container platforms (Kubernetes). I focus on availability, security, Backup/DR, observability, and safe change patterns. Work spans on-prem and hybrid environments.</p>
     </section>
 
     <section class="card" aria-labelledby="keywords-h">
@@ -73,6 +69,8 @@
         <span class="kw">Virtualization (Proxmox · VMware / Broadcom)</span>
         <span class="kw">Storage &amp; Data Protection</span>
         <span class="kw">Container Platforms &amp; Orchestration</span>
+        <span class="kw">Linux</span>
+        <span class="kw">Microsoft Windows Server</span>
         <span class="kw">Infrastructure as Code (Terraform · Ansible)</span>
         <span class="kw">Kubernetes</span>
         <span class="kw">Slurm</span>
@@ -85,7 +83,7 @@
         <span class="kw">Load Balancing</span>
         <span class="kw">Identity &amp; Access Management (IAM)</span>
         <span class="kw">Database Replication</span>
-        <span class="kw">Zero‑Downtime Upgrades</span>
+        <span class="kw">Zero-Downtime Upgrades</span>
         <span class="kw">Security Hardening</span>
         <span class="kw">ISO 27001</span>
         <span class="kw">NIS2</span>
@@ -111,33 +109,32 @@
 
       <section class="card" aria-labelledby="now-h">
         <h2 id="now-h">Now / Focus</h2>
-        <p>On‑prem & hybrid modernization · storage resiliency & QoS · container platform reliability · routine lifecycle & security maintenance.</p>
+        <p>On-prem &amp; hybrid modernization · storage resiliency &amp; QoS · container platform reliability · routine lifecycle &amp; security maintenance.</p>
       </section>
     </div>
 
     <footer class="note" role="contentinfo">© <span id="y"></span> Roman Mednitzer — Canonical public profile</footer>
   </main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "knowsAbout": [
-      "Systems Reliability Engineering","Infrastructure & Operations","Virtualization","Containers","Kubernetes","Slurm","Ceph","ZFS","Terraform","Ansible","Observability","Prometheus","Grafana","ELK","High Availability","Disaster Recovery","Zero‑Downtime Upgrades","Linux","Microsoft Windows Server","Identity and Access Management","Load Balancing","Database Replication","Security Hardening","CI/CD","ISO 27001","NIS2","Azure","AWS","GCP","GPU / HPC (AMD · NVIDIA)","Mellanox Fabric","Proxmox","VMware / Broadcom Virtualization"
-    ]: "https://rmednitzer.github.io/profile_roman-mednitzer.png",
+    "@type": "Person",
+    "name": "Roman Mednitzer",
+    "jobTitle": "IT Infrastructure & Operations Engineer",
+    "image": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
     "memberOf": [
       {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},
       {"@type":"Organization","name":"IEEE","url":"https://www.ieee.org/"}
     ],
-    "sameAs": [
-      "https://www.linkedin.com/in/rmednitzer",
-      "https://github.com/rmednitzer"
-    ],
+    "email": "mailto:r.mednitzer@ieee.org",
+    "sameAs": ["https://www.linkedin.com/in/rmednitzer","https://github.com/rmednitzer"],
+    "address": {"@type": "PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},
+    "areaServed": "EU",
     "knowsAbout": [
-      "Systems Reliability Engineering","Infrastructure & Operations","Kubernetes","Slurm","Ceph","ZFS","Terraform","Ansible","Observability","Prometheus","Grafana","ELK","High Availability","Disaster Recovery","Zero-downtime Upgrades","Identity and Access Management","Load Balancing","Database Replication","Security Hardening","CI/CD","ISO 27001","NIS2","Azure","AWS","GCP","GPU / HPC (AMD · NVIDIA)","Mellanox Fabric","Proxmox","VMware / Broadcom Virtualization"
+      "Systems Reliability Engineering","Infrastructure & Operations","Virtualization","Containers","Kubernetes","Slurm","Ceph","ZFS","Terraform","Ansible","Observability","Prometheus","Grafana","ELK","High Availability","Disaster Recovery","Zero-Downtime Upgrades","Linux","Microsoft Windows Server","Identity and Access Management","Load Balancing","Database Replication","Security Hardening","CI/CD","ISO 27001","NIS2","Azure","AWS","GCP","GPU / HPC (AMD · NVIDIA)","Mellanox Fabric","Proxmox","VMware / Broadcom Virtualization"
     ]
   }
   </script>
@@ -147,12 +144,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Roman Mednitzer — IT Infrastructure & Operations",
-    "url": "https://rmednitzer.github.io/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://rmednitzer.github.io/?q={query}",
-      "query-input": "required name=query"
-    }
+    "url": "https://rmednitzer.github.io/"
   }
   </script>
 </body>
