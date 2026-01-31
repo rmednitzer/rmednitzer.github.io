@@ -1,7 +1,7 @@
 {
-  "name": "Roman Mednitzer — Public Profile",
+  "name": "Roman Mednitzer — Linux Infrastructure & Hybrid Platforms",
   "short_name": "R. Mednitzer",
-  "description": "Professional profile of Roman Mednitzer — Linux infrastructure & hybrid platforms (on-prem/datacenter + cloud, platform/SRE, automation, observability, resilience).",
+  "description": "Linux-centric infrastructure and platform operations. On-prem/datacenter first with virtualization, Kubernetes/OpenShift, IaC/GitOps, observability, backup/DR, and security/compliance alignment.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
