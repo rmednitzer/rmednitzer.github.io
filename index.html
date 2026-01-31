@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Roman Mednitzer — IT Infrastructure & Operations</title>
+  <title>Roman Mednitzer — Linux Infrastructure & Hybrid Platforms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="IT Infrastructure & Operations engineer. Linux, Virtualization, Containers, Storage, Observability, Security, Backup/DR">
+  <meta name="description" content="Linux-first infrastructure & hybrid platform operations (on-prem/datacenter + cloud). Platform/SRE, Kubernetes/OpenShift, automation, observability, security, resilience.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" content="#0b0f14">
   <meta name="color-scheme" content="dark light">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Roman Mednitzer — IT Infrastructure & Operations">
+  <meta property="og:title" content="Roman Mednitzer — Linux Infrastructure & Hybrid Platforms">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="IT Infrastructure & Operations · Linux · Virtualization · Containers · Storage · Observability · Security · Backup/DR">
+  <meta property="og:description" content="Linux-first infrastructure & hybrid platforms · on-prem/datacenter · platform/SRE · automation · observability · security · resilience">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
@@ -23,8 +23,8 @@
   <meta property="og:image:width" content="768">
   <meta property="og:image:height" content="768">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roman Mednitzer — IT Infrastructure & Operations">
-  <meta name="twitter:description" content="IT Infrastructure & Operations · Linux · Virtualization · Containers · Storage · Observability · Security · Backup/DR">
+  <meta name="twitter:title" content="Roman Mednitzer — Linux Infrastructure & Hybrid Platforms">
+  <meta name="twitter:description" content="Linux-first infrastructure & hybrid platforms · on-prem/datacenter · platform/SRE · automation · observability · security · resilience">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -37,18 +37,20 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    main{max-width:900px;margin:0 auto;padding:2rem 1rem 4rem}
-    header{display:flex;flex-direction:column;gap:.5rem}
+    main{max-width:920px;margin:0 auto;padding:2rem 1rem 4rem}
+    header{display:flex;flex-direction:column;gap:.35rem}
     h1,h2{margin:.6em 0 .3em}
     .lead{font-size:1.05rem;color:var(--muted)}
-    .card{border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.2rem;background:var(--card)}
-    .card p { max-width: 80ch; }
+    .card{border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.1rem;background:var(--card)}
+    .card p { max-width: 85ch; }
     .kw{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:.2rem .6rem;margin:.25rem;font-size:.85em;white-space:nowrap}
     .grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
     .note{color:var(--muted);font-size:.95em}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .avatar{display:block;margin:.5rem 0 0;width:144px;height:144px;border-radius:9999px;border:1px solid var(--border);object-fit:cover}
+    ul{margin:.4rem 0 .2rem 1.1rem}
+    li{margin:.25rem 0}
   </style>
 </head>
 <body>
@@ -57,44 +59,59 @@
     <header>
       <h1>Roman Mednitzer</h1>
       <img class="avatar" src="profile_roman-mednitzer.png" alt="Portrait of Roman Mednitzer" width="144" height="144" loading="lazy" decoding="async">
-      <p class="lead">Vienna, AT · IT Infrastructure &amp; Operations Engineer</p>
-      <p class="note">Canonical Public Profile</p>
+      <p class="lead">Vienna, AT · Linux Infrastructure &amp; Hybrid Platforms</p>
+      <p class="note">Canonical public profile</p>
     </header>
 
     <section class="card" aria-labelledby="bio-h">
       <h2 id="bio-h">About</h2>
-      <p>I run and improve IT infrastructure across Virtualization, Storage, and Container Platforms. I focus on availability, security, Backup/DR, Observability, and safe change patterns.</p>
+      <p>With over 10 years of experience, I specialize in Linux-centric infrastructure and platform operations. I contribute to the stability and reliability of on-premises environments by managing server hardware lifecycle, production platforms, and core infrastructure services. My focus includes backup and recovery (including restore readiness), patch management, and controlled change routines across systems to maintain operational integrity.</p>
+      <p>Skilled in on-premises infrastructure management, data center operations, and resilience practices, I prioritize reliable, secure, and efficient IT environments. I work with structured processes, documented procedures, and proactive monitoring/alerting, aligning day-to-day operations with organizational requirements and compliance expectations.</p>
+      <p class="note">Current focus: translating requirements from NIS2, GDPR, and the EU AI Act into concrete technical controls, measurable signals, and audit-ready evidence for infrastructure and AI workloads.</p>
+    </section>
+
+    <section class="card" aria-labelledby="what-h">
+      <h2 id="what-h">What I do</h2>
+      <ul>
+        <li>Run Linux-first on-prem/datacenter platforms (virtualization, Kubernetes/OpenShift) with disciplined operations.</li>
+        <li>Standardize and automate change (Terraform/Ansible, GitOps) to reduce drift and increase repeatability.</li>
+        <li>Design for reliability and recovery (observability, incident response, verified backup/restore, DR/BC).</li>
+      </ul>
     </section>
 
     <section class="card" aria-labelledby="keywords-h">
       <h2 id="keywords-h">Keywords</h2>
+      <p class="note">Focused, forward-facing keywords (kept intentionally short).</p>
       <p>
-        <span class="kw">Systems Reliability &amp; Operations</span>
-        <span class="kw">Compute &amp; Virtualization Infrastructure</span>
-        <span class="kw">GPU / HPC (AMD · NVIDIA)</span>
-        <span class="kw">Virtualization (Proxmox · VMware / Broadcom)</span>
-        <span class="kw">Storage &amp; Data Protection</span>
-        <span class="kw">Container Platforms &amp; Orchestration</span>
-        <span class="kw">Cloud Platforms</span>
         <span class="kw">Linux</span>
-        <span class="kw">Microsoft Windows Server</span>
-        <span class="kw">Infrastructure as Code (Terraform · Ansible)</span>
+        <span class="kw">On-Prem &amp; Datacenter</span>
+        <span class="kw">Platform Engineering</span>
+        <span class="kw">Site Reliability Engineering</span>
+        <span class="kw">Virtualization (VMware · Proxmox)</span>
         <span class="kw">Kubernetes</span>
-        <span class="kw">Slurm</span>
-        <span class="kw">Ceph</span>
-        <span class="kw">ZFS</span>
-        <span class="kw">Observability (Prometheus · Grafana · ELK)</span>
-        <span class="kw">CI/CD</span>
-        <span class="kw">High Availability</span>
-        <span class="kw">Backup &amp; DR</span>
-        <span class="kw">Load Balancing</span>
-        <span class="kw">Identity &amp; Access Management (IAM)</span>
-        <span class="kw">Database Replication</span>
-        <span class="kw">Zero-Downtime Upgrades</span>
-        <span class="kw">Security Hardening</span>
+        <span class="kw">OpenShift</span>
+        <span class="kw">IaC (Terraform · Ansible)</span>
+        <span class="kw">GitOps</span>
+        <span class="kw">Observability (Prometheus · Grafana · OpenTelemetry)</span>
+        <span class="kw">Incident Response</span>
+        <span class="kw">Backup/DR &amp; Business Continuity</span>
+        <span class="kw">IAM · Secrets</span>
+        <span class="kw">Policy-as-Code</span>
+        <span class="kw">Supply-Chain Security (SBOM/SLSA)</span>
         <span class="kw">ISO 27001</span>
-        <span class="kw">NIS2</span>
+        <span class="kw">NIS2 · GDPR · EU AI Act</span>
       </p>
+    </section>
+
+    <section class="card" aria-labelledby="evidence-h">
+      <h2 id="evidence-h">Evidence</h2>
+      <p>Public links and artifacts that back up the claims above (kept lean by design):</p>
+      <ul>
+        <li><a rel="me" href="https://www.linkedin.com/in/rmednitzer">LinkedIn</a> (experience, skills, recommendations)</li>
+        <li><a rel="me" href="https://github.com/rmednitzer">GitHub</a> (automation templates, snippets, infrastructure notes)</li>
+        <li><a href="/.well-known/security.txt">security.txt</a> (responsible disclosure contact)</li>
+      </ul>
+      <p class="note">If you need a specific evidence pack (runbook/checklist set, architecture sketch, control mapping), ask and I will publish a minimal, non-sensitive version.</p>
     </section>
 
     <section class="card" aria-labelledby="orgs-h">
@@ -109,12 +126,13 @@
       <section class="card" aria-labelledby="contact-h">
         <h2 id="contact-h">Contact</h2>
         <p>Email: <a rel="me" href="mailto:r.mednitzer@ieee.org">r.mednitzer@ieee.org</a></p>
+        <p class="note">Security contact: <a rel="me" href="mailto:r.mednitzer@outlook.com">r.mednitzer@outlook.com</a></p>
         <p>Profiles: <a rel="me" href="https://www.linkedin.com/in/rmednitzer">LinkedIn</a> · <a rel="me" href="https://github.com/rmednitzer">GitHub</a></p>
       </section>
 
       <section class="card" aria-labelledby="now-h">
         <h2 id="now-h">Focus</h2>
-        <p>IT Infrastructure &amp; Operations engineer. Linux, Virtualization, Containers, Storage, Observability, Security, Backup/DR</p>
+        <p>Linux Infrastructure &amp; Hybrid Platforms — on-prem/datacenter first, cloud where it helps, with measurable reliability and audit-ready operations.</p>
       </section>
     </div>
 
@@ -128,20 +146,58 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Roman Mednitzer",
-    "jobTitle": "IT Infrastructure & Operations Engineer",
+    "jobTitle": "Linux Infrastructure & Hybrid Platforms",
+    "url": "https://rmednitzer.github.io/",
     "image": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
     "memberOf": [
       {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},
       {"@type":"Organization","name":"IEEE","url":"https://www.ieee.org/"},
       {"@type":"Organization","name":"IEEE Systems, Man and Cybernetics Society","url":"https://www.ieeesmc.org/"},
-      {"@type":"Organization","name":"IEEE Computational Intelligence Society","url":https://cis.ieee.org/"}
+      {"@type":"Organization","name":"IEEE Computational Intelligence Society","url":"https://cis.ieee.org/"}
     ],
     "email": "mailto:r.mednitzer@ieee.org",
-    "sameAs": ["https://www.linkedin.com/in/rmednitzer","https://github.com/rmednitzer"],
+    "sameAs": [
+      "https://www.linkedin.com/in/rmednitzer",
+      "https://github.com/rmednitzer"
+    ],
     "address": {"@type": "PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},
     "areaServed": "EU",
     "knowsAbout": [
-      "Systems Reliability Engineering","Infrastructure & Operations","Virtualization","Containers","Kubernetes","Slurm","Ceph","ZFS","Terraform","Ansible","Observability","Prometheus","Grafana","ELK","High Availability","Disaster Recovery","Zero-Downtime Upgrades","Linux","Microsoft Windows Server","Identity and Access Management","Load Balancing","Database Replication","Security Hardening","CI/CD","ISO 27001","NIS2","Azure","AWS","GCP","GPU / HPC (AMD · NVIDIA)","Mellanox Fabric","Proxmox","VMware / Broadcom Virtualization"
+      "Linux",
+      "On-Premises Infrastructure",
+      "Data Center Operations",
+      "Virtualization",
+      "VMware",
+      "Proxmox",
+      "Platform Engineering",
+      "Site Reliability Engineering",
+      "Kubernetes",
+      "OpenShift",
+      "Docker",
+      "Helm",
+      "Terraform",
+      "Ansible",
+      "GitOps",
+      "Observability",
+      "OpenTelemetry",
+      "Prometheus",
+      "Grafana",
+      "Incident Response",
+      "Backup and Recovery",
+      "Disaster Recovery",
+      "Business Continuity",
+      "Identity and Access Management",
+      "Secrets Management",
+      "Policy as Code",
+      "Supply Chain Security",
+      "ISO 27001",
+      "NIS2",
+      "GDPR",
+      "EU AI Act",
+      "MLOps",
+      "LLMOps",
+      "AI Security",
+      "AI Governance"
     ]
   }
   </script>
@@ -150,7 +206,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Roman Mednitzer — IT Infrastructure & Operations",
+    "name": "Roman Mednitzer — Linux Infrastructure & Hybrid Platforms",
     "url": "https://rmednitzer.github.io/"
   }
   </script>
