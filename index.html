@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Roman Mednitzer | Linux Infrastructure & Hybrid Platforms</title>
+  <title>Roman Mednitzer | Systems Assurance · Linux Infrastructure · Hybrid Platforms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Linux Infrastructure & Hybrid Platforms">
+  <meta name="description" content="Systems Assurance Architect. Linux infrastructure, hybrid platforms, and EU governance. Translating requirements into contracts, measured behavior, and signed evidence.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#0b0f14">
+  <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark light">
   <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo" />
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Roman Mednitzer">
+  <meta property="og:title" content="Roman Mednitzer · Systems Assurance · Linux Infrastructure">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Linux Infrastructure & Hybrid Platforms">
+  <meta property="og:description" content="Systems Assurance Architect. Linux infrastructure, hybrid platforms, and EU governance.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
@@ -23,118 +23,385 @@
   <meta property="og:image:width" content="768">
   <meta property="og:image:height" content="768">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roman Mednitzer">
-  <meta name="twitter:description" content="Linux Infrastructure & Hybrid Platforms">
+  <meta name="twitter:title" content="Roman Mednitzer · Systems Assurance · Linux Infrastructure">
+  <meta name="twitter:description" content="Systems Assurance Architect. Linux infrastructure, hybrid platforms, and EU governance.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230b0f14'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230a0e13'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root { --fg:#e5e7eb; --bg:#0b0f14; --muted:#9aa4af; --accent:#0d9488; --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.15); }
-    @media (prefers-color-scheme: light) { :root { --fg:#111827; --bg:#ffffff; --muted:#6b7280; --accent:#0d9488; --card:#ffffff; --border:rgba(17,24,39,.12);} }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    main{max-width:920px;margin:0 auto;padding:2rem 1rem 4rem}
-    header{display:flex;flex-direction:column;gap:.35rem}
-    h1,h2{margin:.6em 0 .3em}
-    .lead{font-size:1.05rem;color:var(--muted)}
-    .card{border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.1rem;background:var(--card)}
-    .card p { max-width: 85ch; }
-    .kw{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:.2rem .6rem;margin:.25rem;font-size:.85em;white-space:nowrap}
-    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}}
-    .note{color:var(--muted);font-size:.95em}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .avatar{display:block;margin:.5rem 0 0;width:144px;height:144px;border-radius:9999px;border:1px solid var(--border);object-fit:cover}
-    ul{margin:.4rem 0 .2rem 1.1rem}
-    li{margin:.25rem 0}
-    .btnrow{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
-    .btn{display:inline-block;border:1px solid var(--border);border-radius:10px;padding:.45rem .7rem;background:rgba(255,255,255,.03);color:var(--fg);font-size:.95em}
-    .btn:hover{border-color:var(--accent);text-decoration:none}
+    :root {
+      --fg: #d4d9e0;
+      --fg-strong: #edf0f4;
+      --bg: #0a0e13;
+      --bg-surface: #0f1319;
+      --muted: #6b7a8d;
+      --accent: #0d9488;
+      --accent-dim: rgba(13,148,136,.12);
+      --accent-glow: rgba(13,148,136,.25);
+      --border: rgba(255,255,255,.08);
+      --border-accent: rgba(13,148,136,.3);
+      --font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'DM Mono', ui-monospace, 'Cascadia Code', monospace;
+      --radius: 8px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --fg: #1f2937;
+        --fg-strong: #0f172a;
+        --bg: #f8f9fb;
+        --bg-surface: #ffffff;
+        --muted: #6b7280;
+        --accent: #0d7d73;
+        --accent-dim: rgba(13,125,115,.07);
+        --accent-glow: rgba(13,125,115,.15);
+        --border: rgba(15,23,42,.09);
+        --border-accent: rgba(13,125,115,.25);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color .15s; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* ── Layout ── */
+    .page { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+    /* ── Hero ── */
+    .hero { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; margin-bottom: 2.5rem; }
+
+    .avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--border-accent);
+      object-fit: cover;
+      box-shadow: 0 0 0 6px var(--accent-dim);
+      transition: box-shadow .3s;
+    }
+    .avatar:hover { box-shadow: 0 0 0 8px var(--accent-glow); }
+
+    .hero-text { padding-top: .25rem; }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--fg-strong);
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-family: var(--font-mono);
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: .35rem;
+      letter-spacing: .01em;
+    }
+
+    .hero-tagline {
+      margin-top: .7rem;
+      font-size: 1.05rem;
+      color: var(--fg);
+      max-width: 52ch;
+      line-height: 1.55;
+    }
+
+    .hero-links {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin-top: .85rem;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .4rem .75rem;
+      font-family: var(--font-mono);
+      font-size: .82rem;
+      color: var(--fg);
+      background: var(--bg-surface);
+      transition: border-color .2s, background .2s;
+    }
+    .btn:hover { border-color: var(--accent); background: var(--accent-dim); text-decoration: none; }
+    .btn svg { width: 14px; height: 14px; stroke: var(--muted); stroke-width: 2; fill: none; }
+
+    @media (max-width: 560px) {
+      .hero { grid-template-columns: 1fr; justify-items: start; gap: 1rem; }
+      .hero-text h1 { font-size: 1.6rem; }
+    }
+
+    /* ── Section ── */
+    .section {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-surface);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section h2 {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent);
+      margin-bottom: .85rem;
+    }
+
+    .section p {
+      max-width: 72ch;
+      color: var(--fg);
+    }
+
+    .section p + p { margin-top: .6rem; }
+
+    /* ── Domain blocks ── */
+    .domains { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 640px) { .domains { grid-template-columns: 1fr 1fr; } }
+
+    .domain {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      background: transparent;
+      transition: border-color .2s;
+    }
+    .domain:hover { border-color: var(--border-accent); }
+
+    .domain h3 {
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--fg-strong);
+      margin-bottom: .35rem;
+    }
+
+    .domain p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Tags ── */
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .18rem .5rem;
+      white-space: nowrap;
+      transition: border-color .2s, color .2s;
+    }
+    .tag:hover { border-color: var(--border-accent); color: var(--fg); }
+    .tag--accent { border-color: var(--border-accent); color: var(--accent); }
+
+    /* ── Orgs ── */
+    .org-list { list-style: none; padding: 0; }
+    .org-list li {
+      position: relative;
+      padding: .3rem 0 .3rem 1rem;
+      font-size: .92rem;
+    }
+    .org-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .org-list .org-sub {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-left: .3rem;
+    }
+
+    /* ── Two-col bottom ── */
+    .bottom-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 640px) { .bottom-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    /* ── Entrance animations ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, .section { animation: fadeUp .5s ease both; }
+      .section:nth-child(2) { animation-delay: .06s; }
+      .section:nth-child(3) { animation-delay: .12s; }
+      .section:nth-child(4) { animation-delay: .18s; }
+      .section:nth-child(5) { animation-delay: .24s; }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
   </style>
 </head>
 <body>
   <a class="sr-only" href="#content">Skip to content</a>
-  <main id="content" role="main">
-    <header>
-      <h1>Roman Mednitzer</h1>
-      <img class="avatar" src="profile_roman-mednitzer.png" alt="Portrait of Roman Mednitzer" width="144" height="144" loading="lazy" decoding="async">
-      <p class="lead">Vienna, AT · Linux Infrastructure &amp; Hybrid Platforms</p>
+  <div class="page" id="content" role="main">
+
+    <!-- ── Hero ── -->
+    <header class="hero">
+      <img class="avatar" src="profile_roman-mednitzer.png" alt="Portrait of Roman Mednitzer" width="120" height="120" loading="eager" decoding="async">
+      <div class="hero-text">
+        <h1>Roman Mednitzer</h1>
+        <p class="hero-sub">Vienna, AT · Systems Assurance · Linux Infrastructure · Hybrid Platforms</p>
+        <p class="hero-tagline">I turn requirements into contracts, measured behavior, and signed evidence: across Linux infrastructure, Kubernetes platforms, and EU governance frameworks.</p>
+        <nav class="hero-links" aria-label="Contact links">
+          <a class="btn" href="mailto:r.mednitzer@outlook.com">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            Email
+          </a>
+          <a class="btn" rel="me" href="https://www.linkedin.com/in/rmednitzer">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" rel="me" href="https://github.com/rmednitzer">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
+        </nav>
+      </div>
     </header>
 
-    <section class="card" aria-labelledby="bio-h">
-      <h2 id="bio-h">About</h2>
-      <p>With over 10 years of experience, I specialize in Linux-centric infrastructure and platform operations. I contribute to the stability and reliability of on-premises environments by managing server hardware lifecycle, production platforms, and core infrastructure services. My focus includes backup and recovery (including restore readiness), patch management, and controlled change routines across systems to maintain operational integrity.</p>
-      <p>Skilled in on-premises infrastructure management, data center operations, and resilience practices, I prioritize reliable, secure, and efficient IT environments. I work with structured processes, documented procedures, and proactive monitoring/alerting, aligning day-to-day operations with organizational requirements and compliance expectations.</p>
+    <!-- ── About ── -->
+    <section class="section" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <p>Over 10 years in Linux-centric infrastructure and platform operations, with increasing depth in systems assurance, governance, and regulated environments. I work at the boundary between infrastructure reliability and organizational compliance: managing server hardware lifecycle, production platforms, backup/recovery, patch management, and controlled change routines while ensuring these operations produce audit-ready evidence.</p>
+      <p>My current focus is translating regulatory requirements (NIS2, GDPR, EU AI Act, DORA) into concrete technical controls, measurable signals, and verifiable evidence chains for infrastructure and AI workloads. I treat every system boundary as a contract: defined inputs, enforced invariants, observable behavior, and signed outputs.</p>
     </section>
 
-    <section class="card" aria-labelledby="keywords-h">
-      <h2 id="keywords-h">Keywords</h2>
-      <p>
-        <span class="kw">Linux</span>
-        <span class="kw">On-Prem &amp; Datacenter</span>
-        <span class="kw">Platform Engineering</span>
-        <span class="kw">Site Reliability Engineering</span>
-        <span class="kw">Virtualization</span>
-        <span class="kw">VMware</span>
-        <span class="kw">Proxmox</span>
-        <span class="kw">Kubernetes</span>
-        <span class="kw">OpenShift</span>
-        <span class="kw">Docker</span>
-        <span class="kw">Helm</span>
-        <span class="kw">Terraform</span>
-        <span class="kw">Ansible</span>
-        <span class="kw">GitOps</span>
-        <span class="kw">Observability</span>
-        <span class="kw">OpenTelemetry</span>
-        <span class="kw">Prometheus</span>
-        <span class="kw">Grafana</span>
-        <span class="kw">Incident Response</span>
-        <span class="kw">Backup/DR</span>
-        <span class="kw">Business Continuity</span>
-        <span class="kw">IAM</span>
-        <span class="kw">Secrets Management</span>
-        <span class="kw">Policy-as-Code</span>
-        <span class="kw">Supply-Chain Security</span>
-        <span class="kw">SBOM</span>
-        <span class="kw">SLSA</span>
-        <span class="kw">ISO 27001</span>
-        <span class="kw">NIS2</span>
-        <span class="kw">GDPR</span>
-        <span class="kw">EU AI Act</span>
-      </p>
-    </section>
-
-    <section class="card" aria-labelledby="orgs-h">
-      <h2 id="orgs-h">Organizations</h2>
-      <p><b>IEEE - Institute of Electrical and Electronics Engineers</b></p>
-      <p>• Systems, Man and Cybernetics Society</p>
-      <p>• Computational Intelligence Society</p>
-      <p><b>OCG - Austrian Computer Society</b></p>
-    </section>
-
-    <div class="grid">
-      <section class="card" aria-labelledby="contact-h">
-        <h2 id="contact-h">Contact</h2>
-        <div class="btnrow">
-          <a class="btn" href="mailto:r.mednitzer@outlook.com" aria-label="Email Roman">Email</a>
-          <a class="btn" rel="me" href="https://www.linkedin.com/in/rmednitzer" aria-label="Roman on LinkedIn">LinkedIn</a>
-          <a class="btn" rel="me" href="https://github.com/rmednitzer" aria-label="Roman on GitHub">GitHub</a>
+    <!-- ── Domains ── -->
+    <section class="section" aria-labelledby="domains-h">
+      <h2 id="domains-h">Domains</h2>
+      <div class="domains">
+        <div class="domain">
+          <h3>Infrastructure & Reliability</h3>
+          <p>Linux on-prem and datacenter operations, virtualization (VMware, Proxmox), server lifecycle, backup/DR, SRE practices, observability, and incident response.</p>
         </div>
-</section>
+        <div class="domain">
+          <h3>Platform Engineering</h3>
+          <p>Kubernetes and OpenShift, Helm, Terraform, Ansible, GitOps, CI/CD security, container image supply chain, and secrets management.</p>
+        </div>
+        <div class="domain">
+          <h3>Governance & Compliance</h3>
+          <p>ISO 27001, NIS2, GDPR, EU AI Act, DORA. Translating framework obligations into policy-as-code, measurable controls, and audit-ready evidence packs.</p>
+        </div>
+        <div class="domain">
+          <h3>Assurance & AI Integration</h3>
+          <p>Systems assurance architecture, enforceable boundary contracts, observability for AI/ML workloads, supply-chain integrity (SBOM/SLSA), and identity/access governance.</p>
+        </div>
+      </div>
+    </section>
 
-      <section class="card" aria-labelledby="now-h">
-        <h2 id="now-h">Focus</h2>
-        <p>Linux Infrastructure &amp; Hybrid Platforms</p>
-        <p>Translating requirements from NIS2, GDPR, and the EU AI Act into concrete technical controls, measurable signals, and audit-ready evidence for infrastructure and AI workloads.</p>
+    <!-- ── Technologies ── -->
+    <section class="section" aria-labelledby="tech-h">
+      <h2 id="tech-h">Technologies</h2>
+      <div class="tags">
+        <span class="tag tag--accent">Linux</span>
+        <span class="tag">On-Prem &amp; Datacenter</span>
+        <span class="tag">VMware</span>
+        <span class="tag">Proxmox</span>
+        <span class="tag tag--accent">Kubernetes</span>
+        <span class="tag">OpenShift</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Helm</span>
+        <span class="tag tag--accent">Terraform</span>
+        <span class="tag tag--accent">Ansible</span>
+        <span class="tag">GitOps</span>
+        <span class="tag tag--accent">OpenTelemetry</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">IAM</span>
+        <span class="tag">Secrets Management</span>
+        <span class="tag tag--accent">Policy-as-Code</span>
+        <span class="tag">SBOM</span>
+        <span class="tag">SLSA</span>
+        <span class="tag tag--accent">ISO 27001</span>
+        <span class="tag tag--accent">NIS2</span>
+        <span class="tag">GDPR</span>
+        <span class="tag tag--accent">EU AI Act</span>
+        <span class="tag">DORA</span>
+      </div>
+    </section>
+
+    <!-- ── Bottom grid: Orgs + Focus ── -->
+    <div class="bottom-grid">
+      <section class="section" aria-labelledby="orgs-h">
+        <h2 id="orgs-h">Organizations</h2>
+        <ul class="org-list">
+          <li><strong>IEEE</strong>
+            <br><span class="org-sub">Systems, Man and Cybernetics Society</span>
+            <br><span class="org-sub">Computational Intelligence Society</span>
+          </li>
+          <li><strong>OCG</strong> <span class="org-sub">(Austrian Computer Society)</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="focus-h">
+        <h2 id="focus-h">Current Focus</h2>
+        <p>Building the bridge between infrastructure operations and EU regulatory compliance: requirements into contracts, contracts into measured behavior, measured behavior into signed evidence.</p>
       </section>
     </div>
 
-    <footer class="note" role="contentinfo">© <span id="y"></span> Roman Mednitzer</footer>
-  </main>
+    <footer role="contentinfo">
+      <span>&copy; <span id="y"></span> Roman Mednitzer</span>
+      <span>GPLv3</span>
+    </footer>
+  </div>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
@@ -143,7 +410,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Roman Mednitzer",
-    "jobTitle": "Linux Infrastructure & Hybrid Platforms",
+    "jobTitle": "Systems Assurance · Linux Infrastructure · Hybrid Platforms",
     "url": "https://rmednitzer.github.io/",
     "image": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
     "memberOf": [
@@ -187,10 +454,14 @@
       "Secrets Management",
       "Policy as Code",
       "Supply Chain Security",
+      "SBOM",
+      "SLSA",
       "ISO 27001",
       "NIS2",
       "GDPR",
       "EU AI Act",
+      "DORA",
+      "Systems Assurance",
       "MLOps",
       "LLMOps",
       "AI Security",
@@ -203,7 +474,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Roman Mednitzer — Linux Infrastructure & Hybrid Platforms",
+    "name": "Roman Mednitzer · Systems Assurance · Linux Infrastructure · Hybrid Platforms",
     "url": "https://rmednitzer.github.io/"
   }
   </script>
