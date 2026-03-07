@@ -4,12 +4,12 @@
     <loc>https://rmednitzer.github.io/</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rmednitzer.github.io/enforceable-boundary-contracts</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

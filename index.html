@@ -28,7 +28,9 @@
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='24' fill='%230a0e13'/><path d='M64 20l14 24-14 24-14-24 14-24zM38 84h52l-26 24-26-24z' fill='%230d9488'/></svg>">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,9 +205,7 @@
       border-radius: var(--radius);
       padding: 1rem 1.1rem;
       background: transparent;
-      transition: border-color .2s;
     }
-    .domain:hover { border-color: var(--border-accent); }
 
     .domain h3 {
       font-size: .95rem;
@@ -231,9 +231,7 @@
       border-radius: 4px;
       padding: .18rem .5rem;
       white-space: nowrap;
-      transition: border-color .2s, color .2s;
     }
-    .tag:hover { border-color: var(--border-accent); color: var(--fg); }
     .tag--accent { border-color: var(--border-accent); color: var(--accent); }
 
     /* ── Orgs ── */
@@ -353,7 +351,7 @@
       <h2 id="domains-h">Domains</h2>
       <div class="domains">
         <div class="domain">
-          <h3>Infrastructure & Reliability</h3>
+          <h3>Infrastructure &amp; Reliability</h3>
           <p>Linux on-prem and datacenter operations, virtualization (VMware, Proxmox), server lifecycle, backup/DR, SRE practices, observability, and incident response.</p>
         </div>
         <div class="domain">
@@ -361,11 +359,11 @@
           <p>Kubernetes and OpenShift, Helm, Terraform, Ansible, GitOps, CI/CD security, container image supply chain, and secrets management.</p>
         </div>
         <div class="domain">
-          <h3>Governance & Compliance</h3>
+          <h3>Governance &amp; Compliance</h3>
           <p>ISO 27001, NIS2, GDPR, EU AI Act, DORA. Translating framework obligations into policy-as-code, measurable controls, and audit-ready evidence packs.</p>
         </div>
         <div class="domain">
-          <h3>Assurance & AI Integration</h3>
+          <h3>Assurance &amp; AI Integration</h3>
           <p>Systems assurance architecture, enforceable boundary contracts, observability for AI/ML workloads, supply-chain integrity (SBOM/SLSA), and identity/access governance.</p>
         </div>
       </div>
@@ -420,22 +418,22 @@
       <section class="section" aria-labelledby="orgs-h">
         <h2 id="orgs-h">Organizations</h2>
         <ul class="org-list">
-          <li><strong>IEEE</strong>
-            <br><span class="org-sub">Systems, Man and Cybernetics Society</span>
-            <br><span class="org-sub">Computational Intelligence Society</span>
+          <li><a href="https://www.ieee.org/"><strong>IEEE</strong></a>
+            <br><span class="org-sub"><a href="https://www.ieeesmc.org/">Systems, Man and Cybernetics Society</a></span>
+            <br><span class="org-sub"><a href="https://cis.ieee.org/">Computational Intelligence Society</a></span>
           </li>
-          <li><strong>OCG</strong> <span class="org-sub">(Austrian Computer Society)</span></li>
+          <li><a href="https://www.ocg.at/en"><strong>OCG</strong></a> <span class="org-sub">(Austrian Computer Society)</span></li>
         </ul>
       </section>
 
       <section class="section" aria-labelledby="focus-h">
         <h2 id="focus-h">Current Focus</h2>
-        <p>Building the bridge between infrastructure operations and EU regulatory compliance: requirements into contracts, contracts into measured behavior, measured behavior into signed evidence.</p>
+        <p>Enforceable runtime governance for EU-regulated infrastructure: boundary contracts that produce signed evidence as a byproduct of normal operation, covering NIS2, CRA, AI Act, and Machinery Regulation obligations across hybrid Linux platforms.</p>
       </section>
     </div>
 
     <footer role="contentinfo">
-      <span>&copy; <span id="y"></span> Roman Mednitzer</span>
+      <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>
       <span>GPLv3</span>
     </footer>
   </div>
