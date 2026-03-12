@@ -110,7 +110,7 @@
 
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-    .page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    .page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
 
     .article-nav {
       font-family: var(--font-mono);
@@ -122,7 +122,7 @@
     .article-header { margin-bottom: 2.5rem; }
 
     .article-header h1 {
-      font-size: 2rem;
+      font-size: clamp(1.4rem, 4vw, 2rem);
       font-weight: 600;
       color: var(--fg-strong);
       letter-spacing: -.02em;
@@ -148,7 +148,7 @@
     }
 
     .article-body h2 {
-      font-size: 1.2rem;
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
       font-weight: 600;
       color: var(--fg-strong);
       margin-top: 2.25rem;
@@ -223,11 +223,18 @@
       font-size: inherit;
     }
 
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1rem;
+    }
+
     .article-body table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
       font-size: .88rem;
+      min-width: 480px;
     }
 
     .article-body th, .article-body td {
@@ -306,8 +313,8 @@
     }
 
     @media (max-width: 560px) {
-      .article-header h1 { font-size: 1.5rem; }
-      .article-body table { font-size: .8rem; }
+      .article-body p { max-width: 100%; }
+      .article-body table { font-size: .8rem; min-width: 400px; }
       .article-body th, .article-body td { padding: .35rem .5rem; }
     }
 
@@ -348,6 +355,9 @@
 
       <p><strong>Autonomy ceiling (honest assessment):</strong></p>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Domain</th><th>Automatable</th><th>Hard ceiling</th></tr>
@@ -360,6 +370,7 @@
           <tr><td>Change management</td><td>70&ndash;80% (standard changes)</td><td>Architecture changes, non-standard changes</td></tr>
         </tbody>
       </table>
+      </div>
 
       <hr>
 
@@ -380,6 +391,9 @@
 
       <p>Adapted from the operational maturity model emerging in the Agentic SRE space:</p>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Level</th><th>Name</th><th>Description</th><th>Human involvement</th></tr>
@@ -392,6 +406,7 @@
           <tr><td>L4</td><td>Autonomous (bounded)</td><td>System executes within policy, alerts human on boundary</td><td>Exception only</td></tr>
         </tbody>
       </table>
+      </div>
 
       <p><strong>Target state for this architecture:</strong> L3&ndash;L4 for standard operations, L1&ndash;L2 for risk-bearing changes.</p>
 
@@ -434,6 +449,9 @@
 
       <h3>2.3 Self-Healing Capabilities</h3>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Failure mode</th><th>Automated response</th><th>Autonomy level</th><th>Verification</th></tr>
@@ -450,6 +468,7 @@
           <tr><td>Split-brain / data inconsistency</td><td><strong>Human gate</strong> &mdash; safe-halt, alert</td><td>L1</td><td>Requires manual diagnosis</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>2.4 What Cannot Be Automated</h3>
 
@@ -508,6 +527,9 @@
 
       <h3>3.2 Patching Domains</h3>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Domain</th><th>Approach</th><th>Autonomy target</th></tr>
@@ -521,6 +543,7 @@
           <tr><td>Kernel / firmware</td><td>Human-gated, scheduled maintenance</td><td>L1</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>3.3 Automated Patching Pipeline</h3>
 
@@ -649,6 +672,9 @@ auto_merge_criteria:
 
       <p>Regulatory frameworks set expectations for patch timelines. These should be encoded as policy:</p>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Severity</th><th>SLA target</th><th>Auto-action</th></tr>
@@ -660,6 +686,7 @@ auto_merge_criteria:
           <tr><td>Low (CVSS &lt; 4.0)</td><td>90 days</td><td>Auto-PR, low priority queue</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>3.7 Human Gates (Non-Automatable)</h3>
 
@@ -715,6 +742,9 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
 
       <h3>4.3 Automated Response Playbooks</h3>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Threat pattern</th><th>Automated response</th><th>Autonomy level</th><th>Constraint</th></tr>
@@ -732,6 +762,7 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
           <tr><td>Insider threat indicators</td><td><strong>Human gate</strong> &mdash; alert security team, capture evidence</td><td>L1</td><td>Legal/HR implications</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>4.4 Policy-as-Code (Admission Control)</h3>
 
@@ -836,6 +867,9 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
 
       <h3>5.3 Continuous Control Monitoring</h3>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Control category</th><th>Automated check</th><th>Frequency</th><th>Evidence type</th></tr>
@@ -853,6 +887,7 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
           <tr><td>Identity lifecycle</td><td>Joiner/mover/leaver automation, MFA enforcement</td><td>Continuous</td><td>IGA audit logs, MFA coverage</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>5.4 Evidence Generation (OSCAL-Based)</h3>
 
@@ -951,6 +986,9 @@ Auditor accesses dashboard + evidence store</code></pre>
 
       <h3>6.2 Change Classification</h3>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Type</th><th>Definition</th><th>Process</th><th>Autonomy</th></tr>
@@ -962,6 +1000,7 @@ Auditor accesses dashboard + evidence store</code></pre>
           <tr><td>Major change</td><td>High risk, architecture impact</td><td>Full CAB review + staged manual rollout</td><td>L1</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>6.3 Standard Change Automation (L4)</h3>
 
@@ -1021,6 +1060,9 @@ Auditor accesses dashboard + evidence store</code></pre>
 
       <p>Every deployment must have a tested rollback path:</p>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Scenario</th><th>Rollback method</th><th>Time to restore</th></tr>
@@ -1033,6 +1075,7 @@ Auditor accesses dashboard + evidence store</code></pre>
           <tr><td>Infrastructure change failure</td><td>Terraform/OpenTofu state rollback</td><td>Minutes</td></tr>
         </tbody>
       </table>
+      </div>
 
       <p><strong>Critical rule:</strong> Never deploy a schema migration that cannot be rolled back, or a migration that requires the new code to function. Deploy migrations and code changes in separate steps (expand-contract pattern).</p>
 
@@ -1122,6 +1165,9 @@ analysis:
 
       <p>Define SLIs and SLOs for every user-facing service:</p>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>SLI</th><th>Measurement</th><th>Typical SLO</th></tr>
@@ -1134,6 +1180,7 @@ analysis:
           <tr><td>Correctness</td><td>Business logic validation pass rate</td><td>99.99%</td></tr>
         </tbody>
       </table>
+      </div>
 
       <p><strong>Error budget:</strong> The difference between 100% and the SLO target is the error budget. Automation decisions consume error budget. If error budget is exhausted, freeze automated deployments until budget recovers.</p>
 
@@ -1365,6 +1412,9 @@ Phase 4 (future):  Extended autonomy
 
       <h2>12. Decision Log</h2>
 
+      <div class="table-wrap">
+
+
       <table>
         <thead>
           <tr><th>Decision</th><th>Rationale</th><th>Alternatives considered</th><th>Reversibility</th></tr>
@@ -1379,10 +1429,14 @@ Phase 4 (future):  Extended autonomy
           <tr><td>Human gates for risk-bearing changes</td><td>Regulatory requirement, safety requirement</td><td>Full automation</td><td>N/A (structurally required)</td></tr>
         </tbody>
       </table>
+      </div>
 
       <hr>
 
       <h2>Appendix A: Tool Reference</h2>
+
+      <div class="table-wrap">
+
 
       <table>
         <thead>
@@ -1418,10 +1472,14 @@ Phase 4 (future):  Extended autonomy
           <tr><td>Service mesh</td><td>Cilium, Linkerd</td><td>Istio</td></tr>
         </tbody>
       </table>
+      </div>
 
       <hr>
 
       <h2>Appendix B: Regulatory Quick Reference</h2>
+
+      <div class="table-wrap">
+
 
       <table>
         <thead>
@@ -1435,10 +1493,14 @@ Phase 4 (future):  Extended autonomy
           <tr><td>CRA</td><td>EU, products with digital elements</td><td>Vulnerability handling, SBOM, security updates</td><td>Conformity assessment, incident reporting</td></tr>
         </tbody>
       </table>
+      </div>
 
       <hr>
 
       <h2>Appendix C: Confidence and Unknowns Summary</h2>
+
+      <div class="table-wrap">
+
 
       <table>
         <thead>
@@ -1455,6 +1517,7 @@ Phase 4 (future):  Extended autonomy
           <tr><td>Policy-as-code eliminates config drift</td><td>[I]</td><td>{70}</td><td>Requires comprehensive policy coverage</td></tr>
         </tbody>
       </table>
+      </div>
 
     </article>
 
