@@ -2,6 +2,7 @@
   "name": "Roman Mednitzer · Systems Assurance · Linux Infrastructure · Hybrid Platforms",
   "short_name": "R. Mednitzer",
   "description": "Systems Assurance Architect. Linux infrastructure, hybrid platforms, and EU governance. Translating requirements into contracts, measured behavior, and signed evidence.",
+  "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
