@@ -48,7 +48,38 @@ All changes are non-breaking. No content was altered. Verify with diff before co
 
 ## NOT changed (deferred / optional)
 
-- **Self-hosted fonts**: Would eliminate Google Fonts dependency (privacy, render-blocking). Requires downloading Outfit + DM Mono WOFF2 files and updating CSS `@font-face`. Recommend as a follow-up.
 - **Shared CSS file**: Both pages duplicate ~4 KB of identical CSS. Extract to `style.css` when adding a third page.
 - **`_headers` / cache control**: GitHub Pages defaults are adequate. Revisit if migrating to Cloudflare Pages.
 - **`security.txt` expiry**: Expires 2026-12-31. Calendar reminder to renew.
+
+---
+
+# Site Patch Changelog — 2026-03-24
+
+## New directory: `fonts/`
+
+Self-hosted WOFF2 font files replacing Google Fonts dependency.
+
+| File | Weight | Purpose |
+|------|--------|---------|
+| `outfit-latin-{300,400,500,600}-normal.woff2` | 300–600 | Body text (latin) |
+| `outfit-latin-ext-{300,400,500,600}-normal.woff2` | 300–600 | Body text (extended latin) |
+| `dm-mono-latin-{400,500}-normal.woff2` | 400–500 | Monospace (latin) |
+| `dm-mono-latin-ext-{400,500}-normal.woff2` | 400–500 | Monospace (extended latin) |
+
+## New file: `fonts/fonts.css`
+
+`@font-face` declarations for all self-hosted font files with correct unicode-range subsetting.
+
+## `index.html`, `enforceable-boundary-contracts.html`, `it-operations-architecture.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed `dns-prefetch` and `preconnect` hints for `fonts.googleapis.com` and `fonts.gstatic.com` | No longer needed — fonts are served from the same origin |
+| 2 | Removed `<link href="https://fonts.googleapis.com/css2?…" rel="stylesheet">` | Replaced by self-hosted fonts |
+| 3 | Added `<link rel="preload">` for `outfit-latin-400-normal.woff2` and `outfit-latin-300-normal.woff2` | Hint browser to fetch most-used weights early, improving First Contentful Paint |
+| 4 | Added `<link rel="stylesheet" href="/fonts/fonts.css">` | Loads self-hosted font declarations |
+
+## `README.md`
+
+Added site link, page index table, and tech notes for GitHub repository visitors.
