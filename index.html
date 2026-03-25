@@ -20,98 +20,30 @@
   <meta property="og:description" content="Infrastructure & Compliance Engineering. Governed infrastructure for regulated environments.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
+  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="Portrait of Roman Mednitzer">
-  <meta property="og:image:width" content="768">
-  <meta property="og:image:height" content="768">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer · Infrastructure & Compliance Engineering">
   <meta name="twitter:description" content="Infrastructure & Compliance Engineering. Governed infrastructure for regulated environments.">
-  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
+  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/profile_roman-mednitzer.png">
+  <link rel="apple-touch-icon" href="/profile_roman-mednitzer-400.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/outfit-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.css">
 
   <style>
-    :root {
-      --fg: #d4d9e0;
-      --fg-strong: #edf0f4;
-      --bg: #0a0e13;
-      --bg-surface: #0f1319;
-      --muted: #6b7a8d;
-      --accent: #0d9488;
-      --accent-dim: rgba(13,148,136,.12);
-      --accent-glow: rgba(13,148,136,.25);
-      --border: rgba(255,255,255,.08);
-      --border-accent: rgba(13,148,136,.3);
-      --font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-      --font-mono: 'DM Mono', ui-monospace, 'Cascadia Code', monospace;
-      --radius: 8px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --fg: #1f2937;
-        --fg-strong: #0f172a;
-        --bg: #f8f9fb;
-        --bg-surface: #ffffff;
-        --muted: #6b7280;
-        --accent: #0d7d73;
-        --accent-dim: rgba(13,125,115,.07);
-        --accent-glow: rgba(13,125,115,.15);
-        --border: rgba(15,23,42,.09);
-        --border-accent: rgba(13,125,115,.25);
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: 1.65;
-      font-size: 16px;
-      min-height: 100vh;
-    }
-
-    /* Subtle grid background */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: .35;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: color .15s; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-    /* ── Layout ── */
     .page { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
 
-    /* ── Hero ── */
     .hero { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; margin-bottom: 2.5rem; }
 
     .avatar {
@@ -177,7 +109,6 @@
       .hero-links { justify-content: center; }
     }
 
-    /* ── Section ── */
     .section {
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -196,14 +127,9 @@
       margin-bottom: .85rem;
     }
 
-    .section p {
-      max-width: 72ch;
-      color: var(--fg);
-    }
-
+    .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
 
-    /* ── Domain blocks ── */
     .domains { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     @media (min-width: 640px) { .domains { grid-template-columns: 1fr 1fr; } }
 
@@ -214,54 +140,16 @@
       background: transparent;
     }
 
-    .domain h3 {
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--fg-strong);
-      margin-bottom: .35rem;
-    }
+    .domain h3 { font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin-bottom: .35rem; }
+    .domain p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
 
-    .domain p {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── Tags ── */
     .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
 
-    .tag {
-      font-family: var(--font-mono);
-      font-size: .75rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: .18rem .5rem;
-      white-space: nowrap;
-    }
-    .tag--accent { border-color: var(--border-accent); color: var(--accent); }
-
-    /* ── Orgs ── */
     .org-list { list-style: none; padding: 0; }
-    .org-list li {
-      position: relative;
-      padding: .3rem 0 .3rem 1rem;
-      font-size: .92rem;
-    }
-    .org-list li::before {
-      content: '›';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .org-list .org-sub {
-      font-size: .82rem;
-      color: var(--muted);
-      margin-left: .3rem;
-    }
+    .org-list li { position: relative; padding: .3rem 0 .3rem 1rem; font-size: .92rem; }
+    .org-list li::before { content: '\203A'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+    .org-list .org-sub { font-size: .82rem; color: var(--muted); margin-left: .3rem; }
 
-    /* ── Writing list ── */
     .writing-list { list-style: none; padding: 0; }
     .writing-item {
       display: block;
@@ -273,43 +161,17 @@
       transition: border-color .2s;
     }
     .writing-item:hover { border-color: var(--border-accent); text-decoration: none; }
-    .writing-item-title {
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--fg-strong);
-    }
-    .writing-item-meta {
-      font-family: var(--font-mono);
-      font-size: .78rem;
-      color: var(--muted);
-      margin-top: .2rem;
-    }
+    .writing-item-title { font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
+    .writing-item-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; }
 
-    /* ── Two-col bottom ── */
     .bottom-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
     @media (min-width: 640px) { .bottom-grid { grid-template-columns: 1fr 1fr; } }
 
-    /* ── Footer ── */
-    footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--font-mono);
-      font-size: .78rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-
-    /* ── Tablet adjustments ── */
     @media (min-width: 561px) and (max-width: 768px) {
       .hero { gap: 1.25rem; }
       .avatar { width: 100px; height: 100px; }
     }
 
-    /* ── Entrance animations ── */
     @media (prefers-reduced-motion: no-preference) {
       .hero, .section { animation: fadeUp .5s ease both; }
       .section:nth-child(2) { animation-delay: .06s; }
@@ -317,11 +179,6 @@
       .section:nth-child(4) { animation-delay: .18s; }
       .section:nth-child(5) { animation-delay: .24s; }
       .section:nth-child(6) { animation-delay: .30s; }
-
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
     }
   </style>
 </head>
@@ -331,7 +188,10 @@
 
     <!-- ── Hero ── -->
     <header class="hero">
-      <img class="avatar" src="profile_roman-mednitzer.png" alt="Portrait of Roman Mednitzer" width="120" height="120" loading="eager" decoding="async">
+      <picture>
+        <source srcset="profile_roman-mednitzer.webp" type="image/webp">
+        <img class="avatar" src="profile_roman-mednitzer-400.png" alt="Portrait of Roman Mednitzer" width="120" height="120" loading="eager" decoding="async">
+      </picture>
       <div class="hero-text">
         <h1>Roman Mednitzer</h1>
         <p class="hero-sub">Vienna, AT · Infrastructure & Compliance Engineering</p>
@@ -484,9 +344,9 @@
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
-        "url": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
-        "width": 768,
-        "height": 768
+        "url": "https://rmednitzer.github.io/profile_roman-mednitzer-400.png",
+        "width": 400,
+        "height": 400
       },
       "memberOf": [
         {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},

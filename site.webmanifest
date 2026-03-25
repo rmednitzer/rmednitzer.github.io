@@ -19,8 +19,14 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "/profile_roman-mednitzer.png",
-      "sizes": "768x768",
+      "src": "/profile_roman-mednitzer.webp",
+      "sizes": "400x400",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/profile_roman-mednitzer-400.png",
+      "sizes": "400x400",
       "type": "image/png",
       "purpose": "any"
     }
