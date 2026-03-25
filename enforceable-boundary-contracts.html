@@ -18,11 +18,11 @@
   <meta property="og:url" content="https://rmednitzer.github.io/enforceable-boundary-contracts">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Roman Mednitzer">
-  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
+  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="Portrait of Roman Mednitzer">
-  <meta property="og:image:width" content="768">
-  <meta property="og:image:height" content="768">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
   <meta property="article:author" content="Roman Mednitzer">
   <meta property="article:published_time" content="2026-03-07">
   <meta property="article:modified_time" content="2026-03-07">
@@ -38,151 +38,21 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Enforceable Boundary Contracts for EU-Regulated Infrastructure">
   <meta name="twitter:description" content="Why EU-regulated infrastructure must enforce governance constraints at runtime and produce signed evidence as a byproduct of normal operation.">
-  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer.png">
+  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/profile_roman-mednitzer.png">
+  <link rel="apple-touch-icon" href="/profile_roman-mednitzer-400.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/outfit-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.css">
 
   <style>
-    :root {
-      --fg: #d4d9e0;
-      --fg-strong: #edf0f4;
-      --bg: #0a0e13;
-      --bg-surface: #0f1319;
-      --muted: #6b7a8d;
-      --accent: #0d9488;
-      --accent-dim: rgba(13,148,136,.12);
-      --accent-glow: rgba(13,148,136,.25);
-      --border: rgba(255,255,255,.08);
-      --border-accent: rgba(13,148,136,.3);
-      --font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-      --font-mono: 'DM Mono', ui-monospace, 'Cascadia Code', monospace;
-      --radius: 8px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --fg: #1f2937;
-        --fg-strong: #0f172a;
-        --bg: #f8f9fb;
-        --bg-surface: #ffffff;
-        --muted: #6b7280;
-        --accent: #0d7d73;
-        --accent-dim: rgba(13,125,115,.07);
-        --accent-glow: rgba(13,125,115,.15);
-        --border: rgba(15,23,42,.09);
-        --border-accent: rgba(13,125,115,.25);
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: 1.65;
-      font-size: 16px;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: .35;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: color .15s; }
-    a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
     .page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
-
-    .article-nav {
-      font-family: var(--font-mono);
-      font-size: .82rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-    }
-
-    .article-header { margin-bottom: 2.5rem; }
-
-    .article-header h1 {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 600;
-      color: var(--fg-strong);
-      letter-spacing: -.02em;
-      line-height: 1.25;
-      margin-bottom: .6rem;
-    }
-
-    .article-meta {
-      font-family: var(--font-mono);
-      font-size: .82rem;
-      color: var(--muted);
-    }
-
-    .article-body h2 {
-      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-      font-weight: 600;
-      color: var(--fg-strong);
-      margin-top: 2.25rem;
-      margin-bottom: .75rem;
-      letter-spacing: -.01em;
-    }
-
-    .article-body p {
-      max-width: 72ch;
-      margin-bottom: .85rem;
-    }
-
-    .article-body strong {
-      color: var(--fg-strong);
-      font-weight: 500;
-    }
-
-    .article-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
-
-    .tag {
-      font-family: var(--font-mono);
-      font-size: .75rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: .18rem .5rem;
-      white-space: nowrap;
-    }
-    .tag--accent { border-color: var(--border-accent); color: var(--accent); }
-
-    footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--font-mono);
-      font-size: .78rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
 
     @media (max-width: 560px) {
       .article-body p { max-width: 100%; }
@@ -191,10 +61,6 @@
     @media (prefers-reduced-motion: no-preference) {
       .article-header, .article-body { animation: fadeUp .5s ease both; }
       .article-body { animation-delay: .06s; }
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
     }
   </style>
 </head>
@@ -352,9 +218,9 @@
     },
     "image": {
       "@type": "ImageObject",
-      "url": "https://rmednitzer.github.io/profile_roman-mednitzer.png",
-      "width": 768,
-      "height": 768
+      "url": "https://rmednitzer.github.io/profile_roman-mednitzer-400.png",
+      "width": 400,
+      "height": 400
     },
     "keywords": ["NIS2", "Cyber Resilience Act", "EU AI Act", "Machinery Regulation", "IEC 62443", "IEC 63069", "Systems Assurance", "Boundary Enforcement", "Runtime Evidence", "Infrastructure Governance", "SBOM", "GDPR"],
     "inLanguage": "en",
