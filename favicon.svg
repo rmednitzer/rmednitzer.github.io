@@ -1,23 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <radialGradient id="glow" cx="50%" cy="42%" r="50%">
-      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#0a0e13" stop-opacity="0"/>
-    </radialGradient>
     <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#5eead4"/>
       <stop offset="100%" stop-color="#0d9488"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0e13" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <!-- Background -->
   <circle cx="64" cy="64" r="64" fill="#0a0e13"/>
-  <!-- Subtle glow behind letter -->
-  <circle cx="62" cy="56" r="42" fill="url(#glow)"/>
+  <!-- Ambient glow -->
+  <circle cx="64" cy="64" r="46" fill="url(#glow)"/>
   <!-- Accent ring -->
-  <circle cx="64" cy="64" r="59" fill="none" stroke="#0d9488" stroke-width="1.5" opacity="0.25"/>
-  <!-- R monogram -->
-  <g fill="none" stroke="url(#teal)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M38 96 V32 H68 C86 32 94 40 94 51 C94 62 86 70 68 70 H38"/>
-    <line x1="60" y1="70" x2="92" y2="96"/>
-  </g>
+  <circle cx="64" cy="64" r="59" fill="none" stroke="#0d9488" stroke-width="1.5" opacity="0.2"/>
+  <!-- Outer hexagon -->
+  <polygon points="110,64 87,104 41,104 18,64 41,24 87,24" fill="url(#teal)"/>
+  <!-- Inner cutout -->
+  <polygon points="90,64 77,87 51,87 38,64 51,41 77,41" fill="#0a0e13"/>
+  <!-- Vertex node -->
+  <circle cx="64" cy="64" r="7" fill="#5eead4"/>
 </svg>
