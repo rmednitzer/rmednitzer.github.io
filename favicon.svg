@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" fill="#0a0e13"/>
+  <circle cx="64" cy="64" r="64" fill="#0a0e13"/>
   <!-- Blue flame aura (outer glow) -->
   <path d="M64 14c-8 12-24 32-40 44 12-2 26 0 34 6-10 10-18 24-20 40 10-12 18-18 28-20-2 12-1 24 5 36 6-12 7-24 5-36 10 2 18 8 28 20-2-16-10-30-20-40 8-6 22-8 34-6C88 46 80 26 72 14c-3-5-5-8-8-8s-5 3-8 8z" fill="url(#flameOuter)" opacity="0.4"/>
   <!-- Phoenix body - black silhouette -->
