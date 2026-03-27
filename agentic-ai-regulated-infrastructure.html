@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap | Roman Mednitzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://rmednitzer.github.io/agentic-ai-regulated-infrastructure">
+  <meta name="description" content="How to deploy autonomous AI agents in EU-regulated infrastructure without breaking your compliance posture. Covers guardrail architecture, evidence requirements under NIS2 and the AI Act, and the structural accountability gap that current tooling ignores.">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark light">
+  <meta name="author" content="Roman Mednitzer">
+  <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap">
+  <meta property="og:description" content="How to deploy autonomous AI agents in EU-regulated infrastructure without breaking your compliance posture.">
+  <meta property="og:url" content="https://rmednitzer.github.io/agentic-ai-regulated-infrastructure">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Roman Mednitzer">
+  <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Portrait of Roman Mednitzer">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="article:author" content="Roman Mednitzer">
+  <meta property="article:published_time" content="2026-03-27">
+  <meta property="article:modified_time" content="2026-03-27">
+  <meta property="article:section" content="AI Governance">
+  <meta property="article:tag" content="Agentic AI">
+  <meta property="article:tag" content="EU AI Act">
+  <meta property="article:tag" content="NIS2">
+  <meta property="article:tag" content="Infrastructure Automation">
+  <meta property="article:tag" content="AI Governance">
+  <meta property="article:tag" content="Guardrails">
+  <meta property="article:tag" content="Accountability">
+  <meta property="article:tag" content="SRE">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap">
+  <meta name="twitter:description" content="How to deploy autonomous AI agents in EU-regulated infrastructure without breaking your compliance posture.">
+  <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
+  <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/profile_roman-mednitzer-400.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/outfit-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
+
+    @media (max-width: 560px) {
+      .article-body p { max-width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .article-header, .article-body { animation: fadeUp .5s ease both; }
+      .article-body { animation-delay: .06s; }
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+  <div class="page" id="content">
+
+    <nav class="article-nav" aria-label="Breadcrumb">
+      <a href="/">Roman Mednitzer</a> / <span aria-current="page">Writing</span>
+    </nav>
+
+    <header class="article-header">
+      <h1>Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap</h1>
+      <p class="article-meta">Roman Mednitzer &middot; 2026-03-27 &middot; 12 min read</p>
+    </header>
+
+    <article class="article-body" role="main">
+
+      <p><strong>Abstract:</strong> Autonomous AI agents are entering infrastructure operations: triaging alerts, remediating incidents, proposing configuration changes, and managing deployments. The tooling is maturing fast. The governance model is not. This article examines what happens when agentic AI meets EU-regulated infrastructure, identifies the structural accountability gap that current approaches leave open, and proposes a guardrail architecture that makes AI agents auditable, bounded, and compliant by construction.</p>
+
+      <h2>The agentic shift in operations</h2>
+
+      <p>The operational use of AI in infrastructure has moved beyond chatbots and copilots. The current generation of tooling &mdash; agentic SRE platforms, autonomous remediation engines, AI-driven deployment pipelines &mdash; operates with increasing autonomy. An agent receives an alert, correlates it with recent changes, proposes a remediation, executes it within a sandbox, verifies the result against SLOs, and either promotes the fix or rolls it back. Some of these systems run without human approval for well-understood failure modes.</p>
+
+      <p>This is genuinely useful. Alert fatigue is real. The time from detection to remediation matters. Automating the predictable cases frees human operators to focus on the novel ones. The engineering case for agentic AI in operations is strong.</p>
+
+      <p>The governance case, however, has not kept pace. Most agentic AI deployments in infrastructure are governed by informal conventions: prompt engineering, ad-hoc testing, and trust in the vendor&rsquo;s safety claims. For infrastructure that falls under EU regulation &mdash; NIS2, the AI Act, the Cyber Resilience Act, DORA &mdash; this is insufficient.</p>
+
+      <h2>The accountability gap</h2>
+
+      <p>EU regulation is built on a simple principle: someone is accountable. NIS2 Article 20 places cybersecurity risk management responsibility on the management body. The AI Act assigns obligations to providers, deployers, and importers. DORA requires financial entities to retain full responsibility for ICT risk management, including when they outsource to third parties.</p>
+
+      <p>An autonomous AI agent complicates this chain. When an agent remediates an incident by modifying a firewall rule, scaling a deployment, or restarting a service, the action has consequences. If the remediation causes a secondary outage, who is accountable? The operator who configured the agent? The vendor who trained the model? The platform team that approved the agent&rsquo;s scope of action?</p>
+
+      <p>The honest answer in most current deployments: nobody has thought about it. The agent just does things, and if they work, nobody asks.</p>
+
+      <p>This is the accountability gap. Not a failure of technology, but a failure of governance architecture. The agent operates in a space between human decision-making (where accountability is clear) and traditional automation (where deterministic scripts produce predictable outputs). An AI agent is neither. It makes decisions under uncertainty, with variable outputs, in contexts its operators did not fully anticipate. And current deployment practices do not capture the evidence needed to reconstruct its reasoning after the fact.</p>
+
+      <h2>What the AI Act actually requires</h2>
+
+      <p>The AI Act does not ban autonomous agents in infrastructure. What it requires is transparency, traceability, and human oversight &mdash; properties that are achievable but not automatic.</p>
+
+      <p>For high-risk AI systems (which includes safety components of regulated products and systems used in critical infrastructure management), Article 9 requires a risk management system that operates throughout the entire lifecycle. Article 12 requires automatic logging of events relevant to identifying risks, including the input data, the system&rsquo;s output, and any human override decisions. Article 14 requires human oversight measures that allow a natural person to understand the system&rsquo;s capabilities and limitations, monitor its operation, and intervene or interrupt it.</p>
+
+      <p>For general-purpose AI models used within these systems, Article 53 requires documentation of training, evaluation, and known limitations.</p>
+
+      <p>None of this is impossible. But it requires architecture, not just deployment. An agent that executes actions without structured logging of its inputs, reasoning trace, outputs, and outcomes does not meet Article 12. An agent that operates without a defined intervention mechanism does not meet Article 14. An agent whose risk profile is not assessed within the context of the specific infrastructure it operates on does not meet Article 9.</p>
+
+      <h2>NIS2 and the evidence problem</h2>
+
+      <p>NIS2 creates a parallel set of obligations. Essential and important entities must implement cybersecurity risk management measures (Article 21) and report significant incidents within defined timelines (Article 23). The implementing acts specify that these measures must be proportionate and that their effectiveness must be evaluable.</p>
+
+      <p>An AI agent that remediates incidents autonomously creates two evidence challenges.</p>
+
+      <p>First, the agent&rsquo;s actions are themselves security-relevant events. A firewall rule change, a service restart, a credential rotation &mdash; these are the kinds of changes that incident investigators examine first. If the agent&rsquo;s actions are not logged with sufficient detail to distinguish them from malicious activity, the incident response process is compromised. An analyst looking at a modified firewall rule needs to know immediately whether it was changed by an authorised agent executing a known playbook, or by an attacker. The audit trail must make this unambiguous.</p>
+
+      <p>Second, the agent may mask incidents. An agent that automatically remediates a symptom (restarting a crashing service, scaling up to absorb a traffic spike) may prevent the underlying incident from being detected and reported. If the root cause is a security incident that meets the NIS2 reporting threshold, automatic remediation of the symptom without escalation is a compliance failure.</p>
+
+      <h2>A guardrail architecture for agentic operations</h2>
+
+      <p>The solution is not to avoid AI agents in regulated infrastructure. It is to deploy them within an architecture that makes their operation auditable, bounded, and interruptible. This architecture has four components.</p>
+
+      <p><strong>Scoped authority.</strong> Every agent operates within a defined scope: which systems it can observe, which actions it can take, which conditions must hold before it acts. This scope is expressed as policy, not as prompt instructions. Policy-as-code (OPA, Kyverno, Cedar) provides the enforcement mechanism. The agent&rsquo;s scope is a first-class infrastructure artifact, version-controlled, reviewed, and auditable. Changes to an agent&rsquo;s scope are change management events, not configuration tweaks.</p>
+
+      <p><strong>Structured evidence.</strong> Every agent action produces a structured record: the trigger (what initiated the action), the context (what the agent observed), the decision (what action was selected and why), the execution (what was actually done), and the outcome (what changed and whether the verification passed). This is not a log line. It is an evidence record with a defined schema, signed by the agent&rsquo;s identity, and stored in an append-only evidence store. This record is what satisfies Article 12 of the AI Act and what enables incident investigators to reconstruct the agent&rsquo;s behaviour under NIS2.</p>
+
+      <p><strong>Human gates at consequence boundaries.</strong> Not every agent action requires human approval. Restarting a crashed pod does not. Modifying a network policy does. The distinction is consequence, not complexity. Actions that cross defined consequence thresholds &mdash; security-relevant changes, actions affecting availability of critical services, modifications to compliance-relevant controls &mdash; require human approval before execution. The agent proposes; the human authorises; the agent executes; the evidence record captures both decisions. This is what Article 14 of the AI Act means by human oversight in practice.</p>
+
+      <p><strong>Circuit breakers and safe-halt.</strong> An agent that is producing unexpected outcomes must be stoppable. A circuit breaker pattern monitors the agent&rsquo;s error rate, the deviation of its actions from expected patterns, and the SLO impact of its interventions. If any of these exceed defined thresholds, the agent is halted and a human is notified. The safe-halt state is defined in advance: what the agent stops doing, what state it preserves, and what evidence it emits on shutdown. This is the degraded mode requirement from the AI Act and the fail-safe principle from the Machinery Regulation, applied to software agents.</p>
+
+      <h2>The autonomy gradient</h2>
+
+      <p>Not all agent actions carry the same risk. A practical guardrail architecture applies different levels of oversight based on consequence.</p>
+
+      <p><strong>L4 &mdash; Autonomous (bounded):</strong> well-understood remediations with known blast radius. Pod restart, certificate rotation, horizontal scaling within defined limits. The agent acts, logs, and reports. Human is notified after the fact.</p>
+
+      <p><strong>L3 &mdash; Supervised autonomous:</strong> remediations that affect service topology or resource allocation beyond a single workload. The agent acts within pre-approved playbooks, human monitors dashboards and can intervene. Evidence is generated for each action.</p>
+
+      <p><strong>L2 &mdash; Semi-automated:</strong> actions with security or compliance implications. Network policy changes, access control modifications, deployment to production of components with changed dependencies. The agent proposes and prepares; human reviews and approves; agent executes.</p>
+
+      <p><strong>L1 &mdash; Assisted:</strong> novel situations, cascading failures, actions affecting other tenants or external systems. The agent provides analysis and recommendations. Human makes the decision and may execute manually.</p>
+
+      <p>The classification of actions into these levels is itself a governance artifact. It must be documented, reviewed, and updated as the agent&rsquo;s capabilities and the infrastructure&rsquo;s risk profile change. The boundary between L3 and L2 &mdash; between &ldquo;act and report&rdquo; and &ldquo;propose and wait&rdquo; &mdash; is the most consequential decision in the entire architecture.</p>
+
+      <h2>Evidence schema in practice</h2>
+
+      <p>A minimal evidence record for an agent action contains:</p>
+
+      <p><strong>Identity:</strong> which agent, which version, which policy version governed it, which credentials it used.</p>
+
+      <p><strong>Trigger:</strong> the event or condition that initiated the action, with timestamp and source reference.</p>
+
+      <p><strong>Context:</strong> the observations the agent made before deciding &mdash; metrics, logs, configuration state, correlated events. This is the input data that Article 12 of the AI Act requires to be logged.</p>
+
+      <p><strong>Decision:</strong> the action selected, alternatives considered (if available from the agent&rsquo;s reasoning), confidence level, and the policy rule that authorised the action.</p>
+
+      <p><strong>Approval:</strong> for gated actions, the identity of the human who approved, with timestamp. For autonomous actions, the policy rule that pre-authorised the action class.</p>
+
+      <p><strong>Execution:</strong> the precise changes made &mdash; before/after state, commands issued, API calls made, resources modified.</p>
+
+      <p><strong>Outcome:</strong> verification result &mdash; did the remediation achieve its objective? SLO status before and after. Any secondary effects detected.</p>
+
+      <p>This schema is verbose by design. The cost of storing structured evidence is negligible compared to the cost of reconstructing an agent&rsquo;s behaviour from unstructured logs during an incident investigation or regulatory audit.</p>
+
+      <h2>The vendor transparency problem</h2>
+
+      <p>Most agentic AI platforms in the infrastructure space are commercial products with proprietary models. The deploying organisation does not have access to the model weights, the training data, or the detailed evaluation methodology. This creates a tension with the AI Act&rsquo;s transparency requirements.</p>
+
+      <p>Article 13 requires that high-risk AI systems be designed to be sufficiently transparent for deployers to interpret the system&rsquo;s output and use it appropriately. Article 26 requires deployers to use the system in accordance with the instructions of use and to monitor its operation.</p>
+
+      <p>In practice, this means deploying organisations must demand from their vendors: documentation of the agent&rsquo;s capabilities and known limitations, evaluation results for the specific operational domain, clear specification of what the agent can and cannot do reliably, and a mechanism for the deployer to monitor and override the agent&rsquo;s behaviour.</p>
+
+      <p>If the vendor cannot provide this, deploying the agent in a regulated environment creates an unquantified risk. The deployer is accountable under NIS2 and the AI Act regardless of what the vendor promises in a sales pitch.</p>
+
+      <h2>What this means for infrastructure teams</h2>
+
+      <p>Infrastructure teams adopting agentic AI in EU-regulated environments need to address four things before deployment.</p>
+
+      <p>First, classify the agent&rsquo;s actions by consequence level and map them to the autonomy gradient. This determines where human gates are required and what evidence must be captured.</p>
+
+      <p>Second, implement structured evidence capture from day one. Retrofitting audit trails onto an agent that was deployed without them is painful and produces lower-quality evidence. The evidence schema should be agreed with your compliance team before the agent is deployed.</p>
+
+      <p>Third, define the circuit breaker conditions. Under what circumstances does the agent stop? What does &ldquo;stop&rdquo; mean in terms of preserved state and ongoing monitoring? What is the escalation path?</p>
+
+      <p>Fourth, document the accountability chain. When the agent acts, who is responsible? The answer is not &ldquo;the AI.&rdquo; The answer is a named role with documented authority and the evidence to prove that the authority was exercised appropriately.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>Agentic AI in infrastructure operations is not a future scenario. It is a present reality that is expanding rapidly. The engineering benefits are real. The governance gap is equally real.</p>
+
+      <p>EU regulation does not prohibit autonomous agents in infrastructure. It requires that they be transparent, traceable, overseen, and accountable. These are architectural properties, not features that can be bolted on after deployment.</p>
+
+      <p>The organisations that will deploy agentic AI successfully in regulated environments are the ones that treat the guardrail architecture as a first-class engineering concern &mdash; not as a compliance checkbox, but as the infrastructure that makes the agent trustworthy enough to operate. Scoped authority, structured evidence, human gates at consequence boundaries, and circuit breakers for safe-halt. The pattern is not complicated. The discipline of implementing it is what separates production-grade deployments from experiments that will not survive their first audit.</p>
+
+    </article>
+
+    <nav class="article-related" style="margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);">
+      <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .1em;">Related</p>
+      <a class="writing-item" href="/enforceable-boundary-contracts" style="display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.1rem; transition: border-color .2s; margin-bottom: .5rem;">
+        <span style="font-size: .95rem; font-weight: 500; color: var(--fg-strong);">Enforceable Boundary Contracts for EU-Regulated Infrastructure</span>
+        <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem;">The governance pattern underlying the guardrail boundaries described in this article.</p>
+      </a>
+      <a class="writing-item" href="/it-operations-architecture" style="display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.1rem; transition: border-color .2s;">
+        <span style="font-size: .95rem; font-weight: 500; color: var(--fg-strong);">Reference Architecture: Maximum-Autonomy IT Operations</span>
+        <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem;">Full reference architecture including the autonomy levels and agentic AI integration.</p>
+      </a>
+    </nav>
+
+    <div class="article-tags">
+      <span class="tag tag--accent">Agentic AI</span>
+      <span class="tag tag--accent">EU AI Act</span>
+      <span class="tag tag--accent">NIS2</span>
+      <span class="tag tag--accent">AI Governance</span>
+      <span class="tag">Cyber Resilience Act</span>
+      <span class="tag">DORA</span>
+      <span class="tag">Infrastructure Automation</span>
+      <span class="tag">SRE</span>
+      <span class="tag">Policy-as-Code</span>
+      <span class="tag">Accountability</span>
+      <span class="tag">Guardrails</span>
+      <span class="tag">Runtime Evidence</span>
+    </div>
+
+    <footer role="contentinfo">
+      <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>
+      <span><a href="/">Home</a></span>
+      <span class="impressum">Legal notice (Impressum): Roman Mednitzer, Vienna, Austria &middot; <a href="mailto:r.mednitzer@ieee.org">r.mednitzer@ieee.org</a></span>
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap",
+    "description": "How to deploy autonomous AI agents in EU-regulated infrastructure without breaking your compliance posture. Covers guardrail architecture, evidence requirements under NIS2 and the AI Act, and the structural accountability gap that current tooling ignores.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://rmednitzer.github.io/#person",
+      "name": "Roman Mednitzer",
+      "url": "https://rmednitzer.github.io/"
+    },
+    "datePublished": "2026-03-27",
+    "dateModified": "2026-03-27",
+    "url": "https://rmednitzer.github.io/agentic-ai-regulated-infrastructure",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://rmednitzer.github.io/agentic-ai-regulated-infrastructure"
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": "https://rmednitzer.github.io/#person",
+      "name": "Roman Mednitzer"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://rmednitzer.github.io/profile_roman-mednitzer-400.png",
+      "width": 400,
+      "height": 400
+    },
+    "keywords": ["Agentic AI", "EU AI Act", "NIS2", "AI Governance", "Cyber Resilience Act", "DORA", "Infrastructure Automation", "SRE", "Policy-as-Code", "Accountability", "Guardrails", "Runtime Evidence"],
+    "inLanguage": "en",
+    "isPartOf": {"@id": "https://rmednitzer.github.io/#website"},
+    "about": [
+      {"@type": "Thing", "name": "Agentic AI"},
+      {"@type": "Thing", "name": "AI Governance"},
+      {"@type": "Thing", "name": "Infrastructure Automation"},
+      {"@type": "Thing", "name": "EU Digital Regulation"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Roman Mednitzer",
+        "item": "https://rmednitzer.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap",
+        "item": "https://rmednitzer.github.io/agentic-ai-regulated-infrastructure"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
