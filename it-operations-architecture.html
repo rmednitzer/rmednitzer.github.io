@@ -130,7 +130,7 @@
     </header>
 
     <div class="article-meta-block">
-      Version: 1.0.0 &middot; Classification: Conceptual &mdash; Implementation-oriented &middot; Status: For review and adaptation to specific environment
+      Version: 1.0.0 &middot; Classification: Conceptual &ndash; Implementation-oriented &middot; Status: For review and adaptation to specific environment
     </div>
 
     <article class="article-body" role="main">
@@ -141,7 +141,7 @@
 
       <p><strong>Core principle:</strong> Automate the predictable; gate the consequential.</p>
 
-      <p>Every domain has a hard ceiling &mdash; the point beyond which automation requires human judgement, regulatory accountability, or decisions under genuine uncertainty. This architecture is designed around those ceilings, not against them.</p>
+      <p>Every domain has a hard ceiling &ndash; the point beyond which automation requires human judgement, regulatory accountability, or decisions under genuine uncertainty. This architecture is designed around those ceilings, not against them.</p>
 
       <div class="table-wrap">
 
@@ -171,7 +171,7 @@
         <li><strong>Least privilege, least blast radius.</strong> Every automated agent operates with scoped permissions and bounded blast radius. Canary before fleet. Feature flag before hard deploy.</li>
         <li><strong>Evidence by default.</strong> Every automated action produces a signed, timestamped audit trail. If you can&rsquo;t prove it happened correctly, it didn&rsquo;t.</li>
         <li><strong>Fail safe, not fail silent.</strong> Unknown states trigger safe-halt or degraded mode, never silent continuation.</li>
-        <li><strong>Human gates are structural, not temporary.</strong> Certain decisions require human accountability by regulation and by good engineering. These are not automation gaps to be closed &mdash; they are load-bearing control points.</li>
+        <li><strong>Human gates are structural, not temporary.</strong> Certain decisions require human accountability by regulation and by good engineering. These are not automation gaps to be closed &ndash; they are load-bearing control points.</li>
       </ol>
 
       <h3>1.2 Autonomy Levels (Graduated Model)</h3>
@@ -201,7 +201,7 @@
 
       <hr>
 
-      <h2>2. Layer 1 &mdash; Immutable, Self-Healing Base Platform</h2>
+      <h2>2. Layer 1 &ndash; Immutable, Self-Healing Base Platform</h2>
 
       <h3>2.1 Purpose</h3>
 
@@ -252,7 +252,7 @@
           <tr><td>Config drift</td><td>GitOps reconciliation (Flux/ArgoCD)</td><td>L4</td><td>Drift detection alert, sync status</td></tr>
           <tr><td>Resource exhaustion</td><td>HPA/VPA scaling</td><td>L3&ndash;L4</td><td>Resource utilisation, scaling events</td></tr>
           <tr><td>Cascading failure</td><td>Circuit breaker + rate limiting + load shedding</td><td>L3</td><td>Error budget burn rate, human review</td></tr>
-          <tr><td>Split-brain / data inconsistency</td><td><strong>Human gate</strong> &mdash; safe-halt, alert</td><td>L1</td><td>Requires manual diagnosis</td></tr>
+          <tr><td>Split-brain / data inconsistency</td><td><strong>Human gate</strong> &ndash; safe-halt, alert</td><td>L1</td><td>Requires manual diagnosis</td></tr>
         </tbody>
       </table>
       </div>
@@ -306,7 +306,7 @@
 
       <hr>
 
-      <h2>3. Layer 2 &mdash; Continuous Patching Pipeline</h2>
+      <h2>3. Layer 2 &ndash; Continuous Patching Pipeline</h2>
 
       <h3>3.1 Purpose</h3>
 
@@ -408,7 +408,7 @@ auto_merge_criteria:
       sbom_policy_check: pass
     action: auto_merge
 
-  # Security patches &mdash; critical CVEs get fast-tracked
+  # Security patches &ndash; critical CVEs get fast-tracked
   # but still require canary verification
   - match:
       update_type: &quot;any&quot;
@@ -498,7 +498,7 @@ auto_merge_criteria:
 
       <hr>
 
-      <h2>4. Layer 3 &mdash; Security Automation and Autonomous Defense</h2>
+      <h2>4. Layer 3 &ndash; Security Automation and Autonomous Defense</h2>
 
       <h3>4.1 Purpose</h3>
 
@@ -545,8 +545,8 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
           <tr><td>Certificate about to expire</td><td>Auto-rotate</td><td>L4</td><td>cert-manager handles</td></tr>
           <tr><td>Config drift from policy</td><td>Auto-remediate to desired state</td><td>L3&ndash;L4</td><td>Policy-as-code</td></tr>
           <tr><td>Unusual API call patterns</td><td>Increase logging, alert, reduce rate limit</td><td>L3</td><td>May impact legitimate traffic</td></tr>
-          <tr><td>Novel attack pattern</td><td><strong>Human gate</strong> &mdash; alert, capture, do not auto-remediate</td><td>L1</td><td>Unknown blast radius</td></tr>
-          <tr><td>Insider threat indicators</td><td><strong>Human gate</strong> &mdash; alert security team, capture evidence</td><td>L1</td><td>Legal/HR implications</td></tr>
+          <tr><td>Novel attack pattern</td><td><strong>Human gate</strong> &ndash; alert, capture, do not auto-remediate</td><td>L1</td><td>Unknown blast radius</td></tr>
+          <tr><td>Insider threat indicators</td><td><strong>Human gate</strong> &ndash; alert security team, capture evidence</td><td>L1</td><td>Legal/HR implications</td></tr>
         </tbody>
       </table>
       </div>
@@ -570,7 +570,7 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
       <ul>
         <li>AWS SCP / Azure Policy / GCP Organization Policy for guardrails</li>
         <li>Terraform / OpenTofu with plan validation (OPA on plan output)</li>
-        <li>No direct console changes &mdash; all changes through IaC pipeline</li>
+        <li>No direct console changes &ndash; all changes through IaC pipeline</li>
       </ul>
 
       <p><strong>Runtime:</strong></p>
@@ -630,7 +630,7 @@ Layer 0: Identity (Keycloak/OIDC, RBAC, SPIFFE/SPIRE)
 
       <hr>
 
-      <h2>5. Layer 4 &mdash; Compliance Automation and Continuous Assurance</h2>
+      <h2>5. Layer 4 &ndash; Compliance Automation and Continuous Assurance</h2>
 
       <h3>5.1 Purpose</h3>
 
@@ -701,7 +701,7 @@ Auditor accesses dashboard + evidence store</code></pre>
         <li>Risk management measures (Article 21): Automated control enforcement</li>
         <li>Incident reporting: 24-hour early warning, 72-hour notification, 1-month final report</li>
         <li>Supply chain security: SBOM, vendor assessment automation</li>
-        <li>Management accountability: Human sign-off required &mdash; cannot be automated</li>
+        <li>Management accountability: Human sign-off required &ndash; cannot be automated</li>
       </ul>
 
       <p><strong>DORA (applicable if in EU financial sector):</strong></p>
@@ -709,7 +709,7 @@ Auditor accesses dashboard + evidence store</code></pre>
       <ul>
         <li>ICT risk management framework: Continuous control monitoring</li>
         <li>Incident classification and reporting: 4-hour classification, then tiered reporting</li>
-        <li>Threat-Led Penetration Testing (TLPT): Must be conducted &mdash; cannot be purely automated</li>
+        <li>Threat-Led Penetration Testing (TLPT): Must be conducted &ndash; cannot be purely automated</li>
         <li>Third-party risk management: Contract-level controls, cannot be fully automated</li>
       </ul>
 
@@ -727,11 +727,11 @@ Auditor accesses dashboard + evidence store</code></pre>
       <p>The strongest pattern for demonstrating compliance to auditors:</p>
 
       <ul>
-        <li><strong>All infrastructure state in Git</strong> &mdash; signed commits, PR-based review</li>
-        <li><strong>All policy in Git</strong> &mdash; OPA/Kyverno policies version-controlled</li>
-        <li><strong>All changes traceable</strong> &mdash; commit &rarr; PR &rarr; CI &rarr; deploy &rarr; verify</li>
-        <li><strong>Immutable evidence</strong> &mdash; build logs, scan results, deployment events stored with integrity protection</li>
-        <li><strong>Automated mapping</strong> &mdash; technical controls mapped to regulatory requirements</li>
+        <li><strong>All infrastructure state in Git</strong> &ndash; signed commits, PR-based review</li>
+        <li><strong>All policy in Git</strong> &ndash; OPA/Kyverno policies version-controlled</li>
+        <li><strong>All changes traceable</strong> &ndash; commit &rarr; PR &rarr; CI &rarr; deploy &rarr; verify</li>
+        <li><strong>Immutable evidence</strong> &ndash; build logs, scan results, deployment events stored with integrity protection</li>
+        <li><strong>Automated mapping</strong> &ndash; technical controls mapped to regulatory requirements</li>
       </ul>
 
       <p>This turns audit from &ldquo;show me your documents&rdquo; to &ldquo;here is the commit history, the policy enforcement logs, and the continuous compliance dashboard.&rdquo;</p>
@@ -742,7 +742,7 @@ Auditor accesses dashboard + evidence store</code></pre>
 
       <ul>
         <li><strong>Risk acceptance decisions:</strong> A named human must accept residual risk</li>
-        <li><strong>Management review:</strong> ISO 27001 Clause 9.3, NIS2 Article 20 &mdash; senior management must review</li>
+        <li><strong>Management review:</strong> ISO 27001 Clause 9.3, NIS2 Article 20 &ndash; senior management must review</li>
         <li><strong>Incident severity classification:</strong> Initial triage can be automated, final classification needs human judgement</li>
         <li><strong>Vendor risk assessment:</strong> Questionnaires can be automated, risk decisions cannot</li>
         <li><strong>Audit response:</strong> External auditors interact with humans</li>
@@ -765,7 +765,7 @@ Auditor accesses dashboard + evidence store</code></pre>
 
       <hr>
 
-      <h2>6. Layer 5 &mdash; Change Management and Autonomous Deployment</h2>
+      <h2>6. Layer 5 &ndash; Change Management and Autonomous Deployment</h2>
 
       <h3>6.1 Purpose</h3>
 
@@ -927,7 +927,7 @@ analysis:
 
       <hr>
 
-      <h2>7. Observability &mdash; The Nervous System</h2>
+      <h2>7. Observability &ndash; The Nervous System</h2>
 
       <h3>7.1 Purpose</h3>
 
@@ -1011,7 +1011,7 @@ analysis:
           <tr><td>Log analysis and summarisation</td><td>Production-ready</td><td>L2&ndash;L3</td></tr>
           <tr><td>Autonomous remediation (known patterns)</td><td>Emerging</td><td>L1&ndash;L2</td></tr>
           <tr><td>Natural-language infrastructure changes</td><td>Experimental</td><td>L1</td></tr>
-          <tr><td>Autonomous architecture decisions</td><td>Not ready</td><td>&mdash;</td></tr>
+          <tr><td>Autonomous architecture decisions</td><td>Not ready</td><td> &ndash;</td></tr>
         </tbody>
       </table>
       </div>
@@ -1029,7 +1029,7 @@ analysis:
 
       <h3>8.3 Adoption Path</h3>
 
-      <p>Start at L1 (read-only advisory), build trust evidence over 3&ndash;6 months, then graduate to L2 (human-approved actions). Advance to L3 only for well-understood action classes with documented success rates. Do not skip phases &mdash; each builds the evidence needed to justify the next.</p>
+      <p>Start at L1 (read-only advisory), build trust evidence over 3&ndash;6 months, then graduate to L2 (human-approved actions). Advance to L3 only for well-understood action classes with documented success rates. Do not skip phases &ndash; each builds the evidence needed to justify the next.</p>
 
       <p>For a detailed treatment of guardrail architecture, evidence requirements, and the accountability gap in EU-regulated environments, see <a href="/agentic-ai-regulated-infrastructure">Agentic AI in Regulated Infrastructure</a>.</p>
 
@@ -1139,7 +1139,7 @@ analysis:
         <tbody>
           <tr><td>Automate without observability</td><td>You cannot verify what you cannot measure. Automation without SLO gating is guesswork.</td></tr>
           <tr><td>Skip canary for speed</td><td>The time saved is repaid with interest during the inevitable incident.</td></tr>
-          <tr><td>AI agents without audit trails</td><td>If you cannot reconstruct why the agent acted, you cannot trust it &mdash; and neither can an auditor.</td></tr>
+          <tr><td>AI agents without audit trails</td><td>If you cannot reconstruct why the agent acted, you cannot trust it &ndash; and neither can an auditor.</td></tr>
           <tr><td>Bolt-on compliance</td><td>Compliance evidence must be a byproduct of the pipeline, not a separate workstream.</td></tr>
           <tr><td>Eliminate human gates</td><td>Regulation and engineering both require human accountability at consequence boundaries.</td></tr>
           <tr><td>Alert-driven ops without SLOs</td><td>Optimising for alert count rather than user impact produces noise, not reliability.</td></tr>
@@ -1196,8 +1196,8 @@ analysis:
           <tr><td>Metrics</td><td>Prometheus + Mimir/Thanos</td><td>Datadog, New Relic</td></tr>
           <tr><td>Logs</td><td>Loki</td><td>OpenSearch, Elastic</td></tr>
           <tr><td>Traces</td><td>Tempo</td><td>Jaeger</td></tr>
-          <tr><td>Dashboards</td><td>Grafana</td><td>&mdash;</td></tr>
-          <tr><td>Telemetry collection</td><td>OpenTelemetry</td><td>&mdash; (de facto standard)</td></tr>
+          <tr><td>Dashboards</td><td>Grafana</td><td> &ndash;</td></tr>
+          <tr><td>Telemetry collection</td><td>OpenTelemetry</td><td> &ndash; (de facto standard)</td></tr>
           <tr><td>Runtime security</td><td>Falco + Tetragon</td><td>Sysdig</td></tr>
           <tr><td>Host security</td><td>Wazuh</td><td>OSSEC, CrowdSec</td></tr>
           <tr><td>SIEM</td><td>Wazuh / Elastic SIEM</td><td>Splunk, Sentinel</td></tr>

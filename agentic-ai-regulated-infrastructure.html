@@ -83,11 +83,11 @@
 
       <h2>The agentic shift in operations</h2>
 
-      <p>The operational use of AI in infrastructure has moved beyond chatbots and copilots. The current generation of tooling &mdash; agentic SRE platforms, autonomous remediation engines, AI-driven deployment pipelines &mdash; operates with increasing autonomy. An agent receives an alert, correlates it with recent changes, proposes a remediation, executes it within a sandbox, verifies the result against SLOs, and either promotes the fix or rolls it back. Some of these systems run without human approval for well-understood failure modes.</p>
+      <p>The operational use of AI in infrastructure has moved beyond chatbots and copilots. The current generation of tooling &ndash; agentic SRE platforms, autonomous remediation engines, AI-driven deployment pipelines &ndash; operates with increasing autonomy. An agent receives an alert, correlates it with recent changes, proposes a remediation, executes it within a sandbox, verifies the result against SLOs, and either promotes the fix or rolls it back. Some of these systems run without human approval for well-understood failure modes.</p>
 
       <p>This is genuinely useful. Alert fatigue is real. The time from detection to remediation matters. Automating the predictable cases frees human operators to focus on the novel ones. The engineering case for agentic AI in operations is strong.</p>
 
-      <p>The governance case, however, has not kept pace. Most agentic AI deployments in infrastructure are governed by informal conventions: prompt engineering, ad-hoc testing, and trust in the vendor&rsquo;s safety claims. For infrastructure that falls under EU regulation &mdash; NIS2, the AI Act, the Cyber Resilience Act, DORA &mdash; this is insufficient.</p>
+      <p>The governance case, however, has not kept pace. Most agentic AI deployments in infrastructure are governed by informal conventions: prompt engineering, ad-hoc testing, and trust in the vendor&rsquo;s safety claims. For infrastructure that falls under EU regulation &ndash; NIS2, the AI Act, the Cyber Resilience Act, DORA &ndash; this is insufficient.</p>
 
       <h2>The accountability gap</h2>
 
@@ -101,7 +101,7 @@
 
       <h2>What the AI Act actually requires</h2>
 
-      <p>The AI Act does not ban autonomous agents in infrastructure. What it requires is transparency, traceability, and human oversight &mdash; properties that are achievable but not automatic.</p>
+      <p>The AI Act does not ban autonomous agents in infrastructure. What it requires is transparency, traceability, and human oversight &ndash; properties that are achievable but not automatic.</p>
 
       <p>For high-risk AI systems (which includes safety components of regulated products and systems used in critical infrastructure management), Article 9 requires a risk management system that operates throughout the entire lifecycle. Article 12 requires automatic logging of events relevant to identifying risks, including the input data, the system&rsquo;s output, and any human override decisions. Article 14 requires human oversight measures that allow a natural person to understand the system&rsquo;s capabilities and limitations, monitor its operation, and intervene or interrupt it.</p>
 
@@ -115,7 +115,7 @@
 
       <p>An AI agent that remediates incidents autonomously creates two evidence challenges.</p>
 
-      <p>First, the agent&rsquo;s actions are themselves security-relevant events. A firewall rule change, a service restart, a credential rotation &mdash; these are the kinds of changes that incident investigators examine first. If the agent&rsquo;s actions are not logged with sufficient detail to distinguish them from malicious activity, the incident response process is compromised. An analyst looking at a modified firewall rule needs to know immediately whether it was changed by an authorised agent executing a known playbook, or by an attacker. The audit trail must make this unambiguous.</p>
+      <p>First, the agent&rsquo;s actions are themselves security-relevant events. A firewall rule change, a service restart, a credential rotation &ndash; these are the kinds of changes that incident investigators examine first. If the agent&rsquo;s actions are not logged with sufficient detail to distinguish them from malicious activity, the incident response process is compromised. An analyst looking at a modified firewall rule needs to know immediately whether it was changed by an authorised agent executing a known playbook, or by an attacker. The audit trail must make this unambiguous.</p>
 
       <p>Second, the agent may mask incidents. An agent that automatically remediates a symptom (restarting a crashing service, scaling up to absorb a traffic spike) may prevent the underlying incident from being detected and reported. If the root cause is a security incident that meets the NIS2 reporting threshold, automatic remediation of the symptom without escalation is a compliance failure.</p>
 
@@ -127,7 +127,7 @@
 
       <p><strong>Structured evidence.</strong> Every agent action produces a structured record: the trigger (what initiated the action), the context (what the agent observed), the decision (what action was selected and why), the execution (what was actually done), and the outcome (what changed and whether the verification passed). This is not a log line. It is an evidence record with a defined schema, signed by the agent&rsquo;s identity, and stored in an append-only evidence store. This record is what satisfies Article 12 of the AI Act and what enables incident investigators to reconstruct the agent&rsquo;s behaviour under NIS2.</p>
 
-      <p><strong>Human gates at consequence boundaries.</strong> Not every agent action requires human approval. Restarting a crashed pod does not. Modifying a network policy does. The distinction is consequence, not complexity. Actions that cross defined consequence thresholds &mdash; security-relevant changes, actions affecting availability of critical services, modifications to compliance-relevant controls &mdash; require human approval before execution. The agent proposes; the human authorises; the agent executes; the evidence record captures both decisions. This is what Article 14 of the AI Act means by human oversight in practice.</p>
+      <p><strong>Human gates at consequence boundaries.</strong> Not every agent action requires human approval. Restarting a crashed pod does not. Modifying a network policy does. The distinction is consequence, not complexity. Actions that cross defined consequence thresholds &ndash; security-relevant changes, actions affecting availability of critical services, modifications to compliance-relevant controls &ndash; require human approval before execution. The agent proposes; the human authorises; the agent executes; the evidence record captures both decisions. This is what Article 14 of the AI Act means by human oversight in practice.</p>
 
       <p><strong>Circuit breakers and safe-halt.</strong> An agent that is producing unexpected outcomes must be stoppable. A circuit breaker pattern monitors the agent&rsquo;s error rate, the deviation of its actions from expected patterns, and the SLO impact of its interventions. If any of these exceed defined thresholds, the agent is halted and a human is notified. The safe-halt state is defined in advance: what the agent stops doing, what state it preserves, and what evidence it emits on shutdown. This is the degraded mode requirement from the AI Act and the fail-safe principle from the Machinery Regulation, applied to software agents.</p>
 
@@ -135,15 +135,15 @@
 
       <p>Not all agent actions carry the same risk. A practical guardrail architecture applies different levels of oversight based on consequence.</p>
 
-      <p><strong>L4 &mdash; Autonomous (bounded):</strong> well-understood remediations with known blast radius. Pod restart, certificate rotation, horizontal scaling within defined limits. The agent acts, logs, and reports. Human is notified after the fact.</p>
+      <p><strong>L4 &ndash; Autonomous (bounded):</strong> well-understood remediations with known blast radius. Pod restart, certificate rotation, horizontal scaling within defined limits. The agent acts, logs, and reports. Human is notified after the fact.</p>
 
-      <p><strong>L3 &mdash; Supervised autonomous:</strong> remediations that affect service topology or resource allocation beyond a single workload. The agent acts within pre-approved playbooks, human monitors dashboards and can intervene. Evidence is generated for each action.</p>
+      <p><strong>L3 &ndash; Supervised autonomous:</strong> remediations that affect service topology or resource allocation beyond a single workload. The agent acts within pre-approved playbooks, human monitors dashboards and can intervene. Evidence is generated for each action.</p>
 
-      <p><strong>L2 &mdash; Semi-automated:</strong> actions with security or compliance implications. Network policy changes, access control modifications, deployment to production of components with changed dependencies. The agent proposes and prepares; human reviews and approves; agent executes.</p>
+      <p><strong>L2 &ndash; Semi-automated:</strong> actions with security or compliance implications. Network policy changes, access control modifications, deployment to production of components with changed dependencies. The agent proposes and prepares; human reviews and approves; agent executes.</p>
 
-      <p><strong>L1 &mdash; Assisted:</strong> novel situations, cascading failures, actions affecting other tenants or external systems. The agent provides analysis and recommendations. Human makes the decision and may execute manually.</p>
+      <p><strong>L1 &ndash; Assisted:</strong> novel situations, cascading failures, actions affecting other tenants or external systems. The agent provides analysis and recommendations. Human makes the decision and may execute manually.</p>
 
-      <p>The classification of actions into these levels is itself a governance artifact. It must be documented, reviewed, and updated as the agent&rsquo;s capabilities and the infrastructure&rsquo;s risk profile change. The boundary between L3 and L2 &mdash; between &ldquo;act and report&rdquo; and &ldquo;propose and wait&rdquo; &mdash; is the most consequential decision in the entire architecture.</p>
+      <p>The classification of actions into these levels is itself a governance artifact. It must be documented, reviewed, and updated as the agent&rsquo;s capabilities and the infrastructure&rsquo;s risk profile change. The boundary between L3 and L2 &ndash; between &ldquo;act and report&rdquo; and &ldquo;propose and wait&rdquo; &ndash; is the most consequential decision in the entire architecture.</p>
 
       <h2>Evidence schema in practice</h2>
 
@@ -153,15 +153,15 @@
 
       <p><strong>Trigger:</strong> the event or condition that initiated the action, with timestamp and source reference.</p>
 
-      <p><strong>Context:</strong> the observations the agent made before deciding &mdash; metrics, logs, configuration state, correlated events. This is the input data that Article 12 of the AI Act requires to be logged.</p>
+      <p><strong>Context:</strong> the observations the agent made before deciding &ndash; metrics, logs, configuration state, correlated events. This is the input data that Article 12 of the AI Act requires to be logged.</p>
 
       <p><strong>Decision:</strong> the action selected, alternatives considered (if available from the agent&rsquo;s reasoning), confidence level, and the policy rule that authorised the action.</p>
 
       <p><strong>Approval:</strong> for gated actions, the identity of the human who approved, with timestamp. For autonomous actions, the policy rule that pre-authorised the action class.</p>
 
-      <p><strong>Execution:</strong> the precise changes made &mdash; before/after state, commands issued, API calls made, resources modified.</p>
+      <p><strong>Execution:</strong> the precise changes made &ndash; before/after state, commands issued, API calls made, resources modified.</p>
 
-      <p><strong>Outcome:</strong> verification result &mdash; did the remediation achieve its objective? SLO status before and after. Any secondary effects detected.</p>
+      <p><strong>Outcome:</strong> verification result &ndash; did the remediation achieve its objective? SLO status before and after. Any secondary effects detected.</p>
 
       <p>This schema is verbose by design. The cost of storing structured evidence is negligible compared to the cost of reconstructing an agent&rsquo;s behaviour from unstructured logs during an incident investigation or regulatory audit.</p>
 
@@ -193,7 +193,7 @@
 
       <p>EU regulation does not prohibit autonomous agents in infrastructure. It requires that they be transparent, traceable, overseen, and accountable. These are architectural properties, not features that can be bolted on after deployment.</p>
 
-      <p>The organisations that will deploy agentic AI successfully in regulated environments are the ones that treat the guardrail architecture as a first-class engineering concern &mdash; not as a compliance checkbox, but as the infrastructure that makes the agent trustworthy enough to operate. Scoped authority, structured evidence, human gates at consequence boundaries, and circuit breakers for safe-halt. The pattern is not complicated. The discipline of implementing it is what separates production-grade deployments from experiments that will not survive their first audit.</p>
+      <p>The organisations that will deploy agentic AI successfully in regulated environments are the ones that treat the guardrail architecture as a first-class engineering concern &ndash; not as a compliance checkbox, but as the infrastructure that makes the agent trustworthy enough to operate. Scoped authority, structured evidence, human gates at consequence boundaries, and circuit breakers for safe-halt. The pattern is not complicated. The discipline of implementing it is what separates production-grade deployments from experiments that will not survive their first audit.</p>
 
     </article>
 
