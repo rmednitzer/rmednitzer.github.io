@@ -86,6 +86,8 @@ footer {
   gap: .5rem;
 }
 
+footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
+
 @media (prefers-reduced-motion: no-preference) {
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(12px); }
