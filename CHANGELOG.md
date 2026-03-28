@@ -1,3 +1,24 @@
+# Site Patch Changelog — 2026-03-28
+
+## New file: `legal.html`
+- Dedicated legal notice page: Impressum (§ 5 ECG), Offenlegung (§ 25 MedienG), Datenschutzerklärung (DSGVO), copyright notice, liability disclaimer
+- Satisfies "large website" Offenlegungspflicht including grundlegende Richtung
+- Linked from footer on all pages
+
+## `index.html`, `enforceable-boundary-contracts.html`, `it-operations-architecture.html`, `agentic-ai-regulated-infrastructure.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Replaced inline impressum text in footer with link to `/legal` | Dedicated legal page is cleaner and satisfies MedienG requirement for clearly labelled, easily accessible legal notice |
+
+## `sitemap.xml`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added `/legal` entry (priority 0.3, yearly) | New page needs to be discoverable |
+
+---
+
 # Site Patch Changelog — 2026-03-07
 
 All changes are non-breaking. No content was altered. Verify with diff before commit.
