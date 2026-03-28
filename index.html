@@ -37,7 +37,6 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/outfit-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
@@ -184,7 +183,7 @@
 </head>
 <body>
   <a class="sr-only" href="#content">Skip to content</a>
-  <div class="page" id="content" role="main">
+  <main class="page" id="content">
 
     <!-- ── Hero ── -->
     <header class="hero">
@@ -216,8 +215,33 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Operating production Linux platforms since 2015, now specialising in Kubernetes, observability, and policy-as-code for regulated environments. Focused on the boundary where infrastructure meets compliance, safety, and AI.</p>
-      <p>Most compliance work happens after the fact: manual evidence collection, retroactive documentation, audit fire drills. I design systems where compliance evidence is a byproduct of normal operation. Policy-as-code enforces controls at runtime and produces signed audit trails automatically.</p>
+      <p>I design systems where compliance evidence is a byproduct of normal operation, not a documentation exercise assembled after the audit. Policy-as-code enforces controls at runtime and produces signed audit trails automatically.</p>
+      <p>My background is production Linux platforms (since 2015), now specialising in Kubernetes, observability, and governance-as-infrastructure for EU-regulated environments. The focus is the boundary where infrastructure meets compliance, safety, and AI.</p>
+    </section>
+
+    <!-- ── Writing ── -->
+    <section class="section" aria-labelledby="writing-h">
+      <h2 id="writing-h">Writing</h2>
+      <ul class="writing-list">
+        <li>
+          <a class="writing-item" href="/agentic-ai-regulated-infrastructure">
+            <span class="writing-item-title">Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap</span>
+            <p class="writing-item-meta">2026-03-27 · Agentic AI, EU AI Act, NIS2, guardrails, accountability</p>
+          </a>
+        </li>
+        <li>
+          <a class="writing-item" href="/it-operations-architecture">
+            <span class="writing-item-title">Reference Architecture: Maximum-Autonomy IT Operations</span>
+            <p class="writing-item-meta">2026-03-10 · Infrastructure automation, self-healing, GitOps, compliance, SRE</p>
+          </a>
+        </li>
+        <li>
+          <a class="writing-item" href="/enforceable-boundary-contracts">
+            <span class="writing-item-title">Enforceable Boundary Contracts for EU-Regulated Infrastructure</span>
+            <p class="writing-item-meta">2026-03-07 · NIS2, CRA, AI Act, Machinery Regulation, runtime evidence</p>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <!-- ── Domains ── -->
@@ -283,31 +307,6 @@
       </div>
     </section>
 
-    <!-- ── Writing ── -->
-    <section class="section" aria-labelledby="writing-h">
-      <h2 id="writing-h">Writing</h2>
-      <ul class="writing-list">
-        <li>
-          <a class="writing-item" href="/agentic-ai-regulated-infrastructure">
-            <span class="writing-item-title">Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap</span>
-            <p class="writing-item-meta">2026-03-27 · Agentic AI, EU AI Act, NIS2, guardrails, accountability</p>
-          </a>
-        </li>
-        <li style="margin-top: .5rem;">
-          <a class="writing-item" href="/it-operations-architecture">
-            <span class="writing-item-title">Reference Architecture: Maximum-Autonomy IT Operations</span>
-            <p class="writing-item-meta">2026-03-10 · Infrastructure automation, self-healing, GitOps, compliance, SRE</p>
-          </a>
-        </li>
-        <li style="margin-top: .5rem;">
-          <a class="writing-item" href="/enforceable-boundary-contracts">
-            <span class="writing-item-title">Enforceable Boundary Contracts for EU-Regulated Infrastructure</span>
-            <p class="writing-item-meta">2026-03-07 · NIS2, CRA, AI Act, Machinery Regulation, runtime evidence</p>
-          </a>
-        </li>
-      </ul>
-    </section>
-
     <!-- ── Bottom grid: Orgs + Focus ── -->
     <div class="bottom-grid">
       <section class="section" aria-labelledby="orgs-h">
@@ -323,16 +322,16 @@
 
       <section class="section" aria-labelledby="focus-h">
         <h2 id="focus-h">Current Focus</h2>
-        <p>Bringing enforceable boundary contracts to production: runtime gates at system edges that verify compliance obligations and emit signed evidence continuously, not just at audit time. NIS2 obligations are in effect, CRA application dates are approaching, and the AI Act is being implemented. I target all three across hybrid Linux and Kubernetes environments.</p>
+        <p>Applying enforceable boundary contracts to hybrid Linux and Kubernetes environments under NIS2, the CRA, and the AI Act. Current work: guardrail architecture for agentic AI in regulated operations, and continuous compliance evidence pipelines that satisfy multiple frameworks from a single control plane.</p>
       </section>
     </div>
 
     <footer role="contentinfo">
       <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>
       <span>Code: GPLv3 · Content: &copy; Roman Mednitzer</span>
-      <span class="impressum">Legal notice (Impressum): Roman Mednitzer, Vienna, Austria · <a href="mailto:r.mednitzer@ieee.org">r.mednitzer@ieee.org</a></span>
+      <span class="impressum"><a href="/legal">Impressum & Datenschutz</a></span>
     </footer>
-  </div>
+  </main>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
