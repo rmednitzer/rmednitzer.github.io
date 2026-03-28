@@ -47,26 +47,13 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/outfit-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
-  <style>
-    .page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
-
-    @media (max-width: 560px) {
-      .article-body p { max-width: 100%; }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .article-header, .article-body { animation: fadeUp .5s ease both; }
-      .article-body { animation-delay: .06s; }
-    }
-  </style>
 </head>
 <body>
   <a class="sr-only" href="#content">Skip to content</a>
-  <div class="page" id="content">
+  <div class="page page--article" id="content">
 
     <nav class="article-nav" aria-label="Breadcrumb">
       <a href="/">Roman Mednitzer</a> / <span aria-current="page">Writing</span>
@@ -197,15 +184,15 @@
 
     </article>
 
-    <nav class="article-related" style="margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);">
-      <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .1em;">Related</p>
-      <a class="writing-item" href="/enforceable-boundary-contracts" style="display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.1rem; transition: border-color .2s; margin-bottom: .5rem;">
-        <span style="font-size: .95rem; font-weight: 500; color: var(--fg-strong);">Enforceable Boundary Contracts for EU-Regulated Infrastructure</span>
-        <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem;">The governance pattern underlying the guardrail boundaries described in this article.</p>
+    <nav class="article-related">
+      <p class="article-related-heading">Related</p>
+      <a class="writing-item" href="/enforceable-boundary-contracts">
+        <span class="writing-item-title">Enforceable Boundary Contracts for EU-Regulated Infrastructure</span>
+        <p class="writing-item-desc">The governance pattern underlying the guardrail boundaries described in this article.</p>
       </a>
-      <a class="writing-item" href="/it-operations-architecture" style="display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1.1rem; transition: border-color .2s;">
-        <span style="font-size: .95rem; font-weight: 500; color: var(--fg-strong);">Reference Architecture: Maximum-Autonomy IT Operations</span>
-        <p style="font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem;">Full reference architecture including the autonomy levels and agentic AI integration.</p>
+      <a class="writing-item" href="/it-operations-architecture">
+        <span class="writing-item-title">Reference Architecture: Maximum-Autonomy IT Operations</span>
+        <p class="writing-item-desc">Full reference architecture including the autonomy levels and agentic AI integration.</p>
       </a>
     </nav>
 

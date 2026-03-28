@@ -1,5 +1,5 @@
 Contact: mailto:r.mednitzer@ieee.org
 Canonical: https://rmednitzer.github.io/.well-known/security.txt
-Policy: https://rmednitzer.github.io/
+Policy: https://rmednitzer.github.io/legal
 Expires: 2026-12-31T00:00:00Z
 Preferred-Languages: en

@@ -138,3 +138,65 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   color: var(--fg-strong);
   font-weight: 500;
 }
+
+/* ── Article page layout ── */
+.page--article {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem;
+}
+
+@media (max-width: 560px) {
+  .page--article .article-body p { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page--article .article-header,
+  .page--article .article-body { animation: fadeUp .5s ease both; }
+  .page--article .article-body { animation-delay: .06s; }
+}
+
+.writing-list li + li { margin-top: .5rem; }
+
+/* ── Related articles ── */
+.article-related {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-related-heading {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.article-related .writing-item {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .85rem 1.1rem;
+  transition: border-color .2s;
+}
+
+.article-related .writing-item + .writing-item {
+  margin-top: .5rem;
+}
+
+.article-related .writing-item-title {
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--fg-strong);
+}
+
+.article-related .writing-item-desc {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  margin-top: .2rem;
+}

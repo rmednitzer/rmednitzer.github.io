@@ -1,3 +1,40 @@
+# Site Patch Changelog -- 2026-03-28 (batch 2)
+
+## `style.css`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added `.page--article` shared layout class | Extracted from duplicated `<style>` blocks across article pages |
+| 2 | Added `.writing-list li + li` spacing rule | Replaced inline `style="margin-top: .5rem;"` on index.html |
+| 3 | Added `.article-related` component styles | Replaced inline styles on related article nav blocks across all article pages |
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Moved Writing section above Domains | Writing is the strongest differentiator and should be seen first |
+| 2 | Rewrote About to lead with thesis, not timeline | The differentiating value prop was buried behind a CV opening line |
+| 3 | Rewrote Current Focus to be specific and non-overlapping with About | Previous text restated the About thesis |
+| 4 | Changed `<div class="page" role="main">` to `<main class="page">` | Semantic HTML |
+| 5 | Removed inline `margin-top` styles from writing list items | Moved to style.css per project conventions |
+| 6 | Updated animation-delay sequence for new section order | Maintains stagger after reorder |
+
+## `enforceable-boundary-contracts.html`, `it-operations-architecture.html`, `agentic-ai-regulated-infrastructure.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added `page--article` class to `.page` div | Uses shared layout from style.css |
+| 2 | Removed duplicated `.page` / animation CSS from `<style>` blocks | Now in style.css |
+| 3 | Replaced inline styles on `.article-related` with classes | Moved to style.css per project conventions |
+
+## `.well-known/security.txt`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Changed Policy URL from `/` to `/legal` | Points to dedicated legal notice page |
+
+---
+
 # Site Patch Changelog — 2026-03-28
 
 ## New file: `legal.html`
