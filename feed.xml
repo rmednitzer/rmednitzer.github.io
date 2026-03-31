@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://rmednitzer.github.io/</id>
+  <title>Roman Mednitzer</title>
+  <subtitle>Infrastructure &amp; Compliance Engineering</subtitle>
+  <link rel="alternate" type="text/html" href="https://rmednitzer.github.io/"/>
+  <link rel="self" type="application/atom+xml" href="https://rmednitzer.github.io/feed.xml"/>
+  <updated>2026-03-30T00:00:00Z</updated>
+  <author>
+    <name>Roman Mednitzer</name>
+    <email>r.mednitzer@ieee.org</email>
+  </author>
+  <rights>© 2026 Roman Mednitzer</rights>
+
+  <entry>
+    <id>https://rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming</id>
+    <title>Behavioral Contracts for Human-Autonomy Teaming</title>
+    <link rel="alternate" href="https://rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming"/>
+    <published>2026-03-30T00:00:00Z</published>
+    <updated>2026-03-30T00:00:00Z</updated>
+    <author><name>Roman Mednitzer</name></author>
+    <summary>Three research communities are independently converging on formalized behavioral agreements between humans and autonomous agents. This article bridges Human-Autonomy Teaming, AI alignment, and safety engineering, arguing that scoped operator-authored contracts are theoretically necessary and not merely convenient.</summary>
+  </entry>
+
+  <entry>
+    <id>https://rmednitzer.github.io/agentic-ai-regulated-infrastructure</id>
+    <title>Agentic AI in Regulated Infrastructure: Guardrails, Evidence, and the Accountability Gap</title>
+    <link rel="alternate" href="https://rmednitzer.github.io/agentic-ai-regulated-infrastructure"/>
+    <published>2026-03-27T00:00:00Z</published>
+    <updated>2026-03-27T00:00:00Z</updated>
+    <author><name>Roman Mednitzer</name></author>
+    <summary>How to deploy autonomous AI agents in EU-regulated infrastructure without breaking your compliance posture. Covers guardrail architecture, evidence requirements under NIS2 and the AI Act, and the structural accountability gap that current tooling ignores.</summary>
+  </entry>
+
+  <entry>
+    <id>https://rmednitzer.github.io/it-operations-architecture</id>
+    <title>Reference Architecture: Maximum-Autonomy IT Operations</title>
+    <link rel="alternate" href="https://rmednitzer.github.io/it-operations-architecture"/>
+    <published>2026-03-10T00:00:00Z</published>
+    <updated>2026-03-10T00:00:00Z</updated>
+    <author><name>Roman Mednitzer</name></author>
+    <summary>Reference architecture for maximising operational autonomy in IT infrastructure while maintaining compliance, safety, and auditability. Targets 70-85% automation of operational toil with explicit human decision gates.</summary>
+  </entry>
+
+  <entry>
+    <id>https://rmednitzer.github.io/enforceable-boundary-contracts</id>
+    <title>Enforceable Boundary Contracts for EU-Regulated Infrastructure</title>
+    <link rel="alternate" href="https://rmednitzer.github.io/enforceable-boundary-contracts"/>
+    <published>2026-03-07T00:00:00Z</published>
+    <updated>2026-03-07T00:00:00Z</updated>
+    <author><name>Roman Mednitzer</name></author>
+    <summary>Why EU-regulated infrastructure must enforce governance constraints at runtime and produce signed evidence as a byproduct of normal operation. Covers NIS2, CRA, AI Act, Machinery Regulation, and boundary enforcement architecture.</summary>
+  </entry>
+</feed>
