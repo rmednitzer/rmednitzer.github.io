@@ -29,7 +29,7 @@ const articles = [
   },
   {
     slug:   'it-operations-architecture',
-    title:  'Reference Architecture:\nMaximum-Autonomy IT Operations',
+    title:  'Reference Architecture:\nMaximum-Autonomy\nIT Operations',
   },
   {
     slug:   'enforceable-boundary-contracts',
@@ -71,11 +71,18 @@ function xmlEsc(str) {
  *  - "rmednitzer.github.io" in small monospace muted (bottom-right)
  */
 function buildSvg(title) {
-  const lines      = title.split('\n');
-  // Reduce font size for titles with 4+ lines to keep them comfortably within the card
-  const titleFontSize = lines.length >= 4 ? 58 : 68;
-  const lineHeight    = lines.length >= 4 ? 74 : 82;
-  const titleX        = 100;
+  const lines  = title.split('\n');
+  const titleX = 100;
+
+  // Compute font size dynamically so the longest line always fits within the card.
+  // Available horizontal space: image width minus left margin and a comfortable right margin.
+  const availableWidth   = W - titleX - 100; // 1000 px
+  const avgCharWidthCoef = 0.62;             // empirical for bold ui-sans-serif (conservative to handle wide-char lines)
+  const maxLineLen       = Math.max(...lines.map(l => l.length));
+  const titleFontSize    = Math.min(68, Math.max(38,
+    Math.floor(availableWidth / (maxLineLen * avgCharWidthCoef))
+  ));
+  const lineHeight       = Math.round(titleFontSize * 1.22);
 
   // Vertical centre the title block
   const blockH  = lines.length * lineHeight;
