@@ -17,6 +17,18 @@
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "/profile_roman-mednitzer.webp",
+      "sizes": "400x400",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/profile_roman-mednitzer-400.png",
+      "sizes": "400x400",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "related_applications": [],
