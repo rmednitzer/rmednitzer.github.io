@@ -160,6 +160,16 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
 
 .writing-list li + li { margin-top: .5rem; }
 
+.focus-asof {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: .4rem;
+}
+
 /* ── Related articles ── */
 .article-related {
   margin-top: 2.5rem;
