@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Infrastructure & Compliance Engineering. Kubernetes, observability, ISO 27001, EU regulatory compliance.
+Linux Infrastructure, Platform Operations, Systems Assurance. Kubernetes, observability, ISO 27001, EU regulatory compliance.
 
 ---
 
@@ -11,9 +11,10 @@ Infrastructure & Compliance Engineering. Kubernetes, observability, ISO 27001, E
 | Page | URL |
 |------|-----|
 | Profile | [rmednitzer.github.io](https://rmednitzer.github.io/) |
-| Enforceable Boundary Contracts | [rmednitzer.github.io/enforceable-boundary-contracts](https://rmednitzer.github.io/enforceable-boundary-contracts) |
-| Reference Architecture: Maximum-Autonomy IT Operations | [rmednitzer.github.io/it-operations-architecture](https://rmednitzer.github.io/it-operations-architecture) |
+| Behavioral Contracts for Human-Autonomy Teaming | [rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming](https://rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming) |
 | Agentic AI in Regulated Infrastructure | [rmednitzer.github.io/agentic-ai-regulated-infrastructure](https://rmednitzer.github.io/agentic-ai-regulated-infrastructure) |
+| Reference Architecture: Maximum-Autonomy IT Operations | [rmednitzer.github.io/it-operations-architecture](https://rmednitzer.github.io/it-operations-architecture) |
+| Enforceable Boundary Contracts | [rmednitzer.github.io/enforceable-boundary-contracts](https://rmednitzer.github.io/enforceable-boundary-contracts) |
 
 ### Tech notes
 

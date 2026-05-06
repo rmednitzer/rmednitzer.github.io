@@ -3,7 +3,7 @@
 ## Project
 
 Static personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Infrastructure & Compliance Engineering — Kubernetes, observability, ISO 27001, EU regulatory compliance (NIS2, CRA, AI Act).
+Topic: Linux Infrastructure, Platform Operations, Systems Assurance — Kubernetes, observability, ISO 27001, EU regulatory compliance (NIS2, CRA, AI Act).
 
 ## Stack
 
