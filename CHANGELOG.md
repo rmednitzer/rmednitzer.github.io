@@ -1,3 +1,19 @@
+# Site Patch Changelog -- 2026-05-06
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added new `Live Work` section between Writing and Domains | Surface shipped empirical work alongside theoretical writing. Mirrors `.writing-list` styling. Single entry: link to `/sentinel/`, the continuous HAT failure-mode classification corpus |
+
+## `behavioral-contracts-human-autonomy-teaming.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added one paragraph after the seventh structural-gap paragraph (field study gap) | Cross-references `/sentinel/` as a small counter-example operating in deployed conditions, with explicit acknowledgement of N=1 and LLM-derived classification limits |
+
+---
+
 # Site Patch Changelog -- 2026-03-28 (batch 2)
 
 ## `style.css`
