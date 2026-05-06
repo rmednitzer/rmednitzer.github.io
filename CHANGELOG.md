@@ -1,3 +1,15 @@
+
+| 2 | Reordered article table reverse-chronologically | Most recent article first matches the index.html Writing list order |
+| 3 | Updated tagline | Site-wide tagline alignment |
+
+## `CLAUDE.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Updated `Topic` line | Site-wide tagline alignment |
+
+---
+
 # Site Patch Changelog -- 2026-05-06
 
 ## `index.html`

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://rmednitzer.github.io/</id>
   <title>Roman Mednitzer</title>
-  <subtitle>Infrastructure &amp; Compliance Engineering</subtitle>
+  <subtitle>Linux Infrastructure, Platform Operations, Systems Assurance</subtitle>
   <link rel="alternate" type="text/html" href="https://rmednitzer.github.io/"/>
   <link rel="self" type="application/atom+xml" href="https://rmednitzer.github.io/feed.xml"/>
-  <updated>2026-03-30T00:00:00Z</updated>
+  <updated>2026-05-06T00:00:00Z</updated>
   <author>
     <name>Roman Mednitzer</name>
     <email>r.mednitzer@ieee.org</email>
