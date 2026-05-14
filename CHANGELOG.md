@@ -1,4 +1,36 @@
-# Site Patch Changelog -- 2026-05-14
+# Site Patch Changelog -- 2026-05-14 (batch 2: rebalance + Copilot review fixes)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Extended `<title>` / `og:title` / `twitter:title` to "Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps · EU Assurance" | Copilot review (PR #30): previous social-preview titles still surfaced the deprecated "Linux Infrastructure, Platform Operations, Systems Assurance" wording inconsistent with new descriptions and hero-sub |
+| 2 | Extended `hero-sub` to include "Audit-Defensible Platform Ops · EU Assurance" | Restores the right half of the LinkedIn headline that batch-1 truncated |
+| 3 | Reorganised Open-Source list to lead with `platform-blueprint` and `sentinel` as the two centerpieces | User direction: focus the narrative on the two active centerpieces; other governance-as-code repos remain as supporting context |
+| 4 | Tightened repo descriptions for `platform-blueprint` and `sentinel`; promoted `sentinel` from last to second position | Centerpieces deserve descriptive lines, not just slug + license |
+| 5 | Added `· Apache 2.0` suffix to `ansible-ops` and `infra-ops` entries | Copilot review (PR #30): license metadata omitted vs. surrounding entries; verified both repos are Apache-2.0 via repo landing page |
+| 6 | Renamed Domain card 4 "Assurance & Supply-Chain" → "Assurance & AI Governance"; rewrote body to name `platform-blueprint`, `sentinel`, and supply-chain fundamentals as the four prongs | Batch-1 narrowed this card to supply-chain only; that undersold the governance-as-code + agent-runtime work that the public portfolio actually contains |
+| 7 | Restored AI/HAT/governance tags to Technologies: `Governance-as-Code` (accent), `AI Governance` (accent), `Boundary Contracts` (accent), `Human-Autonomy Teaming`, `STPA`, `MLOps`, `LLMOps`, `MCP`, `pgvector`, `Apache AGE`, `Talos`, `VictoriaMetrics`, `Wazuh` | Each tag corresponds to a public artifact: platform-blueprint (governance-as-code, AI governance), operator-resilience + sentinel (HAT, behavioral contracts, STPA), ai-stack + sentinel (MLOps/LLMOps), isms-mcp + vertex (MCP), core-graph (pgvector/AGE), fleet host axiom (Talos, VictoriaMetrics, Wazuh) |
+| 8 | Restored `knowsAbout` entries that batch-1 removed: `MLOps`, `LLMOps`, `AI Governance`, `Human-Autonomy Teaming`, `Behavioral Contracts`, `Cyber-Physical Systems`, `STPA`, `Boundary Contracts`, `Model Context Protocol`, `Graph Databases`, `pgvector`, `Apache AGE`, `Governance-as-Code`, `Talos Linux`, `VictoriaMetrics`, `Wazuh`, `Machinery Regulation` | These map 1:1 to public repos or fleet hosts; batch-1 trimmed them as "writing topics" but the artifacts make them legitimate `knowsAbout` claims |
+| 9 | Extended JSON-LD `jobTitle` to "Senior Platform & Infrastructure Engineer · Audit-Defensible Platform Ops · EU Assurance" | Mirrors LinkedIn headline; consistent with extended page title and hero-sub |
+| 10 | Updated meta/OG/Twitter descriptions and JSON-LD `description` to name the two centerpieces explicitly | Single description string across all surfaces; centers the narrative on `platform-blueprint` + `sentinel` |
+| 11 | Rewrote About paragraph 2 and Current Focus to name `platform-blueprint` and `sentinel` by slug | Concrete artifacts beat abstract framing; reader can click through directly |
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Updated tagline to byte-identically mirror the new `index.html` `.hero-tagline` paragraph | Copilot review (PR #30): README and hero tagline had drifted; align as single source of truth |
+
+## `CHANGELOG.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Restored heading + `## README.md` table header for the orphaned 2026-05-06 batch-2 rows below | Copilot review (PR #30): markdown rendered as broken/ambiguous after the new 2026-05-14 entry was prepended; dated header verified via `list_commits` against `c5131b8` (PR #29, 2026-05-06 10:23 UTC) |
+
+---
+
+# Site Patch Changelog -- 2026-05-14 (batch 1)
 
 ## `index.html`
 
@@ -30,7 +62,13 @@
 
 ---
 
+# Site Patch Changelog -- 2026-05-06 (batch 2: accuracy pass, PR #29)
 
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | (row content lost from upstream merge; rows 2 and 3 below are preserved as-committed) | — |
 | 2 | Reordered article table reverse-chronologically | Most recent article first matches the index.html Writing list order |
 | 3 | Updated tagline | Site-wide tagline alignment |
 
@@ -42,7 +80,7 @@
 
 ---
 
-# Site Patch Changelog -- 2026-05-06
+# Site Patch Changelog -- 2026-05-06 (batch 1: sentinel cross-reference, PR #28)
 
 ## `index.html`
 
