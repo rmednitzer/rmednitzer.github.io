@@ -1,3 +1,22 @@
+# Site Patch Changelog -- 2026-05-14 (batch 6: copy refresh)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Rewrote About paragraphs: split em-dash sentences into two; reworded second paragraph so AI Act and CRA are referred to as "obligations approaching" rather than "emerging expectations" | AI Act (Reg 2024/1689) and CRA (Reg 2024/2847) are already in force with staggered application; "expectations" is inaccurate |
+| 2 | Audit-Facing Operations card: replaced em-dash with comma | No em-dashes in prose |
+| 3 | Current Focus card: replaced "Driving Kubernetes and Argo CD adoption" framing with steady-state platform-operations description (Linux/Windows Server, VMware/KVM, backup/DR, monitoring, change management aligned to ISO 27001 and NIS2) | Drop consultancy verb; remove "expectations come into force" wording |
+
+## `legal.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | § 5 ECG line: replaced em-dash inside the parenthesised gloss with a comma | No em-dashes in prose |
+| 2 | Fonts line: split em-dash sentence into two sentences | No em-dashes in prose |
+
+---
+
 # Site Patch Changelog -- 2026-05-14 (batch 5: review fixes for PR #31)
 
 ## `legal.html`
