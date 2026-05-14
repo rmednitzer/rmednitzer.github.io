@@ -1,3 +1,35 @@
+# Site Patch Changelog -- 2026-05-14
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Rewrote hero tagline, About, and Current Focus to align with profile (PDF) | Previous wording oversold "design" and "compliance evidence as byproduct" beyond what the operator-level role supports; now leads with what is actually done day-to-day |
+| 2 | Updated `hero-sub` to "Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | Matches profile headline rather than three abstract focus areas |
+| 3 | Re-tiered Technologies tags; removed Keycloak, Wazuh, Checkmk, Proxmox, Zarf, MLOps, LLMOps, AI Governance | None of these appear in profile experience; removing avoids implying hands-on use |
+| 4 | Added Windows Server, KVM, Argo CD, OpenTofu, Zabbix, Sigstore, Backup/DR; accented Argo CD, Ansible, Prometheus, NIS2 | Reflects actual stack from profile (EBCONT/Kwizda/medPhoton) |
+| 5 | Rewrote Domains "Governance & Compliance" → "Audit-Facing Operations" and "Assurance & AI Integration" → "Assurance & Supply-Chain" | Drops claims of "observability for AI/ML workloads" and "policy-as-code controls"; keeps what is supported by profile (SBOM/SLSA/Sigstore fundamentals, ISO 27001/NIS2 alignment) |
+| 6 | Expanded Open-Source list with `platform-blueprint`, `ansible-ops`, `infra-ops`; removed `isms` placeholder note since repo is live | Surfaces operational/IaC repos alongside governance-as-code repos so the mix reflects the actual day job, not only research |
+| 7 | Trimmed `knowsAbout` in ProfilePage JSON-LD; removed MLOps, LLMOps, AI Security, AI Governance, Human-Autonomy Teaming, Behavioral Contracts, Cyber-Physical Systems, STPA, Boundary Contracts | These are writing topics, not operational expertise — moved out of the "knows about" claim list |
+| 8 | Added `knowsLanguage: ["de", "en"]` to JSON-LD | Profile is bilingual; previously omitted |
+| 9 | Updated `jobTitle` from "Linux Infrastructure, Platform Operations, Systems Assurance" to "Senior Platform & Infrastructure Engineer" | Matches profile headline |
+| 10 | Updated meta/OG/Twitter descriptions and JSON-LD `description` | Same rationale as 1 — replaced marketing line with profile-accurate one |
+| 11 | Bumped `dateModified` to 2026-05-14 | Index content changed substantively |
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Updated public tagline to match new index tagline | Single source of truth |
+
+## `sitemap.xml`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Bumped `lastmod` on `/` to 2026-05-14 | Index content changed substantively |
+
+---
+
 
 | 2 | Reordered article table reverse-chronologically | Most recent article first matches the index.html Writing list order |
 | 3 | Updated tagline | Site-wide tagline alignment |
