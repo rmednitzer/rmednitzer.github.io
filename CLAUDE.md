@@ -11,7 +11,6 @@ Topic: Linux Infrastructure, Platform Operations, Systems Assurance — Kubernet
 - Self-hosted fonts (Outfit + DM Mono WOFF2) in `fonts/`, loaded via `fonts/fonts.css`
 - `.nojekyll` disables Jekyll processing
 - GitHub Pages serves from the repo root
-- Optional Node tooling (`scripts/`) for OG image generation only — not part of the site runtime
 
 ## Layout
 
@@ -26,7 +25,6 @@ Topic: Linux Infrastructure, Platform Operations, Systems Assurance — Kubernet
 ├── favicon.{svg,ico}           Favicons (+ favicon-{32,180,192,512}.png)
 ├── profile_roman-mednitzer*    Profile portraits (PNG + WebP, 400px + full)
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
-├── scripts/                    OG image generator (Node, sharp) — dev-only
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
 ├── CHANGELOG.md                Site patch log (append-only, dated batches)
@@ -53,7 +51,7 @@ Topic: Linux Infrastructure, Platform Operations, Systems Assurance — Kubernet
 
 - **Fonts:** load only from `fonts/`. Never reference Google Fonts or other CDNs. When adding a weight, add the WOFF2 file, the `@font-face` rule in `fonts/fonts.css`, and (if it's a primary weight) a `<link rel="preload">` in each page.
 - **Images:** prefer WebP with a PNG fallback. Optimise before committing. Profile portraits exist in two sizes (`-400` and full).
-- **OG images:** 1200×630 PNG. The site OG image is the profile portrait; the `scripts/` generator remains for future per-page cards if needed.
+- **OG images:** the site OG image is the profile portrait (`profile_roman-mednitzer-400.png`).
 - **Favicons:** `favicon.svg` is the primary; PNG fallbacks at 32/180/192/512. Update all if rebranding.
 
 ### Discoverability — when adding or renaming a page
@@ -88,5 +86,5 @@ For HTML/structured-data sanity, paste a built page into the [Rich Results Test]
 - Adding a build step, framework, or bundler for the site itself
 - External font/CSS/JS CDNs
 - Inline `style="…"` attributes or per-page `.css` files
-- Committing un-optimised images, dev artefacts (`scripts/node_modules/`, lockfiles already in `.gitignore`), or anything containing private data
+- Committing un-optimised images or anything containing private data
 - Touching `legal.html` boilerplate without confirming the legal context still matches

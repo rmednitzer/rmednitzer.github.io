@@ -1,3 +1,31 @@
+# Site Patch Changelog -- 2026-05-14 (batch 5: review fixes for PR #31)
+
+## `legal.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed `<link rel="alternate" type="application/atom+xml">` pointing at the deleted `feed.xml` | Codex review on PR #31: discoverable URL now 404s after feed removal |
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Repointed `sentinel` Open-Source tile from `/sentinel/` to `https://github.com/rmednitzer/sentinel` | Copilot review on PR #31: local `/sentinel/` path is not present in the repo and would 404 on GitHub Pages |
+
+## Removed directory
+
+| Path | Rationale |
+|------|-----------|
+| `scripts/` (`generate-og-images.js`, `package.json`) | Copilot review on PR #31: script hard-codes the four removed article slugs. Site is now single-page; the only OG image needed is the profile portrait, so the generator and its `scripts/` housing are dead code |
+
+## `CLAUDE.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed all `scripts/`-related notes (Stack bullet, Layout entry, OG-image guidance, "Things to avoid" `scripts/node_modules/` mention) and simplified the OG guidance to "site OG image is the profile portrait" | Reflects deletion of `scripts/` |
+
+---
+
 # Site Patch Changelog -- 2026-05-14 (batch 4: site simplification)
 
 ## `index.html`
