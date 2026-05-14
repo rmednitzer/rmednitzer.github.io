@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Linux Infrastructure, Platform Operations, Systems Assurance. Kubernetes, observability, ISO 27001, EU regulatory compliance.
+Production Linux and hybrid platforms operated with audit-defensible documentation. Driving container and GitOps adoption in regulated environments without losing compliance posture.
 
 ---
 

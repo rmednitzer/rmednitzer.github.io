@@ -1,4 +1,95 @@
+# Site Patch Changelog -- 2026-05-14 (batch 3: trim batch-2 positioning back to conservative restore)
 
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Reverted `<title>` / `og:title` / `twitter:title` to "Roman Mednitzer \| Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | User direction (Conservative restore only): drop the " · EU Assurance" extension that batch-2 added to the headline |
+| 2 | Reverted `hero-sub` to "Vienna, AT · Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | Same — drop the " · Audit-Defensible Platform Ops · EU Assurance" extension |
+| 3 | Reverted meta/OG/Twitter description and JSON-LD `description` to batch-1 form | Drop the "Governance-as-code via platform-blueprint; live HAT failure-mode corpus via sentinel" sentence; do not promote centerpieces in description text |
+| 4 | Reverted JSON-LD `jobTitle` to "Senior Platform & Infrastructure Engineer" | Drop the " · Audit-Defensible Platform Ops · EU Assurance" extension |
+| 5 | Reverted About paragraph 2 and Current Focus to batch-1 form | Drop the "Two active centerpieces — platform-blueprint and sentinel" prose; centerpieces stay in the Open-Source list rather than being promoted in body text |
+| 6 | Reverted Open-Source list to batch-1 order: `platform-blueprint`, `platform-assurance`, `isms`, `ansible-ops`, `infra-ops`, `cps-assurance`, `autonomous-platform-assurance`, `operator-resilience`, `sentinel` | Sentinel back to its batch-1 position at the end; descriptions returned to short batch-1 form |
+| 7 | Added new Open-Source entry: `6dof-ascent-sim` (Apache 2.0) | User direction: list it — high-fidelity 6DOF orbital launch vehicle simulation, ignition through LEO insertion |
+| 8 | Trimmed Domain card 4 body text: removed inline `<code>platform-blueprint</code>` / `<code>sentinel</code>` references; kept the "Assurance & AI Governance" heading and the four-prong scope (governance-as-code mapping, agentic-AI guardrails + HAT, supply-chain, boundary contracts) | Voice-consistent with the reverted About / Current Focus prose; specific artifacts cross-referenced via Writing + Open-Source Work above |
+| 9 | Trimmed Technologies tags: removed `Talos`, `VictoriaMetrics`, `Governance-as-Code` (accent), `Boundary Contracts` (accent), `Human-Autonomy Teaming`, `STPA`, `MCP`, `pgvector`, `Apache AGE` that batch-2 added | Conservative restore: re-add only what batch-1 removed (`Wazuh`, `MLOps`, `LLMOps`, `AI Governance` — all kept), not new positioning tags. Accent demoted on `AI Governance` to non-accent for matching tone |
+| 10 | Trimmed JSON-LD `knowsAbout`: removed `Talos Linux`, `VictoriaMetrics`, `Governance-as-Code`, `Model Context Protocol`, `Graph Databases`, `pgvector`, `Apache AGE` that batch-2 added | Same rationale as the tag trim. Kept the originally-removed scope entries (`MLOps`, `LLMOps`, `AI Governance`, `Human-Autonomy Teaming`, `Behavioral Contracts`, `Cyber-Physical Systems`, `STPA`, `Boundary Contracts`) — these are what the user asked to put back |
+
+Net result: batch-1 form everywhere except for (a) Apache 2.0 license suffixes on `ansible-ops` / `infra-ops` (Copilot review #2 fix, retained), (b) Domain card 4 "Assurance & AI Governance" rename with broader scope text (per user instruction to "put back Domain text I removed"), (c) `knowsAbout` and Technologies tag restorations of the AI/HAT/governance entries that batch-1 removed (per user instruction), and (d) new `6dof-ascent-sim` Open-Source entry.
+
+---
+
+# Site Patch Changelog -- 2026-05-14 (batch 2: rebalance + Copilot review fixes)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Extended `<title>` / `og:title` / `twitter:title` to "Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps · EU Assurance" | Copilot review (PR #30): previous social-preview titles still surfaced the deprecated "Linux Infrastructure, Platform Operations, Systems Assurance" wording inconsistent with new descriptions and hero-sub |
+| 2 | Extended `hero-sub` to include "Audit-Defensible Platform Ops · EU Assurance" | Restores the right half of the LinkedIn headline that batch-1 truncated |
+| 3 | Reorganised Open-Source list to lead with `platform-blueprint` and `sentinel` as the two centerpieces | User direction: focus the narrative on the two active centerpieces; other governance-as-code repos remain as supporting context |
+| 4 | Tightened repo descriptions for `platform-blueprint` and `sentinel`; promoted `sentinel` from last to second position | Centerpieces deserve descriptive lines, not just slug + license |
+| 5 | Added `· Apache 2.0` suffix to `ansible-ops` and `infra-ops` entries | Copilot review (PR #30): license metadata omitted vs. surrounding entries; verified both repos are Apache-2.0 via repo landing page |
+| 6 | Renamed Domain card 4 "Assurance & Supply-Chain" → "Assurance & AI Governance"; rewrote body to name `platform-blueprint`, `sentinel`, and supply-chain fundamentals as the four prongs | Batch-1 narrowed this card to supply-chain only; that undersold the governance-as-code + agent-runtime work that the public portfolio actually contains |
+| 7 | Restored AI/HAT/governance tags to Technologies: `Governance-as-Code` (accent), `AI Governance` (accent), `Boundary Contracts` (accent), `Human-Autonomy Teaming`, `STPA`, `MLOps`, `LLMOps`, `MCP`, `pgvector`, `Apache AGE`, `Talos`, `VictoriaMetrics`, `Wazuh` | Each tag corresponds to a public artifact: platform-blueprint (governance-as-code, AI governance), operator-resilience + sentinel (HAT, behavioral contracts, STPA), ai-stack + sentinel (MLOps/LLMOps), isms-mcp + vertex (MCP), core-graph (pgvector/AGE), fleet host axiom (Talos, VictoriaMetrics, Wazuh) |
+| 8 | Restored `knowsAbout` entries that batch-1 removed: `MLOps`, `LLMOps`, `AI Governance`, `Human-Autonomy Teaming`, `Behavioral Contracts`, `Cyber-Physical Systems`, `STPA`, `Boundary Contracts`, `Model Context Protocol`, `Graph Databases`, `pgvector`, `Apache AGE`, `Governance-as-Code`, `Talos Linux`, `VictoriaMetrics`, `Wazuh`, `Machinery Regulation` | These map 1:1 to public repos or fleet hosts; batch-1 trimmed them as "writing topics" but the artifacts make them legitimate `knowsAbout` claims |
+| 9 | Extended JSON-LD `jobTitle` to "Senior Platform & Infrastructure Engineer · Audit-Defensible Platform Ops · EU Assurance" | Mirrors LinkedIn headline; consistent with extended page title and hero-sub |
+| 10 | Updated meta/OG/Twitter descriptions and JSON-LD `description` to name the two centerpieces explicitly | Single description string across all surfaces; centers the narrative on `platform-blueprint` + `sentinel` |
+| 11 | Rewrote About paragraph 2 and Current Focus to name `platform-blueprint` and `sentinel` by slug | Concrete artifacts beat abstract framing; reader can click through directly |
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Updated tagline to byte-identically mirror the new `index.html` `.hero-tagline` paragraph | Copilot review (PR #30): README and hero tagline had drifted; align as single source of truth |
+
+## `CHANGELOG.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Restored heading + `## README.md` table header for the orphaned 2026-05-06 batch-2 rows below | Copilot review (PR #30): markdown rendered as broken/ambiguous after the new 2026-05-14 entry was prepended; dated header verified via `list_commits` against `c5131b8` (PR #29, 2026-05-06 10:23 UTC) |
+
+---
+
+# Site Patch Changelog -- 2026-05-14 (batch 1)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Rewrote hero tagline, About, and Current Focus to align with profile (PDF) | Previous wording oversold "design" and "compliance evidence as byproduct" beyond what the operator-level role supports; now leads with what is actually done day-to-day |
+| 2 | Updated `hero-sub` to "Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | Matches profile headline rather than three abstract focus areas |
+| 3 | Re-tiered Technologies tags; removed Keycloak, Wazuh, Checkmk, Proxmox, Zarf, MLOps, LLMOps, AI Governance | None of these appear in profile experience; removing avoids implying hands-on use |
+| 4 | Added Windows Server, KVM, Argo CD, OpenTofu, Zabbix, Sigstore, Backup/DR; accented Argo CD, Ansible, Prometheus, NIS2 | Reflects actual stack from profile (EBCONT/Kwizda/medPhoton) |
+| 5 | Rewrote Domains "Governance & Compliance" → "Audit-Facing Operations" and "Assurance & AI Integration" → "Assurance & Supply-Chain" | Drops claims of "observability for AI/ML workloads" and "policy-as-code controls"; keeps what is supported by profile (SBOM/SLSA/Sigstore fundamentals, ISO 27001/NIS2 alignment) |
+| 6 | Expanded Open-Source list with `platform-blueprint`, `ansible-ops`, `infra-ops`; removed `isms` placeholder note since repo is live | Surfaces operational/IaC repos alongside governance-as-code repos so the mix reflects the actual day job, not only research |
+| 7 | Trimmed `knowsAbout` in ProfilePage JSON-LD; removed MLOps, LLMOps, AI Security, AI Governance, Human-Autonomy Teaming, Behavioral Contracts, Cyber-Physical Systems, STPA, Boundary Contracts | These are writing topics, not operational expertise — moved out of the "knows about" claim list |
+| 8 | Added `knowsLanguage: ["de", "en"]` to JSON-LD | Profile is bilingual; previously omitted |
+| 9 | Updated `jobTitle` from "Linux Infrastructure, Platform Operations, Systems Assurance" to "Senior Platform & Infrastructure Engineer" | Matches profile headline |
+| 10 | Updated meta/OG/Twitter descriptions and JSON-LD `description` | Same rationale as 1 — replaced marketing line with profile-accurate one |
+| 11 | Bumped `dateModified` to 2026-05-14 | Index content changed substantively |
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Updated public tagline to match new index tagline | Single source of truth |
+
+## `sitemap.xml`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Bumped `lastmod` on `/` to 2026-05-14 | Index content changed substantively |
+
+---
+
+# Site Patch Changelog -- 2026-05-06 (batch 2: accuracy pass, PR #29)
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | (row content lost from upstream merge; rows 2 and 3 below are preserved as-committed) | — |
 | 2 | Reordered article table reverse-chronologically | Most recent article first matches the index.html Writing list order |
 | 3 | Updated tagline | Site-wide tagline alignment |
 
@@ -10,7 +101,7 @@
 
 ---
 
-# Site Patch Changelog -- 2026-05-06
+# Site Patch Changelog -- 2026-05-06 (batch 1: sentinel cross-reference, PR #28)
 
 ## `index.html`
 
