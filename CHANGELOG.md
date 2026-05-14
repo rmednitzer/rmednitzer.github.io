@@ -1,3 +1,55 @@
+# Site Patch Changelog -- 2026-05-14 (batch 4: site simplification)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed Writing section entirely | User direction: simplify site to a single-page profile |
+| 2 | Reduced Open-Source list from 10 to 5 entries: `platform-blueprint`, `isms`, `sentinel`, `ai-stack`, `core-graph` | User direction: cap repo list at 5; refocus on the most representative artifacts |
+| 3 | Rewrote Current Focus paragraph; removed "Windows Server" mention | User direction |
+| 4 | Tightened hero tagline, meta/OG/Twitter descriptions, About, and all four Domain card bodies | User direction: rework site text to be more focused |
+| 5 | Removed `<link rel="alternate" type="application/atom+xml">` and `hasPart` array from ProfilePage JSON-LD | No articles remain to syndicate |
+
+## Removed files
+
+| File | Rationale |
+|------|-----------|
+| `behavioral-contracts-human-autonomy-teaming.html` | Writing block removed |
+| `agentic-ai-regulated-infrastructure.html` | Writing block removed |
+| `it-operations-architecture.html` | Writing block removed |
+| `enforceable-boundary-contracts.html` | Writing block removed |
+| `og-behavioral-contracts-human-autonomy-teaming.png` | Article OG card no longer used |
+| `og-agentic-ai-regulated-infrastructure.png` | Article OG card no longer used |
+| `og-it-operations-architecture.png` | Article OG card no longer used |
+| `og-enforceable-boundary-contracts.png` | Article OG card no longer used |
+| `feed.xml` | Atom feed had only the four removed articles |
+
+## `sitemap.xml`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed the four article entries; site now lists `/` and `/legal` only | Articles deleted |
+
+## `README.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Reduced Pages table to Profile + Legal; updated tagline to match new hero | Site is now single-page |
+
+## `CLAUDE.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed article-pages table, feed.xml references, per-article OG image conventions, "Atom alternate link" requirement, article-page-only markup notes, and Writing-section discoverability step | Reflect simplified single-page layout |
+
+## `.github/copilot-instructions.md`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Replaced article filenames in Key files list with `legal.html` | Reflect simplified single-page layout |
+
+---
+
 # Site Patch Changelog -- 2026-05-14 (batch 3: trim batch-2 positioning back to conservative restore)
 
 ## `index.html`
