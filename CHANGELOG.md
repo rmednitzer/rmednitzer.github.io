@@ -1,3 +1,24 @@
+# Site Patch Changelog -- 2026-05-14 (batch 3: trim batch-2 positioning back to conservative restore)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Reverted `<title>` / `og:title` / `twitter:title` to "Roman Mednitzer \| Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | User direction (Conservative restore only): drop the " · EU Assurance" extension that batch-2 added to the headline |
+| 2 | Reverted `hero-sub` to "Vienna, AT · Senior Platform & Infrastructure Engineer · Linux · Kubernetes · GitOps" | Same — drop the " · Audit-Defensible Platform Ops · EU Assurance" extension |
+| 3 | Reverted meta/OG/Twitter description and JSON-LD `description` to batch-1 form | Drop the "Governance-as-code via platform-blueprint; live HAT failure-mode corpus via sentinel" sentence; do not promote centerpieces in description text |
+| 4 | Reverted JSON-LD `jobTitle` to "Senior Platform & Infrastructure Engineer" | Drop the " · Audit-Defensible Platform Ops · EU Assurance" extension |
+| 5 | Reverted About paragraph 2 and Current Focus to batch-1 form | Drop the "Two active centerpieces — platform-blueprint and sentinel" prose; centerpieces stay in the Open-Source list rather than being promoted in body text |
+| 6 | Reverted Open-Source list to batch-1 order: `platform-blueprint`, `platform-assurance`, `isms`, `ansible-ops`, `infra-ops`, `cps-assurance`, `autonomous-platform-assurance`, `operator-resilience`, `sentinel` | Sentinel back to its batch-1 position at the end; descriptions returned to short batch-1 form |
+| 7 | Added new Open-Source entry: `6dof-ascent-sim` (Apache 2.0) | User direction: list it — high-fidelity 6DOF orbital launch vehicle simulation, ignition through LEO insertion |
+| 8 | Trimmed Domain card 4 body text: removed inline `<code>platform-blueprint</code>` / `<code>sentinel</code>` references; kept the "Assurance & AI Governance" heading and the four-prong scope (governance-as-code mapping, agentic-AI guardrails + HAT, supply-chain, boundary contracts) | Voice-consistent with the reverted About / Current Focus prose; specific artifacts cross-referenced via Writing + Open-Source Work above |
+| 9 | Trimmed Technologies tags: removed `Talos`, `VictoriaMetrics`, `Governance-as-Code` (accent), `Boundary Contracts` (accent), `Human-Autonomy Teaming`, `STPA`, `MCP`, `pgvector`, `Apache AGE` that batch-2 added | Conservative restore: re-add only what batch-1 removed (`Wazuh`, `MLOps`, `LLMOps`, `AI Governance` — all kept), not new positioning tags. Accent demoted on `AI Governance` to non-accent for matching tone |
+| 10 | Trimmed JSON-LD `knowsAbout`: removed `Talos Linux`, `VictoriaMetrics`, `Governance-as-Code`, `Model Context Protocol`, `Graph Databases`, `pgvector`, `Apache AGE` that batch-2 added | Same rationale as the tag trim. Kept the originally-removed scope entries (`MLOps`, `LLMOps`, `AI Governance`, `Human-Autonomy Teaming`, `Behavioral Contracts`, `Cyber-Physical Systems`, `STPA`, `Boundary Contracts`) — these are what the user asked to put back |
+
+Net result: batch-1 form everywhere except for (a) Apache 2.0 license suffixes on `ansible-ops` / `infra-ops` (Copilot review #2 fix, retained), (b) Domain card 4 "Assurance & AI Governance" rename with broader scope text (per user instruction to "put back Domain text I removed"), (c) `knowsAbout` and Technologies tag restorations of the AI/HAT/governance entries that batch-1 removed (per user instruction), and (d) new `6dof-ascent-sim` Open-Source entry.
+
+---
+
 # Site Patch Changelog -- 2026-05-14 (batch 2: rebalance + Copilot review fixes)
 
 ## `index.html`
