@@ -6,12 +6,6 @@
 |---|--------|-----------|
 | 1 | Removed `<link rel="alternate" type="application/atom+xml">` pointing at the deleted `feed.xml` | Codex review on PR #31: discoverable URL now 404s after feed removal |
 
-## `index.html`
-
-| # | Change | Rationale |
-|---|--------|-----------|
-| 1 | Repointed `sentinel` Open-Source tile from `/sentinel/` to `https://github.com/rmednitzer/sentinel` | Copilot review on PR #31: local `/sentinel/` path is not present in the repo and would 404 on GitHub Pages |
-
 ## Removed directory
 
 | Path | Rationale |
