@@ -21,11 +21,9 @@ Static personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitz
 
 ## Key files
 
-- `index.html` — Profile landing page
+- `index.html` — Profile landing page (single-page site)
+- `legal.html` — Impressum / DSGVO / MedienG legal notice
 - `style.css` — Shared stylesheet
-- `enforceable-boundary-contracts.html` — Article
-- `it-operations-architecture.html` — Reference architecture article
-- `agentic-ai-regulated-infrastructure.html` — Article
 - `favicon.svg` — Site favicon
 - `site.webmanifest` — PWA manifest
 - `sitemap.xml` — Sitemap for search engines

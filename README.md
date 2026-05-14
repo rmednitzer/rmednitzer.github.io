@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Production Linux and hybrid platforms operated with audit-defensible documentation. Driving container and GitOps adoption in regulated environments without losing compliance posture.
+Production Linux, Kubernetes, and GitOps in regulated environments. Audit-defensible operations under ISO 27001 and NIS2.
 
 ---
 
@@ -11,10 +11,7 @@ Production Linux and hybrid platforms operated with audit-defensible documentati
 | Page | URL |
 |------|-----|
 | Profile | [rmednitzer.github.io](https://rmednitzer.github.io/) |
-| Behavioral Contracts for Human-Autonomy Teaming | [rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming](https://rmednitzer.github.io/behavioral-contracts-human-autonomy-teaming) |
-| Agentic AI in Regulated Infrastructure | [rmednitzer.github.io/agentic-ai-regulated-infrastructure](https://rmednitzer.github.io/agentic-ai-regulated-infrastructure) |
-| Reference Architecture: Maximum-Autonomy IT Operations | [rmednitzer.github.io/it-operations-architecture](https://rmednitzer.github.io/it-operations-architecture) |
-| Enforceable Boundary Contracts | [rmednitzer.github.io/enforceable-boundary-contracts](https://rmednitzer.github.io/enforceable-boundary-contracts) |
+| Legal notice & privacy | [rmednitzer.github.io/legal](https://rmednitzer.github.io/legal) |
 
 ### Tech notes
 
