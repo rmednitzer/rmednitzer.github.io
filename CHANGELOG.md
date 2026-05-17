@@ -1,3 +1,13 @@
+# Site Patch Changelog -- 2026-05-17 (batch 1: open-source list)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Open-Source Work: replaced the `ai-stack` entry with `agents` (`https://github.com/rmednitzer/agents`, meta "Agentic workloads, skills, harness, and memory infrastructure · Apache 2.0") and reordered the list to `platform-blueprint`, `isms`, `agents`, `sentinel`, `core-graph` | User direction: swap `ai-stack` for the `agents` repo and order entries by professional relevance (platform/EU-assurance flagships first) |
+
+---
+
 # Site Patch Changelog -- 2026-05-14 (batch 6: copy refresh)
 
 ## `index.html`
