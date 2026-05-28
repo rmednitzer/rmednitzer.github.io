@@ -1,3 +1,53 @@
+# Site Patch Changelog -- 2026-05-28 (batch 7: high-assurance position realignment)
+
+Structural realignment from generic "platform/infrastructure engineer" to
+"High-Assurance Infrastructure Architecture & Systems Validation," targeting
+principal engineers and technical scouts in defence tech, critical
+infrastructure, and EU high-assurance validation. Core thesis surfaced
+throughout: gating non-deterministic/stochastic runtimes behind deterministic
+safety envelopes, STPA hazard modeling, and programmatic boundary enforcement.
+Footprint stays sovereign (no build step, no JS added, no trackers, fonts
+self-hosted); all new CSS is page-unique in the `index.html` `<head>` block per
+CLAUDE.md, so `style.css` is untouched.
+
+Every technical claim was verified against the in-workspace repositories before
+landing. Where the source brief proposed copy that the repos contradict or do
+not yet support, the claim was rewritten to the verified mechanism rather than
+shipped as written — continuing the batch-6 norm of refusing fabrication on a
+profile that a code-reading audience will check.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Retitled positioning across `<title>`, description, OG/Twitter, hero `.hero-sub`/`.hero-tagline`, and JSON-LD `jobTitle`/`description` to "High-Assurance Infrastructure Architecture & Systems Validation" | Req 1 structural position realignment |
+| 2 | Added a config-style `.hero-meta` key/value strip (locale / register / thesis / methods) under the tagline | Replaces whitespace with scannable technical metadata (style directive) |
+| 3 | Rewrote About to the deterministic-envelope thesis (contracts, tiered authority, action budgets, fail-closed, append-only evidence, STPA-before-mechanism, EU mandate mapping) | Req 1 intro pivot; verified against agents + relay-shell + STPA repos |
+| 4 | Added "Regulatory Trust Boundaries" section: framework → enforced-mechanism rows (NIS2/ISO 27001, EU AI Act/CRA, AI Act high-risk/Machinery, DORA, GDPR) | Req 2 compliance-as-trust-boundaries, config-style grid |
+| 5 | Added "Observability & Verification" section: metrics/traces (OTel→VictoriaMetrics), JS-divergence drift, append-only evidence + run-provenance gate, property/fuzz regression, Wazuh SIEM | Req 4 telemetry/verification showcase |
+| 6 | Open-Source list reworked: added `nous`, reordered, rewrote platform-blueprint / agents / relay-shell / mission-assurance descriptions to high-assurance mechanics | Req 3 project-corpus refactor |
+| 7 | Technologies: added `ISO 42001`, `STPA`, `Boundary Contracts` tags | Reflect the high-assurance positioning; all accurate |
+| 8 | Page-unique CSS added in `<head>`: `.hero-meta`, `.boundaries`/`.boundary` (responsive framework→mechanism grid), inline `code`; extended fade-up `nth-child` delays to cover the two new sections | Denser, config-style layout (style directive); promote to `style.css` if reused on another page |
+
+## Accuracy corrections — brief copy NOT shipped as written
+
+| Brief copy | Why not shipped verbatim | Shipped instead |
+|---|---|---|
+| relay-shell "system-level process sandboxing" | Contradicts ADR 0002 (Accepted): relay-shell is **unsandboxed by design**; service account is the trust boundary. ADR 0006 seccomp-notify is **audit-only** and only *Proposed* | "Unsandboxed by design — the service account is the trust boundary"; compensating controls listed |
+| AI isolation "via systemd scopes, cgroups tracking, and seccomp notification filters" | Not the implemented mechanism. agents ships subprocess + `rlimit`; container/seccomp/namespace is an explicit **out-of-tree extension point**. Real inference isolation is ai-stack k8s PSA (restricted, `seccompProfile: RuntimeDefault`, default-deny NetworkPolicy) | k8s Pod Security + bounded subprocess/`rlimit`; capability/namespace isolation noted as extension point |
+| "cryptographically signed forensic ledger" | relay-shell audit is SHA-256 **hashed** append-only, not signed. QES signing exists only in the `isms` document layer (`verify_qes.py`) | Output-hashed append-only ledger for the runtime; QES verification attributed to ISMS records |
+| platform-blueprint "Canonical GitOps reference overlays" | Repo states it is **documentation, not deployable code**; ships no kustomize/overlays | "Reference architectures, design patterns, and EU compliance mappings … documentation, not deployable code" |
+| "operator-resilience" repo | No such repo exists | Mapped to `mission-assurance` operator/cyber-physical domain (STPA UCA) + `nous` |
+| "real-time latency distribution tracking (inference jitter vs. deterministic gate overhead)" | No latency-histogram/jitter instrumentation found in repos | OTel→VictoriaMetrics timing + action-budget wall-clock bounds, framed as separating gate overhead from inference time |
+
+## Validation (req 3 / execution directives)
+
+- Link targets verified against in-workspace repos: platform-blueprint, agents, relay-shell, nous, mission-assurance, automation → `github.com/rmednitzer/<repo>`; sentinel → published `/sentinel/` project pages (unchanged).
+- `html-validate index.html`: my additions are clean (all `&` encoded as `&amp;`). The 3 reported errors (lowercase `<!doctype>`, >70-char title, raw `&` in the pre-existing `/legal` footer link) predate this batch and are left untouched per scope.
+- Tag balance verified; local serve returns HTTP 200; no build/static-gen config exists (raw static HTML/CSS), no external scripts/analytics/font CDNs added.
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 6: Invariant Matrix + engineering-first de-warm)
 
 Refactor toward a peer-engineer register (user direction). Adds a static
