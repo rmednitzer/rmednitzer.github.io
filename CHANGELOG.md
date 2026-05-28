@@ -1,3 +1,89 @@
+# Site Patch Changelog -- 2026-05-28 (batch 6: Invariant Matrix + engineering-first de-warm)
+
+Refactor toward a peer-engineer register (user direction). Adds a static
+Invariant Matrix and strips portfolio warmth; scope confirmed via questions
+(matrix = agents + relay-shell, static not live, moderate de-warm, relay-shell
+description rewritten). nous and mission-assurance were intentionally left
+untouched: neither is in the workspace/scope, so their high-assurance invariants
+could not be verified without fabrication. Favicon and all visual tokens are
+unchanged. Footprint stays sovereign (no build step, no JS added, no trackers).
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added an "Invariant Matrix" section (static, no JS) after About: per-repo spec cards for agents and relay-shell with Boundary / Control / Isolation / Audit rows | Replaces abstraction summaries with at-a-glance verified constraints (req 2). STPA omitted: neither repo tracks hazards via STPA, so claiming it would be fabrication |
+| 2 | Removed the "Domains" section (4 capability cards) | Superseded by the Invariant Matrix per user direction |
+| 3 | Removed the "Organizations" (IEEE/OCG) and "Current Focus" blocks | Moderate de-warm: drop resume/corporate filler. `memberOf` retained in JSON-LD as accurate structured data |
+| 4 | Rewrote relay-shell description to primitives; sharpened agents | Peer-engineer register (req 1), verified against each repo |
+| 5 | Un-truncated `.repo-meta` (removed nowrap/ellipsis) | Constraints in descriptions must be readable, not clipped |
+| 6 | Tersed the About paragraphs | Engineering-first density (req 2) |
+| 7 | Swapped dead `.domains/.domain`, `.org-list`, `.bottom-grid` CSS for the `.matrix/.spec` component; no new fonts/JS | Component for the matrix; shared `style.css` left untouched except dead-rule removal |
+
+## `style.css`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed `.focus-asof` (dead after the Current Focus block was removed) | Cleanup |
+
+## Validation (req 3)
+
+- No build/static-gen config exists; raw static HTML/CSS served from repo root. That is the lightweight, sovereign footprint.
+- No external scripts, analytics, trackers, or font CDNs; only an inline footer-year updater + inline JSON-LD; fonts self-hosted.
+- All GitHub cross-links resolve (platform-blueprint, mission-assurance, agents, relay-shell, automation; sentinel local). Matrix links to agents and relay-shell verified in-workspace.
+
+---
+
+# Site Patch Changelog -- 2026-05-28 (batch 5: multi-provider AI tags)
+
+Makes the "stack-agnostic over an API" point concrete per user note (uses
+Gemini, OpenAI/ChatGPT, and Claude via web and API, alongside local models).
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | About para 2: extended the stack-agnostic clause to name the stack (local models on own hardware plus the Claude, OpenAI, and Gemini APIs) | Grounds the existing claim in the actual multi-provider usage |
+| 2 | Technologies: added `Claude`, `OpenAI`, `Gemini` tags, unaccented | Reflect real multi-provider AI use; accenting stays reserved for the open-source identity since these are proprietary |
+| 3 | JSON-LD knowsAbout: added Anthropic Claude, OpenAI, Google Gemini | Consistency with the new tags |
+
+---
+
+# Site Patch Changelog -- 2026-05-28 (batch 4: rework + optimize — separate Homelab from Open-Source)
+
+Structural rework and cleanup. Per user direction the homelab and GitHub are now
+presented as separate things, and dead CSS left over from the removed article
+pages is dropped. The favicon and all its files/URLs are untouched (reused by
+other services, e.g. vertex.blackphoenix.org); visual design tokens (colours,
+fonts, accent, dark/light, grid background), the hero, title, and meta are
+unchanged.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Split the combined "Homelab & Open-Source" section into two sections: **Homelab** (the self-run fleet, two short paragraphs, no repo links) and **Open-Source** (the pinned GitHub repos with a lead-in). Dropped the "pinned repositories below are the artifacts" tie-in | User direction: GitHub and the homelab should be seen as separate. Homelab = what I run; Open-Source = what I publish |
+| 2 | Renamed the legacy `.writing-*` classes (left from the deleted Writing section) to semantic `.repo-list` / `.repo-item` / `.repo-name` / `.repo-meta` in the page `<style>` block and markup | Clarity: the list holds repos, not writing. No visual change |
+| 3 | Domains card 4: "AI Assurance (Homelab R&D)" → "AI Assurance (R&D)" | Avoids "Homelab" doubling now that there is a dedicated Homelab section; body already says "self-run track" |
+| 4 | Removed the trailing ` /` self-close on the `google-site-verification` `<meta>` | Consistency with the other void `<meta>` elements; clears the html-validate `void-style` error |
+
+## `style.css`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed dead rules left from the deleted article pages: `.article-tags`, `.article-meta`, and the entire `.article-related*` block | Unused by both `index.html` and `legal.html` (verified). Smaller stylesheet |
+| 2 | Renamed `.writing-list li + li` → `.repo-list li + li` | Matches the renamed repo list |
+
+Kept (still used by `legal.html`): `.page--article`, `.article-nav`, `.article-header`, `.article-body` and children.
+
+## `legal.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed the trailing ` /` self-close on the `google-site-verification` `<meta>` | Same as index; consistency + validator |
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 3: realign to actual fleet + open-source preference)
 
 Realigns the site to what is actually run day-to-day, verified against the
