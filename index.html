@@ -131,25 +131,24 @@
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
 
-    .domains { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media (min-width: 640px) { .domains { grid-template-columns: 1fr 1fr; } }
+    .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 640px) { .matrix { grid-template-columns: 1fr 1fr; } }
 
-    .domain {
+    .spec {
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1rem 1.1rem;
       background: transparent;
     }
-
-    .domain h3 { font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin-bottom: .35rem; }
-    .domain p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .55rem; }
+    .spec-head a { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
+    .spec-head a:hover { color: var(--accent); }
+    .spec-tag { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); white-space: nowrap; }
+    .spec dl { display: grid; grid-template-columns: max-content 1fr; gap: .3rem .8rem; margin: 0; }
+    .spec dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .12rem; }
+    .spec dd { margin: 0; font-size: .82rem; color: var(--fg); line-height: 1.45; }
 
     .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
-
-    .org-list { list-style: none; padding: 0; }
-    .org-list li { position: relative; padding: .3rem 0 .3rem 1rem; font-size: .92rem; }
-    .org-list li::before { content: '\203A'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
-    .org-list .org-sub { font-size: .82rem; color: var(--muted); margin-left: .3rem; }
 
     .repo-list { list-style: none; padding: 0; }
     .section p + .repo-list { margin-top: .85rem; }
@@ -164,12 +163,9 @@
     }
     .repo-item:hover { border-color: var(--border-accent); text-decoration: none; }
     .repo-name { font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
-    .repo-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .repo-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; }
 
     .repos-note { margin-top: .85rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
-
-    .bottom-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-    @media (min-width: 640px) { .bottom-grid { grid-template-columns: 1fr 1fr; } }
 
     @media (min-width: 561px) and (max-width: 768px) {
       .hero { gap: 1.25rem; }
@@ -220,8 +216,40 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Ten-plus years operating production infrastructure in regulated and business-critical environments, including medical-device manufacturing. Day-to-day: Linux, virtualisation, Kubernetes, monitoring, and backup/DR with verified restore. Work that has to hold up under change management and audit.</p>
-      <p>The common thread is assurance: evidence chains and controls mapped to ISO 27001 and NIS2, grounded in hands-on ISMS and BCM work and an ISO 27001 auditor qualification. Given the choice I work open source over closed, mostly on Ubuntu and Red Hat, and stay stack-agnostic wherever the AI integration is viable over an API: local models on my own hardware alongside the Claude, OpenAI, and Gemini APIs. The same discipline carries into a self-run homelab, where I explore governed execution, runtime control points, and observability for LLM and agent workloads.</p>
+      <p>Ten-plus years running production infrastructure in regulated, business-critical environments, including medical-device manufacturing: Linux, virtualisation, Kubernetes, monitoring, backup/DR with verified restore. Work that holds up under change management and audit.</p>
+      <p>Assurance is the through-line: evidence chains and controls mapped to ISO 27001 and NIS2, backed by hands-on ISMS/BCM work and an ISO 27001 auditor qualification. Bias: open source over closed, mostly Ubuntu and Red Hat; stack-agnostic where the AI integration is viable over an API (local models plus the Claude, OpenAI, and Gemini APIs). The same discipline runs in a self-hosted homelab: governed execution, runtime control points, observability for LLM and agent workloads.</p>
+    </section>
+
+    <!-- ── Invariant Matrix ── -->
+    <section class="section" aria-labelledby="matrix-h">
+      <h2 id="matrix-h">Invariant Matrix</h2>
+      <p>Core constraints of the two systems I maintain in the open, stated as invariants and verified against each repository.</p>
+      <div class="matrix">
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/agents">agents</a>
+            <span class="spec-tag">Apache-2.0 · pre-1.0</span>
+          </div>
+          <dl>
+            <dt>Boundary</dt><dd>Authority boundary between models, agents, and tools; untrusted skill bundles load with contracts off, pinned by an immutable ref plus sha256.</dd>
+            <dt>Control</dt><dd>Behavioral contracts (pre/invariant/post) and action budgets (steps, tokens, wall-clock, tool-calls) on one guard gate: approve, reject, or require-approval, with pause/resume and a circuit breaker.</dd>
+            <dt>Isolation</dt><dd>Namespace-bound memory; role and attribute ACLs, MVCC version tokens, AES-256-GCM at rest; opt-in subprocess and rlimit skill execution.</dd>
+            <dt>Audit</dt><dd>OpenTelemetry events, Jensen-Shannon drift, and self-attesting run-provenance with an offline verification gate.</dd>
+          </dl>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
+            <span class="spec-tag">Apache-2.0 · v0.1.0</span>
+          </div>
+          <dl>
+            <dt>Boundary</dt><dd>Scoped service account, no sandbox by design; HTTP bound to loopback behind a CIDR Caddy/TLS edge, with optional OAuth 2.1 (DCR, PKCE).</dd>
+            <dt>Control</dt><dd>Central runner, denylist-first policy, tiered authority 0 to 3 (open, guarded, readonly), privileged-cue flagging; the transport fails closed.</dd>
+            <dt>Isolation</dt><dd>Per-call timeout and output caps, bounded session count and buffers, idle and lifetime reaping; output bodies are never persisted.</dd>
+            <dt>Audit</dt><dd>Append-only JSONL, one line per call: SHA-256 of the output (never the body), byte length, exit code, tier, and request and client id; secrets redacted.</dd>
+          </dl>
+        </div>
+      </div>
     </section>
 
     <!-- ── Homelab ── -->
@@ -251,13 +279,13 @@
         <li>
           <a class="repo-item" href="https://github.com/rmednitzer/agents">
             <span class="repo-name">agents</span>
-            <p class="repo-meta">Modular execution substrate for governed agentic workloads · Apache 2.0</p>
+            <p class="repo-meta">Execution substrate for governed agents: behavioral contracts, action budgets, isolated memory · Apache 2.0</p>
           </a>
         </li>
         <li>
           <a class="repo-item" href="https://github.com/rmednitzer/relay-shell">
             <span class="repo-name">relay-shell</span>
-            <p class="repo-meta">Governed MCP relay for the shell/SSH path: tiered authority, append-only audit · Apache 2.0</p>
+            <p class="repo-meta">MCP shell/SSH server: no sandbox by design, tiered-authority policy, output-hashed append-only audit, per-call bounds · Apache 2.0</p>
           </a>
         </li>
         <li>
@@ -274,29 +302,6 @@
         </li>
       </ul>
       <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
-    </section>
-
-    <!-- ── Domains ── -->
-    <section class="section" aria-labelledby="domains-h">
-      <h2 id="domains-h">Domains</h2>
-      <div class="domains">
-        <div class="domain">
-          <h3>Infrastructure &amp; Reliability</h3>
-          <p>Production Linux (Ubuntu, Red Hat), KVM and libvirt virtualisation, ZFS with Sanoid snapshots, backup/DR with verified restore, monitoring, on-call, and incident management.</p>
-        </div>
-        <div class="domain">
-          <h3>Platform Engineering</h3>
-          <p>Kubernetes (Talos), Helm, OpenTofu and Ansible automation, GitOps delivery, container and local-inference pipelines, hybrid-cloud operations.</p>
-        </div>
-        <div class="domain">
-          <h3>Audit-Facing Operations</h3>
-          <p>Change management, operational documentation, and backup/DR procedures aligned with ISO 27001 and NIS2, including evidence preparation in a previous ISO 27001 medical-device context.</p>
-        </div>
-        <div class="domain">
-          <h3>AI Assurance (R&amp;D)</h3>
-          <p>A self-run track exploring how audit-defensible operations apply to AI systems: self-hosted models behind a governed MCP gateway, PydanticAI agents under runtime control points, failure-mode observability, and supply-chain fundamentals (SBOM, SLSA, Sigstore). Early work, not a service line.</p>
-        </div>
-      </div>
     </section>
 
     <!-- ── Technologies ── -->
@@ -350,25 +355,6 @@
         <span class="tag">Sigstore</span>
       </div>
     </section>
-
-    <!-- ── Bottom grid: Orgs + Focus ── -->
-    <div class="bottom-grid">
-      <section class="section" aria-labelledby="orgs-h">
-        <h2 id="orgs-h">Organizations</h2>
-        <ul class="org-list">
-          <li><a href="https://www.ieee.org/"><strong>IEEE</strong></a>
-            <br><span class="org-sub"><a href="https://www.ieeesmc.org/">Systems, Man and Cybernetics Society</a></span>
-            <br><span class="org-sub"><a href="https://cis.ieee.org/">Computational Intelligence Society</a></span>
-          </li>
-          <li><a href="https://www.ocg.at/en"><strong>OCG</strong></a> <span class="org-sub">(Austrian Computer Society)</span></li>
-        </ul>
-      </section>
-
-      <section class="section" aria-labelledby="focus-h">
-        <h2 id="focus-h">Current Focus <span class="focus-asof">as of Q2 2026</span></h2>
-        <p>By day, production platform operations across a regulated Windows and Linux estate: virtualisation, backup and recovery with verified restore, monitoring, and change management aligned to ISO 27001 and NIS2. By preference and after hours, an all-open-source, mostly-Ubuntu fleet: self-hosted LLM inference with llama.cpp and Ollama, a self-built MCP gateway and PydanticAI agents, and a Talos Kubernetes observability and SIEM stack.</p>
-      </section>
-    </div>
 
     <footer role="contentinfo">
       <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>

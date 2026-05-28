@@ -1,3 +1,39 @@
+# Site Patch Changelog -- 2026-05-28 (batch 6: Invariant Matrix + engineering-first de-warm)
+
+Refactor toward a peer-engineer register (user direction). Adds a static
+Invariant Matrix and strips portfolio warmth; scope confirmed via questions
+(matrix = agents + relay-shell, static not live, moderate de-warm, relay-shell
+description rewritten). nous and mission-assurance were intentionally left
+untouched: neither is in the workspace/scope, so their high-assurance invariants
+could not be verified without fabrication. Favicon and all visual tokens are
+unchanged. Footprint stays sovereign (no build step, no JS added, no trackers).
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Added an "Invariant Matrix" section (static, no JS) after About: per-repo spec cards for agents and relay-shell with Boundary / Control / Isolation / Audit rows | Replaces abstraction summaries with at-a-glance verified constraints (req 2). STPA omitted: neither repo tracks hazards via STPA, so claiming it would be fabrication |
+| 2 | Removed the "Domains" section (4 capability cards) | Superseded by the Invariant Matrix per user direction |
+| 3 | Removed the "Organizations" (IEEE/OCG) and "Current Focus" blocks | Moderate de-warm: drop resume/corporate filler. `memberOf` retained in JSON-LD as accurate structured data |
+| 4 | Rewrote relay-shell description to primitives; sharpened agents | Peer-engineer register (req 1), verified against each repo |
+| 5 | Un-truncated `.repo-meta` (removed nowrap/ellipsis) | Constraints in descriptions must be readable, not clipped |
+| 6 | Tersed the About paragraphs | Engineering-first density (req 2) |
+| 7 | Swapped dead `.domains/.domain`, `.org-list`, `.bottom-grid` CSS for the `.matrix/.spec` component; no new fonts/JS | Component for the matrix; shared `style.css` left untouched except dead-rule removal |
+
+## `style.css`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed `.focus-asof` (dead after the Current Focus block was removed) | Cleanup |
+
+## Validation (req 3)
+
+- No build/static-gen config exists; raw static HTML/CSS served from repo root. That is the lightweight, sovereign footprint.
+- No external scripts, analytics, trackers, or font CDNs; only an inline footer-year updater + inline JSON-LD; fonts self-hosted.
+- All GitHub cross-links resolve (platform-blueprint, mission-assurance, agents, relay-shell, automation; sentinel local). Matrix links to agents and relay-shell verified in-workspace.
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 5: multi-provider AI tags)
 
 Makes the "stack-agnostic over an API" point concrete per user note (uses
