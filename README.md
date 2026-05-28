@@ -1,4 +1,4 @@
-## Roman Mednitzer — Public Profile
+## Roman Mednitzer · Public Profile
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
@@ -15,8 +15,8 @@ Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps,
 
 ### Tech notes
 
-- Static HTML/CSS — no build step required
-- Fonts self-hosted under `fonts/` (Outfit + DM Mono WOFF2) — no Google Fonts dependency
+- Static HTML/CSS, no build step required
+- Fonts self-hosted under `fonts/` (Outfit + DM Mono WOFF2), no Google Fonts dependency
 - `.nojekyll` disables Jekyll processing on GitHub Pages
 - GitHub Pages serves from the repo root
 

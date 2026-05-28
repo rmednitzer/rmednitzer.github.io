@@ -1,3 +1,16 @@
+# Site Patch Changelog -- 2026-05-28 (batch 9: drop em-dashes from site copy)
+
+Removed em-dashes from the public copy per the owner's standing preference
+(continuing the earlier "drop em-dashes" pass). Replaced them with commas,
+colons, or full stops; no wording or meaning changed. Historical changelog
+entries and internal instruction files were left as-is.
+
+| File | Change |
+|------|--------|
+| `index.html` | 6 em-dashes removed across About, Open-source projects, and Homelab copy |
+| `README.md` | 3 em-dashes removed (heading + two tech-note bullets) |
+| `CLAUDE.md` | Topic line reworded to avoid the one em-dash added in batch 8 |
+
 # Site Patch Changelog -- 2026-05-28 (batch 8: honesty & concision realignment)
 
 Reverted the batch-7 "High-Assurance Infrastructure Architecture & Systems

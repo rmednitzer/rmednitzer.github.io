@@ -206,21 +206,21 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments — from radiation-therapy medical-device manufacturing to enterprise hybrid estates. Day to day that means Linux (Ubuntu, Red Hat, SLES, Rocky), virtualization (KVM, VMware), Kubernetes and GitOps (Argo CD), observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restore — the kind of work that has to hold up under change management and audit.</p>
-      <p>Most of it I taught myself. I hold an ISO 27001 ISMS Manager &amp; Auditor qualification (TÜV Austria) and have done hands-on ISMS/BCM and audit-prep work. I prefer open source over closed, and I learn by building — most of what follows started in a homelab.</p>
+      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, from radiation-therapy medical-device manufacturing to enterprise hybrid estates. Day to day that means Linux (Ubuntu, Red Hat, SLES, Rocky), virtualization (KVM, VMware), Kubernetes and GitOps (Argo CD), observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restore, all of which has to hold up under change management and audit.</p>
+      <p>Most of it I taught myself. I hold an ISO 27001 ISMS Manager &amp; Auditor qualification (TÜV Austria) and have done hands-on ISMS/BCM and audit-prep work. I prefer open source over closed, and I learn by building. Most of what follows started in a homelab.</p>
     </section>
 
     <!-- ── Open-source projects ── -->
     <section class="section" aria-labelledby="projects-h">
       <h2 id="projects-h">Open-source projects</h2>
-      <p>Two things I maintain in the open. Both are personal, pre-1.0, and Apache-2.0 — built to understand the problem properly, not to sell anything.</p>
+      <p>Two things I maintain in the open. Both are personal, pre-1.0, and Apache-2.0, built to understand the problem properly rather than to sell anything.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
             <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
             <span class="spec-tag">Apache-2.0 · v0.1.0</span>
           </div>
-          <p>A governed MCP server for the shell and SSH path. Four-tier authority (open / guarded / read-only), an append-only audit that hashes outputs with SHA-256 instead of storing them, automatic secret redaction, and bounded execution — timeouts, output caps, idle session reaping. One interface for local shell, SSH, SFTP, port-forwarding, and parallel commands across a fleet.</p>
+          <p>A governed MCP server for the shell and SSH path. Four-tier authority (open / guarded / read-only), an append-only audit that hashes outputs with SHA-256 instead of storing them, automatic secret redaction, and bounded execution: timeouts, output caps, and idle session reaping. One interface for local shell, SSH, SFTP, port-forwarding, and parallel commands across a fleet.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
@@ -230,14 +230,14 @@
           <p>An execution substrate that sits between model output and real system capabilities. Behavioral contracts (pre / invariant / post), action budgets (steps, tokens, wall-clock, per-tool), a single guard gate that approves, rejects, or asks first, and namespace-isolated encrypted memory across SQLite, Redis, S3, and DynamoDB.</p>
         </div>
       </div>
-      <p class="repos-note">More — Ansible automation, OpenTofu/KVM modules, an ISO 27001 ISMS, a Helm AI-inference stack, and assorted experiments — at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
+      <p class="repos-note">Ansible automation, OpenTofu/KVM modules, an ISO 27001 ISMS, a Helm AI-inference stack, and assorted experiments are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
     </section>
 
     <!-- ── Homelab ── -->
     <section class="section" aria-labelledby="homelab-h">
       <h2 id="homelab-h">Homelab</h2>
       <p>A self-run, all-open-source fleet, mostly Ubuntu. Local LLM inference on NVIDIA (llama.cpp, llama-swap) and AMD ROCm (Ollama), driving PydanticAI agents through a self-built MCP gateway on Hetzner. Underneath: a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh; ZFS with Sanoid snapshots; a Tailscale/WireGuard mesh.</p>
-      <p>It's where I try things before they're tidy — the same backup and change discipline as the day job, minus the change-advisory board. relay-shell and agents both started here.</p>
+      <p>It's where I try things before they're tidy, with the same backup and change discipline as the day job, minus the change-advisory board. relay-shell and agents both started here.</p>
     </section>
 
     <!-- ── Skills ── -->
