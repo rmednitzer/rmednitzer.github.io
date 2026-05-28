@@ -1,3 +1,13 @@
+# Site Patch Changelog -- 2026-05-28 (batch 11: legal page validation cleanup)
+
+Resolved the remaining `html-validate` errors on the legal page without changing
+its content. The fixes are semantic-only: uppercase doctype, native landmark
+usage, and removal of a redundant ARIA role.
+
+| File | Change |
+|------|--------|
+| `legal.html` | Uppercased `<!DOCTYPE html>`, changed the page wrapper from `<div>` to `<main>`, removed redundant `role="main"` from `<article>`, and removed redundant `role="contentinfo"` from `<footer>` |
+
 # Site Patch Changelog -- 2026-05-28 (batch 10: copy tighten + text fixes)
 
 Refined the public profile copy for clarity and flow without changing the site's
