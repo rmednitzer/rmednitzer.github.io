@@ -1,3 +1,38 @@
+# Site Patch Changelog -- 2026-05-28 (batch 4: rework + optimize — separate Homelab from Open-Source)
+
+Structural rework and cleanup. Per user direction the homelab and GitHub are now
+presented as separate things, and dead CSS left over from the removed article
+pages is dropped. The favicon and all its files/URLs are untouched (reused by
+other services, e.g. vertex.blackphoenix.org); visual design tokens (colours,
+fonts, accent, dark/light, grid background), the hero, title, and meta are
+unchanged.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Split the combined "Homelab & Open-Source" section into two sections: **Homelab** (the self-run fleet, two short paragraphs, no repo links) and **Open-Source** (the pinned GitHub repos with a lead-in). Dropped the "pinned repositories below are the artifacts" tie-in | User direction: GitHub and the homelab should be seen as separate. Homelab = what I run; Open-Source = what I publish |
+| 2 | Renamed the legacy `.writing-*` classes (left from the deleted Writing section) to semantic `.repo-list` / `.repo-item` / `.repo-name` / `.repo-meta` in the page `<style>` block and markup | Clarity: the list holds repos, not writing. No visual change |
+| 3 | Domains card 4: "AI Assurance (Homelab R&D)" → "AI Assurance (R&D)" | Avoids "Homelab" doubling now that there is a dedicated Homelab section; body already says "self-run track" |
+| 4 | Removed the trailing ` /` self-close on the `google-site-verification` `<meta>` | Consistency with the other void `<meta>` elements; clears the html-validate `void-style` error |
+
+## `style.css`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed dead rules left from the deleted article pages: `.article-tags`, `.article-meta`, and the entire `.article-related*` block | Unused by both `index.html` and `legal.html` (verified). Smaller stylesheet |
+| 2 | Renamed `.writing-list li + li` → `.repo-list li + li` | Matches the renamed repo list |
+
+Kept (still used by `legal.html`): `.page--article`, `.article-nav`, `.article-header`, `.article-body` and children.
+
+## `legal.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Removed the trailing ` /` self-close on the `google-site-verification` `<meta>` | Same as index; consistency + validator |
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 3: realign to actual fleet + open-source preference)
 
 Realigns the site to what is actually run day-to-day, verified against the

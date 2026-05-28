@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark light">
-  <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo" />
+  <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo">
   <meta name="author" content="Roman Mednitzer">
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
@@ -151,9 +151,9 @@
     .org-list li::before { content: '\203A'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
     .org-list .org-sub { font-size: .82rem; color: var(--muted); margin-left: .3rem; }
 
-    .writing-list { list-style: none; padding: 0; }
-    .section p + .writing-list { margin-top: .85rem; }
-    .writing-item {
+    .repo-list { list-style: none; padding: 0; }
+    .section p + .repo-list { margin-top: .85rem; }
+    .repo-item {
       display: block;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -162,9 +162,9 @@
       background: transparent;
       transition: border-color .2s;
     }
-    .writing-item:hover { border-color: var(--border-accent); text-decoration: none; }
-    .writing-item-title { font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
-    .writing-item-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .repo-item:hover { border-color: var(--border-accent); text-decoration: none; }
+    .repo-name { font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
+    .repo-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     .repos-note { margin-top: .85rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
@@ -224,49 +224,56 @@
       <p>The common thread is assurance: evidence chains and controls mapped to ISO 27001 and NIS2, grounded in hands-on ISMS and BCM work and an ISO 27001 auditor qualification. Given the choice I work open source over closed, mostly on Ubuntu and Red Hat, and stay stack-agnostic wherever the AI integration is viable over an API. The same discipline carries into a self-run homelab, where I explore governed execution, runtime control points, and observability for LLM and agent workloads.</p>
     </section>
 
-    <!-- ── Open-Source Work ── -->
+    <!-- ── Homelab ── -->
+    <section class="section" aria-labelledby="homelab-h">
+      <h2 id="homelab-h">Homelab</h2>
+      <p>A self-run, all-open-source fleet of mostly Ubuntu hosts. Local LLM inference on both NVIDIA (llama.cpp and llama-swap) and AMD ROCm (Ollama), fronted by a self-built MCP gateway on Hetzner that drives PydanticAI agents, OSINT feeds, and CVE and EU-regulatory intel.</p>
+      <p>Underneath it: a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh for observability and SIEM; ZFS with Sanoid snapshots; a Tailscale mesh. The same change-control and evidence discipline I apply at work runs here too.</p>
+    </section>
+
+    <!-- ── Open-Source ── -->
     <section class="section" aria-labelledby="open-source-h">
-      <h2 id="open-source-h">Homelab &amp; Open-Source</h2>
-      <p>Nearly all of this comes out of a self-run, all-open-source fleet of mostly Ubuntu hosts. Local LLM inference on both NVIDIA (llama.cpp and llama-swap) and AMD ROCm (Ollama); a self-built MCP gateway on Hetzner fronting PydanticAI agents, OSINT feeds, and CVE and EU-regulatory intel; a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh for observability and SIEM; ZFS with Sanoid snapshots; a Tailscale mesh. The pinned repositories below are the artifacts.</p>
-      <ul class="writing-list">
+      <h2 id="open-source-h">Open-Source</h2>
+      <p>Published work on GitHub. Some grows out of the homelab; some stands on its own. Apache-2.0 unless noted.</p>
+      <ul class="repo-list">
         <li>
-          <a class="writing-item" href="https://github.com/rmednitzer/platform-blueprint">
-            <span class="writing-item-title">platform-blueprint</span>
-            <p class="writing-item-meta">Engineering blueprint for platform/infrastructure systems with EU compliance mapping · Apache 2.0</p>
+          <a class="repo-item" href="https://github.com/rmednitzer/platform-blueprint">
+            <span class="repo-name">platform-blueprint</span>
+            <p class="repo-meta">Engineering blueprint for platform/infrastructure systems with EU compliance mapping · Apache 2.0</p>
           </a>
         </li>
         <li>
-          <a class="writing-item" href="https://github.com/rmednitzer/mission-assurance">
-            <span class="writing-item-title">mission-assurance</span>
-            <p class="writing-item-meta">Governance-as-code for EU-regulated on-premises and hybrid platform operations · Apache 2.0</p>
+          <a class="repo-item" href="https://github.com/rmednitzer/mission-assurance">
+            <span class="repo-name">mission-assurance</span>
+            <p class="repo-meta">Governance-as-code for EU-regulated on-premises and hybrid platform operations · Apache 2.0</p>
           </a>
         </li>
         <li>
-          <a class="writing-item" href="https://github.com/rmednitzer/agents">
-            <span class="writing-item-title">agents</span>
-            <p class="writing-item-meta">Modular execution substrate for governed agentic workloads · Apache 2.0</p>
+          <a class="repo-item" href="https://github.com/rmednitzer/agents">
+            <span class="repo-name">agents</span>
+            <p class="repo-meta">Modular execution substrate for governed agentic workloads · Apache 2.0</p>
           </a>
         </li>
         <li>
-          <a class="writing-item" href="https://github.com/rmednitzer/relay-shell">
-            <span class="writing-item-title">relay-shell</span>
-            <p class="writing-item-meta">Governed MCP relay for the shell/SSH path: tiered authority, append-only audit · Apache 2.0</p>
+          <a class="repo-item" href="https://github.com/rmednitzer/relay-shell">
+            <span class="repo-name">relay-shell</span>
+            <p class="repo-meta">Governed MCP relay for the shell/SSH path: tiered authority, append-only audit · Apache 2.0</p>
           </a>
         </li>
         <li>
-          <a class="writing-item" href="/sentinel/">
-            <span class="writing-item-title">sentinel</span>
-            <p class="writing-item-meta">Continuous HAT failure-mode corpus · twice-daily cadence · Apache 2.0</p>
+          <a class="repo-item" href="/sentinel/">
+            <span class="repo-name">sentinel</span>
+            <p class="repo-meta">Continuous HAT failure-mode corpus · twice-daily cadence · Apache 2.0</p>
           </a>
         </li>
         <li>
-          <a class="writing-item" href="https://github.com/rmednitzer/automation">
-            <span class="writing-item-title">automation</span>
-            <p class="writing-item-meta">Infrastructure automation and configuration management with Ansible · Apache 2.0</p>
+          <a class="repo-item" href="https://github.com/rmednitzer/automation">
+            <span class="repo-name">automation</span>
+            <p class="repo-meta">Infrastructure automation and configuration management with Ansible · Apache 2.0</p>
           </a>
         </li>
       </ul>
-      <p class="repos-note">More repositories at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
     </section>
 
     <!-- ── Domains ── -->
@@ -286,7 +293,7 @@
           <p>Change management, operational documentation, and backup/DR procedures aligned with ISO 27001 and NIS2, including evidence preparation in a previous ISO 27001 medical-device context.</p>
         </div>
         <div class="domain">
-          <h3>AI Assurance (Homelab R&amp;D)</h3>
+          <h3>AI Assurance (R&amp;D)</h3>
           <p>A self-run track exploring how audit-defensible operations apply to AI systems: self-hosted models behind a governed MCP gateway, PydanticAI agents under runtime control points, failure-mode observability, and supply-chain fundamentals (SBOM, SLSA, Sigstore). Early work, not a service line.</p>
         </div>
       </div>
