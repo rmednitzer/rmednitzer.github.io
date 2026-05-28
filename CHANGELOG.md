@@ -1,3 +1,13 @@
+# Site Patch Changelog -- 2026-05-28 (batch 1: open-source list mirrors pinned repos)
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Open-Source Work: replaced the 5-entry list (`platform-blueprint`, `isms`, `agents`, `sentinel`, `core-graph`) with the 6 pinned GitHub repos, ordered platform/EU-assurance flagships first: `platform-blueprint`, `mission-assurance`, `agents`, `relay-shell`, `sentinel`, `automation`. Added `mission-assurance`, `relay-shell`, `automation`; dropped `isms`, `core-graph` | User direction: site should reflect the highest-value (pinned) repos. Descriptions and Apache-2.0 licenses verified against each repo's GitHub About text; `sentinel` keeps its local `/sentinel/` Pages dashboard link |
+
+---
+
 # Site Patch Changelog -- 2026-05-17 (batch 1: open-source list)
 
 ## `index.html`
