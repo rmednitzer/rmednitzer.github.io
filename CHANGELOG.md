@@ -1,3 +1,18 @@
+# Site Patch Changelog -- 2026-05-28 (batch 5: multi-provider AI tags)
+
+Makes the "stack-agnostic over an API" point concrete per user note (uses
+Gemini, OpenAI/ChatGPT, and Claude via web and API, alongside local models).
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | About para 2: extended the stack-agnostic clause to name the stack (local models on own hardware plus the Claude, OpenAI, and Gemini APIs) | Grounds the existing claim in the actual multi-provider usage |
+| 2 | Technologies: added `Claude`, `OpenAI`, `Gemini` tags, unaccented | Reflect real multi-provider AI use; accenting stays reserved for the open-source identity since these are proprietary |
+| 3 | JSON-LD knowsAbout: added Anthropic Claude, OpenAI, Google Gemini | Consistency with the new tags |
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 4: rework + optimize — separate Homelab from Open-Source)
 
 Structural rework and cleanup. Per user direction the homelab and GitHub are now
