@@ -136,6 +136,7 @@
     /* featured-project cards */
     .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: .85rem; }
     @media (min-width: 640px) { .matrix { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 640px) { .matrix > .spec:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
     .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
     .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
@@ -212,7 +213,7 @@
     <!-- ── Open-source projects ── -->
     <section class="section" aria-labelledby="projects-h">
       <h2 id="projects-h">Open-source projects</h2>
-      <p>Two projects I maintain, built to understand real operating problems properly.</p>
+      <p>A few projects I maintain, built to understand real operating problems properly.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
@@ -227,6 +228,27 @@
             <span class="spec-tag">Apache-2.0 · pre-1.0</span>
           </div>
           <p>An execution substrate that sits between model output and real system capabilities. It enforces behavioral contracts (pre, invariant, post), action budgets (steps, tokens, wall-clock, per-tool), a single guard gate that can approve, reject, or ask first, and namespace-isolated encrypted memory across SQLite, Redis, S3, and DynamoDB.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/core-graph">core-graph</a>
+            <span class="spec-tag">Apache-2.0 · alpha</span>
+          </div>
+          <p>A converged graph-vector knowledge platform on PostgreSQL with Apache AGE and pgvector. It pulls heterogeneous security and infrastructure data (threat intelligence, security events, OSINT, audit evidence, forensic timelines) into one store across eight ontology layers aligned to STIX 2.1, MITRE ATT&CK, OCSF, and OSCAL, exposed over MCP, REST, and TAXII 2.1.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/sentinel">sentinel</a>
+            <span class="spec-tag">Apache-2.0</span>
+          </div>
+          <p>Continuous failure-mode classification of a running agent fleet. Twice a day it samples the most recent window of scheduled-agent activity, classifies the behavior against a Human-Autonomy Teaming taxonomy, and commits the result to the repository. It is deliberately honest about its limits: single-operator, classifications are model-derived, observation rather than controlled evaluation.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/platform-blueprint">platform-blueprint</a>
+            <span class="spec-tag">Apache-2.0 · docs</span>
+          </div>
+          <p>An engineering blueprint for designing, operating, and assuring platform systems: design patterns, reference architectures, and EU regulatory mapping (NIS2, CRA, DORA, GDPR, AI Act) with the ISO 27001 and 42001 families as references. Documentation rather than deployable code, written as specifications to implement.</p>
         </div>
       </div>
       <p class="repos-note">My other repos are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
