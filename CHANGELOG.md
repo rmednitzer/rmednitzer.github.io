@@ -1,3 +1,38 @@
+# Site Patch Changelog -- 2026-05-28 (batch 8: honesty & concision realignment)
+
+Reverted the batch-7 "High-Assurance Infrastructure Architecture & Systems
+Validation" positioning to an honest, concise profile at the site owner's
+request: Senior Linux & Platform Engineer, autodidact, open source by default.
+Copy was aligned with the owner's CVs (day-to-day production ops) without
+overindexing on them, and the AI/agent-governance and EU-regulatory material was
+reframed as homelab, open-source, and learning rather than professional
+high-assurance services. The audit also fixed two real defects (a broken link
+and a license mismatch). No build step, no JS added, no trackers; fonts stay
+self-hosted; all new CSS stays page-unique in the `index.html` `<head>`.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Retitled across `<title>`, description, OG/Twitter, and JSON-LD `jobTitle`/`description` to "Senior Linux & Platform Engineer" | Honest identity per the owner |
+| 2 | Removed the "Regulatory Trust Boundaries", "Invariant Matrix", and "Observability & Verification" sections | Cut overclaim; "keep it short." New flow: hero -> About -> Open-source projects -> Homelab -> Skills |
+| 3 | De-jargoned the hero: dropped thesis/register/deterministic-envelope copy; honest `.hero-meta` (focus / experience / approach) | Plain language |
+| 4 | Featured only relay-shell + agents (README-grounded, pre-1.0, Apache-2.0); linked the rest via github.com/rmednitzer | Owner: these two are the most mature; de-emphasise the simulators |
+| 5 | Replaced the 47-tag keyword dump with grouped Skills aligned to CV proficiency | Scannable, honest |
+| 6 | Trimmed JSON-LD `knowsAbout` to a defensible set; reduced `memberOf` to OCG + IEEE | Remove aspirational claims |
+| 7 | Fixed broken link: `sentinel` pointed at `/sentinel/` (404 -- no such directory) -> removed | Bug |
+| 8 | Footer code license GPLv3 -> Apache-2.0 (matches the LICENSE file) | Bug |
+| 9 | Trimmed page-unique CSS (removed `.boundaries`/`.boundary` and `.repo-item`; added the `.skills` grid) | Match new markup |
+
+## Other files
+
+| File | Change |
+|------|--------|
+| `legal.html` | Code license GPLv3 -> Apache-2.0; editorial-direction wording matched to a profile site |
+| `site.webmanifest` | `name`/`description` -> Senior Linux & Platform Engineer |
+| `README.md` | Tagline -> honest profile summary |
+| `CLAUDE.md` | Topic line updated to the new positioning |
+
 # Site Patch Changelog -- 2026-05-28 (batch 7: high-assurance position realignment)
 
 Structural realignment from generic "platform/infrastructure engineer" to

@@ -3,7 +3,7 @@
 ## Project
 
 Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Linux Infrastructure, Platform Operations, Systems Assurance — Kubernetes, GitOps, ISO 27001, EU regulatory compliance (NIS2, CRA, AI Act).
+Topic: Senior Linux & Platform Engineer — production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments; ISO 27001 auditor; open-source tooling (relay-shell, agents) and a self-run homelab.
 
 ## Stack
 

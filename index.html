@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Roman Mednitzer | High-Assurance Infrastructure Architecture &amp; Systems Validation</title>
+  <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="High-assurance infrastructure architecture and systems validation in Vienna, EU. Deterministic safety envelopes around stochastic AI runtimes: STPA hazard modeling, programmatic boundary enforcement, and append-only evidence chains under NIS2, CRA, DORA, and the EU AI Act.">
+  <meta name="description" content="Senior Linux & Platform Engineer in Vienna, AT. 10+ years running production Linux, virtualization, and Kubernetes/GitOps in regulated, business-critical environments. ISO 27001 auditor, mostly self-taught, open source by default.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark light">
@@ -13,11 +13,11 @@
   <meta name="author" content="Roman Mednitzer">
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Roman Mednitzer · High-Assurance Infrastructure Architecture &amp; Systems Validation">
+  <meta property="og:title" content="Roman Mednitzer · Senior Linux &amp; Platform Engineer">
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="High-assurance infrastructure architecture in Vienna, EU. Deterministic safety envelopes around stochastic AI runtimes: STPA hazard modeling, programmatic boundary enforcement, append-only evidence chains under NIS2, CRA, DORA, and the EU AI Act.">
+  <meta property="og:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, observability, and backup/DR in regulated environments. Open-source tooling: relay-shell, agents. Mostly self-taught.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_AT">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -26,8 +26,8 @@
   <meta property="og:image:width" content="400">
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roman Mednitzer · High-Assurance Infrastructure Architecture &amp; Systems Validation">
-  <meta name="twitter:description" content="High-assurance infrastructure architecture in Vienna, EU. Deterministic safety envelopes around stochastic AI runtimes under NIS2, CRA, DORA, and the EU AI Act.">
+  <meta name="twitter:title" content="Roman Mednitzer · Senior Linux &amp; Platform Engineer">
+  <meta name="twitter:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, and backup/DR in regulated environments; open-source tooling, mostly self-taught.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="/style.css">
 
   <style>
-    .page { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
+    .page { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem) 4rem; }
 
     .hero { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; margin-bottom: 2.5rem; }
 
@@ -79,14 +79,16 @@
       margin-top: .7rem;
       font-size: 1.05rem;
       color: var(--fg);
-      max-width: 52ch;
+      max-width: 54ch;
       line-height: 1.55;
     }
 
-    .hero-links {
-      display: flex; flex-wrap: wrap; gap: .5rem;
-      margin-top: .85rem;
-    }
+    /* config-style key/value strip */
+    .hero-meta { margin-top: .85rem; display: grid; grid-template-columns: max-content 1fr; gap: .25rem .9rem; max-width: 64ch; }
+    .hero-meta dt { font-family: var(--font-mono); font-size: .66rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .12rem; }
+    .hero-meta dd { margin: 0; font-size: .8rem; color: var(--fg); line-height: 1.45; }
+
+    .hero-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .95rem; }
 
     .btn {
       display: inline-flex; align-items: center; gap: .4rem;
@@ -106,7 +108,7 @@
     @media (max-width: 560px) {
       .hero { grid-template-columns: 1fr; justify-items: center; gap: 1rem; text-align: center; }
       .hero-text { display: flex; flex-direction: column; align-items: center; }
-      .hero-tagline { text-align: left; }
+      .hero-tagline, .hero-meta { text-align: left; }
       .hero-links { justify-content: center; }
     }
 
@@ -131,55 +133,25 @@
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
 
-    .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    /* featured-project cards */
+    .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: .85rem; }
     @media (min-width: 640px) { .matrix { grid-template-columns: 1fr 1fr; } }
 
-    .spec {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.1rem;
-      background: transparent;
-    }
-    .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .55rem; }
+    .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
+    .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
     .spec-head a { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
     .spec-head a:hover { color: var(--accent); }
     .spec-tag { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); white-space: nowrap; }
-    .spec dl { display: grid; grid-template-columns: max-content 1fr; gap: .3rem .8rem; margin: 0; }
-    .spec dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .12rem; }
-    .spec dd { margin: 0; font-size: .82rem; color: var(--fg); line-height: 1.45; }
+    .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: none; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
-    .repo-list { list-style: none; padding: 0; }
-    .section p + .repo-list { margin-top: .85rem; }
-    .repo-item {
-      display: block;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: .85rem 1.1rem;
-      min-height: 44px;
-      background: transparent;
-      transition: border-color .2s;
-    }
-    .repo-item:hover { border-color: var(--border-accent); text-decoration: none; }
-    .repo-name { font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
-    .repo-meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); margin-top: .2rem; }
-
-    .repos-note { margin-top: .85rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
-
-    /* hero metadata strip — config-style key/value */
-    .hero-meta { margin-top: .85rem; display: grid; grid-template-columns: max-content 1fr; gap: .25rem .9rem; max-width: 64ch; }
-    .hero-meta dt { font-family: var(--font-mono); font-size: .66rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .12rem; }
-    .hero-meta dd { margin: 0; font-size: .8rem; color: var(--fg); line-height: 1.45; }
-
-    /* framework -> mechanism boundary rows */
-    .boundaries { margin-top: .85rem; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .boundary { display: grid; grid-template-columns: 1fr; gap: .25rem; padding: .8rem 1rem; border-top: 1px solid var(--border); }
-    .boundary:first-child { border-top: 0; }
-    .boundary dt { font-family: var(--font-mono); font-size: .76rem; color: var(--accent); letter-spacing: .02em; }
-    .boundary dd { margin: 0; font-size: .85rem; color: var(--fg); line-height: 1.5; }
-    .boundary dd code { font-family: var(--font-mono); font-size: .92em; color: var(--fg-strong); background: var(--accent-dim); padding: .03em .3em; border-radius: 3px; }
-    @media (min-width: 640px) { .boundary { grid-template-columns: 13rem 1fr; gap: .3rem 1.2rem; align-items: start; } }
+    /* grouped skills */
+    .skills { display: grid; gap: .7rem; margin: 0; }
+    .skill-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
+    .skill-row dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .3rem; }
+    .skill-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
+    @media (min-width: 640px) { .skill-row { grid-template-columns: 9.5rem 1fr; gap: .3rem 1rem; align-items: start; } }
 
     @media (min-width: 561px) and (max-width: 768px) {
       .hero { gap: 1.25rem; }
@@ -192,9 +164,6 @@
       .section:nth-child(3) { animation-delay: .12s; }
       .section:nth-child(4) { animation-delay: .18s; }
       .section:nth-child(5) { animation-delay: .24s; }
-      .section:nth-child(6) { animation-delay: .30s; }
-      .section:nth-child(7) { animation-delay: .36s; }
-      .section:nth-child(8) { animation-delay: .42s; }
     }
   </style>
 </head>
@@ -210,13 +179,12 @@
       </picture>
       <div class="hero-text">
         <h1>Roman Mednitzer</h1>
-        <p class="hero-sub">Vienna, AT · High-Assurance Infrastructure Architecture &amp; Systems Validation</p>
-        <p class="hero-tagline">I put deterministic safety envelopes around stochastic AI and agent runtimes: STPA hazard modeling, programmatic authority boundaries, and append-only evidence chains — for EU-regulated, high-assurance environments.</p>
+        <p class="hero-sub">Vienna, AT · Senior Linux &amp; Platform Engineer</p>
+        <p class="hero-tagline">I run production Linux and Kubernetes infrastructure in regulated, business-critical environments, and build small open-source tools for the same kind of work. Mostly self-taught; open source by default.</p>
         <dl class="hero-meta">
-          <dt>locale</dt><dd>Vienna, AT · EU jurisdiction</dd>
-          <dt>register</dt><dd>defensive, security-first infrastructure</dd>
-          <dt>thesis</dt><dd>deterministic envelopes gating non-deterministic runtimes</dd>
-          <dt>methods</dt><dd>STPA hazard modeling · programmatic boundary enforcement · append-only evidence</dd>
+          <dt>focus</dt><dd>Linux · virtualization · Kubernetes/GitOps · observability · backup/DR</dd>
+          <dt>experience</dt><dd>10+ years in regulated &amp; business-critical environments · ISO 27001 auditor</dd>
+          <dt>approach</dt><dd>open source by default · mostly self-taught</dd>
         </dl>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
@@ -238,212 +206,117 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, including medical-device manufacturing: Linux, virtualisation, Kubernetes, observability, and backup/DR with verified restore — work that holds under change management and audit.</p>
-      <p>The through-line is constraining non-deterministic runtimes behind deterministic safety envelopes. Stochastic AI and agent loops are gated by behavioral contracts, tiered authority, and action budgets; failure paths fail closed; every action lands in an append-only, output-hashed evidence chain. Hazards are modeled with STPA before mechanism is chosen, and controls map directly to EU mandates (NIS2, CRA, DORA, the AI Act), backed by hands-on ISMS/BCM work and an ISO 27001 auditor qualification.</p>
-      <p>Bias: open source over closed, mostly Ubuntu and Red Hat; stack-agnostic where the AI integration runs over an API (local models plus the Claude, OpenAI, and Gemini APIs). The same discipline runs in a self-hosted homelab — governed execution, runtime control points, observability for LLM and agent workloads.</p>
+      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments — from radiation-therapy medical-device manufacturing to enterprise hybrid estates. Day to day that means Linux (Ubuntu, Red Hat, SLES, Rocky), virtualization (KVM, VMware), Kubernetes and GitOps (Argo CD), observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restore — the kind of work that has to hold up under change management and audit.</p>
+      <p>Most of it I taught myself. I hold an ISO 27001 ISMS Manager &amp; Auditor qualification (TÜV Austria) and have done hands-on ISMS/BCM and audit-prep work. I prefer open source over closed, and I learn by building — most of what follows started in a homelab.</p>
     </section>
 
-    <!-- ── Trust Boundaries ── -->
-    <section class="section" aria-labelledby="boundaries-h">
-      <h2 id="boundaries-h">Regulatory Trust Boundaries</h2>
-      <p>EU mandates treated as operational trust boundaries — each mapped to an enforced mechanism rather than a policy statement.</p>
-      <dl class="boundaries">
-        <div class="boundary">
-          <dt>NIS2 / ISO 27001</dt>
-          <dd>Append-only, output-hashed audit ledgers as forensic evidence chains — SHA-256 per call, output body never persisted; qualified-signature (QES) verification for ISMS records. ISO 27001 auditor-qualified.</dd>
-        </div>
-        <div class="boundary">
-          <dt>EU AI Act / CRA</dt>
-          <dd>Stochastic inference isolated to bound blast radius — Kubernetes Pod Security (restricted PSA, <code>seccompProfile: RuntimeDefault</code>, default-deny NetworkPolicy) for inference workloads, and bounded process execution (subprocess + <code>rlimit</code>) for agent skill contracts; capability/namespace isolation as an explicit extension point.</dd>
-        </div>
-        <div class="boundary">
-          <dt>AI Act high-risk / Machinery</dt>
-          <dd>STPA hazard modeling — losses to hazards to unsafe control actions — and inference-boundary contracts settled before mechanism is chosen (6dof-ascent-sim, mission-assurance, platform-blueprint).</dd>
-        </div>
-        <div class="boundary">
-          <dt>DORA</dt>
-          <dd>Operational resilience — verified-restore backup/DR, graceful-degradation and recovery-verification patterns, and fail-closed transports under degraded conditions.</dd>
-        </div>
-        <div class="boundary">
-          <dt>GDPR</dt>
-          <dd>PII redaction at the telemetry boundary (OpenTelemetry collector) and secret redaction in audit records before anything is persisted.</dd>
-        </div>
-      </dl>
-    </section>
-
-    <!-- ── Invariant Matrix ── -->
-    <section class="section" aria-labelledby="matrix-h">
-      <h2 id="matrix-h">Invariant Matrix</h2>
-      <p>Core constraints of the two systems I maintain in the open, stated as invariants and verified against each repository.</p>
+    <!-- ── Open-source projects ── -->
+    <section class="section" aria-labelledby="projects-h">
+      <h2 id="projects-h">Open-source projects</h2>
+      <p>Two things I maintain in the open. Both are personal, pre-1.0, and Apache-2.0 — built to understand the problem properly, not to sell anything.</p>
       <div class="matrix">
-        <div class="spec">
-          <div class="spec-head">
-            <a href="https://github.com/rmednitzer/agents">agents</a>
-            <span class="spec-tag">Apache-2.0 · pre-1.0</span>
-          </div>
-          <dl>
-            <dt>Boundary</dt><dd>Authority boundary between models, agents, and tools; untrusted skill bundles load with contracts off, pinned by an immutable ref plus sha256.</dd>
-            <dt>Control</dt><dd>Behavioral contracts (pre/invariant/post) and action budgets (steps, tokens, wall-clock, tool-calls) on one guard gate: approve, reject, or require-approval, with pause/resume and a circuit breaker.</dd>
-            <dt>Isolation</dt><dd>Namespace-bound memory; role and attribute ACLs, MVCC version tokens, AES-256-GCM at rest; opt-in subprocess and rlimit skill execution.</dd>
-            <dt>Audit</dt><dd>OpenTelemetry events, Jensen-Shannon drift, and self-attesting run-provenance with an offline verification gate.</dd>
-          </dl>
-        </div>
         <div class="spec">
           <div class="spec-head">
             <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
             <span class="spec-tag">Apache-2.0 · v0.1.0</span>
           </div>
-          <dl>
-            <dt>Boundary</dt><dd>Scoped service account, no sandbox by design; HTTP bound to loopback behind a CIDR Caddy/TLS edge, with optional OAuth 2.1 (DCR, PKCE).</dd>
-            <dt>Control</dt><dd>Central runner, denylist-first policy, tiered authority 0 to 3 (open, guarded, readonly), privileged-cue flagging; the transport fails closed.</dd>
-            <dt>Isolation</dt><dd>Per-call timeout and output caps, bounded session count and buffers, idle and lifetime reaping; output bodies are never persisted.</dd>
-            <dt>Audit</dt><dd>Append-only JSONL, one line per call: SHA-256 of the output (never the body), byte length, exit code, tier, and request and client id; secrets redacted.</dd>
-          </dl>
+          <p>A governed MCP server for the shell and SSH path. Four-tier authority (open / guarded / read-only), an append-only audit that hashes outputs with SHA-256 instead of storing them, automatic secret redaction, and bounded execution — timeouts, output caps, idle session reaping. One interface for local shell, SSH, SFTP, port-forwarding, and parallel commands across a fleet.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/agents">agents</a>
+            <span class="spec-tag">Apache-2.0 · pre-1.0</span>
+          </div>
+          <p>An execution substrate that sits between model output and real system capabilities. Behavioral contracts (pre / invariant / post), action budgets (steps, tokens, wall-clock, per-tool), a single guard gate that approves, rejects, or asks first, and namespace-isolated encrypted memory across SQLite, Redis, S3, and DynamoDB.</p>
         </div>
       </div>
-    </section>
-
-    <!-- ── Observability & Verification ── -->
-    <section class="section" aria-labelledby="observ-h">
-      <h2 id="observ-h">Observability &amp; Verification</h2>
-      <p>The telemetry and verification loop that keeps unattended execution legible and reversible.</p>
-      <dl class="boundaries">
-        <div class="boundary">
-          <dt>Metrics &amp; traces</dt>
-          <dd>OpenTelemetry into VictoriaMetrics, surfaced in Grafana; per-call timing and resource use captured. Agent action budgets bound wall-clock, tokens, steps, and tool-calls per run, separating deterministic gate overhead from stochastic inference time.</dd>
-        </div>
-        <div class="boundary">
-          <dt>Drift</dt>
-          <dd>Jensen-Shannon distributional drift on agent behavior, emitted as structured OTel-ready events per step (agents).</dd>
-        </div>
-        <div class="boundary">
-          <dt>Evidence</dt>
-          <dd>Append-only, output-hashed audit pipelines (relay-shell, nous MCP surface) and self-attesting run-provenance behind an offline verification gate (agents).</dd>
-        </div>
-        <div class="boundary">
-          <dt>Regression</dt>
-          <dd>Property-based and fuzz suites gating lights-out execution loops — relay-shell fuzz tests, nous estimator property tests — run in CI; Wazuh SIEM across the homelab fleet.</dd>
-        </div>
-      </dl>
+      <p class="repos-note">More — Ansible automation, OpenTofu/KVM modules, an ISO 27001 ISMS, a Helm AI-inference stack, and assorted experiments — at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
     </section>
 
     <!-- ── Homelab ── -->
     <section class="section" aria-labelledby="homelab-h">
       <h2 id="homelab-h">Homelab</h2>
-      <p>A self-run, all-open-source fleet of mostly Ubuntu hosts. Local LLM inference on both NVIDIA (llama.cpp and llama-swap) and AMD ROCm (Ollama), fronted by a self-built MCP gateway on Hetzner that drives PydanticAI agents, OSINT feeds, and CVE and EU-regulatory intel.</p>
-      <p>Underneath it: a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh for observability and SIEM; ZFS with Sanoid snapshots; a Tailscale mesh. Same change-control and evidence discipline as the regulated environments.</p>
+      <p>A self-run, all-open-source fleet, mostly Ubuntu. Local LLM inference on NVIDIA (llama.cpp, llama-swap) and AMD ROCm (Ollama), driving PydanticAI agents through a self-built MCP gateway on Hetzner. Underneath: a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh; ZFS with Sanoid snapshots; a Tailscale/WireGuard mesh.</p>
+      <p>It's where I try things before they're tidy — the same backup and change discipline as the day job, minus the change-advisory board. relay-shell and agents both started here.</p>
     </section>
 
-    <!-- ── Open-Source ── -->
-    <section class="section" aria-labelledby="open-source-h">
-      <h2 id="open-source-h">Open-Source</h2>
-      <p>Published work on GitHub. Some grows out of the homelab; some stands on its own. Apache-2.0 unless noted.</p>
-      <ul class="repo-list">
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/platform-blueprint">
-            <span class="repo-name">platform-blueprint</span>
-            <p class="repo-meta">Reference architectures, design patterns, and EU compliance mappings (NIS2, CRA, DORA, AI Act, ISO 27001/42001) for assuring platform and infrastructure systems. Documentation, not deployable code · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/agents">
-            <span class="repo-name">agents</span>
-            <p class="repo-meta">Execution substrate for governed agents — behavioral contracts (pre/invariant/post), action budgets, a single guard gate (approve / reject / require-approval), circuit breaker, and namespace-isolated encrypted memory — to constrain non-deterministic inference loops · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/relay-shell">
-            <span class="repo-name">relay-shell</span>
-            <p class="repo-meta">Async MCP server for shell and SSH: tiered-authority policy, deny-list-first fail-closed transport, secret redaction, and an append-only output-hashed audit. Unsandboxed by design — the service account is the trust boundary · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/nous">
-            <span class="repo-name">nous</span>
-            <p class="repo-meta">Simulator for a man-portable AI inference appliance in contested, disconnected environments: a hand-rolled mission-posture state machine, recursive estimators (Kalman/EKF/UKF/particle), an audited MCP tool surface, and NATO/open-standard interop (CoT/TAK, MISB KLV, STANAG 4774) · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/mission-assurance">
-            <span class="repo-name">mission-assurance</span>
-            <p class="repo-meta">Governance-as-code for EU-regulated on-premises and hybrid operations, including STPA unsafe-control-action analysis in the operator and cyber-physical domains · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="/sentinel/">
-            <span class="repo-name">sentinel</span>
-            <p class="repo-meta">Continuous HAT failure-mode corpus · twice-daily cadence · Apache 2.0</p>
-          </a>
-        </li>
-        <li>
-          <a class="repo-item" href="https://github.com/rmednitzer/automation">
-            <span class="repo-name">automation</span>
-            <p class="repo-meta">Infrastructure automation and configuration management with Ansible · Apache 2.0</p>
-          </a>
-        </li>
-      </ul>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
-    </section>
-
-    <!-- ── Technologies ── -->
-    <section class="section" aria-labelledby="tech-h">
-      <h2 id="tech-h">Technologies</h2>
-      <div class="tags">
-        <span class="tag tag--accent">Linux</span>
-        <span class="tag tag--accent">Ubuntu</span>
-        <span class="tag">Red Hat</span>
-        <span class="tag tag--accent">Open Source</span>
-        <span class="tag">KVM</span>
-        <span class="tag">ZFS</span>
-        <span class="tag tag--accent">Kubernetes</span>
-        <span class="tag">Talos</span>
-        <span class="tag">Helm</span>
-        <span class="tag">Docker</span>
-        <span class="tag">OpenShift</span>
-        <span class="tag">GitOps</span>
-        <span class="tag">Ansible</span>
-        <span class="tag">OpenTofu</span>
-        <span class="tag">CI/CD</span>
-        <span class="tag">GitLab</span>
-        <span class="tag tag--accent">MCP</span>
-        <span class="tag tag--accent">PydanticAI</span>
-        <span class="tag">llama.cpp</span>
-        <span class="tag">Ollama</span>
-        <span class="tag">Claude</span>
-        <span class="tag">OpenAI</span>
-        <span class="tag">Gemini</span>
-        <span class="tag">SearXNG</span>
-        <span class="tag">CUDA</span>
-        <span class="tag">ROCm</span>
-        <span class="tag">LLMOps</span>
-        <span class="tag">VictoriaMetrics</span>
-        <span class="tag">OpenTelemetry</span>
-        <span class="tag">Grafana</span>
-        <span class="tag">Prometheus</span>
-        <span class="tag">Zabbix</span>
-        <span class="tag">Wazuh</span>
-        <span class="tag">Tailscale</span>
-        <span class="tag">Backup/DR</span>
-        <span class="tag tag--accent">ISO 27001</span>
-        <span class="tag">ISO 42001</span>
-        <span class="tag tag--accent">NIS2</span>
-        <span class="tag">GDPR</span>
-        <span class="tag">EU AI Act</span>
-        <span class="tag">CRA</span>
-        <span class="tag">DORA</span>
-        <span class="tag tag--accent">STPA</span>
-        <span class="tag tag--accent">Boundary Contracts</span>
-        <span class="tag">AI Governance</span>
-        <span class="tag">SBOM</span>
-        <span class="tag">SLSA</span>
-        <span class="tag">Sigstore</span>
-      </div>
+    <!-- ── Skills ── -->
+    <section class="section" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <div class="skill-row">
+          <dt>Linux &amp; virt</dt>
+          <dd>
+            <span class="tag tag--accent">Linux</span>
+            <span class="tag tag--accent">Ubuntu</span>
+            <span class="tag">Red Hat</span>
+            <span class="tag">SLES · Rocky</span>
+            <span class="tag">KVM</span>
+            <span class="tag">VMware</span>
+            <span class="tag">ZFS</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Containers / GitOps</dt>
+          <dd>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">Talos</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Helm</span>
+            <span class="tag">Argo CD</span>
+            <span class="tag">GitOps</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Automation / IaC</dt>
+          <dd>
+            <span class="tag">Ansible</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">OpenTofu</span>
+            <span class="tag">GitLab CI/CD</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Observability</dt>
+          <dd>
+            <span class="tag">Prometheus</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">Zabbix</span>
+            <span class="tag">OpenTelemetry</span>
+            <span class="tag">VictoriaMetrics</span>
+            <span class="tag">Checkmk</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Resilience / security</dt>
+          <dd>
+            <span class="tag">Backup/DR</span>
+            <span class="tag">Veeam</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag tag--accent">ISO 27001</span>
+            <span class="tag">ISMS/BCM</span>
+            <span class="tag">NIS2</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Homelab / learning</dt>
+          <dd>
+            <span class="tag">local LLMs</span>
+            <span class="tag">llama.cpp</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">MCP</span>
+            <span class="tag">PydanticAI</span>
+            <span class="tag">LLMOps</span>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <footer role="contentinfo">
       <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>
-      <span>Code: GPLv3 · Content: &copy; Roman Mednitzer</span>
-      <span class="impressum"><a href="/legal">Legal Notice & Privacy</a></span>
+      <span>Code: Apache-2.0 · Content: &copy; Roman Mednitzer</span>
+      <span class="impressum"><a href="/legal">Legal Notice &amp; Privacy</a></span>
     </footer>
   </main>
 
@@ -459,8 +332,8 @@
       "name": "Roman Mednitzer",
       "givenName": "Roman",
       "familyName": "Mednitzer",
-      "jobTitle": "High-Assurance Infrastructure Architect",
-      "description": "High-assurance infrastructure architecture and systems validation in Vienna, EU. Deterministic safety envelopes around stochastic AI runtimes: STPA hazard modeling, programmatic boundary enforcement, tiered authority, and append-only evidence chains aligned with ISO 27001, NIS2, CRA, DORA, and the EU AI Act.",
+      "jobTitle": "Senior Linux & Platform Engineer",
+      "description": "Senior Linux & Platform Engineer in Vienna, AT. Ten-plus years operating production Linux, virtualization, and Kubernetes/GitOps in regulated, business-critical environments; backup/DR with verified restore, ISMS/BCM, and ISO 27001 auditor-qualified. Mostly self-taught; open source by default.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
@@ -470,9 +343,7 @@
       },
       "memberOf": [
         {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},
-        {"@type":"Organization","name":"IEEE","url":"https://www.ieee.org/"},
-        {"@type":"Organization","name":"IEEE Systems, Man and Cybernetics Society","url":"https://www.ieeesmc.org/"},
-        {"@type":"Organization","name":"IEEE Computational Intelligence Society","url":"https://cis.ieee.org/"}
+        {"@type":"Organization","name":"IEEE","url":"https://www.ieee.org/"}
       ],
       "email": "mailto:r.mednitzer@ieee.org",
       "sameAs": [
@@ -480,23 +351,23 @@
         "https://github.com/rmednitzer"
       ],
       "address": {"@type": "PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},
-      "areaServed": "EU",
       "knowsLanguage": ["de", "en"],
       "knowsAbout": [
         "Linux",
         "Ubuntu",
+        "Red Hat Enterprise Linux",
+        "SUSE Linux Enterprise Server",
         "Open Source Software",
-        "Windows Server",
-        "Data Center Operations",
         "Virtualization",
         "KVM",
+        "VMware",
         "ZFS",
-        "Talos Linux",
+        "Data Center Operations",
         "Platform Engineering",
         "Site Reliability Engineering",
         "Kubernetes",
         "OpenShift",
-        "Red Hat Enterprise Linux",
+        "Talos Linux",
         "Docker",
         "Helm",
         "Argo CD",
@@ -512,42 +383,22 @@
         "Zabbix",
         "VictoriaMetrics",
         "OpenTelemetry",
+        "Checkmk",
         "Wazuh",
         "Incident Management",
         "Backup and Recovery",
         "Disaster Recovery",
         "Business Continuity",
         "Change Management",
-        "Supply Chain Security",
-        "SBOM",
-        "SLSA",
-        "Sigstore",
         "ISO 27001",
         "ISMS",
         "NIS2",
-        "GDPR",
-        "EU AI Act",
-        "DORA",
-        "Cyber Resilience Act",
-        "Machinery Regulation",
-        "AI Governance",
-        "MLOps",
-        "LLMOps",
         "Local Large Language Models",
         "llama.cpp",
         "Ollama",
-        "Anthropic Claude",
-        "OpenAI",
-        "Google Gemini",
-        "PydanticAI",
         "Model Context Protocol",
-        "Retrieval-Augmented Generation",
-        "Tailscale",
-        "Human-Autonomy Teaming",
-        "Behavioral Contracts",
-        "Boundary Contracts",
-        "Cyber-Physical Systems",
-        "STPA"
+        "PydanticAI",
+        "LLMOps"
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",

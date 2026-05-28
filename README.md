@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Production Linux, Kubernetes, and GitOps in regulated environments. Audit-defensible operations under ISO 27001 and NIS2.
+Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, and backup/DR in regulated environments; open-source tooling, mostly self-taught.
 
 ---
 
