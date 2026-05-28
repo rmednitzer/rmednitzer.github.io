@@ -1,3 +1,58 @@
+# Site Patch Changelog -- 2026-05-28 (batch 3: realign to actual fleet + open-source preference)
+
+Realigns the site to what is actually run day-to-day, verified against the
+operator's own running fleet. That fleet is all open source and mostly Ubuntu,
+and the technologies below are the ones the public site now names: local LLM
+inference (llama.cpp/llama-swap on NVIDIA, Ollama on AMD ROCm), a self-built MCP
+gateway with PydanticAI agents, and a single-node Talos K8s cluster running
+VictoriaMetrics + OpenTelemetry + Grafana observability and a Wazuh SIEM. Per
+user direction, closed-source tools that only appear in the regulated day job
+(VMware, Veeam, SEP sesam, Checkmk, Azure, Windows Server, Tanzu) are
+de-emphasised; the day job stays acknowledged honestly but is no longer the
+site's identity. No design/CSS-file changes.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | About para 2: added a sentence stating the preference (open source over closed, mostly Ubuntu and Red Hat, stack-agnostic wherever AI integration is viable over an API) | User direction: "just because I have to work with something professionally doesn't mean I enjoy it." Encodes the stated preference verbatim in intent |
+| 2 | Homelab note: rewrote to the verified fleet (all-open-source, mostly-Ubuntu; llama.cpp/llama-swap on NVIDIA + Ollama on AMD ROCm; MCP gateway fronting PydanticAI agents and OSINT/CVE/EU-regulatory intel; Talos K8s with VictoriaMetrics/OTel/Wazuh; ZFS+Sanoid; Tailscale mesh). Replaced "WireGuard" with "Tailscale" (the actual tool) | Accuracy: matches the operator's own verified fleet state. Foregrounds the open-source/local-AI reality |
+| 3 | Domains card 1 (Infrastructure & Reliability): replaced "virtualisation (VMware, KVM)" with "Production Linux (Ubuntu, Red Hat), KVM and libvirt virtualisation, ZFS with Sanoid snapshots" | VMware is day-job only; the fleet uses KVM/libvirt + ZFS/Sanoid (open source) |
+| 4 | Domains card 2 (Platform Engineering): replaced "Argo CD … Terraform/OpenTofu" with "Kubernetes (Talos), Helm, OpenTofu and Ansible … container and local-inference pipelines" | Matches the fleet (Talos/Helm/OpenTofu/Ansible). Dropped Terraform (now BSL/source-available) in favour of OpenTofu (open source) |
+| 5 | Domains card 4 (AI Assurance): grounded the prongs in the real stack (self-hosted models behind a governed MCP gateway, PydanticAI agents under runtime control points) | Concrete artifacts over abstractions; matches relay-shell and agents |
+| 6 | Current Focus: rewrote as an honest two-part split — "by day" the regulated enterprise estate (generic: virtualisation, backup/DR, monitoring, change management under ISO 27001/NIS2), "by preference and after hours" the all-open-source mostly-Ubuntu AI fleet | User direction: acknowledge the day job without making the tolerated closed stack the identity. Removed the specific closed-product names (VMware vSphere, Veeam, SEP sesam, Checkmk, Tanzu) |
+| 7 | Technologies: removed closed day-job-only tags (Windows Server, VMware, Veeam, Azure, Checkmk) and Terraform (BSL); added open-source/AI-fleet tags (Ubuntu, Open Source, Talos, MCP, PydanticAI, llama.cpp, Ollama, SearXNG, CUDA, ROCm, VictoriaMetrics, Tailscale); re-tiered accents to identity (Linux, Ubuntu, Open Source, Kubernetes, MCP, PydanticAI, ISO 27001, NIS2). Dropped Argo CD/Backup-DR/GitOps accents | Tags read as the toolkit/identity he leads with; align with actual practice + stated open-source preference |
+| 8 | JSON-LD knowsAbout: removed the closed-product brand names (VMware, Veeam, Microsoft Azure, Checkmk); added Ubuntu, Open Source Software, Talos Linux, VictoriaMetrics, llama.cpp, Ollama, PydanticAI, Model Context Protocol, Retrieval-Augmented Generation, Local Large Language Models, Tailscale | Keep structured data consistent with the realigned identity; generic capabilities (Virtualization, Backup and Recovery, Windows Server) retained as honest knowledge |
+
+---
+
+# Site Patch Changelog -- 2026-05-28 (batch 2: ops-first alignment + homelab framing)
+
+Realigns site copy with the proven strengths in the provided CV/profile PDFs
+(ops-first) and frames the AI-assurance work as homelab R&D. The pinned-repo
+list is unchanged (already mirrors the 6 GitHub pins). No design/CSS-file
+changes; the homelab note reuses `.section p` plus one page-local spacing rule.
+
+## `index.html`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | About para 2: replaced the "seam between platform operations and systems assurance / policy-enforced delivery / runtime control points" framing with a grounded line (evidence chains and controls mapped to ISO 27001 / NIS2, ISMS/BCM work, ISO 27001 auditor qualification), then explicitly labels the agentic-AI/observability work as self-run homelab exploration | User direction: ops-first, grounded. AI-assurance is a clearly-labeled forward/R&D track, not established practice. ISMS/BCM and the ISO 27001 Manager & Auditor qualification are proven in the CV |
+| 2 | Open-Source Work: renamed heading to "Homelab & Open-Source" and added one intro paragraph describing the real homelab (single-node Talos K8s with VictoriaMetrics/OpenTelemetry/Wazuh, NVIDIA RTX local-LLM compute, ZFS + Sanoid, WireGuard, self-hosted MCP gateway on Hetzner). Repo list unchanged | User direction: "pinned repos are my main homelab work"; add a short homelab note. Content sourced from the CV free-text |
+| 3 | Added page-local rule `.section p + .writing-list { margin-top: .85rem; }` to the index `<style>` block | Spacing between the new intro paragraph and the repo list; kept page-unique layout out of shared `style.css` per conventions |
+| 4 | Domains card 4: retitled "Assurance & AI Governance" → "AI Assurance (Homelab R&D)" and reworded to read as exploratory work ("a self-run track exploring…", "early work, not a service line"); kept supply-chain fundamentals (SBOM/SLSA/Sigstore) | User direction: ops-first. The card previously read as a claimed service line; the PDFs support this only as forward/homelab work |
+| 5 | Technologies: added proven CV tools (`Red Hat`, `CI/CD`, `GitLab`, `Checkmk`, `ZFS`, `Veeam`, `Azure`); accented `Backup/DR`; de-accented `Prometheus` | Align tags with the CV "Kenntnisse" list and the current-role stack (Checkmk/Veeam are current monitoring/backup). Prometheus is not in the German CV (Checkmk/Zabbix/Grafana are the day-job monitors), so it stays as a plain tag |
+| 6 | Current Focus: named the current-role stack (Windows Server + Linux SLES/Rocky, VMware vSphere, Veeam/SEP sesam, Checkmk, Tanzu Kubernetes + Argo CD GitOps) | More accurate to what is actually done day-to-day per the CV; kept employer unnamed per existing site style |
+| 7 | JSON-LD: added `ZFS`, `Red Hat Enterprise Linux`, `CI/CD`, `GitLab`, `Microsoft Azure`, `Checkmk`, `Veeam`, `ISMS` to `knowsAbout`; bumped `dateModified` to 2026-05-28 | Keep structured data consistent with the new tags; existing AI/assurance entries remain valid "knows about" claims |
+
+## `sitemap.xml`
+
+| # | Change | Rationale |
+|---|--------|-----------|
+| 1 | Bumped `/` `lastmod` to 2026-05-28 | Index content changed substantively |
+
+---
+
 # Site Patch Changelog -- 2026-05-28 (batch 1: open-source list mirrors pinned repos)
 
 ## `index.html`
