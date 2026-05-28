@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, and backup/DR in regulated environments; open-source tooling, mostly self-taught.
+Senior Linux & Platform Engineer in Vienna. Ten-plus years running production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments. Open-source tooling, self-taught, open source by default.
 
 ---
 

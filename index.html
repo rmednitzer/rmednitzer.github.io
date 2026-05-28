@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Senior Linux & Platform Engineer in Vienna, AT. 10+ years running production Linux, virtualization, and Kubernetes/GitOps in regulated, business-critical environments. ISO 27001 auditor, mostly self-taught, open source by default.">
+  <meta name="description" content="Senior Linux & Platform Engineer in Vienna. Ten-plus years running production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments. ISO 27001 auditor, self-taught, open source by default.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark light">
@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, observability, and backup/DR in regulated environments. Open-source tooling: relay-shell, agents. Mostly self-taught.">
+  <meta property="og:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments. Open-source tooling: relay-shell and agents.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_AT">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -27,7 +27,7 @@
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer · Senior Linux &amp; Platform Engineer">
-  <meta name="twitter:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, Kubernetes/GitOps, and backup/DR in regulated environments; open-source tooling, mostly self-taught.">
+  <meta name="twitter:description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -180,7 +180,7 @@
       <div class="hero-text">
         <h1>Roman Mednitzer</h1>
         <p class="hero-sub">Vienna, AT · Senior Linux &amp; Platform Engineer</p>
-        <p class="hero-tagline">I run production Linux and Kubernetes infrastructure in regulated, business-critical environments, and build small open-source tools for the same kind of work. Mostly self-taught; open source by default.</p>
+        <p class="hero-tagline">I run production Linux, virtualization, and Kubernetes infrastructure in regulated, business-critical environments, and build small open-source tools for the same problems. Mostly self-taught. Open source by default.</p>
         <dl class="hero-meta">
           <dt>focus</dt><dd>Linux · virtualization · Kubernetes/GitOps · observability · backup/DR</dd>
           <dt>experience</dt><dd>10+ years in regulated &amp; business-critical environments · ISO 27001 auditor</dd>
@@ -206,28 +206,28 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, from radiation-therapy medical-device manufacturing to enterprise hybrid estates. Day to day that means Linux (Ubuntu, Red Hat, SLES, Rocky), virtualization (KVM, VMware), Kubernetes and GitOps (Argo CD), observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restore, all of which has to hold up under change management and audit.</p>
-      <p>Most of it I taught myself. I have done hands-on ISMS/BCM and audit-prep work. I prefer open source over closed, and I learn by building.</p>
+      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, from radiation-therapy manufacturing to enterprise hybrid estates. Day to day, that means Linux (Ubuntu, Red Hat, SLES, Rocky), virtualization (KVM, VMware), Kubernetes and GitOps (Argo CD), observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restores, all under change control and audit.</p>
+      <p>I taught most of it to myself by building. Alongside platform work, I have done hands-on ISMS/BCM and audit-prep work, and I generally prefer open source to closed source.</p>
     </section>
 
     <!-- ── Open-source projects ── -->
     <section class="section" aria-labelledby="projects-h">
       <h2 id="projects-h">Open-source projects</h2>
-      <p>Two things I maintain in the open. Both are personal, pre-1.0, and Apache-2.0, built to understand the problem properly rather than to sell anything.</p>
+      <p>Two projects I maintain in the open. Both are personal, pre-1.0, and Apache-2.0, built to understand real operating problems properly rather than to sell anything.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
             <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
             <span class="spec-tag">Apache-2.0 · v0.1.0</span>
           </div>
-          <p>A governed MCP server for the shell and SSH path. Four-tier authority (open / guarded / read-only), an append-only audit that hashes outputs with SHA-256 instead of storing them, automatic secret redaction, and bounded execution: timeouts, output caps, and idle session reaping. One interface for local shell, SSH, SFTP, port-forwarding, and parallel commands across a fleet.</p>
+          <p>A governed MCP server for shell and SSH work. It adds four authority modes (open, guarded, read-only, and deny), append-only auditing with SHA-256 output hashes instead of raw output storage, automatic secret redaction, and bounded execution through timeouts, output caps, and idle-session reaping. One interface covers local shell, SSH, SFTP, port forwarding, and parallel fleet commands.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <a href="https://github.com/rmednitzer/agents">agents</a>
             <span class="spec-tag">Apache-2.0 · pre-1.0</span>
           </div>
-          <p>An execution substrate that sits between model output and real system capabilities. Behavioral contracts (pre / invariant / post), action budgets (steps, tokens, wall-clock, per-tool), a single guard gate that approves, rejects, or asks first, and namespace-isolated encrypted memory across SQLite, Redis, S3, and DynamoDB.</p>
+          <p>An execution substrate that sits between model output and real system capabilities. It enforces behavioral contracts (pre, invariant, post), action budgets (steps, tokens, wall-clock, per-tool), a single guard gate that can approve, reject, or ask first, and namespace-isolated encrypted memory across SQLite, Redis, S3, and DynamoDB.</p>
         </div>
       </div>
       <p class="repos-note">Ansible automation, OpenTofu/KVM modules, an ISO 27001 ISMS, a Helm AI-inference stack, and assorted experiments are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
@@ -236,8 +236,8 @@
     <!-- ── Homelab ── -->
     <section class="section" aria-labelledby="homelab-h">
       <h2 id="homelab-h">Homelab</h2>
-      <p>A self-run, all-open-source fleet, mostly Ubuntu. Local LLM inference on NVIDIA (llama.cpp, llama-swap) and AMD ROCm (Ollama), driving PydanticAI agents through a self-built MCP gateway on Hetzner. Underneath: a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh; ZFS with Sanoid snapshots; a Tailscale/WireGuard mesh.</p>
-      <p>It's where I try things before they're tidy, with the same backup and change discipline as the day job, minus the change-advisory board. relay-shell and agents both started here.</p>
+      <p>A self-run, all-open-source fleet, mostly Ubuntu. Local LLM inference runs on NVIDIA (llama.cpp, llama-swap) and AMD ROCm (Ollama), feeding PydanticAI agents through a self-built MCP gateway on Hetzner. Underneath is a single-node Talos Kubernetes cluster running VictoriaMetrics, OpenTelemetry, and Wazuh, plus ZFS with Sanoid snapshots and a Tailscale/WireGuard mesh.</p>
+      <p>It's where I try things before they are tidy, with the same backup and change discipline as the day job, minus the change-advisory board. relay-shell and agents both started there.</p>
     </section>
 
     <!-- ── Skills ── -->
@@ -333,7 +333,7 @@
       "givenName": "Roman",
       "familyName": "Mednitzer",
       "jobTitle": "Senior Linux & Platform Engineer",
-      "description": "Senior Linux & Platform Engineer in Vienna, AT. Ten-plus years operating production Linux, virtualization, and Kubernetes/GitOps in regulated, business-critical environments; backup/DR with verified restore, and ISMS/BCM.",
+      "description": "Senior Linux & Platform Engineer in Vienna. Ten-plus years operating production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated, business-critical environments, plus hands-on ISMS/BCM and audit-prep work.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
