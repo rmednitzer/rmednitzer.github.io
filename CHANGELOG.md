@@ -1,25 +1,25 @@
 # Site Patch Changelog -- 2026-05-28 (batch 3: realign to actual fleet + open-source preference)
 
-Realigns the site to what is actually run day-to-day, verified by inspecting
-the live fleet via the Vertex MCP gateway (fleet-inventory + snapshots +
-talos-axiom + service-health skills). The fleet is all open source and mostly
-Ubuntu: local LLM inference (llama.cpp/llama-swap on NVIDIA, Ollama on AMD
-ROCm), a self-built MCP gateway with PydanticAI agents and OSINT/CVE/regulatory
-intel, and a single-node Talos K8s cluster running VictoriaMetrics + OTel +
-Grafana observability and a Wazuh SIEM. Per user direction, closed-source tools
-that only appear in the regulated day job (VMware, Veeam, SEP sesam, Checkmk,
-Azure, Windows Server, Tanzu) are de-emphasised; the day job stays acknowledged
-honestly but is no longer the site's identity. No design/CSS-file changes.
+Realigns the site to what is actually run day-to-day, verified against the
+operator's own running fleet. That fleet is all open source and mostly Ubuntu,
+and the technologies below are the ones the public site now names: local LLM
+inference (llama.cpp/llama-swap on NVIDIA, Ollama on AMD ROCm), a self-built MCP
+gateway with PydanticAI agents, and a single-node Talos K8s cluster running
+VictoriaMetrics + OpenTelemetry + Grafana observability and a Wazuh SIEM. Per
+user direction, closed-source tools that only appear in the regulated day job
+(VMware, Veeam, SEP sesam, Checkmk, Azure, Windows Server, Tanzu) are
+de-emphasised; the day job stays acknowledged honestly but is no longer the
+site's identity. No design/CSS-file changes.
 
 ## `index.html`
 
 | # | Change | Rationale |
 |---|--------|-----------|
 | 1 | About para 2: added a sentence stating the preference (open source over closed, mostly Ubuntu and Red Hat, stack-agnostic wherever AI integration is viable over an API) | User direction: "just because I have to work with something professionally doesn't mean I enjoy it." Encodes the stated preference verbatim in intent |
-| 2 | Homelab note: rewrote to the verified fleet (all-open-source, mostly-Ubuntu; llama.cpp/llama-swap on NVIDIA + Ollama on AMD ROCm; MCP gateway fronting PydanticAI agents and OSINT/CVE/EU-regulatory intel; Talos K8s with VictoriaMetrics/OTel/Wazuh; ZFS+Sanoid; Tailscale mesh). Replaced "WireGuard" with "Tailscale" (the actual tool) | Accuracy: matches fleet-inventory + talos-axiom skills. Foregrounds the open-source/local-AI reality |
+| 2 | Homelab note: rewrote to the verified fleet (all-open-source, mostly-Ubuntu; llama.cpp/llama-swap on NVIDIA + Ollama on AMD ROCm; MCP gateway fronting PydanticAI agents and OSINT/CVE/EU-regulatory intel; Talos K8s with VictoriaMetrics/OTel/Wazuh; ZFS+Sanoid; Tailscale mesh). Replaced "WireGuard" with "Tailscale" (the actual tool) | Accuracy: matches the operator's own verified fleet state. Foregrounds the open-source/local-AI reality |
 | 3 | Domains card 1 (Infrastructure & Reliability): replaced "virtualisation (VMware, KVM)" with "Production Linux (Ubuntu, Red Hat), KVM and libvirt virtualisation, ZFS with Sanoid snapshots" | VMware is day-job only; the fleet uses KVM/libvirt + ZFS/Sanoid (open source) |
 | 4 | Domains card 2 (Platform Engineering): replaced "Argo CD … Terraform/OpenTofu" with "Kubernetes (Talos), Helm, OpenTofu and Ansible … container and local-inference pipelines" | Matches the fleet (Talos/Helm/OpenTofu/Ansible). Dropped Terraform (now BSL/source-available) in favour of OpenTofu (open source) |
-| 5 | Domains card 4 (AI Assurance): grounded the prongs in the real stack (self-hosted models behind a governed MCP gateway, PydanticAI agents under runtime control points) | Concrete artifacts over abstractions; matches relay-shell/agents/vertex |
+| 5 | Domains card 4 (AI Assurance): grounded the prongs in the real stack (self-hosted models behind a governed MCP gateway, PydanticAI agents under runtime control points) | Concrete artifacts over abstractions; matches relay-shell and agents |
 | 6 | Current Focus: rewrote as an honest two-part split — "by day" the regulated enterprise estate (generic: virtualisation, backup/DR, monitoring, change management under ISO 27001/NIS2), "by preference and after hours" the all-open-source mostly-Ubuntu AI fleet | User direction: acknowledge the day job without making the tolerated closed stack the identity. Removed the specific closed-product names (VMware vSphere, Veeam, SEP sesam, Checkmk, Tanzu) |
 | 7 | Technologies: removed closed day-job-only tags (Windows Server, VMware, Veeam, Azure, Checkmk) and Terraform (BSL); added open-source/AI-fleet tags (Ubuntu, Open Source, Talos, MCP, PydanticAI, llama.cpp, Ollama, SearXNG, CUDA, ROCm, VictoriaMetrics, Tailscale); re-tiered accents to identity (Linux, Ubuntu, Open Source, Kubernetes, MCP, PydanticAI, ISO 27001, NIS2). Dropped Argo CD/Backup-DR/GitOps accents | Tags read as the toolkit/identity he leads with; align with actual practice + stated open-source preference |
 | 8 | JSON-LD knowsAbout: removed the closed-product brand names (VMware, Veeam, Microsoft Azure, Checkmk); added Ubuntu, Open Source Software, Talos Linux, VictoriaMetrics, llama.cpp, Ollama, PydanticAI, Model Context Protocol, Retrieval-Augmented Generation, Local Large Language Models, Tailscale | Keep structured data consistent with the realigned identity; generic capabilities (Virtualization, Backup and Recovery, Windows Server) retained as honest knowledge |
