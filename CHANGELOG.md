@@ -1,3 +1,20 @@
+# Site Patch Changelog -- 2026-06-12 (batch 14: surface verifiable credentials and the nous project)
+
+Owner direction: the profile must stay honest, no overstatements. Every
+addition in this batch surfaces facts already published elsewhere by the
+owner: languages and memberships come from the page's own JSON-LD, "ISO
+27001 auditor" already ships in site.webmanifest's description, the
+Hardening tag is backed by the public `automation` repo (Ansible fleet
+hardening aligned to NIS2, CRA, GDPR, ISO/IEC 27001), and the new `nous`
+card states explicitly that the project is simulation only. Deliberately
+not added: anything about clearances, citizenship, professional air-gapped
+operations, or a CV (owner-only facts).
+
+| File | Change |
+|------|--------|
+| `index.html` | Meta description extended with the regulated-environments phrase already used in og:description plus "open-source work on governed automation and edge AI"; hero experience row now reads "ISO 27001 auditor" (matches the manifest); new hero-meta rows "languages: German · English" and "member of: IEEE · Austrian Computer Society (OCG)" (both from the page's JSON-LD); sixth project card `nous` (Apache-2.0, pre-1.0, simulation-based digital twin of an edge-AI appliance with CoT/TAK, STANAG 4774/4778, MISB KLV, NMEA 0183, SensorThings interop; "Simulation throughout; no fielded hardware"); Resilience/Security skill row moved from fifth to second and gains a Hardening tag; JSON-LD knowsAbout gains "Edge AI"; ampersands in description/og:description/twitter:description attribute values encoded as `&amp;` for consistency with the escaped titles (review suggestion; raw `&` + space is valid HTML5, change is cosmetic) |
+| `legal.html` | Same escaping consistency pass: og:title and twitter:title now use `&amp;` |
+
 # Site Patch Changelog -- 2026-06-12 (batch 13: feature aiops-mcp in projects)
 
 Swapped the fifth open-source project card at the owner's direction:
