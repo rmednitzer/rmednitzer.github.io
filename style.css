@@ -151,5 +151,3 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   .page--article .article-body { animation: fadeUp .5s ease both; }
   .page--article .article-body { animation-delay: .06s; }
 }
-
-.repo-list li + li { margin-top: .5rem; }
