@@ -9,9 +9,7 @@
       "Bash(npm test)",
       "Bash(npm test:*)",
       "Bash(npx html-validate:*)",
-      "Bash(npx -y html-validate:*)",
-      "Bash(hugo:*)",
-      "Bash(jekyll:*)"
+      "Bash(npx -y html-validate:*)"
     ],
     "deny": [
       "Read(./.env)",
