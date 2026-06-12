@@ -1,3 +1,19 @@
+# Site Patch Changelog -- 2026-06-12 (batch 17: rebalance highlighted projects)
+
+Owner-approved rebalance of the open-source cards from a 5-of-6 AI/agent
+list to a 3 + 3 split: the platform-engineering pillar (the actual job
+title) was previously absent. In: `infra` (OpenTofu KVM/Talos IaC),
+`automation` (Ansible hardening mapped to NIS2/CRA/GDPR/ISO 27001), and
+`isms` (code-managed ISMS, marked early-stage; it substantiates the
+hero's "ISO 27001 ISMS implementation" claim). Out (still on GitHub via
+the profile link): `agents`, `core-graph`, `sentinel`. Card copy,
+licenses, and maturity verified against each repo README on 2026-06-12;
+all three are Apache-2.0.
+
+| File | Change |
+|------|--------|
+| `index.html` | Project grid reordered and recomposed to infra, automation, isms, relay-shell, aiops-mcp, nous; section intro updated to describe the span ("from the code that runs and hardens my own fleet to governed-agent and edge-AI research"); relay-shell, aiops-mcp, and nous cards unchanged |
+
 # Site Patch Changelog -- 2026-06-12 (batch 16: layout and design refinement)
 
 Visual, typographic, and interaction polish; no copy changes, favicon
