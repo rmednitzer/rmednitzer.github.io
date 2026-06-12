@@ -7,6 +7,13 @@ command(s) that produced the evidence. Items marked [UNVERIFIED] could
 not be confirmed from this environment and are asserted as unknown, not
 as fact.
 
+Reading convention: finding bodies are the point-in-time record at the
+reference commit and are never rewritten. Later dispositions are
+appended inside the affected finding as dated "Post-audit addendum"
+lines. Where a body says "no change", "not applied", or "goes to the
+owner", that describes the state during the audit pass; the addendum
+below it, when present, is the current disposition.
+
 ## Scope and method
 
 - Dependency audit: not applicable; zero dependency manifests and zero
@@ -283,7 +290,8 @@ Enumerated from the full file listing and page sources:
 - Location: `index.html:22`, `legal.html:19`.
 - Evidence: file read; en_AT is syntactically valid for Open Graph but
   absent from the common consumer locale lists (en_US, de_AT, ...).
-  Consumers fall back gracefully. Logged only; no change.
+  Consumers fall back gracefully. Logged only; no change during the
+  audit pass.
 - Post-audit addendum (2026-06-12): owner approved the switch; both
   pages now use en_US (B-08).
 
