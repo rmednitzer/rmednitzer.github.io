@@ -13,9 +13,9 @@ unknowable. See ADR 0001 for the process.
 | [0004](0004-github-pages-hosting-from-repo-root.md) | GitHub Pages hosting from the repo root, Jekyll disabled | accepted | 2026-06-12 (backfilled) |
 | [0005](0005-single-shared-stylesheet-with-page-scoped-extras.md) | Single shared stylesheet plus page-unique head styles | accepted | 2026-06-12 (backfilled) |
 | [0006](0006-renovate-for-dependency-automation.md) | Renovate (best-practices preset) for dependency automation | accepted | 2026-06-04 (backfilled) |
-| [0007](0007-meta-csp-for-github-pages.md) | Hash-based meta CSP for both pages | proposed | 2026-06-12 |
-| [0008](0008-prune-or-regenerate-orphaned-binary-assets.md) | Prune or regenerate orphaned portrait and font binaries | proposed | 2026-06-12 |
-| [0009](0009-ci-html-validation-on-pull-requests.md) | Run html-validate in CI on pull requests | proposed | 2026-06-12 |
+| [0007](0007-meta-csp-for-github-pages.md) | Hash-based meta CSP for both pages | accepted | 2026-06-12 |
+| [0008](0008-prune-or-regenerate-orphaned-binary-assets.md) | Prune or regenerate orphaned portrait and font binaries | accepted | 2026-06-12 |
+| [0009](0009-ci-html-validation-on-pull-requests.md) | Run html-validate in CI on pull requests | accepted | 2026-06-12 |
 
 The 2026-06-12 audit's phase 4 fixes were single-line, behavior-
 preserving corrections; the one structural follow-up (footers moved out
