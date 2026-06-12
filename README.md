@@ -20,6 +20,11 @@ Senior Linux & Platform Engineer in Vienna. Ten-plus years running production Li
 - `.nojekyll` disables Jekyll processing on GitHub Pages
 - GitHub Pages serves from the repo root
 
+### License & security
+
+- Code: [Apache-2.0](LICENSE) · Content: © Roman Mednitzer (see the [legal notice](https://rmednitzer.github.io/legal))
+- Vulnerability reports: see [SECURITY.md](SECURITY.md) or [`/.well-known/security.txt`](.well-known/security.txt)
+
 ---
 
 Keep private details out of this repo (no phone, address, or day-level dates).

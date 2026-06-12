@@ -1,3 +1,24 @@
+# Site Patch Changelog -- 2026-06-12 (batch 12: full audit pass)
+
+Full repository audit: validation baseline, security and quality findings
+register, small validation-driven fixes, documentation sync, ADR backfill,
+and a prioritized backlog. Reports live under `audit/`, decisions under
+`docs/adr/`, deferred work in `BACKLOG.md`. Registry note: the 2026-05-28
+PRs #43 (open-source projects expanded from 2 to 5 cards) and #44 (hero
+wording and skills casing) shipped without changelog batches at the time;
+recorded here, history not rewritten.
+
+| File | Change |
+|------|--------|
+| `index.html` | Encoded the raw `&` in "MITRE ATT&CK" (restores a clean `html-validate` run); dropped redundant `role="contentinfo"` from the footer (parity with batch 11 on the legal page); added `aria-hidden="true"` to the three decorative contact-button SVGs; after review, moved the footer out of `<main>` (sibling inside the `.page` wrapper) so it maps natively to the contentinfo landmark; JSON-LD `dateModified` bumped to 2026-06-12 |
+| `legal.html` | Footer moved out of `<main>` into the `.page` wrapper (same landmark fix as `index.html`; batch 11 had left this page without a contentinfo landmark too) |
+| `style.css` | Moved `scroll-behavior: smooth` behind the `prefers-reduced-motion` gate; removed the dead `.repo-list` rule (its article pages were deleted 2026-05-14); corrected the article-layout comment |
+| `sitemap.xml` | `/legal` lastmod refreshed 2026-04-29 to 2026-05-28 to match the file's last change; both entries then bumped to 2026-06-12 with this batch's page changes |
+| `.well-known/security.txt` | Added GitHub private vulnerability reporting as the first `Contact:` entry (aligns with SECURITY.md) |
+| `CLAUDE.md` | Layout map now lists all tracked repo files; local-validation note added for the `/legal` extensionless quirk |
+| `README.md` | Added license and security-policy pointers |
+| `docs/adr/`, `audit/`, `BACKLOG.md` | New: six accepted ADRs (0001 plus five backfills), three proposed ADRs (meta CSP, asset pruning, CI validation), audit phase reports, prioritized backlog |
+
 # Site Patch Changelog -- 2026-05-28 (batch 11: legal page validation cleanup)
 
 Resolved the remaining `html-validate` errors on the legal page without changing

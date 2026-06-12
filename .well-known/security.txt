@@ -1,3 +1,4 @@
+Contact: https://github.com/rmednitzer/rmednitzer.github.io/security/advisories/new
 Contact: mailto:r.mednitzer@ieee.org
 Canonical: https://rmednitzer.github.io/.well-known/security.txt
 Policy: https://rmednitzer.github.io/legal
