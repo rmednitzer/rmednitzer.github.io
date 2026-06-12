@@ -284,6 +284,8 @@ Enumerated from the full file listing and page sources:
 - Evidence: file read; en_AT is syntactically valid for Open Graph but
   absent from the common consumer locale lists (en_US, de_AT, ...).
   Consumers fall back gracefully. Logged only; no change.
+- Post-audit addendum (2026-06-12): owner approved the switch; both
+  pages now use en_US (B-08).
 
 ### Q-14 .gitignore targets a directory that no longer exists
 - Severity: info. Effort: none.
@@ -301,6 +303,8 @@ Enumerated from the full file listing and page sources:
   things to avoid. The allow entries were added deliberately in #47
   (`c81f903`, 2026-06-08), so this is flagged for owner review rather
   than changed. Backlog (tooling section).
+- Post-audit addendum (2026-06-12): owner chose removal; the hugo and
+  jekyll allow entries are deleted (B-07).
 
 ### Q-16 No automated validation anywhere in the pipeline
 - Severity: low (process). Effort: M.
@@ -323,6 +327,9 @@ Enumerated from the full file listing and page sources:
   sentence was dropped in a later rewrite. CLAUDE.md forbids changing
   legal.html boilerplate without confirming legal context, so this goes
   to the owner: backlog B-06. No change in this pass.
+- Post-audit addendum (2026-06-12): owner confirmed the restoration;
+  the Art. 77 sentence naming the Austrian DPA is back in the privacy
+  section (B-06).
 
 ## Severity totals after phases 2 and 3
 
