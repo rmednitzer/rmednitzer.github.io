@@ -1,8 +1,9 @@
 # Run html-validate in CI on every pull request
 
-- Status: proposed
-- Date: 2026-06-12
-- Deciders: repository owner (decision pending)
+- Status: accepted
+- Date: 2026-06-12 (proposed and accepted the same day; owner approved
+  the backlog burn-down)
+- Deciders: repository owner
 - Source: audit finding Q-16, backlog B-05
 
 ## Context and problem statement
@@ -30,12 +31,14 @@ would only check, never build.
 
 ## Decision outcome
 
-Pending owner decision. Option 1 is recommended; it is about 20 lines
-of YAML, introduces the repo's first workflow (which finally gives
-Renovate something to maintain), and turns the project's own
-documented validator into an enforced invariant. The workflow file was
-deliberately not added during the audit because introducing CI is a
-structural change reserved for the owner.
+Option 1, accepted and implemented as `.github/workflows/validate.yml`:
+pull_request and push-to-main triggers, `permissions: contents: read`,
+`actions/checkout` pinned by digest (v6.0.3), html-validate pinned at
+11.5.3 (the audited version). Two implementation deviations from the
+sketch above: XML well-formedness uses the Python stdlib parser instead
+of xmllint (libxml2-utils is not guaranteed on runners, python3 is),
+and the workflow also parses the JSON manifest/settings and the JSON-LD
+blocks, plus the CSP hash check added by ADR 0007.
 
 ### Consequences (option 1)
 

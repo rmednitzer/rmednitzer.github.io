@@ -27,6 +27,7 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
+├── .github/workflows/validate.yml    CI: html-validate + data-file checks on PRs
 ├── .claude/settings.json       Claude Code permission policy for this repo
 ├── .gitignore                  Ignores ad-hoc local script tooling (scripts/)
 ├── renovate.json5              Renovate dependency-update config
@@ -80,7 +81,9 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 
 ## Local validation
 
-No build or test pipeline. Validate by serving locally and checking pages in a browser:
+No build step. CI (`.github/workflows/validate.yml`) runs html-validate
+and the data-file checks on every pull request; keep it green. For local
+checks, serve and click through:
 
 ```sh
 python3 -m http.server 8000

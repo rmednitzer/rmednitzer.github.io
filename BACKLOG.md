@@ -29,20 +29,6 @@ changes, and legal wording are deliberately owner decisions.
 - Dependencies: none.
 - Suggested owner role: repository admin.
 
-## Reliability
-
-### B-05 Add CI: html-validate plus sitemap lint on pull requests
-- Finding: Q-16. Severity: low. Effort: M.
-- Rationale: the only documented validator is manual; finding Q-01 (a
-  validator error live in production for two weeks) is the concrete
-  failure case.
-- Suggested approach: ADR 0009 (proposed) option 1: one workflow,
-  `permissions: contents: read`, actions pinned by digest, running
-  `npx -y html-validate index.html legal.html` and
-  `xmllint --noout sitemap.xml`.
-- Dependencies: none (Renovate then maintains the pins, ADR 0006).
-- Suggested owner role: site owner / maintainer.
-
 ## Quality
 
 ### B-03 Prune or regenerate orphaned binary assets
