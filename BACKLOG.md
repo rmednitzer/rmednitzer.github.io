@@ -8,16 +8,6 @@ changes, and legal wording are deliberately owner decisions.
 
 ## Security
 
-### B-01 Decide on a meta Content-Security-Policy
-- Findings: S-01, S-02. Severity: low. Effort: M.
-- Rationale: GitHub Pages allows no response headers; a hash-based meta
-  CSP is the only client-side hardening available, but every inline
-  edit then becomes a hash-maintenance event that fails closed.
-- Suggested approach: read ADR 0007 (proposed); if accepted, land it
-  together with B-05 so CI verifies the hashes.
-- Dependencies: ideally B-05 first.
-- Suggested owner role: site owner (security trade-off call).
-
 ### B-02 Verify platform security settings and calendar the security.txt renewal
 - Findings: S-03 (renewal note), S-04. Severity: info. Effort: S.
 - Rationale: four settings are invisible from the repo and unverified:

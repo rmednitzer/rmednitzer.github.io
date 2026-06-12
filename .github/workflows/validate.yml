@@ -39,3 +39,6 @@ jobs:
               for b in blocks:
                   json.loads(b)
           EOF
+
+      - name: CSP hashes match inline content
+        run: python3 .github/scripts/check_csp_hashes.py
