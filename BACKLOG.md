@@ -31,18 +31,6 @@ changes, and legal wording are deliberately owner decisions.
 
 ## Quality
 
-### B-03 Prune or regenerate orphaned binary assets
-- Findings: Q-07, Q-08. Severity: info. Effort: S (delete) to M
-  (regenerate WebP).
-- Rationale: the "full size" WebP is a byte-identical duplicate of the
-  400 px file; the Outfit 300 font pair is referenced by no rule; the
-  800 px PNG master is unreferenced but documented as intentional.
-- Suggested approach: ADR 0008 (proposed) option 1: keep the PNG
-  master, delete the duplicate WebP and the 300-weight pair plus their
-  @font-face rules, update CLAUDE.md wording and add a CHANGELOG batch.
-- Dependencies: owner decision; cwebp only if regenerating.
-- Suggested owner role: site owner.
-
 ### B-08 Review og:locale value
 - Finding: Q-13. Severity: info. Effort: S.
 - Rationale: `en_AT` is syntactically fine but absent from common Open
