@@ -82,8 +82,10 @@ p { text-wrap: pretty; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-/* Skip link becomes visible while keyboard-focused */
-a.sr-only:focus-visible {
+/* Skip link becomes visible while focused; plain :focus (not :focus-visible)
+   so the reveal works in every browser, and a clipped link cannot be
+   mouse-focused anyway */
+a.sr-only:focus {
   position: fixed;
   top: .75rem;
   left: .75rem;
