@@ -8,16 +8,6 @@ changes, and legal wording are deliberately owner decisions.
 
 ## Security
 
-### B-01 Decide on a meta Content-Security-Policy
-- Findings: S-01, S-02. Severity: low. Effort: M.
-- Rationale: GitHub Pages allows no response headers; a hash-based meta
-  CSP is the only client-side hardening available, but every inline
-  edit then becomes a hash-maintenance event that fails closed.
-- Suggested approach: read ADR 0007 (proposed); if accepted, land it
-  together with B-05 so CI verifies the hashes.
-- Dependencies: ideally B-05 first.
-- Suggested owner role: site owner (security trade-off call).
-
 ### B-02 Verify platform security settings and calendar the security.txt renewal
 - Findings: S-03 (renewal note), S-04. Severity: info. Effort: S.
 - Rationale: four settings are invisible from the repo and unverified:
@@ -29,33 +19,7 @@ changes, and legal wording are deliberately owner decisions.
 - Dependencies: none.
 - Suggested owner role: repository admin.
 
-## Reliability
-
-### B-05 Add CI: html-validate plus sitemap lint on pull requests
-- Finding: Q-16. Severity: low. Effort: M.
-- Rationale: the only documented validator is manual; finding Q-01 (a
-  validator error live in production for two weeks) is the concrete
-  failure case.
-- Suggested approach: ADR 0009 (proposed) option 1: one workflow,
-  `permissions: contents: read`, actions pinned by digest, running
-  `npx -y html-validate index.html legal.html` and
-  `xmllint --noout sitemap.xml`.
-- Dependencies: none (Renovate then maintains the pins, ADR 0006).
-- Suggested owner role: site owner / maintainer.
-
 ## Quality
-
-### B-03 Prune or regenerate orphaned binary assets
-- Findings: Q-07, Q-08. Severity: info. Effort: S (delete) to M
-  (regenerate WebP).
-- Rationale: the "full size" WebP is a byte-identical duplicate of the
-  400 px file; the Outfit 300 font pair is referenced by no rule; the
-  800 px PNG master is unreferenced but documented as intentional.
-- Suggested approach: ADR 0008 (proposed) option 1: keep the PNG
-  master, delete the duplicate WebP and the 300-weight pair plus their
-  @font-face rules, update CLAUDE.md wording and add a CHANGELOG batch.
-- Dependencies: owner decision; cwebp only if regenerating.
-- Suggested owner role: site owner.
 
 ### B-08 Review og:locale value
 - Finding: Q-13. Severity: info. Effort: S.

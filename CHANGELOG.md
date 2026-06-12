@@ -1,3 +1,19 @@
+# Site Patch Changelog -- 2026-06-12 (batch 18: backlog burn-down B-05, B-03, B-01)
+
+Owner-approved implementation of three audit backlog items in dependency
+order: CI validation first, then asset pruning, then the meta CSP whose
+hash maintenance the new CI guards. ADRs 0007, 0008, and 0009 flip from
+proposed to accepted.
+
+| File | Change |
+|------|--------|
+| `.github/workflows/validate.yml` | New, the repo's first workflow: html-validate@11.5.3 on both pages, sitemap XML parse, manifest/settings JSON parse, JSON-LD parse, and the CSP hash check; `permissions: contents: read`, checkout pinned by digest (v6.0.3) |
+| `.github/scripts/check_csp_hashes.py` | New: recomputes every bare inline script/style hash and fails CI when the page's meta CSP no longer lists it |
+| `index.html`, `legal.html` | Hash-based meta Content-Security-Policy (default-src 'none'; self-only images, styles, fonts, manifest; hashed inline year script and index style block; placed before all subresources) |
+| `profile_roman-mednitzer.webp`, `fonts/outfit-latin-300-normal.woff2`, `fonts/outfit-latin-ext-300-normal.woff2` | Deleted: the "full size" WebP was byte-identical to the 400px file and the 300-weight pair was referenced by no rule (both re-verified before deletion); their two @font-face blocks removed; the 800px PNG master stays |
+| `CLAUDE.md` | Layout map gains the workflow; local-validation section now points at CI; portrait notes match the pruned inventory |
+| `docs/adr/`, `BACKLOG.md`, `audit/02-security-findings.md` | ADRs 0007/0008/0009 accepted and index updated; B-01/B-03/B-05 removed from the backlog; post-audit addenda recorded on findings S-01, Q-07, Q-08, Q-16 |
+
 # Site Patch Changelog -- 2026-06-12 (batch 17: rebalance highlighted projects)
 
 Owner-approved rebalance of the open-source cards from a 5-of-6 AI/agent

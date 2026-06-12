@@ -1,8 +1,9 @@
 # Prune or regenerate the orphaned portrait and font binaries
 
-- Status: proposed
-- Date: 2026-06-12
-- Deciders: repository owner (decision pending)
+- Status: accepted
+- Date: 2026-06-12 (proposed and accepted the same day; owner approved
+  the backlog burn-down)
+- Deciders: repository owner
 - Source: audit findings Q-07 and Q-08, backlog B-03
 
 ## Context and problem statement
@@ -34,11 +35,13 @@ gated as an owner decision, so nothing was removed):
 
 ## Decision outcome
 
-Pending owner decision. Option 1 is recommended: it removes 29584 bytes
-of misleading assets (duplicate WebP + unused fonts), keeps the PNG
-master, and requires updating the CLAUDE.md "two sizes" note plus a
-CHANGELOG batch. Visitor-facing behavior does not change under any
-option (none of these files is ever served to a visitor today).
+Option 1, accepted and executed: the duplicate WebP and the two Outfit
+300 files (29584 bytes total) are deleted along with their @font-face
+rules, the 800 px PNG master is kept, and CLAUDE.md's portrait notes
+now describe the real inventory. The duplicate-hash and zero-reference
+evidence was re-verified immediately before deletion. Visitor-facing
+behavior does not change (none of these files was ever served). All
+deleted bytes remain recoverable from git history.
 
 ### Consequences (option 1)
 

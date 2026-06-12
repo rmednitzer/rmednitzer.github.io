@@ -62,6 +62,10 @@ Enumerated from the full file listing and page sources:
   breaks the year script and every copy edit to inline content becomes a
   CSP maintenance event. See ADR 0007 (proposed) and backlog B-01.
 - Effort: M.
+- Post-audit addendum (2026-06-12): implemented. ADR 0007 accepted; a
+  hash-based meta CSP now ships on both pages and CI verifies the
+  hashes on every pull request (ADR 0009). frame-ancestors remains an
+  accepted residual.
 
 ### S-02 Inline script and style constrain any future CSP
 - Severity: info.
@@ -224,6 +228,8 @@ Enumerated from the full file listing and page sources:
   the 800 px PNG as the documented source-of-truth and delete the
   duplicate WebP, or regenerate a real 800 px WebP. Backlog B-03,
   ADR 0008 (proposed).
+- Post-audit addendum (2026-06-12): ADR 0008 accepted and executed; the
+  duplicate WebP is deleted, the 800 px PNG master kept.
 
 ### Q-08 Unused Outfit 300 font faces and files
 - Severity: info. Effort: S (deletion) gated as an owner decision.
@@ -235,6 +241,8 @@ Enumerated from the full file listing and page sources:
   fetch fonts lazily, so the files are never downloaded by visitors;
   the cost is repo weight and a misleading fonts.css. Backlog B-03,
   ADR 0008 (proposed).
+- Post-audit addendum (2026-06-12): ADR 0008 accepted and executed; the
+  300-weight files and their @font-face rules are deleted.
 
 ### Q-09 CHANGELOG missing batches for the two latest site-content PRs
 - Severity: info. Effort: S.
@@ -302,6 +310,9 @@ Enumerated from the full file listing and page sources:
   production precisely because nothing runs it. Recommended: a minimal
   GitHub Actions workflow running html-validate on pull requests.
   Backlog B-05, ADR 0009 (proposed).
+- Post-audit addendum (2026-06-12): implemented. ADR 0009 accepted;
+  `.github/workflows/validate.yml` runs html-validate plus XML, JSON,
+  JSON-LD, and CSP-hash checks on every pull request.
 
 ### Q-17 GDPR rights paragraph omits the supervisory-authority complaint right
 - Severity: info (legal completeness, owner decision). Effort: S.

@@ -1,8 +1,9 @@
 # Add a hash-based meta Content-Security-Policy to both pages
 
-- Status: proposed
-- Date: 2026-06-12
-- Deciders: repository owner (decision pending)
+- Status: accepted
+- Date: 2026-06-12 (proposed and accepted the same day; owner approved
+  the backlog burn-down with ADR 0009 landing first)
+- Deciders: repository owner
 - Source: audit findings S-01 and S-02, backlog B-01
 
 ## Context and problem statement
@@ -33,13 +34,17 @@ against platform-level compromise, not a fix for an existing hole.
 
 ## Decision outcome
 
-Pending owner decision. The audit did not apply option 1 because every
-future edit to the inline style block or year script silently breaks
-the page or the script for visitors (a wrong hash fails closed), which
-trades a low-likelihood risk for a recurring operational hazard on a
-hand-edited site with no CI. If ADR 0009 (CI validation) is accepted
-first, a CI step can recompute and verify the hashes, removing the main
-argument against option 1.
+Option 1, accepted and implemented after ADR 0009 landed, which removed
+the main argument against it: `.github/scripts/check_csp_hashes.py`
+recomputes the hashes of every bare inline `<script>`/`<style>` block
+on both pages and fails CI when a hash is missing from the page's meta
+CSP, so silent breakage cannot reach main through a pull request. Both
+pages carry one canonical policy: `default-src 'none'; base-uri 'none';
+form-action 'none'; img-src 'self'; style-src 'self' 'sha256-...';
+script-src 'sha256-...'; font-src 'self'; manifest-src 'self'`. The
+style hash is unused on legal.html (which has no inline style block)
+and harmless there; frame-ancestors remains inexpressible via meta and
+stays an accepted residual (documented in the audit register, S-01).
 
 ### Consequences (if option 1 or 2 is adopted)
 

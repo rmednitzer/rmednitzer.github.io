@@ -23,10 +23,11 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── robots.txt                  Crawler directives
 ├── site.webmanifest            PWA manifest
 ├── favicon.{svg,ico}           Favicons (+ favicon-{32,180,192,512}.png)
-├── profile_roman-mednitzer*    Profile portraits (PNG + WebP, 400px + full)
+├── profile_roman-mednitzer*    Portraits (400px PNG + WebP; 800px PNG master)
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
+├── .github/workflows/validate.yml    CI: html-validate + data-file checks on PRs
 ├── .claude/settings.json       Claude Code permission policy for this repo
 ├── .gitignore                  Ignores ad-hoc local script tooling (scripts/)
 ├── renovate.json5              Renovate dependency-update config
@@ -58,7 +59,7 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ### Assets
 
 - **Fonts:** load only from `fonts/`. Never reference Google Fonts or other CDNs. When adding a weight, add the WOFF2 file, the `@font-face` rule in `fonts/fonts.css`, and (if it's a primary weight) a `<link rel="preload">` in each page.
-- **Images:** prefer WebP with a PNG fallback. Optimise before committing. Profile portraits exist in two sizes (`-400` and full).
+- **Images:** prefer WebP with a PNG fallback. Optimise before committing. Profile portraits: 400px PNG + WebP serve the page; the 800px PNG is the unreferenced master (ADR 0008).
 - **OG images:** the site OG image is the profile portrait (`profile_roman-mednitzer-400.png`).
 - **Favicons:** `favicon.svg` is the primary; PNG fallbacks at 32/180/192/512. Update all if rebranding.
 
@@ -80,7 +81,9 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 
 ## Local validation
 
-No build or test pipeline. Validate by serving locally and checking pages in a browser:
+No build step. CI (`.github/workflows/validate.yml`) runs html-validate
+and the data-file checks on every pull request; keep it green. For local
+checks, serve and click through:
 
 ```sh
 python3 -m http.server 8000
