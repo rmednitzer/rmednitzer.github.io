@@ -27,7 +27,15 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
+├── .claude/settings.json       Claude Code permission policy for this repo
+├── .gitignore                  Ignores ad-hoc local script tooling (scripts/)
+├── renovate.json5              Renovate dependency-update config
+├── docs/adr/                   Architecture decision records (MADR format)
+├── audit/                      Audit reports (2026-06-12 full pass)
+├── BACKLOG.md                  Prioritized deferred findings and proposals
 ├── CHANGELOG.md                Site patch log (append-only, dated batches)
+├── SECURITY.md                 Vulnerability reporting policy
+├── LICENSE                     Apache-2.0 (code; content is rights-reserved)
 └── README.md                   Public README (page index for repo visitors)
 ```
 
@@ -78,6 +86,9 @@ No build or test pipeline. Validate by serving locally and checking pages in a b
 python3 -m http.server 8000
 # open http://localhost:8000/
 ```
+
+Note: extensionless URLs resolve only on GitHub Pages. Locally, `/legal`
+returns 404; open `/legal.html` instead.
 
 For HTML/structured-data sanity, paste a built page into the [Rich Results Test](https://search.google.com/test/rich-results) or run `npx -y html-validate <file.html>` if you want a quick lint.
 
