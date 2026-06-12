@@ -1,3 +1,17 @@
+# Site Patch Changelog -- 2026-06-12 (batch 19: backlog close-out B-06, B-07, B-08, B-09)
+
+Owner decisions collected and applied. The audit backlog is now down to
+a single item, B-02 (repository-settings verification and the
+security.txt renewal), which needs owner access to GitHub Settings.
+
+| File | Change |
+|------|--------|
+| `legal.html` | Privacy section: restored the GDPR Art. 77 sentence naming the Austrian DPA (Österreichische Datenschutzbehörde, public authority address and dsb@dsb.gv.at), as carried by the pre-2026-04 revision; og:locale en_AT to en_US |
+| `index.html` | og:locale en_AT to en_US (absent from consumer locale lists; Austria stays signalled in copy and JSON-LD address) |
+| `.claude/settings.json` | Removed `Bash(hugo:*)` and `Bash(jekyll:*)` allowances to match the no-build convention |
+| `BACKLOG.md` | B-06/B-07/B-08 resolved; B-09 closed without creating CONTRIBUTING.md (deliberate: personal site, no contributions solicited); resolution log added; only B-02 remains |
+| `audit/02-security-findings.md` | Post-audit addenda on findings Q-13, Q-15, Q-17 |
+
 # Site Patch Changelog -- 2026-06-12 (batch 18: backlog burn-down B-05, B-03, B-01)
 
 Owner-approved implementation of three audit backlog items in dependency
