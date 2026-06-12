@@ -7,7 +7,8 @@
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source work on governed automation and edge AI.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#0a0e13">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
   <meta name="color-scheme" content="dark light">
   <meta name="google-site-verification" content="DuSGwK_Ch4kYoa39aXgkJQZ9ev7Csbfyv4KLcs6iszo">
   <meta name="author" content="Roman Mednitzer">
@@ -39,6 +40,7 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/style.css">
 
@@ -129,6 +131,9 @@
       color: var(--accent);
       margin-bottom: .85rem;
     }
+    /* terminal-style prefix; alt-text syntax keeps it silent for screen readers
+       and the rule fails safe (no prefix) where unsupported */
+    .section h2::before { content: '// ' / ''; color: var(--muted); }
 
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
@@ -177,7 +182,7 @@
     <header class="hero">
       <picture>
         <source srcset="profile_roman-mednitzer-400.webp" type="image/webp">
-        <img class="avatar" src="profile_roman-mednitzer-400.png" alt="Portrait of Roman Mednitzer" width="120" height="120" loading="eager" decoding="async">
+        <img class="avatar" src="profile_roman-mednitzer-400.png" alt="Portrait of Roman Mednitzer" width="120" height="120" loading="eager" decoding="async" fetchpriority="high">
       </picture>
       <div class="hero-text">
         <h1>Roman Mednitzer</h1>

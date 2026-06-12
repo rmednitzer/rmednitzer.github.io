@@ -1,3 +1,18 @@
+# Site Patch Changelog -- 2026-06-12 (batch 16: layout and design refinement)
+
+Visual, typographic, and interaction polish; no copy changes, favicon
+unchanged per owner direction. All colour work stays inside the existing
+token system: the new print palette re-maps the same custom properties the
+dark and light palettes already use. Closes backlog item B-04 (audit
+finding Q-12).
+
+| File | Change |
+|------|--------|
+| `style.css` | `color-scheme: dark light` on `:root`; body font-size 16px to 1rem so user browser defaults are respected; background grid fades toward the page bottom via `mask-image`; in-paragraph links underlined (1px, offset, border-accent colour) so links no longer rely on colour alone; global `:focus-visible` outline in accent; `::selection` in accent; `text-wrap: balance` for headings and `text-wrap: pretty` for paragraphs; skip link now becomes visible while keyboard-focused; print block with ink-safe token re-map, grid hidden, links underlined |
+| `index.html` | Paired light/dark `theme-color` metas; DM Mono 400 preload (mono renders above the fold); `fetchpriority="high"` on the avatar (LCP); terminal-style `// ` prefix on section headings via `::before` with alt-text syntax (silent for screen readers, fails safe to no prefix where unsupported) |
+| `legal.html` | Paired light/dark `theme-color` metas; DM Mono 400 preload |
+| `BACKLOG.md` | B-04 (light theme-color meta) removed: implemented in this batch |
+
 # Site Patch Changelog -- 2026-06-12 (batch 15: correct ISO 27001 role wording)
 
 Owner correction: he is not an ISO 27001 auditor; he is a systems engineer

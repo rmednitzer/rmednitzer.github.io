@@ -57,16 +57,6 @@ changes, and legal wording are deliberately owner decisions.
 - Dependencies: owner decision; cwebp only if regenerating.
 - Suggested owner role: site owner.
 
-### B-04 Add a light-palette theme-color meta
-- Finding: Q-12. Severity: info. Effort: S.
-- Rationale: both pages declare only the dark `#0a0e13` theme-color, so
-  light-mode mobile browser chrome mismatches the light palette
-  (`--bg: #f8f9fb`).
-- Suggested approach: paired metas with `media="(prefers-color-scheme: light)"`
-  / `dark` on both pages; visual check on a mobile browser.
-- Dependencies: none.
-- Suggested owner role: maintainer.
-
 ### B-08 Review og:locale value
 - Finding: Q-13. Severity: info. Effort: S.
 - Rationale: `en_AT` is syntactically fine but absent from common Open
