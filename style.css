@@ -95,7 +95,7 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   }
 }
 
-/* ── Article layout (shared by article pages) ── */
+/* ── Article layout (used by legal.html; former article pages removed 2026-05-14) ── */
 .article-nav {
   font-family: var(--font-mono);
   font-size: .82rem;
