@@ -43,7 +43,8 @@
 </head>
 <body>
   <a class="sr-only" href="#content">Skip to content</a>
-  <main class="page page--article" id="content">
+  <div class="page page--article">
+  <main id="content">
 
     <nav class="article-nav" aria-label="Breadcrumb">
       <a href="/">Roman Mednitzer</a> / <span aria-current="page">Legal Notice &amp; Privacy</span>
@@ -89,13 +90,14 @@
       <p>The content of this website is provided for informational purposes. The author makes no warranties regarding the accuracy, completeness, or timeliness of the information. Liability for damages arising from the use of information on this site is excluded to the extent permitted by Austrian law. External links are provided for convenience; the author has no control over and accepts no responsibility for the content of linked websites.</p>
 
     </article>
+  </main>
 
     <footer>
       <span>&copy; <span id="y">2026</span> Roman Mednitzer</span>
       <span><a href="/">Home</a></span>
       <span class="impressum"><a href="/legal">Legal Notice &amp; Privacy</a></span>
     </footer>
-  </main>
+  </div>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 
