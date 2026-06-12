@@ -5,7 +5,7 @@
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Senior Linux & Platform Engineer in Vienna.">
+  <meta name="description" content="Senior Linux & Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source work on governed automation and edge AI.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark light">
@@ -185,8 +185,10 @@
         <p class="hero-tagline">I run production Linux, virtualization, and Kubernetes infrastructure in regulated, business-critical environments, and build open-source tools and platforms for the same problems. Mostly self-taught. Open source by default.</p>
         <dl class="hero-meta">
           <dt>focus</dt><dd>Linux · virtualization · Kubernetes/GitOps · observability · backup/DR</dd>
-          <dt>experience</dt><dd>10+ years in regulated &amp; business-critical environments · ISO 27001</dd>
+          <dt>experience</dt><dd>10+ years in regulated &amp; business-critical environments · ISO 27001 auditor</dd>
           <dt>approach</dt><dd>open source by default · mostly self-taught</dd>
+          <dt>languages</dt><dd>German · English</dd>
+          <dt>member of</dt><dd>IEEE · Austrian Computer Society (OCG)</dd>
         </dl>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
@@ -251,6 +253,13 @@
           </div>
           <p>A self-contained, security-first AIOps control plane exposed as an MCP server. It combines a bitemporal model of fleet state (hosts, services, packages, networks, identities, alerts), a drift engine comparing observed against desired state, and an audited actuator with tiered execution and human confirmation gates over SSH, Ansible, OpenTofu, and cloud APIs. v0 is stdio-only; limitations are tracked openly in the repo.</p>
         </div>
+        <div class="spec">
+          <div class="spec-head">
+            <a href="https://github.com/rmednitzer/nous">nous</a>
+            <span class="spec-tag">Apache-2.0 · pre-1.0</span>
+          </div>
+          <p>A simulation-based digital twin of a man-portable edge-AI appliance for single operators in disconnected or contested environments: per-subsystem physics models (power, thermal, compute, radios, sensors), recursive state estimators, and a mission-posture state machine, queried by an LLM controller over MCP with an append-only audit trail. Interop adapters cover CoT/TAK, STANAG 4774/4778, MISB KLV, NMEA 0183, and SensorThings. Simulation throughout; no fielded hardware.</p>
+        </div>
       </div>
       <p class="repos-note">My other repos are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
     </section>
@@ -275,6 +284,18 @@
             <span class="tag">KVM</span>
             <span class="tag">VMware</span>
             <span class="tag">ZFS</span>
+          </dd>
+        </div>
+        <div class="skill-row">
+          <dt>Resilience / Security</dt>
+          <dd>
+            <span class="tag">Backup/DR</span>
+            <span class="tag">Veeam</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">Hardening</span>
+            <span class="tag tag--accent">ISO 27001</span>
+            <span class="tag">ISMS/BCM</span>
+            <span class="tag">NIS2</span>
           </dd>
         </div>
         <div class="skill-row">
@@ -307,17 +328,6 @@
             <span class="tag">OpenTelemetry</span>
             <span class="tag">VictoriaMetrics</span>
             <span class="tag">Checkmk</span>
-          </dd>
-        </div>
-        <div class="skill-row">
-          <dt>Resilience / Security</dt>
-          <dd>
-            <span class="tag">Backup/DR</span>
-            <span class="tag">Veeam</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag tag--accent">ISO 27001</span>
-            <span class="tag">ISMS/BCM</span>
-            <span class="tag">NIS2</span>
           </dd>
         </div>
         <div class="skill-row">
@@ -416,6 +426,7 @@
         "ISMS",
         "NIS2",
         "Local Large Language Models",
+        "Edge AI",
         "llama.cpp",
         "Ollama",
         "Model Context Protocol",
