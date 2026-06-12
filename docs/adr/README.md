@@ -17,6 +17,8 @@ unknowable. See ADR 0001 for the process.
 | [0008](0008-prune-or-regenerate-orphaned-binary-assets.md) | Prune or regenerate orphaned portrait and font binaries | proposed | 2026-06-12 |
 | [0009](0009-ci-html-validation-on-pull-requests.md) | Run html-validate in CI on pull requests | proposed | 2026-06-12 |
 
-The 2026-06-12 audit's phase 4 fixes were all single-line, behavior-
-preserving corrections (see `audit/03-final-report.md`); none rose to
-ADR significance, so no per-fix ADRs exist.
+The 2026-06-12 audit's phase 4 fixes were single-line, behavior-
+preserving corrections; the one structural follow-up (footers moved out
+of `<main>` after review to restore the contentinfo landmark) is
+recorded in `audit/03-final-report.md`. None rose to ADR significance,
+so no per-fix ADRs exist.

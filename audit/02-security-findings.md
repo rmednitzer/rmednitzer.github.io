@@ -161,6 +161,10 @@ Enumerated from the full file listing and page sources:
   `2026-05-28 4adba6d` (batch 11 markup changes), so the sitemap
   understates the modification date by 29 days.
 - Fix: set lastmod to 2026-05-28T00:00:00Z. Applied in phase 4.
+- Post-review addendum (2026-06-12): since this PR itself modifies both
+  pages, both sitemap entries and the index JSON-LD dateModified were
+  subsequently bumped to 2026-06-12 (commit `b63e6cf`, prompted by a
+  review comment applying the same convention).
 
 ### Q-03 Redundant contentinfo landmark inside main (index only)
 - Severity: low. Effort: S.
@@ -171,6 +175,14 @@ Enumerated from the full file listing and page sources:
   leaving the two pages inconsistent and exposing a landmark nested
   inside main, which landmark semantics discourage.
 - Fix: drop the role attribute, matching legal.html. Applied in phase 4.
+- Post-review addendum (2026-06-12): the Copilot review on PR #48
+  correctly noted that a footer inside `<main>` maps to no landmark at
+  all in HTML-AAM, so the role removal left both pages without any
+  contentinfo landmark (legal.html had carried the same gap since
+  batch 11). With owner approval, both footers were moved out of
+  `<main>` to be siblings inside the `.page` wrapper (commit `64ce9b8`),
+  restoring a native top-level contentinfo landmark on both pages with
+  layout unchanged.
 
 ### Q-04 Decorative SVG icons exposed to assistive technology
 - Severity: low (WCAG 1.1.1 / 4.1.2 hygiene). Effort: S.

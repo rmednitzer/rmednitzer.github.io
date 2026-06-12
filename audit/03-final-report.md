@@ -98,6 +98,21 @@ unrunnable, no conflicting embedded instructions encountered.
 5. B-06 GDPR complaint-right wording review (info, S): one sentence,
    owner judgement required.
 
+## Post-review follow-ups (2026-06-12, same day)
+
+Two additional fixes landed after the Copilot review of PR #48; the
+metrics table above is unchanged by them (validators stayed green):
+
+| Commit | Rationale |
+|---|---|
+| 64ce9b8 fix: move footers out of main | review correctly noted the Q-03 fix left no contentinfo landmark (footer inside main maps to none); owner approved restructuring both pages: footers are now siblings of main inside the .page div wrapper. Verified: html-validate clean, parser check shows footer ancestors html>body>div and index sections still children 2 to 5 of main (animation delays intact). |
+| b63e6cf fix: modification dates | this PR changes both pages, so both sitemap lastmod entries and the JSON-LD dateModified moved to 2026-06-12 (same convention as Q-02). Verified: xmllint and JSON-LD parse clean. |
+
+The executive summary's "safe and local" characterization predates
+these; the footer move is the one structural change in the PR, made
+deliberately after review and approval rather than during the gated
+phase 4.
+
 ## Scope notes
 
 - `.github/copilot-instructions.md` was checked against the conventions
