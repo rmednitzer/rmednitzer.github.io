@@ -1,3 +1,20 @@
+# Site Patch Changelog -- 2026-06-12 (batch 15: correct ISO 27001 role wording)
+
+Owner correction: he is not an ISO 27001 auditor; he is a systems engineer
+who writes ISMS documentation and implements ISMS requirements. The
+"auditor" wording predated batch 14 (it shipped in site.webmanifest and
+CLAUDE.md) and batch 14 surfaced it into the visible hero; all three
+places now read "ISO 27001 ISMS implementation". The JSON-LD description
+("hands-on ISMS/BCM and audit-prep work") already matched the corrected
+description and is unchanged. Historical changelog entries stay as
+written (append-only log).
+
+| File | Change |
+|------|--------|
+| `index.html` | Hero experience row: "ISO 27001 auditor" corrected to "ISO 27001 ISMS implementation" |
+| `site.webmanifest` | Description: "ISO 27001 auditor" corrected to "ISO 27001 ISMS implementation" |
+| `CLAUDE.md` | Topic line: "ISO 27001 auditor" corrected to "ISO 27001 ISMS implementation" |
+
 # Site Patch Changelog -- 2026-06-12 (batch 14: surface verifiable credentials and the nous project)
 
 Owner direction: the profile must stay honest, no overstatements. Every
