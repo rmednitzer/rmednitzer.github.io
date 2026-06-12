@@ -1,3 +1,18 @@
+# Site Patch Changelog -- 2026-06-12 (batch 13: feature aiops-mcp in projects)
+
+Swapped the fifth open-source project card at the owner's direction:
+`platform-blueprint` (documentation-only engineering blueprint) out,
+`aiops-mcp` in. Rationale: highlight deployable code in the site's core
+domain; the regulatory/ISO themes platform-blueprint covered stay
+represented in the Skills section. Description, license, and maturity
+verified against the repo README on 2026-06-12 (Apache-2.0, v0, stdio-only
+MCP server combining bitemporal fleet state, a drift engine, and a gated
+actuator).
+
+| File | Change |
+|------|--------|
+| `index.html` | Fifth project card now `aiops-mcp` (was `platform-blueprint`); sitemap lastmod and JSON-LD `dateModified` already read 2026-06-12 from batch 12, so no date changes needed |
+
 # Site Patch Changelog -- 2026-06-12 (batch 12: full audit pass)
 
 Full repository audit: validation baseline, security and quality findings
