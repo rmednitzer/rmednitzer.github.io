@@ -198,6 +198,36 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   .page--article .article-body { animation-delay: .06s; }
 }
 
+/* ── Projects page: in-depth project list (projects.html) ── */
+.work-lede { color: var(--muted); font-size: .98rem; max-width: 72ch; margin-bottom: 1.75rem; }
+
+.work-toc {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .8rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.work-toc a { color: var(--muted); }
+.work-toc a:hover { color: var(--accent); }
+
+.work-project { scroll-margin-top: 1rem; }
+
+/* metadata strip under each project heading: repo link plus stack/maturity tags */
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+  margin: -.35rem 0 1rem;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+}
+.work-meta a { color: var(--accent); }
+
 /* ── Print: ink-safe palette via the same token mechanism, decorative chrome off ── */
 @media print {
   :root {

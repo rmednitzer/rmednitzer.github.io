@@ -1,3 +1,25 @@
+# Site Patch Changelog -- 2026-06-21 (batch 20: in-depth projects page + card accuracy refresh)
+
+A new `/projects` page gives each featured open-source project a deeper
+write-up than the home-page card, grounded in the current state of each
+repository. Refreshing the cards against the repos surfaced two factual
+drifts in the existing copy, both corrected here and flagged for the owner:
+relay-shell has three policy modes plus a global deny-list overlay (not four
+modes; deny is not a mode, per relay-shell ADR 0003), and aiops-mcp is no
+longer stdio-only (an opt-in HTTP transport shipped, aiops ADR 0041/0042).
+The new page reuses the existing `page--article` layout and adds no inline
+styles; CI (html-validate, JSON-LD parse, CSP-hash check) now covers it.
+
+| File | Change |
+|------|--------|
+| `projects.html` | New page at `/projects`: in-depth write-ups of the six featured projects (infra, automation, isms, relay-shell, aiops-mcp, nous), each grounded in its repository, with a jump-link table of contents. Reuses `page--article` / `article-body`; carries a `BreadcrumbList` plus a `CollectionPage` whose `mainEntity` is an `ItemList` of six `SoftwareSourceCode` nodes (each `author`-linked to the existing `#person`). Same meta CSP as `legal.html`; reuses the existing year-script hash, no inline `<style>` block |
+| `index.html` | Projects section `repos-note` now links the new `/projects` page; two card corrections from the repo refresh (relay-shell "four authority modes (... and deny)" to "three policy modes (...) plus a global deny-list"; aiops-mcp "v0 is stdio-only" to "v0 defaults to stdio with an opt-in HTTP transport"); JSON-LD `dateModified` to 2026-06-21 |
+| `style.css` | Projects-page layout block (`.work-lede`, `.work-toc`, `.work-project`, `.work-meta`) added beside the existing article-layout rules; no new colour or font tokens, no inline styles |
+| `sitemap.xml` | `/projects` URL added (priority 0.8, monthly, lastmod 2026-06-21) |
+| `.github/workflows/validate.yml` | `html-validate` and the JSON-LD parse step now include `projects.html` |
+| `.github/scripts/check_csp_hashes.py` | `PAGES` now includes `projects.html` |
+| `.github/copilot-instructions.md`, `CLAUDE.md` | Key-files list and layout map note the new `projects.html` page |
+
 # Site Patch Changelog -- 2026-06-12 (batch 19: backlog close-out B-06, B-07, B-08, B-09)
 
 Owner decisions collected and applied. The audit backlog is now down to
