@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://rmednitzer.github.io/projects</loc>
+    <lastmod>2026-06-21T00:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rmednitzer.github.io/legal</loc>
     <lastmod>2026-06-12T00:00:00Z</lastmod>
     <changefreq>yearly</changefreq>

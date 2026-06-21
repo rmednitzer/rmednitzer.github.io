@@ -250,14 +250,14 @@
             <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
             <span class="spec-tag">Apache-2.0 · v0.1.0</span>
           </div>
-          <p>A governed MCP server for shell and SSH work. It adds four authority modes (open, guarded, read-only, and deny), append-only auditing with SHA-256 output hashes instead of raw output storage, automatic secret redaction, and bounded execution through timeouts, output caps, and idle-session reaping. One interface covers local shell, SSH, SFTP, port forwarding, and parallel fleet commands.</p>
+          <p>A governed MCP server for shell and SSH work. It adds three policy modes (open, guarded, read-only) plus a global deny-list, append-only auditing with SHA-256 output hashes instead of raw output storage, automatic secret redaction, and bounded execution through timeouts, output caps, and idle-session reaping. One interface covers local shell, SSH, SFTP, port forwarding, and parallel fleet commands.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <a href="https://github.com/rmednitzer/aiops-mcp">aiops-mcp</a>
             <span class="spec-tag">Apache-2.0 · v0</span>
           </div>
-          <p>A self-contained, security-first AIOps control plane exposed as an MCP server. It combines a bitemporal model of fleet state (hosts, services, packages, networks, identities, alerts), a drift engine comparing observed against desired state, and an audited actuator with tiered execution and human confirmation gates over SSH, Ansible, OpenTofu, and cloud APIs. v0 is stdio-only; limitations are tracked openly in the repo.</p>
+          <p>A self-contained, security-first AIOps control plane exposed as an MCP server. It combines a bitemporal model of fleet state (hosts, services, packages, networks, identities, alerts), a drift engine comparing observed against desired state, and an audited actuator with tiered execution and human confirmation gates over SSH, Ansible, OpenTofu, and cloud APIs. v0 defaults to stdio with an opt-in HTTP transport; limitations are tracked openly in the repo.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
@@ -267,7 +267,7 @@
           <p>A simulation-based digital twin of a man-portable edge-AI appliance for single operators in disconnected or contested environments: per-subsystem physics models (power, thermal, compute, radios, sensors), recursive state estimators, and a mission-posture state machine, queried by an LLM controller over MCP with an append-only audit trail. Interop adapters cover CoT/TAK, STANAG 4774/4778, MISB KLV, NMEA 0183, and SensorThings. Simulation throughout; no fielded hardware.</p>
         </div>
       </div>
-      <p class="repos-note">My other repos are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
+      <p class="repos-note">In-depth write-ups are on the <a href="/projects">projects page</a>; my other repos are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
     </section>
 
     <!-- ── Homelab ── -->
@@ -441,7 +441,7 @@
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",
-    "dateModified": "2026-06-12T00:00:00Z"
+    "dateModified": "2026-06-21T00:00:00Z"
   }
   </script>
 
