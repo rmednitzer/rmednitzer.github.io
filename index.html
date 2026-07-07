@@ -222,7 +222,7 @@
     <!-- ── Open-source projects ── -->
     <section class="section" aria-labelledby="projects-h">
       <h2 id="projects-h">Open-source projects</h2>
-      <p>A few projects I maintain, from the code that runs and hardens my own fleet to governed-agent and edge-AI research.</p>
+      <p>A few projects I maintain: the infrastructure as code and configuration management that build and harden my own fleet, and a code-managed ISMS for the compliance side of the same work.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
@@ -244,27 +244,6 @@
             <span class="spec-tag">Apache-2.0 · early</span>
           </div>
           <p>A code-managed ISMS for ISO/IEC 27001:2022, NIS2/NISG 2026, and GDPR Art. 32: a reusable template layer with per-organization instances, three evidence layers (signed Git history, eIDAS qualified signatures for formal documents, continuous evidence collection), and offline-capable validators and packagers. Early stage by design: the framework tooling is public while instance content stays confidential, and content population is ongoing.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <a href="https://github.com/rmednitzer/relay-shell">relay-shell</a>
-            <span class="spec-tag">Apache-2.0 · v0.1.0</span>
-          </div>
-          <p>A governed MCP server for shell and SSH work. It adds three policy modes (open, guarded, read-only) plus a global deny-list, append-only auditing with SHA-256 output hashes instead of raw output storage, automatic secret redaction, and bounded execution through timeouts, output caps, and idle-session reaping. One interface covers local shell, SSH, SFTP, port forwarding, and parallel fleet commands.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <a href="https://github.com/rmednitzer/aiops-mcp">aiops-mcp</a>
-            <span class="spec-tag">Apache-2.0 · v0</span>
-          </div>
-          <p>A self-contained, security-first AIOps control plane exposed as an MCP server. It combines a bitemporal model of fleet state (hosts, services, packages, networks, identities, alerts), a drift engine comparing observed against desired state, and an audited actuator with tiered execution and human confirmation gates over SSH, Ansible, OpenTofu, and cloud APIs. v0 defaults to stdio with an opt-in HTTP transport; limitations are tracked openly in the repo.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <a href="https://github.com/rmednitzer/nous">nous</a>
-            <span class="spec-tag">Apache-2.0 · pre-1.0</span>
-          </div>
-          <p>A simulation-based digital twin of a man-portable edge-AI appliance for single operators in disconnected or contested environments: per-subsystem physics models (power, thermal, compute, radios, sensors), recursive state estimators, and a mission-posture state machine, queried by an LLM controller over MCP with an append-only audit trail. Interop adapters cover CoT/TAK, STANAG 4774/4778, MISB KLV, NMEA 0183, and SensorThings. Simulation throughout; no fielded hardware.</p>
         </div>
       </div>
       <p class="repos-note">In-depth write-ups are on the <a href="/projects">projects page</a>; my other repos are at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>.</p>
