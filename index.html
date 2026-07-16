@@ -221,13 +221,13 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, from manufacturing to enterprise hybrid estates. Day to day, that means Linux (Ubuntu, Red Hat), virtualization (KVM, VMware), Kubernetes and GitOps, observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restores, all under change control and audit.</p>
+      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive, from regulated manufacturing to enterprise hybrid estates. The range is the point: I run the infrastructure and prove the recoveries, and I implement the ISO 27001 ISMS that has to satisfy an auditor, so the engineering and the governance are built together instead of bolted on. I lean on reproducible, evidence-backed automation rather than one-off fixes, all under change control.</p>
     </section>
 
     <!-- ── Open source ── -->
     <section class="section" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
-      <p class="section-lede">Open source by default: the same arc as the day job, in public. The infrastructure as code and configuration management that build and harden the fleet, and a code-managed ISMS for the compliance side of the same work.</p>
+      <p class="section-lede">Open source by default: the same arc as the day job, in public. The infrastructure as code and configuration management that build and harden the fleet, and the governed control plane that operates it.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
@@ -245,13 +245,13 @@
         </div>
         <div class="spec">
           <div class="spec-head">
-            <h3 class="spec-name"><a href="https://github.com/rmednitzer/isms">isms</a></h3>
-            <span class="spec-tag">Apache-2.0 · early</span>
+            <h3 class="spec-name"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
+            <span class="spec-tag">Apache-2.0 · MCP</span>
           </div>
-          <p>A code-managed ISMS for ISO/IEC 27001:2022, NISG 2026, and GDPR Art. 32. It pairs a reusable template layer, with per-organization instances, with three independent evidence layers: signed Git history, eIDAS qualified signatures, and continuous evidence collection. Framework tooling is public; instance content stays confidential.</p>
+          <p>A governed Model Context Protocol server that hands real shell and SSH capability to an AI client without giving up control. One audited runner covers local and remote execution, SFTP, port forwarding, and parallel fleet commands, with privileged flows gated behind explicit policy. Three modes (open, guarded, read-only) sit over a global deny-list; every call is secret-redacted, recorded as a SHA-256 hash rather than a raw body, and bounded by timeouts and output caps. Ships with CodeQL, dependency review, pip-audit, and gitleaks in CI.</p>
         </div>
       </div>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including relay-shell, a governed MCP server for shell and SSH work, plus edge-AI experiments.</p>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including a code-managed ISO 27001 ISMS and edge-AI experiments.</p>
     </section>
 
     <!-- ── Skills ── -->
