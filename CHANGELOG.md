@@ -1,3 +1,24 @@
+# Site Patch Changelog -- 2026-07-16 (batch 25: hero positioning, work with open source not build tools)
+
+Two positioning fixes to the intro copy. First, dropped the closing
+"Mostly self-taught. Open source by default." from the hero tagline: those
+two sentences repeated the `approach` meta chip ("open source by default ·
+mostly self-taught") two lines below, verbatim, so the hero duplicated
+itself. Second, per the owner, reframed the copy away from building tools
+and toward working with open-source software: the tagline's "build
+open-source tools and platforms for the same problems" and the meta
+description's "open-source tooling for the same problems" mis-positioned
+him as a tool builder. The fleet line was adjusted from "control plane I
+built myself" to "designed and run myself" to credit his architect and
+operator role (he works out the specs; the systems stay his) without
+implying from-scratch coding. Body-only; inline style and CSP hash
+unchanged, no em-dashes.
+
+| File | Change |
+|------|--------|
+| `index.html` | Hero tagline trimmed and reframed to "working with open-source software throughout"; meta description reframed to "built entirely on open-source software"; fleet lede "control plane I built myself" to "designed and run myself" |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 24: sharper About section)
 
 Rewrote the About paragraph. The previous copy restated the hero-meta
