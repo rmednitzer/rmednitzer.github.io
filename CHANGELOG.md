@@ -1,3 +1,20 @@
+# Site Patch Changelog -- 2026-07-16 (batch 24: sharper About section)
+
+Rewrote the About paragraph. The previous copy restated the hero-meta
+`experience` and `focus` lines and re-listed the same stack that the
+Skills tags already carry, so it duplicated the page instead of adding to
+it. The replacement drops the tool enumeration, leads with the value
+(keeping business-critical systems dependable where downtime and audit
+findings both cost), and makes the differentiator explicit: running the
+infrastructure and implementing the ISO 27001 ISMS together, engineering
+and governance built rather than bolted on. Body-only; inline style and
+CSP hash unchanged, no em-dashes.
+
+| File | Change |
+|------|--------|
+| `index.html` | About paragraph rewritten from a stack enumeration to a narrative that does not duplicate the hero-meta or Skills |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 23: feature relay-shell over isms)
 
 Swapped the third featured repo in the Open source section from `isms` to
