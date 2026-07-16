@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-WSg7EeiwwuvTHUy9kHO/cdKi3vsh3B0PS64CGHGVCNs='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-DOa46CyTm1VRRMhJnAfNRCRlallcJcsrwKrIGxJjhuM='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments — plus a self-run, governed homelab fleet and open-source tooling for the same problems.">
+  <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet and open-source tooling for the same problems.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -138,28 +138,32 @@
 
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
+    .section-lede { color: var(--muted); }
 
     /* card grid: fleet roles and featured repos */
-    .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: .85rem; }
+    .matrix { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
     @media (min-width: 640px) { .matrix { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 640px) { .matrix > .spec:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
-    .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
+    .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; transition: border-color .2s, background .2s; }
+    .spec:hover { border-color: var(--border-accent); background: var(--accent-dim); }
     .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
-    .spec-head a { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); }
-    .spec-head a:hover { color: var(--accent); }
-    .spec-name { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin: 0; }
+    .spec-name { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin: 0; line-height: 1.3; }
+    .spec-name a { color: inherit; }
+    .spec-name a:hover { color: var(--accent); }
     .spec-tag { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); white-space: nowrap; }
     .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: none; }
 
     .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
-    /* grouped skills */
-    .skills { display: grid; gap: .7rem; margin: 0; }
-    .skill-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
-    .skill-row dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .3rem; }
-    .skill-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
-    @media (min-width: 640px) { .skill-row { grid-template-columns: 9.5rem 1fr; gap: .3rem 1rem; align-items: start; } }
+    /* grouped rows of tags: fleet principles and skills */
+    .taglist { display: grid; gap: .7rem; margin: 0; }
+    .tag-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
+    .tag-row dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .3rem; }
+    .tag-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
+    @media (min-width: 640px) { .tag-row { grid-template-columns: 9.5rem 1fr; gap: .3rem 1rem; align-items: start; } }
+
+    .fleet-principles { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
 
     @media (min-width: 561px) and (max-width: 768px) {
       .hero { gap: 1.25rem; }
@@ -223,74 +227,87 @@
     <!-- ── The fleet ── -->
     <section class="section" aria-labelledby="fleet-h">
       <h2 id="fleet-h">The fleet</h2>
-      <p>A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I built myself. The design bias throughout is operational safety: credential and network separation, typed and gated mutation, localhost-only by default, hash-chained evidence, and reversibility first.</p>
+      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I built myself. Five hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Control plane</h3>
             <span class="spec-tag">cloud VM</span>
           </div>
-          <p>An authenticated, typed MCP gateway — the only externally reachable surface. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
+          <p>An authenticated, typed MCP gateway that is the only externally reachable surface. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Data &amp; inference</h3>
             <span class="spec-tag">GPU compute server</span>
           </div>
-          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector + Apache AGE knowledge graph, feeding sixteen scheduled OSINT and analysis pipelines. Loopback-only by default.</p>
+          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, feeding sixteen scheduled OSINT and analysis pipelines. Loopback-only by default.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Observability &amp; SIEM</h3>
             <span class="spec-tag">Talos Kubernetes</span>
           </div>
-          <p>A single-node Talos Linux cluster — immutable, API-managed, no SSH — carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, plus a Wazuh SIEM with realtime file-integrity monitoring. Helm-deployed and GitOps-reconciled.</p>
+          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, plus a Wazuh SIEM with realtime file-integrity monitoring. Helm-deployed and GitOps-reconciled.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Edge &amp; mesh</h3>
             <span class="spec-tag">workstations</span>
           </div>
-          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface round out the fleet, joined over a Tailscale / WireGuard mesh. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
+          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface round out the fleet, joined over a Tailscale and WireGuard mesh. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
         </div>
       </div>
+      <dl class="taglist fleet-principles">
+        <div class="tag-row">
+          <dt>principles</dt>
+          <dd>
+            <span class="tag">credential / network separation</span>
+            <span class="tag">typed, gated mutation</span>
+            <span class="tag">localhost-only by default</span>
+            <span class="tag">hash-chained audit</span>
+            <span class="tag">ZFS snapshots</span>
+            <span class="tag">reversible by default</span>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <!-- ── Open source ── -->
     <section class="section" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
-      <p>Open source by default — the same arc as the day job, in public: the infrastructure as code and configuration management that build and harden the fleet, and a code-managed ISMS for the compliance side of the same work.</p>
+      <p class="section-lede">Open source by default: the same arc as the day job, in public. The infrastructure as code and configuration management that build and harden the fleet, and a code-managed ISMS for the compliance side of the same work.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
-            <a href="https://github.com/rmednitzer/infra">infra</a>
+            <h3 class="spec-name"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
             <span class="spec-tag">Apache-2.0 · OpenTofu</span>
           </div>
           <p>Infrastructure as code for the fleet: a KVM/libvirt module for cloud-init Ubuntu VMs and a Talos Linux module that stands up a hardened Kubernetes cluster. Lab and production are separated, production state lives in an encrypted, locked remote backend, and CI gates every change with fmt, validate, TFLint, Trivy, and gitleaks.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
-            <a href="https://github.com/rmednitzer/automation">automation</a>
+            <h3 class="spec-name"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
             <span class="spec-tag">Apache-2.0 · Ansible</span>
           </div>
           <p>Ansible configuration management and hardening for the same fleet: a compliance-aligned baseline of hardening roles plus playbooks for the SRE toolchain, local inference, and out-of-band management. Every control is mapped to NIS2, CRA, GDPR, and ISO/IEC 27001 in a machine-readable file, with ansible-lint and schema checks in CI.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
-            <a href="https://github.com/rmednitzer/isms">isms</a>
+            <h3 class="spec-name"><a href="https://github.com/rmednitzer/isms">isms</a></h3>
             <span class="spec-tag">Apache-2.0 · early</span>
           </div>
-          <p>A code-managed ISMS for ISO/IEC 27001:2022, NISG 2026, and GDPR Art. 32: a reusable template layer with per-organization instances and three evidence layers — signed Git history, eIDAS qualified signatures, and continuous evidence collection. Framework tooling is public; instance content stays confidential.</p>
+          <p>A code-managed ISMS for ISO/IEC 27001:2022, NISG 2026, and GDPR Art. 32. It pairs a reusable template layer, with per-organization instances, with three independent evidence layers: signed Git history, eIDAS qualified signatures, and continuous evidence collection. Framework tooling is public; instance content stays confidential.</p>
         </div>
       </div>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a> — including relay-shell, a governed MCP server for shell and SSH work, and edge-AI experiments.</p>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including relay-shell, a governed MCP server for shell and SSH work, plus edge-AI experiments.</p>
     </section>
 
     <!-- ── Skills ── -->
     <section class="section" aria-labelledby="skills-h">
       <h2 id="skills-h">Skills</h2>
-      <dl class="skills">
-        <div class="skill-row">
+      <dl class="taglist">
+        <div class="tag-row">
           <dt>Linux &amp; Virtualization</dt>
           <dd>
             <span class="tag tag--accent">Linux</span>
@@ -303,7 +320,7 @@
             <span class="tag">ZFS</span>
           </dd>
         </div>
-        <div class="skill-row">
+        <div class="tag-row">
           <dt>Resilience / Security</dt>
           <dd>
             <span class="tag">Backup/DR</span>
@@ -315,7 +332,7 @@
             <span class="tag">NIS2</span>
           </dd>
         </div>
-        <div class="skill-row">
+        <div class="tag-row">
           <dt>Containers / GitOps</dt>
           <dd>
             <span class="tag">Kubernetes</span>
@@ -327,7 +344,7 @@
             <span class="tag">GitOps</span>
           </dd>
         </div>
-        <div class="skill-row">
+        <div class="tag-row">
           <dt>Automation / IaC</dt>
           <dd>
             <span class="tag">Ansible</span>
@@ -336,7 +353,7 @@
             <span class="tag">GitLab CI/CD</span>
           </dd>
         </div>
-        <div class="skill-row">
+        <div class="tag-row">
           <dt>Observability</dt>
           <dd>
             <span class="tag">Prometheus</span>
@@ -347,7 +364,7 @@
             <span class="tag">Checkmk</span>
           </dd>
         </div>
-        <div class="skill-row">
+        <div class="tag-row">
           <dt>Homelab / Learning</dt>
           <dd>
             <span class="tag">Local LLMs</span>

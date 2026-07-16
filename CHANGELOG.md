@@ -1,3 +1,20 @@
+# Site Patch Changelog -- 2026-07-16 (batch 22: fleet showcase polish + em-dash removal)
+
+Formatting and layout pass on the home page to make the fleet read as a
+real showcase, plus a house-style change: no em-dashes anywhere in the
+prose. The fleet section gains a one-line topology summary and a scannable
+`principles` chip row under the role cards (credential/network separation,
+typed gated mutation, localhost-only, hash-chained audit, ZFS snapshots,
+reversible by default); every card title is now a real `<h3>`, and cards
+lift on hover. Copy across the fleet and open-source sections was tightened
+and every em-dash replaced with a colon, comma, or parenthetical. Verified
+in Chromium at desktop and mobile widths in both colour schemes.
+
+| File | Change |
+|------|--------|
+| `index.html` | Fleet section: topology lede plus a `principles` tag row beneath the cards; role/repo card titles promoted to `<h3 class="spec-name">` (repo names wrap an `<a>`); `.spec` gains a hover lift (border + tint). Shared `.skills`/`.skill-row` classes renamed to `.taglist`/`.tag-row` (now used by both principles and skills); `.section-lede` muted-lede helper added. All em-dashes removed from copy and the meta description. Meta CSP `style-src` hash recomputed (`sha256-DOa4...`); year-script hash unchanged. No inline `style=` attributes; no new colour or font tokens |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 21: site rework + remove /projects sub-site)
 
 Reworked the single-page site around the homelab fleet and removed the
