@@ -1,3 +1,17 @@
+# Site Patch Changelog -- 2026-07-16 (batch 25: trim hero tagline duplication)
+
+Dropped the closing "Mostly self-taught. Open source by default." from the
+hero tagline. Those two sentences repeated the `approach` meta chip
+("open source by default · mostly self-taught") two lines below, verbatim,
+so the hero duplicated itself. The tagline is now a single positioning
+sentence; the self-taught / open-source fact still lives in the `approach`
+chip. Body-only; inline style and CSP hash unchanged.
+
+| File | Change |
+|------|--------|
+| `index.html` | Hero tagline trimmed to one sentence; removed the tail that duplicated the `approach` meta chip |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 24: sharper About section)
 
 Rewrote the About paragraph. The previous copy restated the hero-meta
