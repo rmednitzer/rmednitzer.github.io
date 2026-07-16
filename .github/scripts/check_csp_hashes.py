@@ -12,7 +12,7 @@ import hashlib
 import re
 import sys
 
-PAGES = ('index.html', 'legal.html', 'projects.html')
+PAGES = ('index.html', 'legal.html')
 
 
 def sha256_token(content: str) -> str:

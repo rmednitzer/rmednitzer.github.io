@@ -17,7 +17,6 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ```
 /                              repo root = site root
 ├── index.html                  Profile landing page (single-page site)
-├── projects.html               In-depth open-source project write-ups (/projects)
 ├── style.css                   Shared stylesheet (single source of truth)
 ├── legal.html                  Impressum / DSGVO / MedienG legal notice
 ├── sitemap.xml                 Sitemap for crawlers

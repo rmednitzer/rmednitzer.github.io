@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - name: html-validate
-        run: npx -y html-validate@11.5.3 index.html legal.html projects.html
+        run: npx -y html-validate@11.5.3 index.html legal.html
 
       - name: sitemap is well-formed XML
         run: python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('sitemap.xml')"
@@ -32,7 +32,7 @@ jobs:
         run: |
           python3 - <<'EOF'
           import re, json
-          for page in ('index.html', 'legal.html', 'projects.html'):
+          for page in ('index.html', 'legal.html'):
               html = open(page).read()
               blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
               assert blocks, f'no JSON-LD found in {page}'

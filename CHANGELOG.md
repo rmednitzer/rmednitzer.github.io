@@ -1,3 +1,24 @@
+# Site Patch Changelog -- 2026-07-16 (batch 21: site rework + remove /projects sub-site)
+
+Reworked the single-page site around the homelab fleet and removed the
+`/projects` sub-site. The former standalone `projects.html` write-up page
+is gone; the home page now leads with a public-safe showcase of the
+self-run fleet — a control-plane / data-plane split described by role, not
+by hostname (no hostnames, IPs, domains, or provider IDs) — followed by a
+trimmed open-source section and the existing skills grid. The old
+"Homelab" one-paragraph section is replaced by four role cards (control
+plane, data & inference, observability & SIEM, edge & mesh). CI, the
+sitemap, and the docs mirrors were updated to drop the retired page.
+
+| File | Change |
+|------|--------|
+| `projects.html` | Removed. The `/projects` sub-site is retired; its content is not migrated (the deeper per-repo write-ups are dropped in favour of the fleet showcase and the compact home-page cards) |
+| `index.html` | New `The fleet` section: intro plus four role cards showcasing the control plane, data & inference plane, Talos observability/SIEM cluster, and edge/mesh nodes, all described by role with no hostnames, IPs, domains, or provider IDs. Former `Open-source projects` section renamed `Open source`, trimmed to three cards, and delinked from the removed `/projects` page (repos-note now points only to GitHub). Inline `<style>` adds `.spec-name` for non-link card titles; the `.matrix` comment generalised from "featured-project cards" to the shared card grid. Meta/OG/Twitter descriptions and the JSON-LD `Person.description` mention the fleet; `knowsAbout` adds PostgreSQL, Tailscale, WireGuard; `dateModified` to 2026-07-16. Meta CSP `style-src` hash recomputed for the new inline style (`sha256-WSg7...`); year-script hash unchanged |
+| `sitemap.xml` | `/projects` URL removed; `/` `lastmod` to 2026-07-16 |
+| `.github/workflows/validate.yml` | `html-validate` and the JSON-LD parse step no longer include `projects.html` |
+| `.github/scripts/check_csp_hashes.py` | `PAGES` no longer includes `projects.html` |
+| `.github/copilot-instructions.md`, `CLAUDE.md` | Key-files list and layout map drop the retired `projects.html` |
+
 # Site Patch Changelog -- 2026-06-21 (batch 20: in-depth projects page + card accuracy refresh)
 
 A new `/projects` page gives each featured open-source project a deeper
