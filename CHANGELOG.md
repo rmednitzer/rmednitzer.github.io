@@ -12,7 +12,7 @@ in Chromium at desktop and mobile widths in both colour schemes.
 
 | File | Change |
 |------|--------|
-| `index.html` | Fleet section: topology lede plus a `principles` tag row beneath the cards; role/repo card titles promoted to `<h3 class="spec-name">` (repo names wrap an `<a>`); `.spec` gains a hover lift (border + tint). Shared `.skills`/`.skill-row` classes renamed to `.taglist`/`.tag-row` (now used by both principles and skills); `.section-lede` muted-lede helper added. All em-dashes removed from copy and the meta description. Meta CSP `style-src` hash recomputed (`sha256-DOa4...`); year-script hash unchanged. No inline `style=` attributes; no new colour or font tokens |
+| `index.html` | Section order is now About, Open source, Skills, then The fleet (professional signal first; the homelab fleet closes the page). Fleet section: topology lede plus a `principles` tag row beneath the cards; role/repo card titles promoted to `<h3 class="spec-name">` (repo names wrap an `<a>`); `.spec` gains a hover lift (border + tint). Shared `.skills`/`.skill-row` classes renamed to `.taglist`/`.tag-row` (now used by both principles and skills); `.section-lede` muted-lede helper added. All em-dashes removed from copy and the meta description. Meta CSP `style-src` hash recomputed (`sha256-DOa4...`); year-script hash unchanged. No inline `style=` attributes; no new colour or font tokens |
 | `CHANGELOG.md` | This entry |
 
 # Site Patch Changelog -- 2026-07-16 (batch 21: site rework + remove /projects sub-site)

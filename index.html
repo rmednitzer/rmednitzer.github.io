@@ -224,55 +224,6 @@
       <p>Ten-plus years operating production infrastructure in regulated, business-critical environments, from manufacturing to enterprise hybrid estates. Day to day, that means Linux (Ubuntu, Red Hat), virtualization (KVM, VMware), Kubernetes and GitOps, observability (Zabbix, Grafana, Prometheus, OpenTelemetry), and backup/DR with verified restores, all under change control and audit.</p>
     </section>
 
-    <!-- ── The fleet ── -->
-    <section class="section" aria-labelledby="fleet-h">
-      <h2 id="fleet-h">The fleet</h2>
-      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I built myself. Five hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
-      <div class="matrix">
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Control plane</h3>
-            <span class="spec-tag">cloud VM</span>
-          </div>
-          <p>An authenticated, typed MCP gateway that is the only externally reachable surface. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Data &amp; inference</h3>
-            <span class="spec-tag">GPU compute server</span>
-          </div>
-          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, feeding sixteen scheduled OSINT and analysis pipelines. Loopback-only by default.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Observability &amp; SIEM</h3>
-            <span class="spec-tag">Talos Kubernetes</span>
-          </div>
-          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, plus a Wazuh SIEM with realtime file-integrity monitoring. Helm-deployed and GitOps-reconciled.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Edge &amp; mesh</h3>
-            <span class="spec-tag">workstations</span>
-          </div>
-          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface round out the fleet, joined over a Tailscale and WireGuard mesh. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
-        </div>
-      </div>
-      <dl class="taglist fleet-principles">
-        <div class="tag-row">
-          <dt>principles</dt>
-          <dd>
-            <span class="tag">credential / network separation</span>
-            <span class="tag">typed, gated mutation</span>
-            <span class="tag">localhost-only by default</span>
-            <span class="tag">hash-chained audit</span>
-            <span class="tag">ZFS snapshots</span>
-            <span class="tag">reversible by default</span>
-          </dd>
-        </div>
-      </dl>
-    </section>
-
     <!-- ── Open source ── -->
     <section class="section" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
@@ -373,6 +324,55 @@
             <span class="tag">MCP</span>
             <span class="tag">PydanticAI</span>
             <span class="tag">LLMOps</span>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ── The fleet ── -->
+    <section class="section" aria-labelledby="fleet-h">
+      <h2 id="fleet-h">The fleet</h2>
+      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I built myself. Five hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
+      <div class="matrix">
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">Control plane</h3>
+            <span class="spec-tag">cloud VM</span>
+          </div>
+          <p>An authenticated, typed MCP gateway that is the only externally reachable surface. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">Data &amp; inference</h3>
+            <span class="spec-tag">GPU compute server</span>
+          </div>
+          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, feeding sixteen scheduled OSINT and analysis pipelines. Loopback-only by default.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">Observability &amp; SIEM</h3>
+            <span class="spec-tag">Talos Kubernetes</span>
+          </div>
+          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, plus a Wazuh SIEM with realtime file-integrity monitoring. Helm-deployed and GitOps-reconciled.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">Edge &amp; mesh</h3>
+            <span class="spec-tag">workstations</span>
+          </div>
+          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface round out the fleet, joined over a Tailscale and WireGuard mesh. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
+        </div>
+      </div>
+      <dl class="taglist fleet-principles">
+        <div class="tag-row">
+          <dt>principles</dt>
+          <dd>
+            <span class="tag">credential / network separation</span>
+            <span class="tag">typed, gated mutation</span>
+            <span class="tag">localhost-only by default</span>
+            <span class="tag">hash-chained audit</span>
+            <span class="tag">ZFS snapshots</span>
+            <span class="tag">reversible by default</span>
           </dd>
         </div>
       </dl>
