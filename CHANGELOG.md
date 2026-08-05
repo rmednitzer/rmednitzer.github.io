@@ -1,3 +1,68 @@
+# Site Patch Changelog -- 2026-08-05 (batch 28: trim the fleet section, re-pick the featured repos)
+
+A subtractive pass. Batch 26 refreshed every factual claim against the
+live fleet, and in doing so pushed the fleet section into territory that
+is more inventory than engineering. This batch pulls it back and fixes
+one link that oversold what it points at.
+
+**The fleet section no longer describes a house.** The `Edge & mesh`
+card is gone entirely: it enumerated the personal devices on the
+operator side -- an SDR desktop, a roaming laptop, a Windows management
+surface -- and placed the subnet router and exit node "at home". On a
+page that already carries a full name, a portrait, and Vienna, that
+combination is a physical inventory, and it demonstrated nothing the
+architecture cards do not. The mesh survives as one word in the lede,
+which is all it needed.
+
+For the same reason the `Data & inference` card drops its spec sheet
+(Core i9, 128 GB ECC, RTX 4500 Ada) for "a single workstation-class
+host", and the storage card drops the NAS as a named box -- encrypted
+Restic backups going off-host is the control; where they land is not a
+credential. The software-scale claims stay: 130+ OSINT sources, the
+four-hour cycle, six analysis agents, PostgreSQL 18. Those describe a
+system, not a room.
+
+The lede also loses the host count, which invited the inventory reading,
+and "I designed and run myself", which restated the "self-run" three
+clauses earlier.
+
+Net effect on layout: five cards become four, so the fleet grid is now
+an even 2x2 and no card takes the full-width `:last-child:nth-child(odd)`
+branch. `relay-shell` remains the only full-width card on the page.
+
+**Featured repos re-picked against what the repos actually are.** The
+"More at" note advertised "a code-managed ISO 27001 ISMS", linking work
+that its own README marks as a *Skeleton* with content population
+incomplete. ISO 27001 is the strongest governance credential on this
+page; pointing it at an empty framework was the one link that could cost
+more than it earned. Dropped.
+
+Also dropped: the governed agentic runtime (`agents`), which retold the
+story the featured `relay-shell` card already tells in more detail.
+
+The note now names three, chosen for maturity and for covering three
+different kinds of system rather than three versions of one:
+
+- `aiops-mcp` -- bitemporal fleet state, drift detection, and a tiered
+  actuator that gates changes behind approval. Nine invariants proven in
+  CI, STPA analysis, AI Act/NIS2/CRA mapping.
+- `ai-stack` -- 15+ components as one Helm chart, with SBOM validation,
+  CVE scanning, and conformance testing in CI.
+- `core-graph` -- eight ontology layers on PostgreSQL with Apache AGE
+  and pgvector, MCP/REST/TAXII interfaces.
+
+Not featured but worth knowing about, if the note is ever revisited:
+`mission-assurance` (governance-as-code, operational, no draft marker)
+is the honest replacement for the `isms` link, and `platform-blueprint`
+is a 122-document corpus whose content is still uniformly draft.
+
+**Also.** The Open source lede opened with "Open source by default",
+which is verbatim the hero `approach` line eight elements above it.
+Reworded to lead with the arc instead.
+
+No CSS changed, so the CSP style hash is untouched. html-validate, the
+CSP hashes, the contrast budget, and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-05 (batch 27: contrast fix, layout repairs, CI budgets)
 
 A design and setup pass driven by rendering the page rather than reading
