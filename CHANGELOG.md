@@ -1,3 +1,29 @@
+# Site Patch Changelog -- 2026-08-05 (batch 26: refresh every factual claim against the live fleet and repos)
+
+Accuracy pass over everything the page asserts about the owner, checked
+against the live fleet inventory and the current GitHub repositories
+rather than against the previous copy. The fleet has grown since the last
+update: a Git/services server and a NAS backup target joined it, so the
+lede count went from five hosts to eight and a fifth role card was added.
+The control plane is no longer the only externally reachable surface now
+that a public relay host exists, so that claim was reworded to what is
+still true (it is where automated action enters the fleet). The data-plane
+card's "sixteen scheduled OSINT and analysis pipelines" was wrong after the
+2026-07 migration that moved scheduling to the compute host; it is now
+130-plus sources on a four-hour cycle and six scheduled agents. The
+observability cluster reconciles with Flux, not generic GitOps. Repo cards
+picked up CI surfaces that have since been added (SBOM publishing, nightly
+fuzzing, module tests), and the repos-note now names what is actually in
+the account instead of "edge-AI experiments". Body-only; inline style and
+CSP hashes unchanged, no em-dashes.
+
+| File | Change |
+|------|--------|
+| `index.html` | Fleet lede five to eight hosts; control-plane card reworded off the "only externally reachable surface" claim; data/inference card corrected to 130-plus OSINT sources, four-hour cycle, six scheduled agents; observability card gains vmalert/Alertmanager and Wazuh agent coverage, "GitOps-reconciled" to "Flux-reconciled"; "Edge & mesh" trimmed to the operator side with a new "Git, services & storage" card (Forgejo, Ansible job automation, notifications, encrypted Restic backups, ZFS/Sanoid); principles gain "encrypted off-host backups"; `infra` card gains module tests, `relay-shell` card gains SBOM and nightly fuzzing; repos-note rewritten to the current portfolio; Skills gain Flux, Restic, pgvector; JSON-LD `knowsAbout` gains Flux, pgvector, Apache AGE, Forgejo, Restic, Cyber Resilience Act, GDPR; `dateModified` to 2026-08-05 |
+| `sitemap.xml` | Home `lastmod` to 2026-08-05 |
+| `README.md` | Summary reframed to match the site's positioning (works with open-source software, not builds open-source tooling) |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 25: hero positioning, work with open source not build tools)
 
 Two positioning fixes to the intro copy. First, dropped the closing
