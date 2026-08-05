@@ -1,3 +1,23 @@
+# Site Patch Changelog -- 2026-08-05 (batch 32: the More at note is just the link)
+
+The note now reads "More at github.com/rmednitzer" and nothing else.
+
+The teaser list -- "an AIOps MCP, a self-hosted AI stack as one Helm
+chart, a knowledge platform on PostgreSQL" -- described three
+repositories the page had already decided not to feature. Three cards
+above it make the case in detail; a partial second list underneath
+competes with them for attention and adds nothing a reader cannot get
+by following the link, which is what the note is for.
+
+This also finishes what batches 29 and 30 started. The note has been
+edited three times running: batch 28 re-picked which repositories it
+named, batch 29 cut their descriptions down, batch 30 removed the
+"earlier-stage" ranking. Each pass kept the list and trimmed it. The
+list itself was the thing that did not belong.
+
+No CSS changed, so the CSP style hash is untouched. html-validate, the
+CSP hashes, the contrast budget, and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-05 (batch 31: draw the fleet topology)
 
 The fleet section opens by calling itself "a strict control-plane /
