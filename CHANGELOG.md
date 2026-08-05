@@ -1,3 +1,51 @@
+# Site Patch Changelog -- 2026-08-05 (batch 30: remove the portfolio commentary from the Open source section)
+
+Batch 29 fixed a proportion problem by adding maturity commentary. That
+was the wrong instrument. Ranking your own repositories in the copy is
+something a reader does not need and a professional profile should not
+do: it talks *about* the portfolio instead of presenting the work, and it
+tells the reader how to read the page. Four passages went, all of the
+same kind.
+
+**The self-ranking.** The `relay-shell` card's second paragraph -- "The
+furthest along of my repositories, and the one to read first: released,
+documented, and carrying the most CI" -- is gone. So is the `most
+developed` fragment appended to its tag, which had broken the tag
+pattern: every other tag slot on the page carries licence and
+technology, not a self-assessment.
+
+The card keeps its primacy without claiming it. It still leads at full
+width above the grid, and position plus width is the whole signal --
+that is what the layout is for. The freed sentence went back into
+substance: interactive PTY sessions, which the card had omitted and
+which are a real part of the tool surface.
+
+**The disclaimers.** The `automation` card's "Pre-1.0: the gaps that
+remain are written down in the repository rather than left implied" and
+the note's "Most of it is earlier-stage than the three above" are gone
+for the same reason, inverted -- pre-emptive self-deprecation is still
+commentary about the portfolio, and on a professional profile it reads
+as anxious rather than candid. Anyone assessing the repositories will
+open them; the repositories are honest about their own state, which is
+where that belongs.
+
+`automation` got its substance back instead: the roles it actually ships
+(SSH, auditd, firewalling, kernel and systemd hardening) and the three
+playbooks batch 29 had cut (SRE toolchain, local inference, out-of-band
+management), all verified against the repository.
+
+The principle the section now follows: **primacy through position,
+honesty through specificity.** Say precisely what each thing is and let
+the ordering carry the ranking. Maturity claims and maturity disclaimers
+are both commentary, and neither belongs in the copy.
+
+`legal.html` was reviewed in the same pass and left unchanged -- it is
+standard Impressum, DSGVO, and MedienG boilerplate, and the editorial
+direction it declares still matches the site.
+
+No CSS changed, so the CSP style hash is untouched. html-validate, the
+CSP hashes, the contrast budget, and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-05 (batch 29: rank the repos honestly, shorten the Open source section)
 
 A proportion pass over the Open source section, plus two small honesty
