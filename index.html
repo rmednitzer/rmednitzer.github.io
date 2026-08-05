@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-DOa46CyTm1VRRMhJnAfNRCRlallcJcsrwKrIGxJjhuM='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-CiAGnAvyW4WkTtkAdR4+EonILDeNmd/1aSaMBmmngeU='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -88,7 +88,7 @@
 
     /* config-style key/value strip */
     .hero-meta { margin-top: .85rem; display: grid; grid-template-columns: max-content 1fr; gap: .25rem .9rem; max-width: 64ch; }
-    .hero-meta dt { font-family: var(--font-mono); font-size: .66rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .12rem; }
+    .hero-meta dt { font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .1rem; }
     .hero-meta dd { margin: 0; font-size: .8rem; color: var(--fg); line-height: 1.45; }
 
     .hero-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .95rem; }
@@ -120,10 +120,13 @@
       border-radius: 12px;
       background: var(--bg-surface);
       padding: clamp(1rem, 3vw, 1.5rem);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .section h2 {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
       font-family: var(--font-mono);
       font-size: .78rem;
       font-weight: 500;
@@ -134,7 +137,9 @@
     }
     /* terminal-style prefix; alt-text syntax keeps it silent for screen readers
        and the rule fails safe (no prefix) where unsupported */
-    .section h2::before { content: '// ' / ''; color: var(--muted); }
+    .section h2::before { content: '//' / ''; color: var(--muted); }
+    /* hairline runs the heading out to the card edge, spec-sheet style */
+    .section h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
@@ -146,13 +151,16 @@
     @media (min-width: 640px) { .matrix > .spec:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
     .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; transition: border-color .2s, background .2s; }
-    .spec:hover { border-color: var(--border-accent); background: var(--accent-dim); }
+    .spec:hover,
+    .spec:focus-within { border-color: var(--border-accent); background: var(--accent-dim); }
     .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
     .spec-name { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin: 0; line-height: 1.3; }
     .spec-name a { color: inherit; }
     .spec-name a:hover { color: var(--accent); }
     .spec-tag { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); white-space: nowrap; }
-    .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: none; }
+    /* a card that spans the full grid width would otherwise run past 100
+       characters per line; two-column cards are far narrower than the cap */
+    .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: 74ch; }
 
     .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
@@ -161,7 +169,13 @@
     .tag-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
     .tag-row dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .3rem; }
     .tag-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
-    @media (min-width: 640px) { .tag-row { grid-template-columns: 9.5rem 1fr; gap: .3rem 1rem; align-items: start; } }
+    /* Above 640px the rows collapse into one shared grid so every label sits in
+       a single track sized to the longest of them: labels stay aligned and on
+       one line, and no fixed width has to be re-tuned when a label changes. */
+    @media (min-width: 640px) {
+      .taglist { grid-template-columns: max-content 1fr; gap: .55rem 1rem; align-items: start; }
+      .tag-row { display: contents; }
+    }
 
     .fleet-principles { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
 

@@ -3,7 +3,10 @@
   --fg-strong: #edf0f4;
   --bg: #0a0e13;
   --bg-surface: #0f1319;
-  --muted: #6b7a8d;
+  /* --muted carries most of the page's secondary text (tags, ledes, footer),
+     so it is held to WCAG AA for small text against both --bg and
+     --bg-surface; .github/scripts/check_contrast.py enforces that in CI */
+  --muted: #788699;
   --accent: #0d9488;
   --accent-dim: rgba(13,148,136,.12);
   --accent-glow: rgba(13,148,136,.25);
@@ -21,7 +24,7 @@
     --fg-strong: #0f172a;
     --bg: #f8f9fb;
     --bg-surface: #ffffff;
-    --muted: #6b7280;
+    --muted: #666d7a;
     --accent: #0d7d73;
     --accent-dim: rgba(13,125,115,.07);
     --accent-glow: rgba(13,125,115,.15);
@@ -141,6 +144,25 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   }
 }
 
+/* ── Raised contrast: same tokens, stronger values, so every rule follows ── */
+@media (prefers-contrast: more) {
+  :root {
+    --fg: #e8ecf1;
+    --muted: #a8b4c3;
+    --border: rgba(255,255,255,.22);
+    --border-accent: rgba(13,148,136,.55);
+  }
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: light) {
+  :root {
+    --fg: #111827;
+    --muted: #4a515c;
+    --border: rgba(15,23,42,.28);
+    --border-accent: rgba(13,125,115,.5);
+  }
+}
+
 /* ── Article layout (used by legal.html; former article pages removed 2026-05-14) ── */
 .article-nav {
   font-family: var(--font-mono);
@@ -246,4 +268,8 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   body::before { display: none; }
 
   a { color: var(--fg); text-decoration: underline; }
+
+  /* keep a card and its heading on one sheet rather than splitting mid-spec */
+  .section, .spec, .tag-row { break-inside: avoid; }
+  .section h2, .spec-name { break-after: avoid; }
 }

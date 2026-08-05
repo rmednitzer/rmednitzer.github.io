@@ -1,0 +1,21 @@
+# Off-site link rot, checked on a schedule rather than on pull requests:
+# a rate-limited or bot-filtered host is not a reason to block a merge.
+name: external-links
+
+on:
+  schedule:
+    # Mondays, 05:20 UTC
+    - cron: '20 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - name: External links are reachable
+        run: python3 .github/scripts/check_links.py --external
