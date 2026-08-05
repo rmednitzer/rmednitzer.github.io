@@ -27,7 +27,11 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
-├── .github/workflows/validate.yml    CI: html-validate + data-file checks on PRs
+├── .github/workflows/validate.yml    CI gate on PRs: html-validate, data files,
+│                                     CSP hashes, contrast budget, internal links
+├── .github/workflows/links.yml       CI: weekly off-site link-rot check
+├── .github/scripts/                  Dependency-free CI checks (CSP, contrast, links)
+├── .editorconfig                     Editor defaults (UTF-8, LF, 2-space)
 ├── .claude/settings.json       Claude Code permission policy for this repo
 ├── .gitignore                  Ignores ad-hoc local script tooling (scripts/)
 ├── renovate.json5              Renovate dependency-update config
@@ -45,6 +49,7 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ### Styling
 
 - **All shared styles live in `style.css`.** Use the CSS custom properties already defined there (`--fg`, `--bg`, `--accent`, `--font-body`, `--font-mono`, `--radius`, etc.) — do not introduce new colour or font literals.
+- **Colour changes carry a contrast budget.** `--fg`, `--fg-strong`, `--muted`, and `--accent` must stay at or above 4.5:1 against both `--bg` and `--bg-surface`, in every palette the stylesheet defines (dark, light, their `prefers-contrast: more` variants, print). CI enforces this (ADR 0010); run `python3 .github/scripts/check_contrast.py` before pushing a palette edit.
 - A `<style>` block in `<head>` is acceptable only for genuinely page-unique layout (e.g. the index hero grid). If a pattern appears on more than one page, promote it to `style.css`.
 - **No inline `style="…"` attributes.** No page-specific `.css` files.
 - Light/dark mode via `prefers-color-scheme` is already wired in `:root` — keep both palettes in mind when adding tokens.
@@ -81,9 +86,23 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 
 ## Local validation
 
-No build step. CI (`.github/workflows/validate.yml`) runs html-validate
-and the data-file checks on every pull request; keep it green. For local
-checks, serve and click through:
+No build step. CI (`.github/workflows/validate.yml`) runs html-validate,
+the data-file checks, the CSP hashes, the contrast budget, and the
+internal-link check on every pull request; keep it green. The whole gate
+runs locally in about a second:
+
+```sh
+npx -y html-validate index.html legal.html
+python3 .github/scripts/check_csp_hashes.py
+python3 .github/scripts/check_contrast.py
+python3 .github/scripts/check_links.py
+```
+
+Off-site links are checked weekly by `.github/workflows/links.yml`, not
+on pull requests; run it on demand with
+`python3 .github/scripts/check_links.py --external`.
+
+For a visual check, serve and click through:
 
 ```sh
 python3 -m http.server 8000

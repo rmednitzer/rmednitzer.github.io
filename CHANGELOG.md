@@ -1,3 +1,90 @@
+# Site Patch Changelog -- 2026-08-05 (batch 27: contrast fix, layout repairs, CI budgets)
+
+A design and setup pass driven by rendering the page rather than reading
+it. Three things were wrong once looked at.
+
+**Contrast.** `--muted` sat at 4.25:1 against `--bg-surface` in dark mode
+(4.42:1 against `--bg`), below the WCAG AA small-text floor of 4.5:1, and
+it carries most of the page's secondary text: every skill and principle
+tag, every section lede, the footer, the hero subtitle, the repo tags.
+Light mode passed, which is presumably how it survived review. Dark
+`--muted` moves to `#788699` (5.03:1 / 5.22:1) and light `--muted` to
+`#666d7a` for margin. A `prefers-contrast: more` palette was added on top,
+overriding the same tokens so every existing rule follows without change.
+
+**Measure.** `.spec p` had `max-width: none`, which is invisible in the
+two-column cards but let the full-width ones (`relay-shell`, and the new
+fleet storage card) run past 100 characters per line. Capped at 74ch,
+which only ever binds on a full-width card.
+
+**Skills alignment.** The label column was a fixed 9.5rem, so
+"Linux & Virtualization" wrapped to two lines while shorter labels did
+not. Widening the fixed value just moved the problem to the tags. Instead
+the rows now collapse into one shared grid (`.tag-row { display: contents }`
+above 640px), so every label sits in a single `max-content` track: aligned,
+one line each, and no magic number to re-tune when a label changes.
+
+Also: section headings gained a hairline that runs out to the card edge,
+which gives the five stacked cards some rhythm; cards respond to
+`:focus-within` as well as `:hover`, so keyboard users get the same
+affordance as mouse users; the hero meta labels went from .66rem to .7rem;
+section spacing 1.25rem to 1.5rem; and print gained `break-inside: avoid`
+so a card is not split across sheets.
+
+**Setup.** Two dependency-free CI checks in the pattern ADR 0007
+established, plus the ADR recording them:
+
+- `check_contrast.py` asserts the 4.5:1 floor for `--fg`, `--fg-strong`,
+  `--muted`, and `--accent` against both surfaces, across all five
+  palettes, layering media-block overrides the way the cascade does. It
+  was verified to fail on the exact palette this batch replaced.
+- `check_links.py` resolves internal links, assets, in-page anchors, CSS
+  `url()` targets, and every sitemap `<loc>` against the files on disk,
+  using Pages' own resolution order so `/legal` is checked as served. It
+  also fails any external reference in the stylesheets, making ADR 0003's
+  no-third-party-requests rule executable. `--external` runs weekly from a
+  separate workflow rather than gating pull requests, because a
+  rate-limited host is not a reason to block a merge.
+
+| File | Change |
+|------|--------|
+| `style.css` | Dark `--muted` `#6b7a8d` to `#788699`, light `#6b7280` to `#666d7a` (WCAG AA); new `prefers-contrast: more` palettes for dark and light; print gains `break-inside`/`break-after` guards |
+| `index.html` | `.spec p` max-width `none` to `74ch`; `.taglist` becomes the shared grid with `.tag-row { display: contents }` above 640px; `.section h2` flex layout with trailing hairline rule; `.spec:focus-within` matches `:hover`; hero `dt` .66rem to .7rem; section margin 1.25rem to 1.5rem; inline-style CSP hash recomputed |
+| `.github/scripts/check_contrast.py` | New: palette contrast budget |
+| `.github/scripts/check_links.py` | New: internal link/asset/anchor/sitemap resolution, plus `--external` mode |
+| `.github/workflows/validate.yml` | Two new gating steps: contrast budget, internal links |
+| `.github/workflows/links.yml` | New: weekly off-site link-rot check, not gating |
+| `.editorconfig` | New: UTF-8, LF, final newline, 2-space (4 for Python) |
+| `docs/adr/0010-...md`, `docs/adr/README.md` | ADR 0010 recording both checks and what they deliberately do not cover |
+| `CLAUDE.md`, `.github/copilot-instructions.md` | Contrast budget documented; local validation section now lists the full gate |
+| `CHANGELOG.md` | This entry |
+
+# Site Patch Changelog -- 2026-08-05 (batch 26: refresh every factual claim against the live fleet and repos)
+
+Accuracy pass over everything the page asserts about the owner, checked
+against the live fleet inventory and the current GitHub repositories
+rather than against the previous copy. The fleet has grown since the last
+update: a Git/services server and a NAS backup target joined it, so the
+lede count went from five hosts to eight and a fifth role card was added.
+The control plane is no longer the only externally reachable surface now
+that a public relay host exists, so that claim was reworded to what is
+still true (it is where automated action enters the fleet). The data-plane
+card's "sixteen scheduled OSINT and analysis pipelines" was wrong after the
+2026-07 migration that moved scheduling to the compute host; it is now
+130-plus sources on a four-hour cycle and six scheduled agents. The
+observability cluster reconciles with Flux, not generic GitOps. Repo cards
+picked up CI surfaces that have since been added (SBOM publishing, nightly
+fuzzing, module tests), and the repos-note now names what is actually in
+the account instead of "edge-AI experiments". Body-only; inline style and
+CSP hashes unchanged, no em-dashes.
+
+| File | Change |
+|------|--------|
+| `index.html` | Fleet lede five to eight hosts; control-plane card reworded off the "only externally reachable surface" claim; data/inference card corrected to 130-plus OSINT sources, four-hour cycle, six scheduled agents; observability card gains vmalert/Alertmanager and Wazuh agent coverage, "GitOps-reconciled" to "Flux-reconciled"; "Edge & mesh" trimmed to the operator side with a new "Git, services & storage" card (Forgejo, Ansible job automation, notifications, encrypted Restic backups, ZFS/Sanoid); principles gain "encrypted off-host backups"; `infra` card gains module tests, `relay-shell` card gains SBOM and nightly fuzzing; repos-note rewritten to the current portfolio; Skills gain Flux, Restic, pgvector; JSON-LD `knowsAbout` gains Flux, pgvector, Apache AGE, Forgejo, Restic, Cyber Resilience Act, GDPR; `dateModified` to 2026-08-05 |
+| `sitemap.xml` | Home `lastmod` to 2026-08-05 |
+| `README.md` | Summary reframed to match the site's positioning (works with open-source software, not builds open-source tooling) |
+| `CHANGELOG.md` | This entry |
+
 # Site Patch Changelog -- 2026-07-16 (batch 25: hero positioning, work with open source not build tools)
 
 Two positioning fixes to the intro copy. First, dropped the closing

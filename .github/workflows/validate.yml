@@ -42,3 +42,9 @@ jobs:
 
       - name: CSP hashes match inline content
         run: python3 .github/scripts/check_csp_hashes.py
+
+      - name: Palette meets its contrast budget
+        run: python3 .github/scripts/check_contrast.py
+
+      - name: Internal links, assets, and anchors resolve
+        run: python3 .github/scripts/check_links.py

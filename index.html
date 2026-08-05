@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-DOa46CyTm1VRRMhJnAfNRCRlallcJcsrwKrIGxJjhuM='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-CiAGnAvyW4WkTtkAdR4+EonILDeNmd/1aSaMBmmngeU='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -88,7 +88,7 @@
 
     /* config-style key/value strip */
     .hero-meta { margin-top: .85rem; display: grid; grid-template-columns: max-content 1fr; gap: .25rem .9rem; max-width: 64ch; }
-    .hero-meta dt { font-family: var(--font-mono); font-size: .66rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .12rem; }
+    .hero-meta dt { font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); padding-top: .1rem; }
     .hero-meta dd { margin: 0; font-size: .8rem; color: var(--fg); line-height: 1.45; }
 
     .hero-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .95rem; }
@@ -120,10 +120,13 @@
       border-radius: 12px;
       background: var(--bg-surface);
       padding: clamp(1rem, 3vw, 1.5rem);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .section h2 {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
       font-family: var(--font-mono);
       font-size: .78rem;
       font-weight: 500;
@@ -134,7 +137,9 @@
     }
     /* terminal-style prefix; alt-text syntax keeps it silent for screen readers
        and the rule fails safe (no prefix) where unsupported */
-    .section h2::before { content: '// ' / ''; color: var(--muted); }
+    .section h2::before { content: '//' / ''; color: var(--muted); }
+    /* hairline runs the heading out to the card edge, spec-sheet style */
+    .section h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     .section p { max-width: 72ch; color: var(--fg); }
     .section p + p { margin-top: .6rem; }
@@ -146,13 +151,16 @@
     @media (min-width: 640px) { .matrix > .spec:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
     .spec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; transition: border-color .2s, background .2s; }
-    .spec:hover { border-color: var(--border-accent); background: var(--accent-dim); }
+    .spec:hover,
+    .spec:focus-within { border-color: var(--border-accent); background: var(--accent-dim); }
     .spec-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
     .spec-name { font-family: var(--font-mono); font-size: .95rem; font-weight: 500; color: var(--fg-strong); margin: 0; line-height: 1.3; }
     .spec-name a { color: inherit; }
     .spec-name a:hover { color: var(--accent); }
     .spec-tag { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); white-space: nowrap; }
-    .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: none; }
+    /* a card that spans the full grid width would otherwise run past 100
+       characters per line; two-column cards are far narrower than the cap */
+    .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: 74ch; }
 
     .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
@@ -161,7 +169,13 @@
     .tag-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
     .tag-row dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: .3rem; }
     .tag-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
-    @media (min-width: 640px) { .tag-row { grid-template-columns: 9.5rem 1fr; gap: .3rem 1rem; align-items: start; } }
+    /* Above 640px the rows collapse into one shared grid so every label sits in
+       a single track sized to the longest of them: labels stay aligned and on
+       one line, and no fixed width has to be re-tuned when a label changes. */
+    @media (min-width: 640px) {
+      .taglist { grid-template-columns: max-content 1fr; gap: .55rem 1rem; align-items: start; }
+      .tag-row { display: contents; }
+    }
 
     .fleet-principles { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
 
@@ -234,7 +248,7 @@
             <h3 class="spec-name"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
             <span class="spec-tag">Apache-2.0 · OpenTofu</span>
           </div>
-          <p>Infrastructure as code for the fleet: a KVM/libvirt module for cloud-init Ubuntu VMs and a Talos Linux module that stands up a hardened Kubernetes cluster. Lab and production are separated, production state lives in an encrypted, locked remote backend, and CI gates every change with fmt, validate, TFLint, Trivy, and gitleaks.</p>
+          <p>Infrastructure as code for the fleet: a KVM/libvirt module for cloud-init Ubuntu VMs and a Talos Linux module that stands up a hardened Kubernetes cluster. Lab and production are separated, production state lives in an encrypted, locked remote backend, and CI gates every change with fmt, validate, TFLint, Trivy, gitleaks, and module tests.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
@@ -248,10 +262,10 @@
             <h3 class="spec-name"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
             <span class="spec-tag">Apache-2.0 · MCP</span>
           </div>
-          <p>A governed Model Context Protocol server that hands real shell and SSH capability to an AI client without giving up control. One audited runner covers local and remote execution, SFTP, port forwarding, and parallel fleet commands, with privileged flows gated behind explicit policy. Three modes (open, guarded, read-only) sit over a global deny-list; every call is secret-redacted, recorded as a SHA-256 hash rather than a raw body, and bounded by timeouts and output caps. Ships with CodeQL, dependency review, pip-audit, and gitleaks in CI.</p>
+          <p>A governed Model Context Protocol server that hands real shell and SSH capability to an AI client without giving up control. One audited runner covers local and remote execution, SFTP, port forwarding, and parallel fleet commands, with privileged flows gated behind explicit policy. Three modes (open, guarded, read-only) sit over a global deny-list; every call is secret-redacted, recorded as a SHA-256 hash rather than a raw body, and bounded by timeouts and output caps. Ships with CodeQL, dependency review, pip-audit, gitleaks, SBOM publishing, and nightly fuzzing in CI.</p>
         </div>
       </div>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including a code-managed ISO 27001 ISMS and edge-AI experiments.</p>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including a code-managed ISO 27001 ISMS, a governed runtime for agentic workloads, a graph-plus-vector knowledge platform on PostgreSQL, and a self-hosted AI stack packaged as one Helm chart.</p>
     </section>
 
     <!-- ── Skills ── -->
@@ -276,6 +290,7 @@
           <dd>
             <span class="tag">Backup/DR</span>
             <span class="tag">Veeam</span>
+            <span class="tag">Restic</span>
             <span class="tag">Wazuh</span>
             <span class="tag">Hardening</span>
             <span class="tag tag--accent">ISO 27001</span>
@@ -292,6 +307,7 @@
             <span class="tag">Docker</span>
             <span class="tag">Helm</span>
             <span class="tag">Argo CD</span>
+            <span class="tag">Flux</span>
             <span class="tag">GitOps</span>
           </dd>
         </div>
@@ -323,6 +339,7 @@
             <span class="tag">Ollama</span>
             <span class="tag">MCP</span>
             <span class="tag">PydanticAI</span>
+            <span class="tag">pgvector</span>
             <span class="tag">LLMOps</span>
           </dd>
         </div>
@@ -332,35 +349,42 @@
     <!-- ── The fleet ── -->
     <section class="section" aria-labelledby="fleet-h">
       <h2 id="fleet-h">The fleet</h2>
-      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I designed and run myself. Five hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
+      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane I designed and run myself. Eight hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Control plane</h3>
             <span class="spec-tag">cloud VM</span>
           </div>
-          <p>An authenticated, typed MCP gateway that is the only externally reachable surface. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
+          <p>An authenticated, typed MCP gateway on a cloud VM is where every automated action enters the fleet. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan → authorize → execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Data &amp; inference</h3>
             <span class="spec-tag">GPU compute server</span>
           </div>
-          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, feeding sixteen scheduled OSINT and analysis pipelines. Loopback-only by default.</p>
+          <p>A workstation-class box (Core i9, 128 GB ECC, RTX 4500 Ada) carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, fed by more than 130 OSINT sources on a four-hour cycle and six scheduled analysis agents. Loopback-only by default.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Observability &amp; SIEM</h3>
             <span class="spec-tag">Talos Kubernetes</span>
           </div>
-          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, plus a Wazuh SIEM with realtime file-integrity monitoring. Helm-deployed and GitOps-reconciled.</p>
+          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, with vmalert and Alertmanager on top, plus a Wazuh SIEM with realtime file-integrity monitoring and agents across the Linux and Windows hosts. Helm-deployed and Flux-reconciled.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Edge &amp; mesh</h3>
             <span class="spec-tag">workstations</span>
           </div>
-          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface round out the fleet, joined over a Tailscale and WireGuard mesh. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
+          <p>A ROCm desktop with software-defined radio, a roaming laptop, and a hardened Windows management surface make up the operator side, joined to the rest over a Tailscale and WireGuard mesh with a subnet router and exit node at home.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">Git, services &amp; storage</h3>
+            <span class="spec-tag">server + NAS</span>
+          </div>
+          <p>A small always-on server holds the fleet's own Git authority on self-hosted Forgejo, plus Ansible job automation and the notification service, so the code that builds the fleet does not depend on anything I do not run. A NAS takes encrypted Restic backups off-host. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
         </div>
       </div>
       <dl class="taglist fleet-principles">
@@ -372,6 +396,7 @@
             <span class="tag">localhost-only by default</span>
             <span class="tag">hash-chained audit</span>
             <span class="tag">ZFS snapshots</span>
+            <span class="tag">encrypted off-host backups</span>
             <span class="tag">reversible by default</span>
           </dd>
         </div>
@@ -437,6 +462,7 @@
         "Docker",
         "Helm",
         "Argo CD",
+        "Flux",
         "GitOps",
         "Terraform",
         "OpenTofu",
@@ -452,16 +478,22 @@
         "Checkmk",
         "Wazuh",
         "PostgreSQL",
+        "pgvector",
+        "Apache AGE",
+        "Forgejo",
         "Tailscale",
         "WireGuard",
         "Incident Management",
         "Backup and Recovery",
+        "Restic",
         "Disaster Recovery",
         "Business Continuity",
         "Change Management",
         "ISO 27001",
         "ISMS",
         "NIS2",
+        "Cyber Resilience Act",
+        "GDPR",
         "Local Large Language Models",
         "Edge AI",
         "llama.cpp",
@@ -472,7 +504,7 @@
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",
-    "dateModified": "2026-07-16T00:00:00Z"
+    "dateModified": "2026-08-05T00:00:00Z"
   }
   </script>
 

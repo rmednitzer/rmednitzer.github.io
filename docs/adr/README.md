@@ -16,6 +16,7 @@ unknowable. See ADR 0001 for the process.
 | [0007](0007-meta-csp-for-github-pages.md) | Hash-based meta CSP for both pages | accepted | 2026-06-12 |
 | [0008](0008-prune-or-regenerate-orphaned-binary-assets.md) | Prune or regenerate orphaned portrait and font binaries | accepted | 2026-06-12 |
 | [0009](0009-ci-html-validation-on-pull-requests.md) | Run html-validate in CI on pull requests | accepted | 2026-06-12 |
+| [0010](0010-enforce-contrast-and-link-budgets-in-ci.md) | Enforce a contrast budget and link integrity in CI | accepted | 2026-08-05 |
 
 The 2026-06-12 audit's phase 4 fixes were single-line, behavior-
 preserving corrections; the one structural follow-up (footers moved out
