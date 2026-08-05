@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-CiAGnAvyW4WkTtkAdR4+EonILDeNmd/1aSaMBmmngeU='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-r6kY7D2ImI8z/OxucTJRnFocg490/wh7K9jwJ/Xha90='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -162,6 +162,11 @@
        characters per line; two-column cards are far narrower than the cap */
     .spec p { font-size: .85rem; color: var(--fg); line-height: 1.55; max-width: 74ch; }
 
+    /* the most developed repo leads at full width, ahead of the grid; keeping it
+       out of .matrix leaves an even card count so no card takes the odd-last
+       full-width branch above */
+    .spec--lead { margin-top: 1rem; }
+
     .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
     /* grouped rows of tags: fleet principles and skills */
@@ -235,37 +240,38 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive, from regulated manufacturing to enterprise hybrid estates. The range is the point: I run the infrastructure and prove the recoveries, and I implement the ISO 27001 ISMS that has to satisfy an auditor, so the engineering and the governance are built together instead of bolted on. I lean on reproducible, evidence-backed automation rather than one-off fixes, all under change control.</p>
+      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive, from regulated manufacturing to enterprise hybrid estates. I run the infrastructure and prove the recoveries, and I implement the ISO 27001 ISMS that has to satisfy the auditor, so the engineering and the governance get built together rather than bolted on. The work leans on reproducible, evidence-backed automation under change control.</p>
     </section>
 
     <!-- ── Open source ── -->
     <section class="section" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
-      <p class="section-lede">The same arc as the day job, in public: the infrastructure as code and configuration management that build and harden the fleet, and the governed control plane that operates it.</p>
+      <p class="section-lede">The same arc as the day job, in public: the governed control plane that operates the fleet, and the infrastructure as code and configuration management that build it.</p>
+      <div class="spec spec--lead">
+        <div class="spec-head">
+          <h3 class="spec-name"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
+          <span class="spec-tag">Apache-2.0 · MCP · most developed</span>
+        </div>
+        <p>A Model Context Protocol server that gives an AI client real shell and SSH capability over hosts I administer: local and remote execution, SFTP, port forwarding, and parallel fleet commands behind one audited runner. Authority is tiered — open, guarded, and read-only modes over a global deny-list — and every call is secret-redacted, recorded as a SHA-256 hash rather than a raw body, and bounded by timeouts and output caps.</p>
+        <p>The furthest along of my repositories, and the one to read first: released, documented, and carrying the most CI.</p>
+      </div>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
             <span class="spec-tag">Apache-2.0 · OpenTofu</span>
           </div>
-          <p>Infrastructure as code for the fleet: a KVM/libvirt module for cloud-init Ubuntu VMs and a Talos Linux module that stands up a hardened Kubernetes cluster. Lab and production are separated, production state lives in an encrypted, locked remote backend, and CI gates every change with fmt, validate, TFLint, Trivy, gitleaks, and module tests.</p>
+          <p>OpenTofu modules that build the fleet: cloud-init Ubuntu VMs on KVM/libvirt, and a Talos Linux module that stands up the Kubernetes cluster. Lab and production are separated, production state lives in an encrypted, locked remote backend, and every change is CI-gated.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
             <span class="spec-tag">Apache-2.0 · Ansible</span>
           </div>
-          <p>Ansible configuration management and hardening for the same fleet: a compliance-aligned baseline of hardening roles plus playbooks for the SRE toolchain, local inference, and out-of-band management. Every control is mapped to NIS2, CRA, GDPR, and ISO/IEC 27001 in a machine-readable file, with ansible-lint and schema checks in CI.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
-            <span class="spec-tag">Apache-2.0 · MCP</span>
-          </div>
-          <p>A governed Model Context Protocol server that hands real shell and SSH capability to an AI client without giving up control. One audited runner covers local and remote execution, SFTP, port forwarding, and parallel fleet commands, with privileged flows gated behind explicit policy. Three modes (open, guarded, read-only) sit over a global deny-list; every call is secret-redacted, recorded as a SHA-256 hash rather than a raw body, and bounded by timeouts and output caps. Ships with CodeQL, dependency review, pip-audit, gitleaks, SBOM publishing, and nightly fuzzing in CI.</p>
+          <p>Ansible hardening and configuration management for the same hosts, with every control mapped to NIS2, CRA, GDPR, and ISO/IEC 27001 in a machine-readable file. Pre-1.0: the gaps that remain are written down in the repository rather than left implied.</p>
         </div>
       </div>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a>, including a unified AIOps MCP with drift detection and gated actuation, a self-hosted AI stack packaged as one Helm chart, and a graph-plus-vector knowledge platform on PostgreSQL.</p>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a> — an AIOps MCP, a self-hosted AI stack as one Helm chart, a knowledge platform on PostgreSQL. Most of it is earlier-stage than the three above.</p>
     </section>
 
     <!-- ── Skills ── -->
@@ -349,7 +355,7 @@
     <!-- ── The fleet ── -->
     <section class="section" aria-labelledby="fleet-h">
       <h2 id="fleet-h">The fleet</h2>
-      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane. Linux hosts and a single-node Kubernetes cluster, meshed and observable, run the way I run production.</p>
+      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane. Linux hosts and a single-node Kubernetes cluster, meshed and observable, run with the habits I bring to production.</p>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">

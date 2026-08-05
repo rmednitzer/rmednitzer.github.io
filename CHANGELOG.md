@@ -1,3 +1,51 @@
+# Site Patch Changelog -- 2026-08-05 (batch 29: rank the repos honestly, shorten the Open source section)
+
+A proportion pass over the Open source section, plus two small honesty
+edits elsewhere. Nothing on the page was false -- batch 26 verified every
+claim and batch 28 re-checked the three featured cards -- but the section
+presented three repositories as peers when they are not, and spent its
+length on CI tool inventories rather than on what each repository is.
+
+**`relay-shell` leads.** It is the furthest along by every available
+signal: a tagged release and a `release.yml`, nine CI workflows
+(CodeQL, dependency-review, pip-audit, gitleaks, SBOM, nightly fuzzing),
+a published docs site, and an `audit/` directory. `infra` has one CI
+workflow plus a Renovate validator and no release pipeline; `automation`
+has two, and its own `LIMITATIONS.md` records "L7 -- Pre-1.0, no release
+tags". Presenting all three at equal weight understated the first and
+overstated the other two.
+
+So `relay-shell` now sits above the grid as a full-width lead card,
+tagged `most developed`, with a second short paragraph saying plainly
+that it is the one to read first. `infra` and `automation` follow as a
+2-up row. Keeping the lead card *outside* `.matrix` leaves the grid an
+even two cards, so nothing takes the `:last-child:nth-child(odd)`
+full-width branch -- the alternative, a third card in the grid, would
+have promoted whichever repo landed last instead of the one that earned
+it. The only new CSS is `.spec--lead { margin-top: 1rem; }`.
+
+**Shorter, and about the repositories rather than their CI.** The card
+bodies drop the tool inventories -- "fmt, validate, TFLint, Trivy,
+gitleaks, and module tests", "ansible-lint and schema checks" -- which
+listed the same class of thing three times and told a reader nothing
+about the systems. `infra` and `automation` are two sentences each now.
+`automation` gained the one fact that matters for calibration: it is
+pre-1.0, and its gaps are written down rather than left implied. The
+"More at" note loses its per-repository descriptions and gains the same
+calibration: most of the rest is earlier-stage than the featured three.
+The section lede flips order to match the new card order.
+
+**Two edits outside the section.** The About paragraph loses "The range
+is the point", which announced the reader's conclusion instead of
+letting the sentence make it. The fleet lede's "run the way I run
+production" claimed an equivalence a personal fleet does not have --
+now "run with the habits I bring to production", which is the true
+claim and the more useful one.
+
+The inline `<style>` block changed, so the CSP style hash was
+regenerated. html-validate, the CSP hashes, the contrast budget, and the
+internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-05 (batch 28: trim the fleet section, re-pick the featured repos)
 
 A subtractive pass. Batch 26 refreshed every factual claim against the
