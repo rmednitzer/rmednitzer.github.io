@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-r6kY7D2ImI8z/OxucTJRnFocg490/wh7K9jwJ/Xha90='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-+dr7jNMqI4QuFwLw26RwBjT1g4nn3ggMmQ0c8bONkvM='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -182,6 +182,59 @@
       .tag-row { display: contents; }
     }
 
+    /* fleet topology: the control-plane / data-plane split the section
+       describes. Drawn in HTML rather than SVG so the labels reflow and stay
+       real text at every width — SVG text scales with the viewBox, so a
+       diagram sized for this column would fall below legibility on a phone. */
+    .topo { margin: 1.25rem 0 0; }
+
+    .topo-tier { border: 1px solid var(--border); border-radius: var(--radius); padding: .9rem 1rem 1rem; }
+
+    /* same hairline as the section headings, so the diagram reads as part of
+       the page rather than an inset picture */
+    .topo-tier-label {
+      display: flex; align-items: center; gap: .55rem;
+      font-family: var(--font-mono); font-size: .68rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--accent);
+      margin-bottom: .75rem;
+    }
+    .topo-tier-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .topo-node { border: 1px solid var(--border); border-radius: var(--radius); padding: .6rem .75rem; transition: border-color .2s, background .2s; }
+    .topo-node:hover { border-color: var(--border-accent); background: var(--accent-dim); }
+    /* the single entry point carries the accent border the other nodes earn only on hover */
+    .topo-node--entry { border-color: var(--border-accent); }
+    .topo-node-name { display: block; font-family: var(--font-mono); font-size: .82rem; color: var(--fg-strong); }
+    .topo-node-meta { display: block; margin-top: .2rem; font-family: var(--font-mono); font-size: .68rem; color: var(--muted); }
+
+    .topo-nodes { display: grid; grid-template-columns: 1fr; gap: .6rem; list-style: none; margin: 0; padding: 0; }
+    @media (min-width: 640px) { .topo-nodes { grid-template-columns: repeat(3, 1fr); } }
+
+    /* plan → authorize → execute, arrows as separators between the pills */
+    .topo-gate { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .5rem; list-style: none; margin: .7rem 0 0; padding: 0; }
+    .topo-gate li { display: flex; align-items: center; gap: .5rem; }
+    .topo-gate li:not(:last-child)::after { content: '→'; font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+
+    /* the run between the tiers: rule, label, chevron */
+    .topo-link {
+      display: flex; flex-direction: column; align-items: center; gap: .35rem;
+      padding: .5rem 0;
+      font-family: var(--font-mono); font-size: .66rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .topo-link::before { content: ''; width: 1px; height: .8rem; background: var(--border-accent); }
+    .topo-link::after {
+      content: ''; width: 6px; height: 6px;
+      border-right: 1px solid var(--border-accent);
+      border-bottom: 1px solid var(--border-accent);
+      transform: rotate(45deg);
+      margin-top: -.2rem;
+    }
+
+    .topo figcaption { margin-top: .8rem; font-size: .8rem; color: var(--muted); max-width: 72ch; }
+
     .fleet-principles { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
 
     @media (min-width: 561px) and (max-width: 768px) {
@@ -355,6 +408,39 @@
     <section class="section" aria-labelledby="fleet-h">
       <h2 id="fleet-h">The fleet</h2>
       <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane. Linux hosts and a single-node Kubernetes cluster, meshed and observable, run with the habits I bring to production.</p>
+      <figure class="topo">
+        <div class="topo-tier">
+          <span class="topo-tier-label">control plane</span>
+          <div class="topo-node topo-node--entry">
+            <span class="topo-node-name">MCP gateway</span>
+            <span class="topo-node-meta">cloud VM · OAuth 2.1 + PKCE · CIDR-locked proxy</span>
+          </div>
+          <ol class="topo-gate">
+            <li><span class="tag">plan</span></li>
+            <li><span class="tag">authorize</span></li>
+            <li><span class="tag">execute</span></li>
+          </ol>
+        </div>
+        <div class="topo-link"><span>every mutation, hash-chained</span></div>
+        <div class="topo-tier">
+          <span class="topo-tier-label">data plane</span>
+          <ul class="topo-nodes">
+            <li class="topo-node">
+              <span class="topo-node-name">Data &amp; inference</span>
+              <span class="topo-node-meta">GPU host · loopback-only</span>
+            </li>
+            <li class="topo-node">
+              <span class="topo-node-name">Observability &amp; SIEM</span>
+              <span class="topo-node-meta">Talos Kubernetes</span>
+            </li>
+            <li class="topo-node">
+              <span class="topo-node-name">Git, services &amp; storage</span>
+              <span class="topo-node-meta">always-on · ZFS</span>
+            </li>
+          </ul>
+        </div>
+        <figcaption>Every automated action enters through the gateway, and nothing above read-only reaches the data plane without crossing the gate.</figcaption>
+      </figure>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">

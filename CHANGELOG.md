@@ -1,3 +1,52 @@
+# Site Patch Changelog -- 2026-08-05 (batch 31: draw the fleet topology)
+
+The fleet section opens by calling itself "a strict control-plane /
+data-plane split" and then describes that split in four prose cards. The
+split is the organizing idea of the whole section and it was the one
+thing the section never showed. This batch draws it.
+
+**A topology figure above the cards.** Two tiers, each a bordered box
+with a hairline label matching the section headings. The control plane
+holds the MCP gateway as the single entry point -- accent-bordered,
+because it is the only way in -- with `plan -> authorize -> execute` as
+three `.tag` pills joined by accent arrows. A short run connects the
+tiers, labelled "every mutation, hash-chained". The data plane holds the
+three host roles. The figure is a map; the four cards below remain the
+detail, and the node names match the card names so the two read
+together.
+
+**Drawn in HTML, not SVG.** This was the load-bearing decision. SVG text
+scales with the viewBox rather than reflowing, so a diagram laid out for
+this 820px column renders its labels at roughly 5px on a 320px phone --
+the width range is 2.4x and there is no `preserveAspectRatio` trick that
+keeps type legible at both ends. HTML boxes reflow instead: the three
+data-plane nodes are a 3-up grid above 640px and stack below it, the
+gate pills wrap, and every label stays real selectable text at its real
+size, honouring user font settings and scaling with them. It also means
+no new colour or font literals -- the figure is built entirely from
+existing tokens, so both palettes, both `prefers-contrast: more`
+variants, and print all follow for free.
+
+Verified at 320, 360, 560, 640, and 900px: no horizontal overflow at any
+width, in either theme.
+
+**Reused rather than reinvented.** The gate steps are the shared `.tag`
+pill. The tier labels use the same `flex` + hairline `::after` as
+`.section h2`. Node hover matches `.spec:hover`. The only genuinely new
+shapes are the connector rule and its CSS chevron.
+
+The inline `<style>` block changed, so the CSP style hash was
+regenerated. html-validate, the CSP hashes, the contrast budget, and the
+internal-link check all pass.
+
+Deliberately not done: the figure restates parts of the `Control plane`
+card (the gate sequence, the hash-chained audit). Map-then-detail makes
+that repetition defensible and the card carries specifics the figure
+does not -- the single-use confirmation digest, the typed interface, no
+provider credential in the network-facing process. Worth revisiting as
+an editorial question, not folded into a batch that was asked to add a
+diagram.
+
 # Site Patch Changelog -- 2026-08-05 (batch 30: remove the portfolio commentary from the Open source section)
 
 Batch 29 fixed a proportion problem by adding maturity commentary. That
