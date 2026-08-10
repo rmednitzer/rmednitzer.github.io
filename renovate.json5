@@ -1,23 +1,4 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: [
-    'config:best-practices',
-    ':semanticCommits',
-    ':timezone(Europe/Vienna)',
-    'schedule:weekly',
-  ],
-  labels: ['dependencies'],
-  prConcurrentLimit: 10,
-  prHourlyLimit: 2,
-  lockFileMaintenance: { enabled: true, schedule: ['before 5am on monday'] },
-  vulnerabilityAlerts: { labels: ['security'] },
-  osvVulnerabilityAlerts: true,
-  packageRules: [
-    {
-      description: 'Group non-major GitHub Actions updates into one PR; majors stay separate for review.',
-      matchManagers: ['github-actions'],
-      matchUpdateTypes: ['minor', 'patch', 'digest'],
-      groupName: 'github-actions',
-    },
-  ],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>rmednitzer/infra:renovate-preset"]
 }
