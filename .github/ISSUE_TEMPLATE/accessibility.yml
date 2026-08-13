@@ -1,0 +1,56 @@
+name: Accessibility Issue
+description: A barrier to using the site with assistive technology or a non-default setting
+labels:
+  - accessibility
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These are the most valuable reports this repository can get. One person
+        cannot test every assistive technology, so a first-hand account of a
+        real barrier is worth more here than almost any other kind of issue.
+
+        Contrast is checked in CI against a 4.5:1 budget across every palette,
+        so if you found a contrast problem it is likely in something the script
+        does not model. Please say so.
+  - type: textarea
+    id: barrier
+    attributes:
+      label: The barrier
+      description: What could you not do, or what was hard to do?
+    validations:
+      required: true
+  - type: input
+    id: tooling
+    attributes:
+      label: Assistive technology or setting
+      placeholder: NVDA 2025.1 on Firefox, or "keyboard only", or "200% zoom"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Colour contrast
+        - Keyboard navigation or focus order
+        - Screen-reader semantics (landmarks, headings, labels)
+        - Motion or animation
+        - Text sizing, zoom, or reflow
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: wcag
+    attributes:
+      label: Related WCAG criterion
+      description: Optional. Helpful if you know it, not expected if you do not.
+      placeholder: "1.4.3 Contrast (Minimum)"
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+    validations:
+      required: false

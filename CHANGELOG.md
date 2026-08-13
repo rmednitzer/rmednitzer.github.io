@@ -1,3 +1,54 @@
+# Site Patch Changelog -- 2026-08-13 (batch 33: font licence files, and the repo's missing paperwork)
+
+## The one that actually mattered: OFL compliance
+
+The site self-hosts Outfit and DM Mono as WOFF2 in `fonts/`, deliberately,
+so no visitor request ever reaches a font CDN. Self-hosting also makes this
+repository a *redistributor* of both families, and SIL Open Font License 1.1
+clause 2 permits redistribution only "provided that each copy contains the
+above copyright notice and this license".
+
+Eleven `.woff2` files were being redistributed with neither. That is a licence
+condition, not a nicety.
+
+Added, verbatim from upstream:
+
+- `fonts/OFL-Outfit.txt`  -- Copyright 2021 The Outfit Project Authors
+- `fonts/OFL-DMMono.txt`  -- Copyright 2020 The DM Mono Project Authors
+
+Both licence bodies are the standard OFL 1.1 text and differ only in the
+`scripts.sil.org` URL scheme, but each ships whole so that each family's own
+copyright line travels with its own licence. Neither family declares a Reserved
+Font Name, so clause 3 imposes no naming restriction here.
+
+`fonts/README.md` now records what is in the directory, why the licence files
+are there, and the rule for adding a family. `CLAUDE.md` and
+`.github/copilot-instructions.md` carry the same rule, so the next weight added
+does not quietly reintroduce the gap.
+
+## Repository paperwork
+
+`NOTICE` now states the split the LICENSE file alone left to inference: the
+markup, stylesheet, and CI scripts are Apache-2.0, while the prose, biography,
+portraits, and site marks are personal content and rights reserved. Anyone who
+wants the layout can take the code and bring their own content, and now the
+repository says so plainly.
+
+`CONTRIBUTING.md` sets expectations honestly for a personal site: bug reports
+and accessibility findings are very welcome, content rewrites and redesigns are
+not, and the no-build-step and no-CDN rules are standing constraints rather than
+things nobody got around to. It also documents the four-command local gate.
+
+Also added: `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1, reporting via
+private advisory), `.github/CODEOWNERS`, a pull request template that mirrors
+the CI gate, and issue forms for bugs and accessibility. The accessibility form
+is separate on purpose: contrast is already machine-checked, so the reports
+worth soliciting are the ones a script cannot produce.
+
+No HTML, CSS, or inline script changed. The CSP hashes are untouched.
+html-validate, the CSP hashes, the contrast budget (40 token pairs across 5
+palettes), and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-05 (batch 32: the More at note is just the link)
 
 The note now reads "More at github.com/rmednitzer" and nothing else.
