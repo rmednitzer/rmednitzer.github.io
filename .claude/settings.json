@@ -24,8 +24,14 @@
       "Read(**/id_rsa*)",
       "Bash(curl:*)",
       "Bash(wget:*)",
+      "Bash(git push --force)",
       "Bash(git push --force:*)",
-      "Bash(git push -f:*)"
+      "Bash(git push -f)",
+      "Bash(git push -f:*)",
+      "Bash(git push * --force)",
+      "Bash(git push * --force *)",
+      "Bash(git push * -f)",
+      "Bash(git push * -f *)"
     ]
   }
 }

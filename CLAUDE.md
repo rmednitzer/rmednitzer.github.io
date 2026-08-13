@@ -24,7 +24,8 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── site.webmanifest            PWA manifest
 ├── favicon.{svg,ico}           Favicons (+ favicon-{32,180,192,512}.png)
 ├── profile_roman-mednitzer*    Portraits (400px PNG + WebP; 800px PNG master)
-├── fonts/                      Self-hosted WOFF2 fonts + fonts.css
+├── fonts/                      Self-hosted WOFF2 fonts + fonts.css + OFL-*.txt
+│                               (README.md explains the redistribution terms)
 ├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
 ├── .github/workflows/validate.yml    CI gate on PRs: html-validate, data files,
@@ -40,7 +41,10 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 ├── BACKLOG.md                  Prioritized deferred findings and proposals
 ├── CHANGELOG.md                Site patch log (append-only, dated batches)
 ├── SECURITY.md                 Vulnerability reporting policy
+├── CONTRIBUTING.md             What is welcome here, and the local gate
+├── CODE_OF_CONDUCT.md          Contributor Covenant 2.1
 ├── LICENSE                     Apache-2.0 (code; content is rights-reserved)
+├── NOTICE                      The code/content split + third-party font terms
 └── README.md                   Public README (page index for repo visitors)
 ```
 
@@ -63,7 +67,7 @@ Topic: Senior Linux & Platform Engineer working on production Linux, virtualizat
 
 ### Assets
 
-- **Fonts:** load only from `fonts/`. Never reference Google Fonts or other CDNs. When adding a weight, add the WOFF2 file, the `@font-face` rule in `fonts/fonts.css`, and (if it's a primary weight) a `<link rel="preload">` in each page.
+- **Fonts:** load only from `fonts/`. Never reference Google Fonts or other CDNs. When adding a weight, add the WOFF2 file, the `@font-face` rule in `fonts/fonts.css`, and (if it's a primary weight) a `<link rel="preload">` in each page. Self-hosting makes this repo a *redistributor*: OFL 1.1 § 2 requires each copy to carry the copyright notice and licence, so a new **family** must ship its upstream `OFL.txt` as `fonts/OFL-<Family>.txt` and be recorded in `NOTICE`. Never edit those files, and never delete one while its `.woff2` files remain. See [`fonts/README.md`](fonts/README.md).
 - **Images:** prefer WebP with a PNG fallback. Optimise before committing. Profile portraits: 400px PNG + WebP serve the page; the 800px PNG is the unreferenced master (ADR 0008).
 - **OG images:** the site OG image is the profile portrait (`profile_roman-mednitzer-400.png`).
 - **Favicons:** `favicon.svg` is the primary; PNG fallbacks at 32/180/192/512. Update all if rebranding.

@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/rmednitzer/rmednitzer.github.io/security/advisories/new
+    about: Please report security vulnerabilities privately, not as a public issue.
+  - name: Legal notice (Impressum, Offenlegung, DSGVO)
+    url: https://rmednitzer.github.io/legal
+    about: Austrian ECG section 5 and MedienG section 25 disclosures, and the privacy notice.
+  - name: Contributing guide
+    url: https://github.com/rmednitzer/rmednitzer.github.io/blob/main/CONTRIBUTING.md
+    about: >-
+      What is welcome here and what is not. This is a personal site, so content
+      and design changes are the owner's; bugs and accessibility findings are
+      very welcome.

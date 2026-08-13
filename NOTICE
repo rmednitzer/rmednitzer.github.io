@@ -1,0 +1,58 @@
+rmednitzer.github.io
+Copyright 2026 Roman Mednitzer
+
+-------------------------------------------------------------------------------
+Two different things, two different terms
+-------------------------------------------------------------------------------
+
+This repository is dual-status. The split matters, so it is stated here rather
+than left to be inferred from the LICENSE file alone.
+
+CODE (Apache-2.0)
+    The markup structure, the stylesheet, the CI scripts under
+    .github/scripts/, and the repository tooling are licensed under the Apache
+    License, Version 2.0. See LICENSE, or:
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+CONTENT (all rights reserved)
+    The prose, the biography, the portrait photographs, the favicon and site
+    marks, and the legal notice text are NOT covered by the Apache License.
+    They are the personal content of Roman Mednitzer and remain rights
+    reserved. Reuse requires permission.
+
+    Apache-2.0 grants a trademark exclusion in section 6; independently of
+    that, the name and likeness on this site are not licensed for reuse.
+
+If you want to reuse the layout or the stylesheet, take the code and supply
+your own content.
+
+-------------------------------------------------------------------------------
+Third-party components
+-------------------------------------------------------------------------------
+
+Fonts are self-hosted in fonts/ rather than loaded from a CDN. That makes this
+repository a redistributor of them, and OFL 1.1 clause 2 requires each copy to
+carry the copyright notice and the licence. The upstream licence files are
+therefore included verbatim:
+
+  * Outfit    -- SIL Open Font License 1.1 -- fonts/OFL-Outfit.txt
+                 Copyright 2021 The Outfit Project Authors
+                 https://github.com/Outfitio/Outfit-Fonts
+
+  * DM Mono   -- SIL Open Font License 1.1 -- fonts/OFL-DMMono.txt
+                 Copyright 2020 The DM Mono Project Authors
+                 https://github.com/googlefonts/dm-mono
+
+Neither family declares a Reserved Font Name, so OFL clause 3 imposes no
+naming restriction here. The OFL is a separate licence from Apache-2.0 and is
+not superseded by it; the font binaries in fonts/*.woff2 are covered by the OFL
+alone, never by the Apache grant above.
+
+The site ships no third-party JavaScript, no analytics, no trackers, and no
+external stylesheets. The only JavaScript is a small inline footer-year updater
+covered by the code terms above.

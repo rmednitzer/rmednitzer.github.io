@@ -1,0 +1,53 @@
+name: Bug Report
+description: Something on the site renders, behaves, or links incorrectly
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please do not include private data (phone number,
+        street address, day-level dates) in this issue.
+  - type: dropdown
+    id: page
+    attributes:
+      label: Page
+      options:
+        - / (index)
+        - /legal
+        - Other or site-wide
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What is wrong
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Firefox 141 on Ubuntu 24.04
+    validations:
+      required: false
+  - type: dropdown
+    id: appearance
+    attributes:
+      label: Colour scheme in use
+      description: The site has dark and light palettes plus higher-contrast variants.
+      options:
+        - Dark
+        - Light
+        - Higher contrast (prefers-contrast:more)
+        - Print
+        - Not relevant
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Screenshot or additional context
+    validations:
+      required: false

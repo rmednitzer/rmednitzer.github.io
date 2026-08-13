@@ -22,8 +22,9 @@ Senior Linux & Platform Engineer in Vienna. Ten-plus years running production Li
 
 ### License & security
 
-- Code: [Apache-2.0](LICENSE) · Content: © Roman Mednitzer (see the [legal notice](https://rmednitzer.github.io/legal))
+- Code: [Apache-2.0](LICENSE) · Content: © Roman Mednitzer (see the [legal notice](https://rmednitzer.github.io/legal)) · Fonts: [OFL 1.1](fonts/README.md) — the split is spelled out in [NOTICE](NOTICE)
 - Vulnerability reports: see [SECURITY.md](SECURITY.md) or [`/.well-known/security.txt`](.well-known/security.txt)
+- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md) — bug reports and accessibility findings welcome; content and design are the owner's
 
 ---
 

@@ -1,0 +1,29 @@
+# CODEOWNERS — automatic reviewer assignment.
+# https://docs.github.com/en/repositories/managing-your-repositories-settings-and-customizations/customizing-your-repository/about-code-owners
+#
+# Lines are matched in order; the last matching pattern wins.
+
+* @rmednitzer
+
+# Personal content, rights reserved (see NOTICE). Not community-editable.
+/index.html                  @rmednitzer
+/profile_roman-mednitzer*    @rmednitzer
+
+# Legal text under Austrian ECG § 5, MedienG § 25, and the GDPR. Changing it
+# without confirming the legal context still matches is how a notice goes
+# stale.
+/legal.html                  @rmednitzer
+
+# The security contact has an Expires field that has to be renewed before it
+# lapses.
+/.well-known/security.txt    @rmednitzer
+/SECURITY.md                 @rmednitzer
+
+# The gate itself, plus the palette it enforces a contrast budget on.
+/.github/workflows/          @rmednitzer
+/.github/scripts/            @rmednitzer
+/style.css                   @rmednitzer
+
+# Redistributed under the OFL; the licence files must stay with the binaries.
+/fonts/                      @rmednitzer
+/NOTICE                      @rmednitzer
