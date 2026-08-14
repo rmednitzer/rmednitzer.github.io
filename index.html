@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Roman Mednitzer | Senior Linux &amp; Platform Engineer</title>
+  <title>Roman Mednitzer | Systems &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-+dr7jNMqI4QuFwLw26RwBjT1g4nn3ggMmQ0c8bONkvM='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-5rTRrfkVNbrhG1XL3KF+9vtdwYIQI2nYSlhBiny7pEc='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
+  <meta name="description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -15,11 +15,11 @@
   <meta name="author" content="Roman Mednitzer">
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Roman Mednitzer · Senior Linux &amp; Platform Engineer">
+  <meta property="og:title" content="Roman Mednitzer · Systems &amp; Platform Engineer">
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet.">
+  <meta property="og:description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -28,8 +28,8 @@
   <meta property="og:image:width" content="400">
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Roman Mednitzer · Senior Linux &amp; Platform Engineer">
-  <meta name="twitter:description" content="Senior Linux &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated environments, plus a self-run, governed homelab fleet.">
+  <meta name="twitter:title" content="Roman Mednitzer · Systems &amp; Platform Engineer">
+  <meta name="twitter:description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -169,6 +169,10 @@
 
     .repos-note { margin-top: .9rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); }
 
+    /* career track: the same spec cards, stacked in date order */
+    .track { display: grid; gap: 1rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+    .spec .track-org { font-family: var(--font-mono); font-size: .74rem; color: var(--muted); margin-bottom: .45rem; }
+
     /* grouped rows of tags: fleet principles and skills */
     .taglist { display: grid; gap: .7rem; margin: 0; }
     .tag-row { display: grid; grid-template-columns: 1fr; gap: .3rem; }
@@ -248,6 +252,7 @@
       .section:nth-child(3) { animation-delay: .12s; }
       .section:nth-child(4) { animation-delay: .18s; }
       .section:nth-child(5) { animation-delay: .24s; }
+      .section:nth-child(6) { animation-delay: .30s; }
     }
   </style>
 </head>
@@ -264,13 +269,16 @@
       </picture>
       <div class="hero-text">
         <h1>Roman Mednitzer</h1>
-        <p class="hero-sub">Vienna, AT · Senior Linux &amp; Platform Engineer</p>
-        <p class="hero-tagline">I run production Linux, virtualization, and Kubernetes infrastructure in regulated, business-critical environments, working with open-source software throughout.</p>
+        <p class="hero-sub">Vienna, AT · Systems &amp; Platform Engineer</p>
+        <p class="hero-tagline">I run production Linux, virtualization, and Kubernetes infrastructure in regulated, business-critical environments — broad rather than specialized, from hardware and storage through to observability and verified recovery.</p>
         <dl class="hero-meta">
-          <dt>focus</dt><dd>Linux · virtualization · Kubernetes/GitOps · observability · backup/DR</dd>
-          <dt>experience</dt><dd>10+ years in regulated &amp; business-critical environments · ISO 27001 ISMS implementation</dd>
+          <dt>focus</dt><dd>Linux · virtualization &amp; storage · Kubernetes/GitOps · observability · backup/DR</dd>
+          <dt>experience</dt><dd>10 years in regulated &amp; business-critical environments · estates of 50–500 hosts and VMs</dd>
+          <dt>seeking</dt><dd>senior systems integration, platform and infrastructure operations, or systems architecture — for a technically demanding product, facility, or platform</dd>
+          <dt>available</dt><dd>from October 2026 · Vienna and surroundings · on-site or remote · security clearance possible where a role requires one</dd>
+          <dt>certified</dt><dd>ISO/IEC 27001 ISMS Manager &amp; Auditor (TÜV Austria, 2017)</dd>
           <dt>approach</dt><dd>open source by default · mostly self-taught</dd>
-          <dt>languages</dt><dd>German · English</dd>
+          <dt>languages</dt><dd>German (native) · English (fluent)</dd>
           <dt>member of</dt><dd>IEEE · Austrian Computer Society (OCG)</dd>
         </dl>
         <nav class="hero-links" aria-label="Contact links">
@@ -293,7 +301,49 @@
     <!-- ── About ── -->
     <section class="section" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive, from regulated manufacturing to enterprise hybrid estates. I run the infrastructure and prove the recoveries, and I implement the ISO 27001 ISMS that has to satisfy the auditor, so the engineering and the governance get built together rather than bolted on. The work leans on reproducible, evidence-backed automation under change control.</p>
+      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive: medical device manufacturing, managed services at an Austrian IT provider, and group-wide enterprise operations. I work broadly rather than narrowly — Linux, virtualization, and hardware through storage and networking to container platforms, observability, and backup with verified recovery. Operations run under change control throughout, with evidence an auditor can follow.</p>
+      <p>I run the infrastructure and prove the recoveries, and I have implemented the ISO 27001 ISMS that has to satisfy the auditor, so the engineering and the governance get built together rather than bolted on. Alongside the day job I run a private lab and track the EU regulation that lands on platforms — NIS2, the CRA, and the AI Act — and I am orienting toward defense technology and sovereign systems.</p>
+    </section>
+
+    <!-- ── Experience ── -->
+    <section class="section" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+      <p class="section-lede">Ten years of production operations, most of it at one Austrian IT service provider, from apprentice to senior engineer.</p>
+      <ol class="track">
+        <li class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">IT Systems Administrator, platform operations</h3>
+            <span class="spec-tag">2025 — now</span>
+          </div>
+          <p class="track-org">Kwizda Holding GmbH · Vienna</p>
+          <p>Production platform operations across a heterogeneous Windows and Linux estate of roughly 200 to 500 hosts and VMs, with an active push toward containers and GitOps. I own backup and recovery with documented restore verification, run monitoring and alerting for operational visibility across the estate, manage infrastructure and server hardware, and support change management and compliance evidence aligned to ISO 27001 and NIS2.</p>
+        </li>
+        <li class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">IT Systems Engineer, senior level</h3>
+            <span class="spec-tag">2017 — 2025</span>
+          </div>
+          <p class="track-org">EBCONT operations GmbH · Vienna</p>
+          <p>Eight years across managed-services customers and internal infrastructure, promoted from junior to senior. Incident, problem, and change lifecycle in production customer environments with structured documentation and a defined rollback; virtualization clusters on enterprise SAN storage; monitoring and alerting for estates of 50 to 200 hosts and VMs; Kubernetes platforms across several distributions with GitOps delivery; the internal source-control and CI platform, upgrades included; and a proof of concept for hyperconverged infrastructure with a high-speed switch fabric. Third-level support and on-call throughout.</p>
+        </li>
+        <li class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">IT Technician → IT Systems Administrator</h3>
+            <span class="spec-tag">2015 — 2017</span>
+          </div>
+          <p class="track-org">medPhoton GmbH · Salzburg</p>
+          <p>Production server and application operations for a manufacturer of radiotherapy medical devices, under medical-device regulatory conditions. Structured troubleshooting with documented incident handling and root-cause analysis, backup and recovery with integrity checks, and hands-on ISMS and BCM practice including preparation for ISO 27001 audits. The standardized operating procedures and runbooks I wrote were adopted by the team.</p>
+        </li>
+        <li class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name">IT Technician, apprenticeship</h3>
+            <span class="spec-tag">2012 — 2014</span>
+          </div>
+          <p class="track-org">Ledl.net GmbH · Salzburg</p>
+          <p>First production Linux at a hosting provider: web hosting operations, domain administration, and customer support.</p>
+        </li>
+      </ol>
+      <p class="repos-note">Apprenticeship in information technology, systems engineering focus, completed 2016.</p>
     </section>
 
     <!-- ── Open source ── -->
@@ -320,7 +370,7 @@
             <h3 class="spec-name"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
             <span class="spec-tag">Apache-2.0 · Ansible</span>
           </div>
-          <p>Ansible hardening and configuration management for the same hosts: a baseline of roles covering SSH, auditd, firewalling, and kernel and systemd hardening, plus playbooks for the SRE toolchain, local inference, and out-of-band management. Every control maps to NIS2, CRA, GDPR, and ISO/IEC 27001 in a machine-readable file.</p>
+          <p>Ansible hardening and configuration management for the same hosts: a CIS-benchmark-based baseline of roles covering SSH, auditd, firewalling, and kernel and systemd hardening, plus playbooks for the SRE toolchain, local inference, and out-of-band management. Every control maps to NIS2, CRA, GDPR, and ISO/IEC 27001 in a machine-readable file.</p>
         </div>
       </div>
       <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a></p>
@@ -335,25 +385,25 @@
           <dd>
             <span class="tag tag--accent">Linux</span>
             <span class="tag tag--accent">Ubuntu</span>
-            <span class="tag">Red Hat</span>
-            <span class="tag">SLES</span>
+            <span class="tag">RHEL</span>
+            <span class="tag">Debian</span>
+            <span class="tag">Windows Server</span>
             <span class="tag">Proxmox</span>
             <span class="tag">KVM</span>
-            <span class="tag">VMware</span>
-            <span class="tag">ZFS</span>
+            <span class="tag">VMware vSphere</span>
           </dd>
         </div>
         <div class="tag-row">
-          <dt>Resilience / Security</dt>
+          <dt>Storage &amp; Data</dt>
           <dd>
-            <span class="tag">Backup/DR</span>
+            <span class="tag">ZFS</span>
+            <span class="tag">Ceph</span>
+            <span class="tag">NetApp</span>
+            <span class="tag">Enterprise SAN</span>
+            <span class="tag">PostgreSQL</span>
             <span class="tag">Veeam</span>
             <span class="tag">Restic</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag">Hardening</span>
-            <span class="tag tag--accent">ISO 27001</span>
-            <span class="tag">ISMS/BCM</span>
-            <span class="tag">NIS2</span>
+            <span class="tag tag--accent">Verified restores</span>
           </dd>
         </div>
         <div class="tag-row">
@@ -363,16 +413,17 @@
             <span class="tag">OpenShift</span>
             <span class="tag">Talos</span>
             <span class="tag">Docker</span>
+            <span class="tag">Podman</span>
             <span class="tag">Helm</span>
             <span class="tag">Argo CD</span>
             <span class="tag">Flux</span>
-            <span class="tag">GitOps</span>
           </dd>
         </div>
         <div class="tag-row">
           <dt>Automation / IaC</dt>
           <dd>
             <span class="tag">Ansible</span>
+            <span class="tag">Ansible Automation Platform</span>
             <span class="tag">Terraform</span>
             <span class="tag">OpenTofu</span>
             <span class="tag">GitLab CI/CD</span>
@@ -382,11 +433,39 @@
           <dt>Observability</dt>
           <dd>
             <span class="tag">Prometheus</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">Zabbix</span>
-            <span class="tag">OpenTelemetry</span>
             <span class="tag">VictoriaMetrics</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">OpenTelemetry</span>
+            <span class="tag">Zabbix</span>
             <span class="tag">Checkmk</span>
+            <span class="tag">Graylog</span>
+            <span class="tag">OpenSearch</span>
+          </dd>
+        </div>
+        <div class="tag-row">
+          <dt>Network &amp; Cloud</dt>
+          <dd>
+            <span class="tag">Segmentation</span>
+            <span class="tag">Load balancing</span>
+            <span class="tag">HAProxy</span>
+            <span class="tag">Cilium</span>
+            <span class="tag">WireGuard</span>
+            <span class="tag">Azure</span>
+            <span class="tag">Google Cloud</span>
+            <span class="tag">Hetzner</span>
+          </dd>
+        </div>
+        <div class="tag-row">
+          <dt>Security &amp; Governance</dt>
+          <dd>
+            <span class="tag tag--accent">ISO 27001</span>
+            <span class="tag">ISMS/BCM</span>
+            <span class="tag">NIS2</span>
+            <span class="tag">CRA</span>
+            <span class="tag">Change control</span>
+            <span class="tag">CIS hardening</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">CrowdStrike</span>
           </dd>
         </div>
         <div class="tag-row">
@@ -454,14 +533,14 @@
             <h3 class="spec-name">Data &amp; inference</h3>
             <span class="spec-tag">GPU compute server</span>
           </div>
-          <p>A single workstation-class host carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, fed by more than 130 OSINT sources on a four-hour cycle and six scheduled analysis agents. Loopback-only by default.</p>
+          <p>A single workstation-class host carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, fed by more than 130 OSINT sources on a four-hour cycle and six scheduled analysis agents. Over 170,000 documents with full embedding coverage and some 25,000 CVEs enriched with KEV and EPSS, retrieved by hybrid vector and full-text search with reranking. Loopback-only by default.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
             <h3 class="spec-name">Observability &amp; SIEM</h3>
             <span class="spec-tag">Talos Kubernetes</span>
           </div>
-          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, with vmalert and Alertmanager on top, plus a Wazuh SIEM with realtime file-integrity monitoring and agents across the Linux and Windows hosts. Helm-deployed and Flux-reconciled.</p>
+          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry across roughly 30 workloads, its state reconciled from Git by Flux alone: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, with vmalert and Alertmanager on top, plus a Wazuh SIEM with realtime file-integrity monitoring and agents across the Linux and Windows hosts. Everything Helm-deployed.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
@@ -507,14 +586,21 @@
       "name": "Roman Mednitzer",
       "givenName": "Roman",
       "familyName": "Mednitzer",
-      "jobTitle": "Senior Linux & Platform Engineer",
-      "description": "Senior Linux & Platform Engineer in Vienna. Ten-plus years operating production Linux, virtualization, Kubernetes/GitOps, observability, and backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet and hands-on ISMS/BCM work.",
+      "jobTitle": "Systems & Platform Engineer",
+      "description": "Systems & Platform Engineer in Vienna. Ten years operating production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet and hands-on ISMS/BCM work.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
         "url": "https://rmednitzer.github.io/profile_roman-mednitzer-400.png",
         "width": 400,
         "height": 400
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ISO/IEC 27001 ISMS Manager and Auditor",
+        "credentialCategory": "certificate",
+        "recognizedBy": {"@type": "Organization", "name": "TÜV Austria"},
+        "dateCreated": "2017"
       },
       "memberOf": [
         {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},
@@ -532,18 +618,27 @@
         "Ubuntu",
         "Red Hat Enterprise Linux",
         "SUSE Linux Enterprise Server",
+        "Debian",
+        "Windows Server",
         "Open Source Software",
         "Virtualization",
+        "Proxmox",
         "KVM",
-        "VMware",
+        "VMware vSphere",
         "ZFS",
+        "Ceph",
+        "NetApp",
+        "Storage Area Networks",
         "Data Center Operations",
+        "Systems Integration",
+        "Systems Architecture",
         "Platform Engineering",
         "Site Reliability Engineering",
         "Kubernetes",
         "OpenShift",
         "Talos Linux",
         "Docker",
+        "Podman",
         "Helm",
         "Argo CD",
         "Flux",
@@ -560,23 +655,36 @@
         "VictoriaMetrics",
         "OpenTelemetry",
         "Checkmk",
+        "Graylog",
+        "OpenSearch",
         "Wazuh",
         "PostgreSQL",
         "pgvector",
         "Apache AGE",
         "Forgejo",
+        "Cilium",
+        "HAProxy",
         "Tailscale",
         "WireGuard",
+        "Network Segmentation",
+        "Load Balancing",
+        "Microsoft Azure",
+        "Google Cloud Platform",
         "Incident Management",
+        "Problem Management",
         "Backup and Recovery",
+        "Veeam",
         "Restic",
         "Disaster Recovery",
         "Business Continuity",
         "Change Management",
         "ISO 27001",
         "ISMS",
+        "CIS Benchmarks",
+        "System Hardening",
         "NIS2",
         "Cyber Resilience Act",
+        "EU AI Act",
         "GDPR",
         "Local Large Language Models",
         "Edge AI",
@@ -588,7 +696,7 @@
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",
-    "dateModified": "2026-08-05T00:00:00Z"
+    "dateModified": "2026-08-14T00:00:00Z"
   }
   </script>
 

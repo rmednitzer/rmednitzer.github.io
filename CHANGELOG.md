@@ -1,3 +1,58 @@
+# Site Patch Changelog -- 2026-08-14 (batch 34: the site follows the CV)
+
+The CV is the primary document; the site had drifted from it. This batch pulls
+the page back onto that base, in English, without redesigning anything.
+
+## Positioning
+
+The title is now **Systems & Platform Engineer**, the headline the CV itself
+carries, replacing "Senior Linux & Platform Engineer" across `<title>`, the
+description, Open Graph and Twitter cards, the manifest, the JSON-LD
+`jobTitle`, and the README. The tagline says what the CV says: broad rather
+than specialised, hardware and storage through to observability and verified
+recovery.
+
+Two rows were added to the hero strip, because a profile that is looking for a
+role should say so: `seeking` (senior systems integration, platform and
+infrastructure operations, or systems architecture) and `available` (from
+October 2026, Vienna and surroundings, on-site or remote, security clearance
+possible). `certified` records the ISO/IEC 27001 ISMS Manager and Auditor
+certificate (TÜV Austria, 2017), which the site had only ever implied.
+
+## Experience
+
+New section between About and Open source: four positions, newest first, on
+the same `.spec` cards the rest of the page already uses -- Kwizda Holding
+(2025 -- now), EBCONT operations (2017 -- 2025), medPhoton (2015 -- 2017),
+Ledl.net (2012 -- 2014), with the estate sizes, the scope, and the apprenticeship
+line the CV states. Two new rules carry it (`.track`, `.spec .track-org`); the
+cards, hairlines, and hover treatment are the existing ones.
+
+Employer names and years only. No address, no phone, no day-level dates --
+the repository rule still holds.
+
+## Skills and the fleet
+
+The tag rows were re-cut against the CV's technology inventory: **Storage &
+Data** and **Network & Cloud** are new rows, hardening and governance moved
+into **Security & Governance**, and the core inventory items the page was
+missing are now on it (Debian, Windows Server, Ceph, NetApp, enterprise SAN,
+Podman, AAP, Graylog, OpenSearch, Cilium, HAProxy, Azure, Google Cloud,
+Hetzner, CIS hardening, CRA).
+
+The fleet cards took the CV's numbers, which are more current than the ones on
+the page: ~30 workloads reconciled by Flux, 170,000+ documents with full
+embedding coverage, ~25,000 CVEs enriched with KEV and EPSS, hybrid retrieval
+with reranking. The Ansible baseline is described as CIS-benchmark-based,
+which it is.
+
+## Housekeeping
+
+JSON-LD gained `hasCredential` and the `knowsAbout` entries matching the new
+tags; `dateModified` and the sitemap `lastmod` moved to 2026-08-14; the inline
+style hash in the meta CSP was recomputed. html-validate, the data-file checks,
+the CSP hashes, the contrast budget, and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-13 (batch 33: font licence files, and the repo's missing paperwork)
 
 ## The one that actually mattered: OFL compliance
