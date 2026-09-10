@@ -1,3 +1,30 @@
+# Site Patch Changelog -- 2026-09-10 (batch 46: a teaser, not a dossier)
+
+Batch 45 leaned too far into biography. The page is meant to be a teaser
+for someone who finds it and an accurate portrait for search engines,
+not enough material to profile a person. About is back to three short
+paragraphs: who and where, what I am curious about, and one sentence of
+life away from the keyboard followed by the memberships. Sports, the
+character sentence, and the Salzburg origin are gone from About, the
+hero, and the `Interests` row. The Person JSON-LD gains "Systems
+Engineering", "Cybernetics", and "AI Assurance" in `knowsAbout` so the
+machine-readable portrait carries the interests the prose no longer
+spells out. No markup, style, or CSP hash changed. The local gate passes.
+
+# Site Patch Changelog -- 2026-09-10 (batch 45: plainer, and a person)
+
+The copy had accumulated aphorisms ("the place where I think", "practise
+what I preach", "rent it and hope", "which teaches you to write things
+down"). This batch strips them and writes plainly. About gains a paragraph
+about life away from the keyboard: swimming and freediving, industrial and
+EBM, building hardware, 3D printing, radio reception and environmental
+sensors, hard science fiction and space. The hero tagline and the
+`Interests` row say the same in fewer words. Experience, Open source, and
+The lab lose their flourishes and keep their facts. Nothing private was
+added: no age, no politics, no employers considered, no pay, no host
+names, no relationships. No markup, style, or CSP hash changed. The local
+gate passes.
+
 # Site Patch Changelog -- 2026-09-10 (batch 44: breadth before biography)
 
 The second About paragraph made the apprenticeship the origin of
