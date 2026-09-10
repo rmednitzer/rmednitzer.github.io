@@ -1,3 +1,13 @@
+# Site Patch Changelog -- 2026-09-10 (batch 43: About is about a person)
+
+The About section opened with a job title and a list of employers, which
+is what the Experience section is for. It now reads as a description of a
+person: what I enjoy, how I learned, what I care about, and what I do for
+fun, with the working history left to the timeline below. The Cubicure
+entry drops "The newest chapter, and my first in an industrial company."
+No fact, date, membership, or technology changed; no markup, style, or
+CSP hash changed. The local gate passes.
+
 # Site Patch Changelog -- 2026-09-10 (batch 42: a personal page, not a CV)
 
 Batch 41 tightened the copy into the register of a corporate CV: "focused
