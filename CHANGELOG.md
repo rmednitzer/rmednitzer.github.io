@@ -1,3 +1,23 @@
+# Site Patch Changelog -- 2026-09-10 (batch 38: one title per position)
+
+The Experience timeline now carries one short title per entry and no
+seniority. "IT Systems Administrator, infrastructure and platform
+operations" is "IT Systems Administrator"; "IT Systems Engineer, senior
+level" is "IT Systems Engineer"; "IT Technician, then IT Systems
+Administrator" is resolved by splitting it the way the CV's education line
+does: the apprenticeship is one entry, "IT Technician" at Ledl.net GmbH and
+medPhoton GmbH, 2012 to 2016, with the completion year and both halves of
+the training in its body; the medPhoton position is "IT Systems
+Administrator", 2016 to 2017. "IT Technician, apprenticeship" lost its
+qualifier for the same reason.
+
+The lede and the EBCONT entry no longer mention junior or senior. The
+apprenticeship note under the timeline is folded into the apprenticeship
+entry, and the `.track-note` rules that placed it are gone; the inline
+style hash in the meta CSP was recomputed. html-validate, the data-file
+checks, the CSP hashes, the contrast budget, and the internal-link check
+all pass.
+
 # Site Patch Changelog -- 2026-09-10 (batch 37: a personal site, not a candidate profile)
 
 The owner's direction: the page read like a job application. Three things
