@@ -1,3 +1,31 @@
+# Site Patch Changelog -- 2026-09-10 (batch 42: a personal page, not a CV)
+
+Batch 41 tightened the copy into the register of a corporate CV: "focused
+on dependable infrastructure for the systems the company relies on",
+"Owned backup and recovery, including documented restore evidence",
+"Core technologies and operating disciplines". This batch puts the
+first-person voice of batch 39 back and keeps the batch 41 structure.
+Every date, title, organisation, technology, and membership is unchanged.
+
+- **Hero.** The tagline says what I do and why the lab exists, and that
+  the backups were restored, not only configured. The `Focus` row is now
+  `Interests`, in plain words rather than positioning phrases.
+- **About.** Four paragraphs in my own voice: where the ten years went
+  and why the whole stack; how I learned the trade and where the habits
+  come from; sovereignty, the EU rules that land on platforms, and the
+  systems that draw me; and what the two IEEE societies say about what I
+  read.
+- **Experience.** The lede and every entry are written as a story told by
+  the person who was there, not as a responsibilities list. The Cubicure
+  entry no longer carries a mission-statement sentence.
+- **Capabilities.** The lede says what the list is: the tools I reach for
+  without thinking.
+- **Social cards.** The Open Graph and Twitter descriptions describe a
+  personal site rather than a service offering.
+
+html-validate, the data-file checks, the CSP hashes, the contrast budget,
+and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-09-10 (batch 41: clearer profile structure and copy)
 
 The profile now leads with a concise statement of scope, replaces the broad
