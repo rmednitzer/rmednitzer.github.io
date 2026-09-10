@@ -1,3 +1,36 @@
+# Site Patch Changelog -- 2026-09-10 (batch 39: a voice)
+
+The copy was accurate and read like a spec sheet. This batch rewrites it
+in the first person, with the reasons behind the facts and the interests
+the CV states, without adding a claim the CV or the repositories do not
+support. No markup structure, style, or token changed; the CSP hashes are
+untouched.
+
+- **Hero.** The tagline says why the lab exists ("because I like knowing
+  how things actually work") and that the backups were restored, not just
+  configured. The `Now` row names what Cubicure makes; the `Into` row adds
+  "reading the news through my own pipeline".
+- **About.** Four paragraphs instead of three: where the ten years were
+  spent and why the whole stack rather than one layer; how the trade was
+  learned and where the habits come from; the EU rules and sovereignty,
+  and why defence, robotics, space, scientific, medical, and industrial
+  systems draw the owner (the machine at the end of the network is real);
+  and the two IEEE societies, with what membership since 2013 says about
+  what the owner reads.
+- **Experience.** Each entry gained a sentence of context: what the
+  company does, what the role taught, why it mattered. Titles, dates, and
+  organisations are unchanged from batch 38.
+- **Open source.** The lede says why the code is public ("the habits are
+  the point"); relay-shell says what it was for; automation says what the
+  control mapping buys.
+- **Stack.** The lede explains the highlighted tags.
+- **The lab.** Same facts, told as a story: what it started as and what it
+  became, what the pipeline is for, and the habits it practises, ending on
+  the fact that it gets broken regularly.
+
+html-validate, the data-file checks, the CSP hashes, the contrast budget,
+and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-09-10 (batch 38: one title per position)
 
 The Experience timeline now carries one short title per entry and no
