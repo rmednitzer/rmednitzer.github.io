@@ -1,3 +1,64 @@
+# Site Patch Changelog -- 2026-09-10 (batch 35: say no more than the CV does)
+
+An accuracy pass against the CV and against live sources, plus the house
+style the last batch had let slip. No redesign, no new tokens.
+
+## Claims trimmed to what the CV states
+
+- The About text said "I have implemented the ISO 27001 ISMS that has to
+  satisfy the auditor". The CV says ISMS and BCM practice including
+  preparation for ISO 27001 audits. The sentence now says that. The
+  manifest description and the `CLAUDE.md` topic line carried the same
+  "ISMS implementation" claim and were corrected with it.
+- The `certified` row now records that the ISO/IEC 27001 ISMS Manager and
+  Auditor certificate (TÜV Austria, 2017) has not been recertified, as the
+  CV does.
+- The Experience lede said "from apprentice to senior engineer" at one
+  provider. The apprenticeship was elsewhere; EBCONT was junior to senior,
+  and the lede now says so. "Ten years" became "around ten years", the
+  CV's own qualifier, in the hero strip and the lede.
+- The Kwizda card carries the CV's title in full (infrastructure and
+  platform operations) and its Kubernetes and GitOps line as a
+  contribution, not an ownership claim.
+- JSON-LD `knowsAbout` lost "SUSE Linux Enterprise Server" and "Edge AI":
+  neither appears in the CV or the fleet.
+
+## Repository cards checked against their READMEs
+
+`infra` no longer "builds the fleet": its README describes modules for
+cloud-init Ubuntu VMs and a Talos cluster, a production environment whose
+remote backend is configured but holds no deployed resources, and a CI gate
+of format, lint, Trivy, gitleaks, and mock-provider module tests. The card
+now says that. `automation` says "Controls map to" rather than "Every
+control maps to". `relay-shell` matched its README and is unchanged in
+substance.
+
+## Fleet numbers refreshed from the data plane
+
+Read live on 2026-09-10: 221,573 documents with 221,573 embeddings,
+38,195 CVEs, 130 enabled feed sources of 138 configured. The Data &
+inference card now says over 220,000 documents, some 38,000 CVEs, and some
+130 sources (it said "more than 130", which the enabled count does not
+support).
+
+## House style and accessibility
+
+Batches 9 and 22 established that the copy carries no em-dashes; batch 34
+reintroduced eight. All are gone again, replaced by colons, commas, and
+parentheticals. Date ranges on the Experience cards use an en dash, and the
+current position reads "since 2025". The arrow in "IT Technician →
+IT Systems Administrator" is now the word "then", the "plan → authorize →
+execute" phrase in the control-plane card is written out, and the arrow
+separators in the topology diagram use the `content: '→' / ''` alt-text
+form so screen readers skip them, matching the `//` heading prefix.
+
+## Housekeeping
+
+`dateModified` and the sitemap `lastmod` moved to 2026-09-10; the inline
+style hash in the meta CSP was recomputed. html-validate, the data-file
+checks, the CSP hashes, the contrast budget (40 token pairs across 5
+palettes), and the internal-link check all pass.
+
 # Site Patch Changelog -- 2026-08-14 (batch 34: the site follows the CV)
 
 The CV is the primary document; the site had drifted from it. This batch pulls
