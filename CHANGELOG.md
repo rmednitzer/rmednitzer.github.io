@@ -1,3 +1,31 @@
+# Site Patch Changelog -- 2026-09-10 (batch 48: Open source cards checked against their repositories)
+
+The three Open source cards were read against the README, LICENSE,
+tiered-authority ADR, and policy module of the repositories they
+describe. The facts held; the wording did not, in five places.
+
+relay-shell: "work a real shell and SSH over hosts" did not parse, and
+now reads "a real shell, on the local host and over SSH on the hosts I
+administer". "Authority is tiered (open, guarded, and read-only modes
+over a global deny-list)" conflated the per-call tier classification
+with the policy mode; the card now states the three mechanisms in the
+order the code applies them: tier classification, policy mode, deny-list
+checked first in every mode. "Every call is recorded as a SHA-256 hash
+rather than a raw body" hashed the wrong thing; the call is logged and
+its output is what is stored as a hash. The closing analogy about a new
+colleague is replaced by a plain statement of the design goal.
+
+infra: the module list now names two modules in parallel form instead
+of a product and a module.
+
+automation: "hardening baseline covering ... kernel and systemd
+hardening" said hardening twice and is now a flat list of what the
+baseline covers. Out-of-band management is labelled as proposed, which
+is how the repository itself labels it (no BMC hardware in the fleet).
+
+Copy only; no markup, style, structured data, or CSP hash changed. The
+local gate passes.
+
 # Site Patch Changelog -- 2026-09-10 (batch 47: validation pass against WCAG 2.2 and the Google profile-page schema)
 
 A validation pass over `index.html` with html-validate (recommended, a11y,
