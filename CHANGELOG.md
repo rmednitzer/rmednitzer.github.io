@@ -1,3 +1,17 @@
+# Site Patch Changelog -- 2026-09-10 (batch 44: breadth before biography)
+
+The second About paragraph made the apprenticeship the origin of
+everything and reduced the owner to it. It now leads with self-taught
+breadth across disciplines, from hardware and operating systems through
+systems theory and control to the rules that govern machines and the
+trustworthiness of models and agents, with production described as the
+source of a temperament rather than of the knowledge. The apprenticeship
+stays on the Experience timeline as a dated fact and is no longer
+mentioned in About. The membership paragraph is reordered so the
+societies come first and the reading follows. No fact, date, membership,
+or technology changed; no markup, style, or CSP hash changed. The local
+gate passes.
+
 # Site Patch Changelog -- 2026-09-10 (batch 43: About is about a person)
 
 The About section opened with a job title and a list of employers, which
