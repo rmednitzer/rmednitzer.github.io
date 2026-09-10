@@ -1,3 +1,12 @@
+# Site Patch Changelog -- 2026-09-10 (batch 40: the current position, without a start date)
+
+The Cubicure entry said "I start in October 2026", which is true for a
+few weeks and then wrong for years. It now reads as the current position:
+"Since 2026" in the date column, one sentence on what the company makes
+and what the job is, no start date. The hero's `Now` row says the same:
+IT Systems Engineer at Cubicure, a Vienna maker of industrial 3D printers.
+No markup or style changed; the CSP hashes are untouched.
+
 # Site Patch Changelog -- 2026-09-10 (batch 39: a voice)
 
 The copy was accurate and read like a spec sheet. This batch rewrites it
