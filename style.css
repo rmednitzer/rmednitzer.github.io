@@ -176,6 +176,15 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   color: var(--muted);
   margin-bottom: 2rem;
 }
+/* the breadcrumb link sits in running text next to the current page name,
+   so it carries the same hairline underline as in-paragraph links */
+.article-nav a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-accent);
+}
+.article-nav a:hover { text-decoration-color: var(--accent); }
 
 .article-header { margin-bottom: 2.5rem; }
 

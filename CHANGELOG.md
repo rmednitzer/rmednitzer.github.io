@@ -1,3 +1,46 @@
+# Site Patch Changelog -- 2026-09-10 (batch 47: validation pass against WCAG 2.2 and the Google profile-page schema)
+
+A validation pass over `index.html` with html-validate (recommended, a11y,
+and document presets), axe-core 4.10 at 1280px and 360px in both colour
+schemes, Lighthouse 12 (desktop 100/100/100 for performance,
+accessibility, and best practices), and hand measurement of the sticky
+navigation. Four changes come out of it.
+
+The section navigation is pinned only from the page's 640px breakpoint
+upward. Below that width the five entries wrap to two rows (three at
+320px), and a pinned bar of that height covered the heading a nav link
+had just jumped to: at 320px the heading landed at 88px while the bar
+ended at 113px. Narrower than 640px the bar now stays in flow. The scroll
+offset moves from `scroll-margin-top` on each section to
+`scroll-padding-top` on the root inside the same media query, which is
+the WCAG 2.2 SC 2.4.11 (Focus Not Obscured) technique C43 and also
+applies when a keyboard-focused link is scrolled into view, not only to
+fragment navigation. Measured after the change: headings sit 36px below
+the bar at 640px and 1280px, and directly at the section padding on
+phones.
+
+The portrait loses its hover ring. It is not interactive, and the
+convention since 2026-03 is that non-interactive elements do not signal
+interactivity (the same reason `.tag` lost its hover).
+
+The Person entry in the JSON-LD gains `alternateName` ("rmednitzer", the
+handle that the `sameAs` profiles use, which the Google profile-page
+guidance recommends) and `worksFor` (Cubicure GmbH, which the hero
+already states). Nothing in the structured data is new information.
+
+In `style.css`, the breadcrumb link on `legal.html` gains the same
+hairline underline as in-paragraph links. axe flagged it as
+distinguishable by colour alone (WCAG 1.4.1); it is the one violation
+either page produced.
+
+Not changed, with the reasons: Lighthouse's "robots.txt is not valid" is
+its in-page fetch being blocked by the meta CSP (no `connect-src`); the
+file itself answers 200 locally and on GitHub Pages. Cache lifetime
+(`max-age=600`) and compression are set by GitHub Pages, not by the repo.
+The 400px Open Graph portrait is below the 1200px that large link
+previews prefer; generating a wider card is a separate asset change.
+Inline-style CSP hash recomputed; the local gate passes.
+
 # Site Patch Changelog -- 2026-09-10 (batch 46: a teaser, not a dossier)
 
 Batch 45 leaned too far into biography. The page is meant to be a teaser

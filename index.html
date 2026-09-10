@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Systems &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-koJDf75RXZa9Rrn876G/kxA3mXbRhB3Khxmr3XiBY2w='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-fjDiXBDvxcyFjtmjQ717q3GkKDhWfswqwLIXLjISPnw='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
   <meta name="description" content="Roman Mednitzer is a systems and platform engineer in Vienna, focused on reliable Linux infrastructure, Kubernetes, observability, and tested recovery.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -57,9 +57,7 @@
       border: 2px solid var(--border-accent);
       object-fit: cover;
       box-shadow: 0 0 0 6px var(--accent-dim);
-      transition: box-shadow .3s;
     }
-    .avatar:hover { box-shadow: 0 0 0 8px var(--accent-glow); }
 
     .hero-text { padding-top: .35rem; min-width: 0; }
 
@@ -126,7 +124,6 @@
 
     /* ── Section navigation: pinned once the hero scrolls away ── */
     .site-nav {
-      position: sticky; top: 0; z-index: 2;
       margin: 2.25rem 0 0;
       padding: .7rem 0;
       border-top: 1px solid var(--border);
@@ -143,10 +140,20 @@
     .site-nav a { display: inline-flex; align-items: baseline; gap: .45rem; padding: .25rem 0; color: var(--muted); }
     .site-nav a::before { counter-increment: nav; content: counter(nav, decimal-leading-zero) / ''; color: var(--accent); font-size: .66rem; }
     .site-nav a:hover { color: var(--fg-strong); text-decoration: none; }
+    /* Pinned only where the five entries fit on one row (the page's 640px
+       breakpoint). Narrower, the bar wraps to two or three rows and, pinned,
+       would cover the heading it had just jumped to. The offset lives as
+       scroll-padding on the root rather than scroll-margin on each section so
+       it also applies when a keyboard-focused link is scrolled into view
+       (WCAG 2.2 SC 2.4.11, technique C43). */
+    @media (min-width: 640px) {
+      .site-nav { position: sticky; top: 0; z-index: 2; }
+      html { scroll-padding-top: 3.25rem; }
+    }
 
     /* ── Sections: numbered, hairline-ruled, no outer card ── */
     main { counter-reset: section; }
-    .section { padding-top: 2.25rem; margin-bottom: 1.5rem; scroll-margin-top: 3.25rem; }
+    .section { padding-top: 2.25rem; margin-bottom: 1.5rem; }
 
     .section h2 {
       display: flex; align-items: baseline; gap: .8rem;
@@ -518,7 +525,9 @@
       "name": "Roman Mednitzer",
       "givenName": "Roman",
       "familyName": "Mednitzer",
+      "alternateName": "rmednitzer",
       "jobTitle": "Systems & Platform Engineer",
+      "worksFor": {"@type": "Organization", "name": "Cubicure GmbH"},
       "description": "Systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, and tested recovery.",
       "url": "https://rmednitzer.github.io/",
       "image": {
