@@ -3,7 +3,7 @@
 ## Project
 
 Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; ISMS/BCM practice and ISO 27001 audit preparation; open-source tooling (relay-shell, infra, automation) and a self-run homelab fleet.
+Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source tooling (relay-shell, infra, automation) and a self-run home lab with its own OSINT pipeline. A personal site, not a candidate profile: first person, no job-search notice, no certificate rows.
 
 ## Stack
 
