@@ -1,3 +1,14 @@
+# Site Patch Changelog -- 2026-09-10 (batch 41: clearer profile structure and copy)
+
+The profile now leads with a concise statement of scope, replaces the broad
+interest list with four professional focus areas, and tightens the About and
+Experience copy around verifiable responsibilities and operating principles.
+The former Stack section is now Capabilities and appears before Open source, so
+the page moves from background and experience to capabilities, evidence in
+public repositories, and the home lab. Search, social, structured-data,
+manifest, and README descriptions use the same positioning. No claims,
+technologies, dates, roles, or organisations were added.
+
 # Site Patch Changelog -- 2026-09-10 (batch 40: the current position, without a start date)
 
 The Cubicure entry said "I start in October 2026", which is true for a
