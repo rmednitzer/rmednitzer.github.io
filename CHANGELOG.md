@@ -1,3 +1,74 @@
+# Site Patch Changelog -- 2026-09-10 (batch 36: typography, hierarchy, and layout)
+
+A design pass on the profile page. The palette, the two fonts, and every
+token are unchanged; what changed is how the type is used, how the page is
+divided, and what a reader sees first. No new colour or font literal, no
+inline `style=`, no page-specific stylesheet.
+
+## Two voices instead of one
+
+DM Mono had been carrying headings, card titles, dates, tags, and labels
+alike, so nothing on the page outranked anything else. It now speaks only
+for metadata: dates, organisations, tags, labels, the nav, the footer, and
+repository names (which are identifiers). Everything a reader is meant to
+read as prose or as a heading is Outfit: the name at up to 2.6rem, the
+role beneath it at 500 weight in the accent colour, section titles at
+around 1.5rem, card and position titles at 1.08rem and 600 weight. Body
+copy moved from 1rem to 1.0625rem on a 1.6 line-height, card copy from
+.85rem to .95rem, and measures are capped at 66 to 70ch (76ch for the lead
+repository card). Mono numerals are tabular, so dates and counts line up.
+
+## Hero
+
+The role is a line of its own rather than a fragment after the city. The
+eight-row key/value strip is split: `seeking` and `available` sit in an
+accent-bordered notice directly under the contact buttons, which is the
+one thing a recruiter should not have to hunt for, and the remaining six
+facts lay out two pairs per row from 720px so the strip is three rows deep
+instead of eight. The portrait grew to 132px to match the larger name.
+
+## Section navigation and numbered sections
+
+A section nav (About, Experience, Open source, Skills, Fleet) sits under
+the hero and pins to the top of the viewport as the page scrolls; every
+section gained an `id` and a scroll margin so the pinned bar never covers
+its heading. The outer section cards are gone. Sections are now separated
+by whitespace and a numbered heading (`01` to `05`, a CSS counter with the
+same silent alt-text form as the old `//` prefix) that runs a hairline out
+to the column edge; the inner cards (`.spec`, the topology tiers) carry the
+surface colour instead, so the page has one level of boxes rather than two.
+
+## Experience as a timeline
+
+The four stacked cards became a timeline: date in a right-aligned mono
+column, a vertical rule with an accent dot per position, title, employer
+and body on the right. On narrow screens the date sits above the entry and
+the rule stays. The apprenticeship note aligns with the body column.
+
+## Capitalisation
+
+Visible text is sentence case throughout, brand names excepted: the fact
+values ("Around ten years", "Open source by default"), the metadata tags
+("Cloud VM", "Always-on server", "Since 2025"), the topology labels and
+gate steps ("Plan", "Authorize", "Execute"), and the principles tags
+("Credential and network separation"). Skill-row labels use an ampersand
+consistently ("Containers & GitOps", "Automation & IaC", "Homelab &
+learning") instead of a slash. Date ranges use an en dash.
+
+## Shared stylesheet
+
+`style.css`: body type size and line-height as above; `.tag` gained a
+line-height, tabular numerals, and slightly more padding; the footer sits
+lower with a touch more tracking. `legal.html` picks up the body size and
+nothing else.
+
+## Housekeeping
+
+The inline style hash in the meta CSP was recomputed. html-validate, the
+data-file checks, the CSP hashes, the contrast budget (40 token pairs
+across 5 palettes), and the internal-link check all pass; the page was
+rendered in dark and light at 1280px and 400px to check the result.
+
 # Site Patch Changelog -- 2026-09-10 (batch 35: say no more than the CV does)
 
 An accuracy pass against the CV and against live sources, plus the house
