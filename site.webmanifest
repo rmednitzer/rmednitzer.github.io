@@ -1,7 +1,7 @@
 {
   "name": "Roman Mednitzer · Systems & Platform Engineer",
   "short_name": "R. Mednitzer",
-  "description": "Systems & Platform Engineer in Vienna. Production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated environments. ISMS/BCM practice and ISO 27001 audit preparation; open source by default.",
+  "description": "Systems & Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes and GitOps, observability, and backup with tested recovery; open source by default; a home lab with its own OSINT pipeline.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

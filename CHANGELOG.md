@@ -1,3 +1,55 @@
+# Site Patch Changelog -- 2026-09-10 (batch 37: a personal site, not a candidate profile)
+
+The owner's direction: the page read like a job application. Three things
+were no longer true or never sat right, and the fleet section showed a
+network diagram where a person should be.
+
+## Removed
+
+- The `certified` row (ISO/IEC 27001 ISMS Manager and Auditor, 2017, not
+  recertified) is gone from the hero and from JSON-LD `hasCredential`. A
+  lapsed certificate is not a headline. ISO 27001 and ISMS/BCM stay in the
+  Governance stack row, which is what they are: things worked with.
+- The availability notice (`seeking` / `available`). The owner starts as
+  IT Systems Engineer at Cubicure GmbH, Vienna, in October 2026. That is
+  now the `Now` row in the hero and the top entry on the timeline; the
+  Kwizda entry closes at 2026.
+- "Mostly self-taught". The apprenticeship is on the same page. The About
+  text says what was meant: the trade was learned by doing it.
+- The fleet section: topology diagram, four role cards, principles row,
+  and the `.topo-*` and `.fleet-principles` rules that drew them.
+
+## Rewritten
+
+- **Hero.** The tagline is first person and says what the owner does and
+  why the lab exists. Four facts remain: `Now`, `Into` (sovereign systems;
+  defence, robotics, and space; scientific, medical, and industrial
+  installations; EU platform regulation), `Member of` (with the two IEEE
+  societies named), `Languages`.
+- **About.** Three first-person paragraphs: the work and where it was
+  done; how the trade was learned and why open source and self-hosting;
+  what matters beyond the job. Every claim traces to the CV.
+- **Experience.** Same timeline, entries trimmed to what a reader of a
+  personal site needs, Cubicure on top.
+- **Stack** (was Skills): six rows instead of eight. The homelab row is
+  gone; the lab has its own section.
+- **The lab** replaces the fleet: three paragraphs on what it is, what it
+  is for (reading the news through an OSINT pipeline: some 130 feeds,
+  220,000+ documents, 38,000+ CVEs, hybrid retrieval, local models, a
+  morning briefing), and the habits it practises (the gate and audit log,
+  the hardening baseline, tested restores, self-hosted Git), with a
+  `Built with` tag row beneath.
+
+## Metadata
+
+The description, Open Graph, Twitter, JSON-LD, manifest, README, and the
+`CLAUDE.md` topic line now describe a person with a lab rather than a
+candidate. The section nav reads About, Experience, Open source, Stack,
+Lab. The inline style hash in the meta CSP was recomputed. html-validate,
+the data-file checks, the CSP hashes, the contrast budget, and the
+internal-link check all pass; dark and light renders at 1280px and 400px
+were inspected.
+
 # Site Patch Changelog -- 2026-09-10 (batch 36: typography, hierarchy, and layout)
 
 A design pass on the profile page. The palette, the two fonts, and every

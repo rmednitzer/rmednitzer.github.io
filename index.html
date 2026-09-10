@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <title>Roman Mednitzer | Systems &amp; Platform Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-0fFQx4DuTCV4eG7RHhwLwhMz860Idah/cFFnNdYvtc0='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-rpTfBwBzm0qKrdHAb3Hhh9b5L03VY75Nr1NckWSEq3c='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet built entirely on open-source software.">
+  <meta name="description" content="Roman Mednitzer, Systems &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes and GitOps, observability, and backup with tested recovery in regulated environments; open source by default; a home lab that reads the news through its own OSINT pipeline.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet.">
+  <meta property="og:description" content="Systems &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes and GitOps, observability, and backup with tested recovery; open source by default; a home lab that reads the news through its own OSINT pipeline.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -29,7 +29,7 @@
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer · Systems &amp; Platform Engineer">
-  <meta name="twitter:description" content="Systems &amp; Platform Engineer in Vienna. Ten years of production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet.">
+  <meta name="twitter:description" content="Systems &amp; Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes and GitOps, observability, and backup with tested recovery; open source by default; a home lab that reads the news through its own OSINT pipeline.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -113,29 +113,14 @@
     .btn:hover { border-color: var(--accent); background: var(--accent-dim); text-decoration: none; }
     .btn svg { width: 14px; height: 14px; stroke: var(--muted); stroke-width: 2; fill: none; }
 
-    /* the open-to-work notice is the one thing a reader should not have to hunt for */
-    .hero-notice {
-      margin-top: 1.5rem;
-      border: 1px solid var(--border-accent);
-      border-radius: var(--radius);
-      background: var(--accent-dim);
-      padding: .9rem 1.1rem;
-    }
-    .hero-notice dl,
-    .hero-facts { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.1rem; margin: 0; }
-    .hero-facts { margin-top: 1.25rem; }
-    .hero-notice dt,
+    .hero-facts { display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.1rem; margin: 1.5rem 0 0; }
     .hero-facts dt { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); padding-top: .25rem; }
-    .hero-notice dd,
     .hero-facts dd { margin: 0; font-size: .92rem; line-height: 1.5; color: var(--fg); }
-    .hero-notice dd { color: var(--fg-strong); }
-    /* two label/value pairs per row once there is room, so the strip stays short */
-    @media (min-width: 720px) { .hero-facts { grid-template-columns: max-content 1fr max-content 1fr; column-gap: 1.25rem; } }
 
     @media (max-width: 560px) {
       .hero { grid-template-columns: 1fr; justify-items: center; gap: 1rem; text-align: center; }
       .hero-text { display: flex; flex-direction: column; align-items: center; width: 100%; padding-top: 0; }
-      .hero-tagline, .hero-notice, .hero-facts { width: 100%; text-align: left; }
+      .hero-tagline, .hero-facts { width: 100%; text-align: left; }
       .hero-links { justify-content: center; }
     }
 
@@ -206,6 +191,8 @@
     .spec--lead p { max-width: 76ch; }
 
     .repos-note { margin-top: 1rem; font-family: var(--font-mono); font-size: .76rem; color: var(--muted); }
+    /* the lab's parts list sits under its prose with the same hairline the stack rows use */
+    .lab-parts { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 
     /* ── Experience: a timeline, dates in the margin ── */
     .track { list-style: none; margin: 1.5rem 0 0; padding: 0; }
@@ -242,60 +229,6 @@
       .tag-row { display: contents; }
     }
 
-    /* ── Fleet topology: the control-plane / data-plane split the section
-       describes. Drawn in HTML rather than SVG so the labels reflow and stay
-       real text at every width; SVG text scales with the viewBox, so a
-       diagram sized for this column would fall below legibility on a phone. ── */
-    .topo { margin: 1.5rem 0 0; }
-
-    .topo-tier { border: 1px solid var(--border); border-radius: 12px; background: var(--bg-surface); padding: 1rem 1.1rem 1.1rem; }
-
-    /* same hairline as the section headings, so the diagram reads as part of
-       the page rather than an inset picture */
-    .topo-tier-label {
-      display: flex; align-items: center; gap: .55rem;
-      font-family: var(--font-mono); font-size: .68rem;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: var(--accent);
-      margin-bottom: .8rem;
-    }
-    .topo-tier-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-    .topo-node { border: 1px solid var(--border); border-radius: var(--radius); padding: .65rem .8rem; transition: border-color .2s, background .2s; }
-    .topo-node:hover { border-color: var(--border-accent); background: var(--accent-dim); }
-    /* the single entry point carries the accent border the other nodes earn only on hover */
-    .topo-node--entry { border-color: var(--border-accent); }
-    .topo-node-name { display: block; font-weight: 500; font-size: .95rem; color: var(--fg-strong); }
-    .topo-node-meta { display: block; margin-top: .25rem; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .02em; color: var(--muted); }
-
-    .topo-nodes { display: grid; grid-template-columns: 1fr; gap: .6rem; list-style: none; margin: 0; padding: 0; }
-    @media (min-width: 640px) { .topo-nodes { grid-template-columns: repeat(3, 1fr); } }
-
-    /* plan, authorize, execute: arrows as separators between the pills, silent for screen readers */
-    .topo-gate { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .5rem; list-style: none; margin: .75rem 0 0; padding: 0; }
-    .topo-gate li { display: flex; align-items: center; gap: .5rem; }
-    .topo-gate li:not(:last-child)::after { content: '→' / ''; font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
-
-    /* the run between the tiers: rule, label, chevron */
-    .topo-link {
-      display: flex; flex-direction: column; align-items: center; gap: .35rem;
-      padding: .55rem 0;
-      font-family: var(--font-mono); font-size: .66rem;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: var(--muted);
-    }
-    .topo-link::before { content: ''; width: 1px; height: .8rem; background: var(--border-accent); }
-    .topo-link::after {
-      content: ''; width: 6px; height: 6px;
-      border-right: 1px solid var(--border-accent);
-      border-bottom: 1px solid var(--border-accent);
-      transform: rotate(45deg);
-      margin-top: -.2rem;
-    }
-
-    .topo figcaption { margin-top: .85rem; font-size: .85rem; color: var(--muted); max-width: 68ch; }
-
-    .fleet-principles { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 
     @media (min-width: 561px) and (max-width: 768px) {
       .hero { gap: 1.25rem; }
@@ -328,7 +261,7 @@
         <h1>Roman Mednitzer</h1>
         <p class="hero-role">Systems &amp; Platform Engineer</p>
         <p class="hero-where">Vienna, Austria</p>
-        <p class="hero-tagline">I run production Linux, virtualization, and Kubernetes infrastructure in regulated, business-critical environments: broad rather than specialized, from hardware and storage through to observability and verified recovery.</p>
+        <p class="hero-tagline">I run production infrastructure for a living and a small lab at home for everything I want to understand properly. Linux, virtualization, Kubernetes, observability, and backups I have actually restored.</p>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
@@ -343,19 +276,11 @@
             GitHub
           </a>
         </nav>
-        <aside class="hero-notice" aria-label="Availability">
-          <dl>
-            <dt>Seeking</dt><dd>Senior systems integration, platform and infrastructure operations, or systems architecture, for a technically demanding product, facility, or platform</dd>
-            <dt>Available</dt><dd>From October 2026 · Vienna and surroundings · on-site or remote · security clearance possible where a role requires one</dd>
-          </dl>
-        </aside>
         <dl class="hero-facts">
-          <dt>Focus</dt><dd>Linux · virtualization &amp; storage · Kubernetes/GitOps · observability · backup/DR</dd>
-          <dt>Experience</dt><dd>Around ten years in regulated &amp; business-critical environments · estates of 50–500 hosts and VMs</dd>
-          <dt>Certified</dt><dd>ISO/IEC 27001 ISMS Manager &amp; Auditor (TÜV Austria, 2017; not recertified)</dd>
-          <dt>Approach</dt><dd>Open source by default · mostly self-taught</dd>
+          <dt>Now</dt><dd>Joining Cubicure in Vienna as IT Systems Engineer in October 2026</dd>
+          <dt>Into</dt><dd>Sovereign systems · defence, robotics, and space · scientific, medical, and industrial installations · the EU regulation that lands on platforms</dd>
+          <dt>Member of</dt><dd>IEEE (Systems, Man, and Cybernetics Society; Computational Intelligence Society) · Austrian Computer Society (OCG)</dd>
           <dt>Languages</dt><dd>German (native) · English (fluent)</dd>
-          <dt>Member of</dt><dd>IEEE · Austrian Computer Society (OCG)</dd>
         </dl>
       </div>
     </header>
@@ -365,16 +290,17 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#open-source">Open source</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#lab">Lab</a></li>
       </ol>
     </nav>
 
     <!-- ── About ── -->
     <section class="section" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I keep business-critical systems dependable in environments where both downtime and audit findings are expensive: medical device manufacturing, managed services at an Austrian IT provider, and group-wide enterprise operations. I work broadly rather than narrowly: Linux, virtualization, and hardware through storage and networking to container platforms, observability, and backup with verified recovery. Operations run under change control throughout, with evidence an auditor can follow.</p>
-      <p>I run the infrastructure and prove the recoveries, and I have worked inside ISMS and BCM practice up to ISO 27001 audit preparation, so the engineering and the governance get built together rather than bolted on. Alongside the day job I run a private lab and track the EU regulation that lands on platforms (NIS2, the CRA, and the AI Act), and I am orienting toward defense technology and sovereign systems.</p>
+      <p>I am a systems and platform engineer in Vienna. For around ten years I have kept business-critical systems running in places where downtime and audit findings are both expensive: a manufacturer of radiotherapy devices, an Austrian IT service provider, and a group IT department. I work broadly rather than deeply in one thing, from Linux, virtualization, and hardware through storage and networking to container platforms, observability, and backup with recovery I have tested rather than assumed.</p>
+      <p>I learned the trade by doing it: an apprenticeship, then production, with change control and evidence as habits rather than paperwork. I prefer open source, and I would rather run something myself and understand it than rent it and hope. The lab at home exists for exactly that reason.</p>
+      <p>What I care about beyond the day job is sovereignty: infrastructure that the people who depend on it can rebuild, audit, and operate themselves. I follow the EU regulation that lands on platforms (NIS2, the CRA, and the AI Act), and the environments that interest me most are defence, robotics, space, scientific and medical installations, and industrial systems.</p>
     </section>
 
     <!-- ── Experience ── -->
@@ -383,11 +309,19 @@
       <p class="section-lede">Around ten years of production operations, eight of them at one Austrian IT service provider, from junior to senior engineer.</p>
       <ol class="track">
         <li class="track-item">
-          <span class="track-when">Since 2025</span>
+          <span class="track-when">From 2026</span>
+          <div class="track-body">
+            <h3 class="track-role">IT Systems Engineer</h3>
+            <p class="track-org">Cubicure GmbH · Vienna</p>
+            <p>Starting in October 2026, at a manufacturer of industrial 3D printing systems.</p>
+          </div>
+        </li>
+        <li class="track-item">
+          <span class="track-when">2025–2026</span>
           <div class="track-body">
             <h3 class="track-role">IT Systems Administrator, infrastructure and platform operations</h3>
             <p class="track-org">Kwizda Holding GmbH · Vienna</p>
-            <p>Production platform operations across a heterogeneous Windows and Linux estate of roughly 200 to 500 hosts and VMs, with an active push toward containers and GitOps, where I contribute to the introduction of Kubernetes platforms and GitOps delivery. I own backup and recovery with documented restore verification, run monitoring and alerting for operational visibility across the estate, manage infrastructure and server hardware, and support change management and compliance evidence aligned to ISO 27001 and NIS2.</p>
+            <p>Platform operations across a heterogeneous Windows and Linux estate of a few hundred hosts and VMs: backup and recovery with documented restore verification, monitoring and alerting, server hardware, and the group's move toward Kubernetes and GitOps.</p>
           </div>
         </li>
         <li class="track-item">
@@ -395,7 +329,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Systems Engineer, senior level</h3>
             <p class="track-org">EBCONT operations GmbH · Vienna</p>
-            <p>Eight years across managed-services customers and internal infrastructure, promoted from junior to senior. Incident, problem, and change lifecycle in production customer environments with structured documentation and a defined rollback; virtualization clusters on enterprise SAN storage; monitoring and alerting for estates of 50 to 200 hosts and VMs; Kubernetes platforms across several distributions with GitOps delivery; the internal source-control and CI platform, upgrades included; and a proof of concept for hyperconverged infrastructure with a high-speed switch fabric. Third-level support and on-call throughout.</p>
+            <p>Eight years at a managed-services provider, junior to senior. The incident, problem, and change lifecycle for customer production environments; virtualization clusters on enterprise SAN storage; Kubernetes across several distributions with GitOps delivery; the internal source-control and CI platform; and a hyperconverged-infrastructure proof of concept. Third-level support and on-call throughout.</p>
           </div>
         </li>
         <li class="track-item">
@@ -403,7 +337,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Technician, then IT Systems Administrator</h3>
             <p class="track-org">medPhoton GmbH · Salzburg</p>
-            <p>Production server and application operations for a manufacturer of radiotherapy medical devices, under medical-device regulatory conditions. Structured troubleshooting with documented incident handling and root-cause analysis, backup and recovery with integrity checks, and hands-on ISMS and BCM practice including preparation for ISO 27001 audits. The standardized operating procedures and runbooks I wrote were adopted by the team.</p>
+            <p>Server and application operations for a manufacturer of radiotherapy devices, under medical-device regulation: documented incident handling and root-cause analysis, backup and recovery with integrity checks, ISMS and BCM practice with ISO 27001 audit preparation, and the runbooks the team adopted.</p>
           </div>
         </li>
         <li class="track-item">
@@ -411,7 +345,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Technician, apprenticeship</h3>
             <p class="track-org">Ledl.net GmbH · Salzburg</p>
-            <p>First production Linux at a hosting provider: web hosting operations, domain administration, and customer support.</p>
+            <p>Where the Linux started: web hosting, domain administration, and customer support at a hosting provider.</p>
           </div>
         </li>
       </ol>
@@ -421,7 +355,7 @@
     <!-- ── Open source ── -->
     <section class="section" id="open-source" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
-      <p class="section-lede">The same arc as the day job, in public: the governed control plane that operates the fleet, and the infrastructure as code and configuration management that build it.</p>
+      <p class="section-lede">The same habits, in public: the control plane that operates my lab, and the infrastructure as code and configuration management that build it.</p>
       <div class="spec spec--lead">
         <div class="spec-head">
           <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
@@ -435,7 +369,7 @@
             <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
             <span class="spec-tag">Apache-2.0 · OpenTofu</span>
           </div>
-          <p>OpenTofu modules for the fleet's hosts: cloud-init Ubuntu VMs on KVM/libvirt, and a Talos Linux module that stands up a Kubernetes cluster. Lab and production environments are separated, production state is configured for an encrypted, locked remote backend, and every change is CI-gated: format, lint, security and secret scanning, and module tests against mock providers.</p>
+          <p>OpenTofu modules for the lab's hosts: cloud-init Ubuntu VMs on KVM/libvirt, and a Talos Linux module that stands up a Kubernetes cluster. Lab and production environments are separated, production state is configured for an encrypted, locked remote backend, and every change is CI-gated: format, lint, security and secret scanning, and module tests against mock providers.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
@@ -448,12 +382,13 @@
       <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a></p>
     </section>
 
-    <!-- ── Skills ── -->
-    <section class="section" id="skills" aria-labelledby="skills-h">
-      <h2 id="skills-h">Skills</h2>
+    <!-- ── Stack ── -->
+    <section class="section" id="stack" aria-labelledby="stack-h">
+      <h2 id="stack-h">Stack</h2>
+      <p class="section-lede">What I reach for, at work and at home.</p>
       <dl class="taglist">
         <div class="tag-row">
-          <dt>Linux &amp; virtualization</dt>
+          <dt>Platforms</dt>
           <dd>
             <span class="tag tag--accent">Linux</span>
             <span class="tag tag--accent">Ubuntu</span>
@@ -466,7 +401,7 @@
           </dd>
         </div>
         <div class="tag-row">
-          <dt>Storage &amp; data</dt>
+          <dt>Storage &amp; backup</dt>
           <dd>
             <span class="tag">ZFS</span>
             <span class="tag">Ceph</span>
@@ -475,11 +410,11 @@
             <span class="tag">PostgreSQL</span>
             <span class="tag">Veeam</span>
             <span class="tag">Restic</span>
-            <span class="tag tag--accent">Verified restores</span>
+            <span class="tag tag--accent">Tested restores</span>
           </dd>
         </div>
         <div class="tag-row">
-          <dt>Containers &amp; GitOps</dt>
+          <dt>Containers &amp; delivery</dt>
           <dd>
             <span class="tag">Kubernetes</span>
             <span class="tag">OpenShift</span>
@@ -489,20 +424,14 @@
             <span class="tag">Helm</span>
             <span class="tag">Argo CD</span>
             <span class="tag">Flux</span>
-          </dd>
-        </div>
-        <div class="tag-row">
-          <dt>Automation &amp; IaC</dt>
-          <dd>
             <span class="tag">Ansible</span>
-            <span class="tag">Ansible Automation Platform</span>
             <span class="tag">Terraform</span>
             <span class="tag">OpenTofu</span>
             <span class="tag">GitLab CI/CD</span>
           </dd>
         </div>
         <div class="tag-row">
-          <dt>Observability</dt>
+          <dt>Observability &amp; security</dt>
           <dd>
             <span class="tag">Prometheus</span>
             <span class="tag">VictoriaMetrics</span>
@@ -512,6 +441,9 @@
             <span class="tag">Checkmk</span>
             <span class="tag">Graylog</span>
             <span class="tag">OpenSearch</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">CrowdStrike</span>
+            <span class="tag">CIS hardening</span>
           </dd>
         </div>
         <div class="tag-row">
@@ -528,111 +460,43 @@
           </dd>
         </div>
         <div class="tag-row">
-          <dt>Security &amp; governance</dt>
+          <dt>Governance</dt>
           <dd>
-            <span class="tag tag--accent">ISO 27001</span>
+            <span class="tag">ISO 27001</span>
             <span class="tag">ISMS/BCM</span>
             <span class="tag">NIS2</span>
             <span class="tag">CRA</span>
             <span class="tag">Change control</span>
-            <span class="tag">CIS hardening</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag">CrowdStrike</span>
-          </dd>
-        </div>
-        <div class="tag-row">
-          <dt>Homelab &amp; learning</dt>
-          <dd>
-            <span class="tag">Local LLMs</span>
-            <span class="tag">llama.cpp</span>
-            <span class="tag">Ollama</span>
-            <span class="tag">MCP</span>
-            <span class="tag">PydanticAI</span>
-            <span class="tag">pgvector</span>
-            <span class="tag">LLMOps</span>
           </dd>
         </div>
       </dl>
     </section>
 
-    <!-- ── The fleet ── -->
-    <section class="section" id="fleet" aria-labelledby="fleet-h">
-      <h2 id="fleet-h">The fleet</h2>
-      <p class="section-lede">A self-run, all-open-source personal fleet, organized as a strict control-plane / data-plane split and driven end to end through a governed <a href="https://modelcontextprotocol.io">Model Context Protocol</a> control plane. Linux hosts and a single-node Kubernetes cluster, meshed and observable, run with the habits I bring to production.</p>
-      <figure class="topo">
-        <div class="topo-tier">
-          <span class="topo-tier-label">Control plane</span>
-          <div class="topo-node topo-node--entry">
-            <span class="topo-node-name">MCP gateway</span>
-            <span class="topo-node-meta">Cloud VM · OAuth 2.1 + PKCE · CIDR-locked proxy</span>
-          </div>
-          <ol class="topo-gate">
-            <li><span class="tag">Plan</span></li>
-            <li><span class="tag">Authorize</span></li>
-            <li><span class="tag">Execute</span></li>
-          </ol>
-        </div>
-        <div class="topo-link"><span>Every mutation, hash-chained</span></div>
-        <div class="topo-tier">
-          <span class="topo-tier-label">Data plane</span>
-          <ul class="topo-nodes">
-            <li class="topo-node">
-              <span class="topo-node-name">Data &amp; inference</span>
-              <span class="topo-node-meta">GPU host · loopback-only</span>
-            </li>
-            <li class="topo-node">
-              <span class="topo-node-name">Observability &amp; SIEM</span>
-              <span class="topo-node-meta">Talos Kubernetes</span>
-            </li>
-            <li class="topo-node">
-              <span class="topo-node-name">Git, services &amp; storage</span>
-              <span class="topo-node-meta">Always-on · ZFS</span>
-            </li>
-          </ul>
-        </div>
-        <figcaption>Every automated action enters through the gateway, and nothing above read-only reaches the data plane without crossing the gate.</figcaption>
-      </figure>
-      <div class="matrix">
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Control plane</h3>
-            <span class="spec-tag">Cloud VM</span>
-          </div>
-          <p>An authenticated, typed MCP gateway on a cloud VM is where every automated action enters the fleet. OAuth 2.1 with PKCE sits behind a CIDR-locked reverse proxy, and no provider credential ever lives in the network-facing process. Anything above read-only crosses an explicit plan, authorize, execute gate with a single-use confirmation digest, and every call lands in an append-only, hash-chained audit log.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Data &amp; inference</h3>
-            <span class="spec-tag">GPU compute server</span>
-          </div>
-          <p>A single workstation-class host carries all local inference and the authoritative data store. Local LLMs run on llama.cpp via llama-swap; PostgreSQL 18 holds the corpora plus a pgvector and Apache AGE knowledge graph, fed by some 130 OSINT sources on a four-hour cycle and six scheduled analysis agents. Over 220,000 documents with full embedding coverage and some 38,000 CVEs enriched with KEV and EPSS, retrieved by hybrid vector and full-text search with reranking. Loopback-only by default.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Observability &amp; SIEM</h3>
-            <span class="spec-tag">Talos Kubernetes</span>
-          </div>
-          <p>A single-node Talos Linux cluster (immutable, API-managed, no SSH) carries fleet-wide telemetry across roughly 30 workloads, its state reconciled from Git by Flux alone: VictoriaMetrics, VictoriaLogs, Tempo, and OpenTelemetry behind Grafana, with vmalert and Alertmanager on top, plus a Wazuh SIEM with realtime file-integrity monitoring and agents across the Linux and Windows hosts. Everything Helm-deployed.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name">Git, services &amp; storage</h3>
-            <span class="spec-tag">Always-on server</span>
-          </div>
-          <p>The fleet's own Git authority runs on self-hosted Forgejo, alongside Ansible job automation and the notification service, so the code that builds the fleet does not depend on anything I do not run. Encrypted Restic backups go off-host. ZFS everywhere on Linux, with Sanoid snapshots, scheduled scrubs, and a pre-change snapshot before anything risky.</p>
-        </div>
-      </div>
-      <dl class="taglist fleet-principles">
+    <!-- ── Lab ── -->
+    <section class="section" id="lab" aria-labelledby="lab-h">
+      <h2 id="lab-h">The lab</h2>
+      <p>I run a small fleet at home: a few Linux hosts on ZFS, a GPU box for local models, and a single-node Talos Kubernetes cluster whose state comes from Git alone. It exists so I can try things I cannot try at work, and break them without anyone noticing.</p>
+      <p>Most of it serves one purpose: reading the news on my own terms. A PostgreSQL knowledge base ingests some 130 OSINT and news feeds, holds over 220,000 documents with embeddings and some 38,000 CVEs enriched with KEV and EPSS, and answers questions through hybrid vector and full-text search with reranking. Local models on llama.cpp do the summarising, and scheduled agents write me a briefing every morning.</p>
+      <p>It is also where I practise what I preach. Every automated action goes through a plan, authorize, execute gate and lands in a hash-chained audit log; the hardening baseline is the automation repository above, applied to every host; snapshots are scheduled and restores are tested rather than assumed; and the Git that builds it all is self-hosted, so the lab depends on nothing I do not run.</p>
+      <dl class="taglist lab-parts">
         <div class="tag-row">
-          <dt>Principles</dt>
+          <dt>Built with</dt>
           <dd>
-            <span class="tag">Credential and network separation</span>
-            <span class="tag">Typed, gated mutation</span>
-            <span class="tag">Localhost-only by default</span>
-            <span class="tag">Hash-chained audit</span>
-            <span class="tag">ZFS snapshots</span>
-            <span class="tag">Encrypted off-host backups</span>
-            <span class="tag">Reversible by default</span>
+            <span class="tag">Talos</span>
+            <span class="tag">Flux</span>
+            <span class="tag">ZFS</span>
+            <span class="tag">Sanoid</span>
+            <span class="tag">Restic</span>
+            <span class="tag">Forgejo</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">VictoriaMetrics</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">pgvector</span>
+            <span class="tag">Apache AGE</span>
+            <span class="tag">llama.cpp</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">MCP</span>
+            <span class="tag">PydanticAI</span>
           </dd>
         </div>
       </dl>
@@ -659,20 +523,13 @@
       "givenName": "Roman",
       "familyName": "Mednitzer",
       "jobTitle": "Systems & Platform Engineer",
-      "description": "Systems & Platform Engineer in Vienna. Ten years operating production Linux, virtualization, storage, Kubernetes/GitOps, observability, and verified backup/DR in regulated, business-critical environments, plus a self-run, governed homelab fleet and hands-on ISMS/BCM work.",
+      "description": "Systems & Platform Engineer in Vienna. Production Linux, virtualization, Kubernetes and GitOps, observability, and backup with tested recovery in regulated environments; open source by default; a home lab that reads the news through its own OSINT pipeline.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
         "url": "https://rmednitzer.github.io/profile_roman-mednitzer-400.png",
         "width": 400,
         "height": 400
-      },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "name": "ISO/IEC 27001 ISMS Manager and Auditor",
-        "credentialCategory": "certificate",
-        "recognizedBy": {"@type": "Organization", "name": "TÜV Austria"},
-        "dateCreated": "2017"
       },
       "memberOf": [
         {"@type":"Organization","name":"Austrian Computer Society (OCG)","url":"https://www.ocg.at/en"},
@@ -762,7 +619,7 @@
         "Ollama",
         "Model Context Protocol",
         "PydanticAI",
-        "LLMOps"
+        "Open Source Intelligence"
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",
