@@ -10,6 +10,11 @@ CSP, asset pruning, CI validation; ADRs 0007 to 0009 accepted); B-06,
 B-07, B-08 closed by batch 19 (owner decisions applied); B-09 closed
 without action, recording the deliberate decision that a CONTRIBUTING.md
 is not appropriate for a personal site that solicits no contributions.
+Addendum (2026-08-13): that decision was reconsidered and reversed by
+batch 33, which added `CONTRIBUTING.md` (plus `CODE_OF_CONDUCT.md`,
+`.github/CODEOWNERS`, a pull request template, and issue forms) as part
+of the repository-paperwork pass — see that batch for the current
+rationale.
 
 One item remains. It requires repository-settings access that only the
 owner has.
