@@ -1,3 +1,12 @@
+# Site Patch Changelog -- 2026-09-12 (batch 49: stop treating LinkedIn's bot-block response as a dead link)
+
+`check_links.py --external` reported `https://www.linkedin.com/in/rmednitzer`
+as unreachable (HTTP 999). LinkedIn returns 999 to any request it does not
+recognise as a real browser, independent of User-Agent; the profile itself is
+reachable. `ACCEPTED_STATUSES` already carried this reasoning for the same
+class of problem on GitHub (403) and rate limiting (429), so 999 joins them
+with a comment explaining why. No content, markup, or CSP changed.
+
 # Site Patch Changelog -- 2026-09-10 (batch 48: Open source cards checked against their repositories)
 
 The three Open source cards were read against the README, LICENSE,

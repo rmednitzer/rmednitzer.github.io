@@ -28,10 +28,12 @@ SITEMAP = 'sitemap.xml'
 SITE_ORIGIN = 'https://rmednitzer.github.io'
 
 # Hosts that answer a real browser but not a CI runner; a failure here says
-# nothing about whether the link is good.
+# nothing about whether the link is good. 999 is LinkedIn's own
+# non-standard status for "request denied to a non-browser client" (seen
+# regardless of User-Agent); treat it the same as the 403/429 bot-block cases.
 EXTERNAL_TIMEOUT = 20
 ACCEPTED_STATUSES = {200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308,
-                     403, 429}
+                     403, 429, 999}
 USER_AGENT = ('Mozilla/5.0 (compatible; rmednitzer.github.io link check; '
               '+https://github.com/rmednitzer/rmednitzer.github.io)')
 
