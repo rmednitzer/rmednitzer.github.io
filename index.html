@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-fjDiXBDvxcyFjtmjQ717q3GkKDhWfswqwLIXLjISPnw='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Roman Mednitzer is a systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, tested recovery, automation, and auditable operations. Available for a hybrid full-time position in Vienna.">
+  <meta name="description" content="Roman Mednitzer is a systems and platform engineer in Vienna who builds inspectable, recoverable infrastructure across Linux, Kubernetes, observability, automation, and AI systems. Available for a hybrid full-time position in Vienna.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, tested recovery, automation, and auditable infrastructure.">
+  <meta property="og:description" content="Personal site of Roman Mednitzer: systems, platforms, open infrastructure, recovery, automation, AI tooling, and the engineering habits behind them.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -29,7 +29,7 @@
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer · Systems &amp; Platform Engineer">
-  <meta name="twitter:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, tested recovery, automation, and auditable infrastructure.">
+  <meta name="twitter:description" content="Personal site of Roman Mednitzer: systems, platforms, open infrastructure, recovery, automation, AI tooling, and the engineering habits behind them.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -268,7 +268,7 @@
         <h1>Roman Mednitzer</h1>
         <p class="hero-role">Systems &amp; Platform Engineer</p>
         <p class="hero-where">Vienna, Austria</p>
-        <p class="hero-tagline">I design, operate, and recover infrastructure: Linux, virtualization, Kubernetes, observability, automation, and the controls that make systems explainable when something goes wrong.</p>
+        <p class="hero-tagline">I build systems I can understand, change, recover, and explain. Linux and platforms are the centre of it; observability, security, automation, and AI are parts of the same system, not separate disciplines.</p>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
@@ -285,8 +285,9 @@
         </nav>
         <dl class="hero-facts">
           <dt>Available</dt><dd>Open to a full-time position, hybrid, in Vienna</dd>
-          <dt>Interests</dt><dd>Linux and open source · how systems stay up and how they fail · EU technology regulation · trustworthy AI systems · hard science fiction and space · industrial and EBM</dd>
-          <dt>Member of</dt><dd>IEEE (Systems, Man, and Cybernetics Society; Computational Intelligence Society) · Austrian Computer Society (OCG)</dd>
+          <dt>Bias</dt><dd>Open source · self-hosted where practical · explicit trust boundaries · tested recovery · clear exit paths</dd>
+          <dt>Curious about</dt><dd>Cybernetics · trustworthy AI · EU technology regulation · space systems</dd>
+          <dt>Outside work</dt><dd>Hard science fiction · industrial and EBM · building things</dd>
           <dt>Languages</dt><dd>German (native) · English (fluent)</dd>
         </dl>
       </div>
@@ -295,32 +296,91 @@
     <nav class="site-nav" aria-label="Sections">
       <ol>
         <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#stack">Capabilities</a></li>
         <li><a href="#open-source">Open source</a></li>
         <li><a href="#lab">Lab</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#stack">Working set</a></li>
       </ol>
     </nav>
 
     <!-- ── About ── -->
     <section class="section" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I am Roman. I live in Vienna and have spent about ten years working across production systems and platform infrastructure, from hardware and virtualization through Linux and Kubernetes to observability, recovery, and operations. I care about how systems behave under failure, not only when they are healthy.</p>
-      <p>Most of what I know I taught myself by building and operating things. My interests now sit where systems engineering, platform engineering, defensive security, AI infrastructure, and technology assurance meet. I prefer open systems I can inspect, reproduce, migrate, and operate without depending on a proprietary control plane.</p>
-      <p>Away from the keyboard I build things, read hard science fiction, and listen to a lot of industrial and EBM. I have been a member of the IEEE Systems, Man, and Cybernetics Society and the Computational Intelligence Society since 2013, and of the Austrian Computer Society. The rest of this page is the work and the lab.</p>
+      <p>I tend to think from the whole system inward. Hardware, storage, network, operating system, orchestration, telemetry, policy, and the operator all affect each other. I am happiest when I can follow a failure across those layers and make the next one easier to understand.</p>
+      <p>I care less about whether an architecture looks clean on a diagram than whether the real system is inspectable, reproducible, observable, recoverable, and replaceable. I want to know where state lives, what has authority, what happens when a dependency disappears, and how to rebuild. That is why I gravitate to Linux, open source, self-hosting, infrastructure as code, and explicit trust boundaries.</p>
+      <p>AI fits into that for me as another systems problem: useful when it can act, more interesting when that action is bounded, observable, and accountable. The same curiosity leads me into cybernetics, assurance, EU technology regulation, and space systems. Away from the keyboard I read hard science fiction, listen to industrial and EBM, and build things. I have been a member of the IEEE Systems, Man, and Cybernetics Society and the Computational Intelligence Society since 2013, and of the Austrian Computer Society.</p>
     </section>
 
+    <!-- ── Open source ── -->
+    <section class="section" id="open-source" aria-labelledby="oss-h">
+      <h2 id="oss-h">Open source</h2>
+      <p class="section-lede">Most of my public code exists because I wanted the capability myself. These three repositories are the clearest view of how I build systems: give them real capability, make the boundaries explicit, and keep enough evidence to understand what happened.</p>
+      <div class="spec spec--lead">
+        <div class="spec-head">
+          <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
+          <span class="spec-tag">Apache-2.0 · MCP</span>
+        </div>
+        <p><code>relay-shell</code> exists because I do not want AI that can only suggest commands. It gives an AI client a real local shell and SSH fleet access—commands, PTYs, transfers, port forwards, and fan-out—then puts authority, policy, limits, redaction, and audit around that capability. Every action is classified and bounded. The interesting problem is not whether an agent can operate a machine; it is whether it can do so without making the control boundary disappear.</p>
+      </div>
+      <div class="matrix">
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
+            <span class="spec-tag">Apache-2.0 · OpenTofu</span>
+          </div>
+          <p><code>infra</code> is the rebuildable substrate: OpenTofu for KVM/libvirt Ubuntu VMs and Talos Linux Kubernetes. Environments are separated, state can be remote, locked, and encrypted, and CI checks formatting, lint, security, secrets, and module behaviour. If a host disappears, I want the code and documented decisions to be enough to make the next one.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-head">
+            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
+            <span class="spec-tag">Apache-2.0 · Ansible</span>
+          </div>
+          <p><code>automation</code> is what turns a fresh Linux host into one I am willing to operate: a CIS-based baseline, configuration, SRE tooling, local inference, and machine-readable control mappings to NIS2, the Cyber Resilience Act, GDPR, and ISO/IEC 27001. I would rather encode a control and test the result than leave it as prose.</p>
+        </div>
+      </div>
+      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a></p>
+    </section>
+
+    <!-- ── Lab ── -->
+    <section class="section" id="lab" aria-labelledby="lab-h">
+      <h2 id="lab-h">The lab</h2>
+      <p>The lab is where the pieces meet. It is not a miniature enterprise; it is the place where I can combine Linux, storage, Kubernetes, telemetry, security, local models, and agent tooling, then change one layer and watch what that does to the rest.</p>
+      <p>One branch is a self-hosted knowledge and OSINT system built around PostgreSQL, graph and vector retrieval, vulnerability intelligence, and local inference. I use it because I want the data, retrieval path, and model boundary under my control, not because every workload needs to be local.</p>
+      <p>The other reason the lab exists is to rehearse failure. Automation has authorization boundaries and audit trails; infrastructure is rebuilt from code; snapshots and backups matter only if recovery works. I break things deliberately often enough that rollback and rebuild are design inputs rather than incident-day inventions.</p>
+      <dl class="taglist lab-parts">
+        <div class="tag-row">
+          <dt>Built with</dt>
+          <dd>
+            <span class="tag">Talos</span>
+            <span class="tag">Flux</span>
+            <span class="tag">ZFS</span>
+            <span class="tag">Sanoid</span>
+            <span class="tag">Restic</span>
+            <span class="tag">Forgejo</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">VictoriaMetrics</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">pgvector</span>
+            <span class="tag">Apache AGE</span>
+            <span class="tag">llama.cpp</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">MCP</span>
+            <span class="tag">PydanticAI</span>
+          </dd>
+        </div>
+      </dl>
+    </section>
     <!-- ── Experience ── -->
     <section class="section" id="experience" aria-labelledby="exp-h">
       <h2 id="exp-h">Experience</h2>
-      <p class="section-lede">Where the ten years went. Most of them at one Austrian IT service provider.</p>
+      <p class="section-lede">The formal timeline. The common thread is operations: real systems, real users, and failure modes that have to be understood rather than explained away.</p>
       <ol class="track">
         <li class="track-item">
           <span class="track-when">2025–2026</span>
           <div class="track-body">
             <h3 class="track-role">IT Systems Administrator</h3>
             <p class="track-org">Kwizda Holding GmbH · Vienna</p>
-            <p>A year of group IT: a mixed Windows and Linux estate of a few hundred hosts and virtual machines across the group's companies. I owned backup and recovery, which meant being able to show a documented restore for anything that mattered, ran monitoring and alerting, looked after the server hardware, and helped move the group toward Kubernetes and GitOps.</p>
+            <p>Group IT across a mixed Windows and Linux estate. I owned backup and recovery, ran monitoring and alerting, worked close to the server hardware, and helped move platform work toward Kubernetes and GitOps. The useful part of owning backups is not that jobs are green; it is being able to prove a restore.</p>
           </div>
         </li>
         <li class="track-item">
@@ -328,7 +388,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Systems Engineer</h3>
             <p class="track-org">EBCONT operations GmbH · Vienna</p>
-            <p>Eight years at a managed-services provider, and the place I learned the most. I carried the incident, problem, and change lifecycle for customers' production environments, ran virtualization clusters on enterprise SAN storage, built Kubernetes platforms with GitOps delivery, kept the internal source-control and CI services current, and ran a proof of concept for hyperconverged infrastructure and high-speed networking. Third-level support and on-call the whole way through.</p>
+            <p>Eight years in managed services gave me most of my operating instincts. I carried incident, problem, and change work for customer environments, ran virtualization and enterprise storage, built Kubernetes and GitOps platforms, maintained source-control and CI services, and spent years in third-level support and on-call. Diagnose before changing, keep the rollback path, and leave the system easier to understand than you found it.</p>
           </div>
         </li>
         <li class="track-item">
@@ -336,7 +396,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Systems Administrator</h3>
             <p class="track-org">medPhoton GmbH · Salzburg</p>
-            <p>Server and application operations at a manufacturer of radiotherapy devices, where the devices are safety-critical and audits are part of normal life. Incident handling and root-cause analysis, backup and recovery with integrity checks, ISMS and BCM work with ISO 27001 audit preparation, and the operating procedures and runbooks I wrote for the team.</p>
+            <p>Operating systems around radiotherapy devices made discipline concrete: safety-critical context, audits as normal work, root-cause analysis, backup and integrity checks, ISMS and BCM work, ISO 27001 preparation, and written operating procedures. It was an early lesson that evidence and repeatability are part of engineering.</p>
           </div>
         </li>
         <li class="track-item">
@@ -344,7 +404,7 @@
           <div class="track-body">
             <h3 class="track-role">IT Technician</h3>
             <p class="track-org">Ledl.net GmbH and medPhoton GmbH · Salzburg</p>
-            <p>Apprenticeship in information technology with a systems engineering focus, completed 2016. It began at a hosting provider with web hosting, domains, and customer support, and finished at the medical-device manufacturer with technical support, backup and recovery, and ISO 27001 audit readiness.</p>
+            <p>I started in hosting and support and finished the information-technology apprenticeship in a medical-device environment. Domains, web hosting, customer support, backup and recovery, and audit readiness gave me the low-level habits before I had names like platform engineering or SRE for them.</p>
           </div>
         </li>
       </ol>
@@ -352,8 +412,8 @@
 
     <!-- ── Capabilities ── -->
     <section class="section" id="stack" aria-labelledby="stack-h">
-      <h2 id="stack-h">Capabilities</h2>
-      <p class="section-lede">The tools I reach for without thinking, at work and at home. The highlighted ones are where I would start.</p>
+      <h2 id="stack-h">Working set</h2>
+      <p class="section-lede">I do not treat this as a keyword inventory. It is the vocabulary I already have when a system needs to be understood, changed, or recovered.</p>
       <dl class="taglist">
         <div class="tag-row">
           <dt>Platforms</dt>
@@ -444,65 +504,6 @@
       </dl>
     </section>
 
-    <!-- ── Open source ── -->
-    <section class="section" id="open-source" aria-labelledby="oss-h">
-      <h2 id="oss-h">Open source</h2>
-      <p class="section-lede">The three repositories I feature here are the ones that best represent how I work on systems and platforms: governed execution, infrastructure as code, and repeatable hardening.</p>
-      <div class="spec spec--lead">
-        <div class="spec-head">
-          <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
-          <span class="spec-tag">Apache-2.0 · MCP</span>
-        </div>
-        <p>A Model Context Protocol server that gives an AI client a real shell, on the local host and over SSH on the hosts I administer: command execution, interactive PTY sessions, SFTP, port forwarding, and parallel commands across a fleet, all through one audited runner. Every call is classified into an authority tier, a policy mode (open, guarded, or read-only) decides which tiers may run, and a deny-list is checked first in every mode. Secrets are redacted, every call is logged with its output stored as a SHA-256 hash rather than the output itself, and everything is bounded by timeouts and output caps. The point is an agent that can do real work on my hosts while every action it takes is classified, bounded, and on record.</p>
-      </div>
-      <div class="matrix">
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
-            <span class="spec-tag">Apache-2.0 · OpenTofu</span>
-          </div>
-          <p>Two OpenTofu modules for the lab's hosts: one for cloud-init Ubuntu VMs on KVM/libvirt, one for a Talos Linux Kubernetes cluster. Lab and production are kept apart, production state is configured for an encrypted, locked remote backend, and nothing merges without passing format, lint, security and secret scanning, and module tests against mock providers.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-head">
-            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
-            <span class="spec-tag">Apache-2.0 · Ansible</span>
-          </div>
-          <p>Ansible for the same hosts: a CIS-based hardening baseline for SSH, auditd, the firewall, the kernel, and systemd services, plus playbooks for the SRE toolchain and local inference, and a proposed one for out-of-band management. Controls map to NIS2, the Cyber Resilience Act, GDPR, and ISO/IEC 27001 in a machine-readable file, so the compliance story comes from the code rather than from a document sitting next to it.</p>
-        </div>
-      </div>
-      <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a></p>
-    </section>
-
-    <!-- ── Lab ── -->
-    <section class="section" id="lab" aria-labelledby="lab-h">
-      <h2 id="lab-h">The lab</h2>
-      <p>I run a small fleet at home: Linux hosts on ZFS, local inference hardware, and a Talos Linux Kubernetes environment whose desired state is kept in Git. It started as a place to test systems ideas outside production constraints and grew into an integration environment for infrastructure, observability, security, and AI tooling.</p>
-      <p>One part of the lab is a self-hosted knowledge and OSINT pipeline built around PostgreSQL, vector and graph search, vulnerability intelligence, and local models. It ingests public sources, supports hybrid retrieval and reranking, and produces scheduled briefings without making a hosted AI service the system of record.</p>
-      <p>It is also where I test operational controls: bounded automation, explicit authorization, audit trails, configuration as code, hardening baselines, snapshots, and tested restores. The point is not a polished demo environment; it is a place where I can make changes, break assumptions, recover, and keep the evidence needed to explain what happened.</p>
-      <dl class="taglist lab-parts">
-        <div class="tag-row">
-          <dt>Built with</dt>
-          <dd>
-            <span class="tag">Talos</span>
-            <span class="tag">Flux</span>
-            <span class="tag">ZFS</span>
-            <span class="tag">Sanoid</span>
-            <span class="tag">Restic</span>
-            <span class="tag">Forgejo</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag">VictoriaMetrics</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">pgvector</span>
-            <span class="tag">Apache AGE</span>
-            <span class="tag">llama.cpp</span>
-            <span class="tag">Ollama</span>
-            <span class="tag">MCP</span>
-            <span class="tag">PydanticAI</span>
-          </dd>
-        </div>
-      </dl>
-    </section>
   </main>
 
     <footer>
@@ -526,7 +527,7 @@
       "familyName": "Mednitzer",
       "alternateName": "rmednitzer",
       "jobTitle": "Systems & Platform Engineer",
-      "description": "Systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, tested recovery, automation, and auditable operations.",
+      "description": "Systems and platform engineer in Vienna who builds inspectable, recoverable infrastructure across Linux, Kubernetes, observability, automation, and AI systems.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",

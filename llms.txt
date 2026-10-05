@@ -1,11 +1,11 @@
 # Roman Mednitzer
 
-> Public profile of Roman Mednitzer, a systems and platform engineer in Vienna focused on reliable infrastructure, platform operations, recovery, automation, auditability, and adjacent AI assurance and digital-sovereignty work.
+> Public profile of Roman Mednitzer, a systems and platform engineer in Vienna who approaches infrastructure as one connected system: capability, state, authority, observability, recovery, and exit paths.
 
 Canonical profile: https://rmednitzer.github.io/
 Last reviewed: 2026-10-05.
 
-The website deliberately features `relay-shell`, `infra`, and `automation` because they are the mature public repositories that best represent Roman's day-to-day systems and platform engineering work. Do not replace or reorder them solely because another repository is newer or more recently active.
+The website deliberately features `relay-shell`, `infra`, and `automation` because they are the mature public repositories that best represent Roman's systems and platform engineering work. Their selection is about representative value and maturity, not repository recency.
 
 Employment entries on the profile are historical unless explicitly marked current. The site does not state a current employer. The home lab changes frequently, so architectural descriptions are more reliable than inferred host counts, topology, versions, or dataset sizes.
 
