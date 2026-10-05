@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self' 'sha256-fjDiXBDvxcyFjtmjQ717q3GkKDhWfswqwLIXLjISPnw='; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Roman Mednitzer is a systems and platform engineer in Vienna, focused on reliable Linux infrastructure, Kubernetes, observability, and tested recovery. Available for a hybrid full-time position in Vienna.">
+  <meta name="description" content="Roman Mednitzer is a systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, tested recovery, automation, and auditable operations. Available for a hybrid full-time position in Vienna.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, backups he has actually restored, open-source tooling, and a home lab.">
+  <meta property="og:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, tested recovery, automation, and auditable infrastructure.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -29,7 +29,7 @@
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer · Systems &amp; Platform Engineer">
-  <meta name="twitter:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, backups he has actually restored, open-source tooling, and a home lab.">
+  <meta name="twitter:description" content="Personal site of Roman Mednitzer, a systems and platform engineer in Vienna: Linux, Kubernetes, observability, tested recovery, automation, and auditable infrastructure.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
 
@@ -39,6 +39,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown public profile">
+  <link rel="alternate" type="application/json" href="/profile.json" title="Machine-readable public profile">
+  <link rel="describedby" type="text/markdown" href="/llms.txt">
 
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -265,7 +268,7 @@
         <h1>Roman Mednitzer</h1>
         <p class="hero-role">Systems &amp; Platform Engineer</p>
         <p class="hero-where">Vienna, Austria</p>
-        <p class="hero-tagline">I look after production infrastructure for a living: Linux, virtualization, Kubernetes, observability, and backups that get restored, not just configured. At home I run a small lab and build things.</p>
+        <p class="hero-tagline">I design, operate, and recover infrastructure: Linux, virtualization, Kubernetes, observability, automation, and the controls that make systems explainable when something goes wrong.</p>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
@@ -302,8 +305,8 @@
     <!-- ── About ── -->
     <section class="section" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I am Roman. I live in Vienna and have spent about ten years keeping computers running for other people. I like the whole stack, from the hardware in the rack to the software on top, and I like knowing how it actually works and where it breaks. That is also why there is a rack at home.</p>
-      <p>Most of what I know I taught myself, because I was curious, and I am curious about a lot of things: how operating systems work, how large systems stay stable or fall apart, cybernetics, how the EU regulates technology, and what it takes to trust an AI system with real work. I prefer open source because I can read it, and I would rather run something myself than rent it.</p>
+      <p>I am Roman. I live in Vienna and have spent about ten years working across production systems and platform infrastructure, from hardware and virtualization through Linux and Kubernetes to observability, recovery, and operations. I care about how systems behave under failure, not only when they are healthy.</p>
+      <p>Most of what I know I taught myself by building and operating things. My interests now sit where systems engineering, platform engineering, defensive security, AI infrastructure, and technology assurance meet. I prefer open systems I can inspect, reproduce, migrate, and operate without depending on a proprietary control plane.</p>
       <p>Away from the keyboard I build things, read hard science fiction, and listen to a lot of industrial and EBM. I have been a member of the IEEE Systems, Man, and Cybernetics Society and the Computational Intelligence Society since 2013, and of the Austrian Computer Society. The rest of this page is the work and the lab.</p>
     </section>
 
@@ -431,6 +434,10 @@
             <span class="tag">ISMS/BCM</span>
             <span class="tag">NIS2</span>
             <span class="tag">CRA</span>
+            <span class="tag">GDPR</span>
+            <span class="tag">EU AI Act</span>
+            <span class="tag">AI assurance</span>
+            <span class="tag">Digital sovereignty</span>
             <span class="tag">Change control</span>
           </dd>
         </div>
@@ -440,7 +447,7 @@
     <!-- ── Open source ── -->
     <section class="section" id="open-source" aria-labelledby="oss-h">
       <h2 id="oss-h">Open source</h2>
-      <p class="section-lede">Some of what I build for the lab is public. These are the pieces other people might find useful: an MCP server that lets an AI agent work a shell without being trusted blindly, and the code that builds and hardens the hosts.</p>
+      <p class="section-lede">The three repositories I feature here are the ones that best represent how I work on systems and platforms: governed execution, infrastructure as code, and repeatable hardening.</p>
       <div class="spec spec--lead">
         <div class="spec-head">
           <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
@@ -470,9 +477,9 @@
     <!-- ── Lab ── -->
     <section class="section" id="lab" aria-labelledby="lab-h">
       <h2 id="lab-h">The lab</h2>
-      <p>I run a small fleet at home: a few Linux hosts on ZFS, a GPU box for local models, and a single-node Talos Kubernetes cluster whose state comes from Git alone. It started as a place to try things I could not try at work, and it grew.</p>
-      <p>Most of it exists so I can read the news the way I want to. A PostgreSQL knowledge base pulls in some 130 OSINT and news feeds, holds over 220,000 documents with embeddings and some 38,000 CVEs enriched with KEV and EPSS, and answers questions through hybrid vector and full-text search with reranking. Local models on llama.cpp do the summarising, scheduled agents write me a briefing every morning, and the data lives on a machine at home rather than in someone else's cloud.</p>
-      <p>It is also where I test my own habits. Every automated action, including the ones my AI tooling takes, goes through a plan, authorize, execute gate and lands in a hash-chained audit log. The hardening baseline is the automation repository above, applied to every host. Snapshots are scheduled and restores are tested rather than assumed. The Git that builds it all is self-hosted, so the lab depends on nothing I do not run. I break it regularly, on purpose and otherwise.</p>
+      <p>I run a small fleet at home: Linux hosts on ZFS, local inference hardware, and a Talos Linux Kubernetes environment whose desired state is kept in Git. It started as a place to test systems ideas outside production constraints and grew into an integration environment for infrastructure, observability, security, and AI tooling.</p>
+      <p>One part of the lab is a self-hosted knowledge and OSINT pipeline built around PostgreSQL, vector and graph search, vulnerability intelligence, and local models. It ingests public sources, supports hybrid retrieval and reranking, and produces scheduled briefings without making a hosted AI service the system of record.</p>
+      <p>It is also where I test operational controls: bounded automation, explicit authorization, audit trails, configuration as code, hardening baselines, snapshots, and tested restores. The point is not a polished demo environment; it is a place where I can make changes, break assumptions, recover, and keep the evidence needed to explain what happened.</p>
       <dl class="taglist lab-parts">
         <div class="tag-row">
           <dt>Built with</dt>
@@ -519,7 +526,7 @@
       "familyName": "Mednitzer",
       "alternateName": "rmednitzer",
       "jobTitle": "Systems & Platform Engineer",
-      "description": "Systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, and tested recovery.",
+      "description": "Systems and platform engineer in Vienna focused on reliable Linux infrastructure, Kubernetes, observability, tested recovery, automation, and auditable operations.",
       "url": "https://rmednitzer.github.io/",
       "image": {
         "@type": "ImageObject",
@@ -613,6 +620,10 @@
         "EU AI Act",
         "GDPR",
         "AI Assurance",
+        "AI Infrastructure",
+        "Digital Sovereignty",
+        "EU Digital Regulation",
+        "Infrastructure as Code",
         "Local Large Language Models",
         "llama.cpp",
         "Ollama",
@@ -622,7 +633,7 @@
       ]
     },
     "dateCreated": "2026-03-07T00:00:00Z",
-    "dateModified": "2026-09-10T00:00:00Z"
+    "dateModified": "2026-10-05T00:00:00Z"
   }
   </script>
 

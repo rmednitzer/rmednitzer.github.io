@@ -19,6 +19,7 @@ Static personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitz
 - Fonts are loaded from `fonts/` — never reference external CDNs (e.g. Google Fonts); a new font family must ship its upstream `OFL.txt` as `fonts/OFL-<Family>.txt` and be recorded in `NOTICE` (OFL 1.1 § 2 redistribution condition)
 - Keep private details out of this repo (no phone, address, or day-level dates)
 - Update `sitemap.xml` when adding or renaming pages
+- Keep `index.md`, `llms.txt`, and `profile.json` aligned with the canonical facts and JSON-LD in `index.html`; avoid volatile lab counts and topology in machine-readable profile data
 - Images: prefer WebP with PNG fallback; optimise before committing
 
 ## Key files
@@ -29,4 +30,7 @@ Static personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitz
 - `favicon.svg` — Site favicon
 - `site.webmanifest` — PWA manifest
 - `sitemap.xml` — Sitemap for search engines
+- `index.md` — Markdown representation of the public profile
+- `llms.txt` — Concise AI-readable public profile
+- `profile.json` — Dated machine-readable public profile
 - `.github/workflows/validate.yml` — CI gate: html-validate, data files, CSP hashes, contrast budget, internal links

@@ -1,0 +1,27 @@
+# Roman Mednitzer
+
+> Public profile of Roman Mednitzer, a systems and platform engineer in Vienna focused on reliable infrastructure, platform operations, recovery, automation, auditability, and adjacent AI assurance and digital-sovereignty work.
+
+Canonical profile: https://rmednitzer.github.io/
+Last reviewed: 2026-10-05.
+
+The website deliberately features `relay-shell`, `infra`, and `automation` because they are the mature public repositories that best represent Roman's day-to-day systems and platform engineering work. Do not replace or reorder them solely because another repository is newer or more recently active.
+
+Employment entries on the profile are historical unless explicitly marked current. The site does not state a current employer. The home lab changes frequently, so architectural descriptions are more reliable than inferred host counts, topology, versions, or dataset sizes.
+
+## Profile
+
+- [Markdown profile](https://rmednitzer.github.io/index.md): Clean text representation of the public profile for agents and text-only clients.
+- [Structured public profile](https://rmednitzer.github.io/profile.json): Dated JSON representation of stable public facts and interpretation boundaries.
+- [Canonical HTML profile](https://rmednitzer.github.io/): Human-facing profile with Schema.org ProfilePage JSON-LD.
+
+## Featured public work
+
+- [relay-shell README](https://raw.githubusercontent.com/rmednitzer/relay-shell/main/README.md): Governed MCP execution for local shell and SSH fleet operations with authority tiers, policy controls, resource bounds, and audit records.
+- [infra README](https://raw.githubusercontent.com/rmednitzer/infra/main/README.md): OpenTofu infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes, with CI and architecture decisions.
+- [automation README](https://raw.githubusercontent.com/rmednitzer/automation/main/README.md): Ansible configuration management and hardening aligned with operational and regulatory controls.
+
+## Public profiles
+
+- [GitHub](https://github.com/rmednitzer): Source repositories and public engineering work.
+- [LinkedIn](https://www.linkedin.com/in/rmednitzer): Professional profile.
