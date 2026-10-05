@@ -53,11 +53,11 @@ Primary areas: Linux, Ubuntu, RHEL, Debian, Windows Server, virtualization, Prox
 
 Working preferences: open source, self-hosting where practical, explicit trust boundaries, reproducible infrastructure, observability, tested recovery, interoperability, rollback, and clear exit paths.
 
-## Interests and memberships
+## Interests
 
 Technical interests include systems engineering, platform engineering, cybernetics, trustworthy AI systems, EU technology regulation, and space systems. Outside work: hard science fiction, industrial and EBM, and building things.
 
-Member of IEEE, including the Systems, Man, and Cybernetics Society and Computational Intelligence Society, and of the Austrian Computer Society (OCG).
+IEEE member since 2013.
 
 Languages: German (native), English (fluent).
 

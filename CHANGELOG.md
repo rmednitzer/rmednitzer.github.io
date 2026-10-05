@@ -1,3 +1,11 @@
+# Site Patch Changelog -- 2026-10-05 (batch 54: simplify memberships)
+
+Membership references are narrowed to IEEE only. Society-level IEEE memberships
+and the Austrian Computer Society are removed from the human page, Markdown
+profile, JSON profile, and Schema.org data so the profile stays focused on the
+engineering work rather than reading like a list of affiliations. The public
+copy now simply says "IEEE member since 2013."
+
 # Site Patch Changelog -- 2026-10-05 (batch 53: make the site sound like Roman)
 
 The profile is rewritten in the owner's actual systems-engineering voice rather
