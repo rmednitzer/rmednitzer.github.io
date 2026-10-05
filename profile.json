@@ -22,7 +22,7 @@
         "level": "fluent"
       }
     ],
-    "summary": "Systems and platform engineer focused on reliable Linux infrastructure, virtualization, Kubernetes, observability, automation, tested recovery, and auditable operations.",
+    "summary": "Systems and platform engineer who builds inspectable, recoverable infrastructure across Linux, Kubernetes, observability, automation, and AI systems, with explicit attention to state, authority, auditability, and exit paths.",
     "professionalFocus": [
       "systems engineering",
       "platform engineering",
@@ -41,11 +41,12 @@
     ],
     "engineeringPreferences": [
       "open source",
-      "self-hostable systems",
+      "self-hosting where practical",
       "reproducible infrastructure",
       "explicit trust boundaries",
-      "auditability",
+      "observable systems",
       "tested recovery",
+      "rollback and reversibility",
       "interoperability",
       "clear exit paths"
     ],
@@ -66,6 +67,13 @@
       "IEEE Systems, Man, and Cybernetics Society",
       "IEEE Computational Intelligence Society",
       "Austrian Computer Society (OCG)"
+    ],
+    "workingPrinciples": [
+      "understand the whole system rather than one layer in isolation",
+      "make state and authority explicit",
+      "design rollback, rebuild, and recovery before failure",
+      "prefer inspectable and replaceable components over opaque control planes",
+      "keep enough evidence to explain changes and failures"
     ]
   },
   "featuredProjects": [

@@ -5,6 +5,8 @@
 Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
 Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source tooling (relay-shell, infra, automation) and a self-run home lab with its own OSINT pipeline. A personal site, not a candidate profile: first person, no certificate rows. One availability line (hero `Available` row) states the current job-search status; keep it to role type, mode, and city, and remove it when it stops being true.
 
+Voice and information architecture are deliberate. Write like an experienced operator explaining how he thinks, not like a recruiter, consultant, or SEO profile: concrete systems language, explicit state/authority/failure/recovery concerns, and reasons behind technical choices. Avoid stacked capability nouns, generic claims ("passionate", "results-driven", "cutting-edge"), and turning every interest into a professional competency. The human-facing order is About -> Open source -> Lab -> Experience -> Working set, so personal work precedes the CV timeline. `relay-shell`, `infra`, and `automation` are the deliberate featured trio because they best represent mature systems/platform work; do not replace them solely because another repository is newer or more active.
+
 ## Stack
 
 - Pure HTML/CSS — no build step, no JavaScript framework, no bundler

@@ -1,3 +1,30 @@
+# Site Patch Changelog -- 2026-10-05 (batch 53: make the site sound like Roman)
+
+The profile is rewritten in the owner's actual systems-engineering voice rather
+than as an optimized professional summary. The central idea is now explicit:
+look at the whole system, make state and authority visible, design for failure,
+and prefer infrastructure that can be inspected, rebuilt, recovered, and
+replaced. AI, assurance, cybernetics, and sovereignty are presented as adjacent
+parts of the same systems view rather than as a list of specialties.
+
+The page order changes from About -> Experience -> Capabilities -> Open source
+-> Lab to About -> Open source -> Lab -> Experience -> Working set. The human-facing
+"Capabilities" label becomes "Working set" to avoid résumé language while the
+machine-readable profile retains the explicit capability taxonomy. This makes
+the site a personal showcase first and a career timeline second. `relay-shell`,
+`infra`, and `automation` remain the deliberate featured repositories; their
+copy is shorter, first-person, and centered on why the projects exist.
+
+The lab and experience prose is rewritten in the same voice, with recovery,
+rollback, evidence, and failure handling described as engineering habits rather
+than résumé claims. Hero facts now expose the owner's technical bias, curiosity,
+and outside-work interests without adding private biographical detail.
+
+`index.md`, `llms.txt`, `profile.json`, the web manifest, metadata, and JSON-LD
+are kept semantically aligned. `CLAUDE.md` and Copilot instructions now preserve
+the first-person systems voice, section order, and deliberate featured-repo
+selection so future automated edits do not regress into generic CV copy.
+
 # Site Patch Changelog -- 2026-10-05 (batch 52: repository settings and security.txt maintenance)
 
 A repository-settings pass closes the verifiable parts of backlog B-02. GitHub
