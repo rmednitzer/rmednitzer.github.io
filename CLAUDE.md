@@ -3,7 +3,7 @@
 ## Project
 
 Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source tooling (relay-shell, infra, automation) and a self-run home lab with its own OSINT pipeline. A personal site, not a candidate profile: first person, no job-search notice, no certificate rows.
+Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source tooling (relay-shell, infra, automation) and a self-run home lab with its own OSINT pipeline. A personal site, not a candidate profile: first person, no certificate rows. One availability line (hero `Available` row) states the current job-search status; keep it to role type, mode, and city, and remove it when it stops being true.
 
 ## Stack
 

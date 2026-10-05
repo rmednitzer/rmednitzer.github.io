@@ -1,3 +1,19 @@
+# Site Patch Changelog -- 2026-10-05 (batch 50: available for a hybrid full-time position in Vienna)
+
+The Cubicure position is removed and the page now says the owner is
+available.
+
+- The hero `Now` row (Cubicure) is replaced by an `Available` row: open to
+  a full-time position, hybrid, in Vienna. It reuses the existing
+  `.hero-facts` rules, so no style changed and the CSP hashes are
+  untouched.
+- The "Since 2026" Experience entry and JSON-LD `worksFor` are gone. The
+  timeline now opens with Kwizda Holding (2025-2026).
+- The meta description carries the same availability sentence.
+- `CLAUDE.md` no longer forbids a job-search notice; it allows the single
+  `Available` line and says to drop it once it stops being true. This
+  supersedes the "no availability notice" part of batch 37.
+
 # Site Patch Changelog -- 2026-09-12 (batch 49: stop treating LinkedIn's bot-block response as a dead link)
 
 `check_links.py --external` reported `https://www.linkedin.com/in/rmednitzer`
