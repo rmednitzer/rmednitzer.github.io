@@ -16,18 +16,27 @@ batch 33, which added `CONTRIBUTING.md` (plus `CODE_OF_CONDUCT.md`,
 of the repository-paperwork pass — see that batch for the current
 rationale.
 
-One item remains. It requires repository-settings access that only the
-owner has.
+One item remains, narrowed to Renovate installation verification. The
+current OAuth token can administer the repository but cannot list GitHub App
+installations, so that point cannot be proven from this environment.
 
 ## Security
 
-### B-02 Verify platform security settings and calendar the security.txt renewal
-- Findings: S-03 (renewal note), S-04. Severity: info. Effort: S.
-- Rationale: four settings are invisible from the repo and unverified:
-  Pages "Enforce HTTPS", branch protection on main, GitHub secret
-  scanning / push protection, Renovate app installation. security.txt
-  expires 2026-12-31T00:00:00Z.
-- Suggested approach: one pass through repo Settings; set a reminder
-  (2026-11) to bump `Expires` in `.well-known/security.txt`.
-- Dependencies: none.
+### B-02 Verify Renovate app installation
+- Findings: S-04. Severity: info. Effort: S.
+- Resolved 2026-10-05: GitHub Pages reports HTTPS enforcement enabled; the
+  active `main-protection` ruleset prevents deletion/non-fast-forward pushes,
+  requires linear history and pull requests, and requires the `validate` status
+  check; repository secret scanning and push protection are enabled. Issues
+  were enabled to match the existing issue templates and `CONTRIBUTING.md`.
+- Resolved 2026-10-05: `.well-known/security.txt` was renewed to
+  2027-09-30T00:00:00Z, keeping the expiry less than a year ahead.
+- Remaining: Renovate app installation is unverified. `GET /user/installations`
+  returns HTTP 403 for the current OAuth token because it is not a GitHub App
+  user access token. No Renovate-authored pull request is present in the
+  repository history inspected here, which is not proof of absence.
+- Suggested approach: verify the Renovate GitHub App under account Settings >
+  Applications > Installed GitHub Apps, or authorize a token that can list app
+  installations.
+- Dependencies: account-level GitHub App visibility.
 - Suggested owner role: repository admin.
