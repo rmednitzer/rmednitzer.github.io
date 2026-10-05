@@ -1,3 +1,24 @@
+# Site Patch Changelog -- 2026-10-05 (batch 52: repository settings and security.txt maintenance)
+
+A repository-settings pass closes the verifiable parts of backlog B-02. GitHub
+Pages reports HTTPS enforcement enabled; the active main-branch ruleset requires
+pull requests, linear history, and the `validate` status check; secret scanning
+and push protection are enabled. Issues are now enabled so the repository's
+existing issue templates and `CONTRIBUTING.md` bug/accessibility-reporting path
+actually work. The repository description and topics now reflect Schema.org
+structured data and the AI-readable profile endpoints.
+
+Optional enhanced secret-scanning validity/non-provider checks remained disabled
+after an attempted API update, so no claim is made that they were enabled.
+Renovate installation remains unverified because the current OAuth token cannot
+list GitHub App installations (HTTP 403).
+
+`.well-known/security.txt` is renewed from 2026-12-31 to
+2027-09-30T00:00:00Z, within RFC 9116's recommended less-than-one-year future
+window. Its `Policy` field is also corrected from the legal/privacy page to the
+actual GitHub Security Policy page. `CLAUDE.md` and `BACKLOG.md` are updated to
+match the effective state.
+
 # Site Patch Changelog -- 2026-10-05 (batch 51: stable public profile for humans and agents)
 
 The public profile is tightened around systems and platform engineering without

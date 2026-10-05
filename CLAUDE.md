@@ -29,7 +29,7 @@ Topic: Systems & Platform Engineer working on production Linux, virtualization, 
 ├── profile_roman-mednitzer*    Portraits (400px PNG + WebP; 800px PNG master)
 ├── fonts/                      Self-hosted WOFF2 fonts + fonts.css + OFL-*.txt
 │                               (README.md explains the redistribution terms)
-├── .well-known/security.txt    Security contact (Expires 2026-12-31 — renew)
+├── .well-known/security.txt    Security contact (Expires 2027-09-30 — renew before expiry)
 ├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
 ├── .github/workflows/validate.yml    CI gate on PRs: html-validate, data files,
 │                                     CSP hashes, contrast budget, internal links
@@ -87,7 +87,7 @@ Topic: Systems & Platform Engineer working on production Linux, virtualization, 
 
 - **No private details in this repo:** no phone, no street address, no day-level dates of life events. Public e-mail (`r.mednitzer@ieee.org`) is fine.
 - `legal.html` covers Austrian Impressum (§ 5 ECG), Offenlegung (§ 25 MedienG), and DSGVO. If site content materially changes (e.g. new tracking, new contact channel, new legal entity), update `legal.html`.
-- `.well-known/security.txt` has an `Expires` field — renew before it lapses.
+- `.well-known/security.txt` has an `Expires` field — renew before 2027-09-30 and keep the next date less than a year ahead per RFC 9116 guidance.
 
 ### Sync points
 
