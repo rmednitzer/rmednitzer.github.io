@@ -1,3 +1,30 @@
+# Site Patch Changelog -- 2026-10-05 (batch 51: stable public profile for humans and agents)
+
+The public profile is tightened around systems and platform engineering without
+changing the deliberate featured-repository selection: `relay-shell`, `infra`,
+and `automation` remain the three showcase projects because they are mature,
+frequently used, and representative of governed execution, infrastructure as
+code, and repeatable hardening.
+
+The hero, About copy, metadata, manifest, and JSON-LD now use the same core
+positioning: Linux/platform infrastructure, Kubernetes, observability,
+automation, tested recovery, and auditable operations, with defensive security,
+AI infrastructure/assurance, EU digital regulation, and digital sovereignty as
+adjacent focus areas. Governance tags now include GDPR, the EU AI Act, AI
+assurance, and digital sovereignty.
+
+The lab copy no longer publishes volatile topology and dataset counts. In
+particular, the stale single-node Talos description and point-in-time feed,
+document, and CVE counts are replaced by architecture-level statements that
+remain accurate as the lab changes.
+
+Three agent-facing representations are added: `index.md` as a clean Markdown
+profile, `llms.txt` following the llms.txt v2 shape, and `profile.json` as a
+dated machine-readable public profile with explicit interpretation boundaries.
+The HTML advertises them using `rel="alternate"` and `rel="describedby"`; the
+Schema.org `ProfilePage` JSON-LD remains the canonical structured-data layer.
+CI now parses `profile.json`, and project instructions document the sync points.
+
 # Site Patch Changelog -- 2026-10-05 (batch 50: available for a hybrid full-time position in Vienna)
 
 The Cubicure position is removed and the page now says the owner is

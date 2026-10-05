@@ -30,6 +30,7 @@ jobs:
           python3 - <<'EOF'
           import json
           json.load(open('site.webmanifest'))
+          json.load(open('profile.json'))
           json.load(open('.claude/settings.json'))
           EOF
 

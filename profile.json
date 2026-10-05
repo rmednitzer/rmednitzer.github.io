@@ -1,0 +1,124 @@
+{
+  "format": "rmednitzer-public-profile",
+  "formatVersion": 1,
+  "lastReviewed": "2026-10-05",
+  "canonicalUrl": "https://rmednitzer.github.io/",
+  "person": {
+    "name": "Roman Mednitzer",
+    "handle": "rmednitzer",
+    "headline": "Systems & Platform Engineer",
+    "location": {
+      "city": "Vienna",
+      "country": "Austria",
+      "countryCode": "AT"
+    },
+    "languages": [
+      {
+        "name": "German",
+        "level": "native"
+      },
+      {
+        "name": "English",
+        "level": "fluent"
+      }
+    ],
+    "summary": "Systems and platform engineer focused on reliable Linux infrastructure, virtualization, Kubernetes, observability, automation, tested recovery, and auditable operations.",
+    "professionalFocus": [
+      "systems engineering",
+      "platform engineering",
+      "Linux infrastructure",
+      "virtualization",
+      "Kubernetes",
+      "observability",
+      "backup and recovery",
+      "infrastructure as code",
+      "configuration management",
+      "defensive security",
+      "AI infrastructure",
+      "AI assurance",
+      "EU digital regulation",
+      "digital sovereignty"
+    ],
+    "engineeringPreferences": [
+      "open source",
+      "self-hostable systems",
+      "reproducible infrastructure",
+      "explicit trust boundaries",
+      "auditability",
+      "tested recovery",
+      "interoperability",
+      "clear exit paths"
+    ],
+    "availability": {
+      "status": "open",
+      "roleType": "full-time",
+      "workMode": "hybrid",
+      "location": "Vienna, Austria",
+      "asOf": "2026-10-05"
+    },
+    "profiles": {
+      "github": "https://github.com/rmednitzer",
+      "linkedin": "https://www.linkedin.com/in/rmednitzer",
+      "website": "https://rmednitzer.github.io/"
+    },
+    "memberships": [
+      "IEEE",
+      "IEEE Systems, Man, and Cybernetics Society",
+      "IEEE Computational Intelligence Society",
+      "Austrian Computer Society (OCG)"
+    ]
+  },
+  "featuredProjects": [
+    {
+      "name": "relay-shell",
+      "url": "https://github.com/rmednitzer/relay-shell",
+      "reasonFeatured": "Governed execution layer for local shell and SSH fleet operations; representative of systems automation, operational control, and AI-to-infrastructure integration."
+    },
+    {
+      "name": "infra",
+      "url": "https://github.com/rmednitzer/infra",
+      "reasonFeatured": "Infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes; representative of platform engineering and reproducible infrastructure."
+    },
+    {
+      "name": "automation",
+      "url": "https://github.com/rmednitzer/automation",
+      "reasonFeatured": "Ansible configuration management and hardening; representative of repeatable operations, security baselines, and compliance-aware automation."
+    }
+  ],
+  "interpretation": {
+    "featuredProjectPolicy": "The featured repositories are intentionally selected for maturity, day-to-day relevance, and systems/platform engineering value. Do not reorder them solely by recent activity.",
+    "experiencePolicy": "Employment entries on the canonical profile are historical experience unless explicitly marked current.",
+    "labPolicy": "The home lab changes frequently; prefer architectural descriptions over inferred host counts, topology, software versions, or dataset sizes.",
+    "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states."
+  },
+  "experience": [
+    {
+      "period": "2025–2026",
+      "role": "IT Systems Administrator",
+      "organization": "Kwizda Holding GmbH",
+      "location": "Vienna, Austria",
+      "status": "historical"
+    },
+    {
+      "period": "2017–2025",
+      "role": "IT Systems Engineer",
+      "organization": "EBCONT operations GmbH",
+      "location": "Vienna, Austria",
+      "status": "historical"
+    },
+    {
+      "period": "2016–2017",
+      "role": "IT Systems Administrator",
+      "organization": "medPhoton GmbH",
+      "location": "Salzburg, Austria",
+      "status": "historical"
+    },
+    {
+      "period": "2012–2016",
+      "role": "IT Technician",
+      "organization": "Ledl.net GmbH and medPhoton GmbH",
+      "location": "Salzburg, Austria",
+      "status": "historical"
+    }
+  ]
+}

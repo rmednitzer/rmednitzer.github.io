@@ -12,12 +12,16 @@ Systems and platform engineer in Vienna focused on reliable Linux infrastructure
 |------|-----|
 | Profile | [rmednitzer.github.io](https://rmednitzer.github.io/) |
 | Legal notice & privacy | [rmednitzer.github.io/legal](https://rmednitzer.github.io/legal) |
+| Markdown profile | [rmednitzer.github.io/index.md](https://rmednitzer.github.io/index.md) |
+| AI-readable summary | [rmednitzer.github.io/llms.txt](https://rmednitzer.github.io/llms.txt) |
+| Machine-readable profile | [rmednitzer.github.io/profile.json](https://rmednitzer.github.io/profile.json) |
 
 ### Tech notes
 
 - Static HTML/CSS, no build step required
 - Fonts self-hosted under `fonts/` (Outfit + DM Mono WOFF2), no Google Fonts dependency
 - `.nojekyll` disables Jekyll processing on GitHub Pages
+- `index.md`, `llms.txt`, and `profile.json` provide clean, dated public facts for AI/search consumers; the HTML/JSON-LD remains canonical
 - GitHub Pages serves from the repo root
 
 ### License & security

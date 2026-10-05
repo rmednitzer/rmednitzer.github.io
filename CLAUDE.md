@@ -21,6 +21,9 @@ Topic: Systems & Platform Engineer working on production Linux, virtualization, 
 ├── legal.html                  Impressum / DSGVO / MedienG legal notice
 ├── sitemap.xml                 Sitemap for crawlers
 ├── robots.txt                  Crawler directives
+├── index.md                    Markdown representation of the public profile
+├── llms.txt                    Concise AI-readable public profile and interpretation notes
+├── profile.json                Dated machine-readable public profile
 ├── site.webmanifest            PWA manifest
 ├── favicon.{svg,ico}           Favicons (+ favicon-{32,180,192,512}.png)
 ├── profile_roman-mednitzer*    Portraits (400px PNG + WebP; 800px PNG master)
@@ -72,10 +75,13 @@ Topic: Systems & Platform Engineer working on production Linux, virtualization, 
 - **OG images:** the site OG image is the profile portrait (`profile_roman-mednitzer-400.png`).
 - **Favicons:** `favicon.svg` is the primary; PNG fallbacks at 32/180/192/512. Update all if rebranding.
 
-### Discoverability — when adding or renaming a page
+### Discoverability and machine-readable profile
 
-1. Add the URL to `sitemap.xml` (set `lastmod`, `priority`, `changefreq`).
-2. Cross-link from `index.html` where appropriate.
+- When adding or renaming an HTML page, add the URL to `sitemap.xml` (set `lastmod`, `priority`, `changefreq`) and cross-link from `index.html` where appropriate.
+- `index.html` and its JSON-LD are the canonical human/public profile. Keep `index.md`, `llms.txt`, and `profile.json` semantically aligned with them.
+- `index.md` is the clean Markdown representation linked with `rel="alternate"`; keep its public facts aligned with the HTML page.
+- `llms.txt` may explain interpretation boundaries that prevent common model errors (for example, historical employers are not current employment). Keep it concise and factual.
+- `profile.json` must contain public facts only, use an explicit `lastReviewed` date, and avoid volatile versions, fleet counts, topology, or dataset counts unless there is a strong reason to publish them.
 
 ### Privacy & legal
 
