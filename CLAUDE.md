@@ -3,9 +3,9 @@
 ## Project
 
 Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Systems & Platform Engineer working on production Linux, virtualization, storage, Kubernetes/GitOps, observability, and backup/DR in regulated environments; open-source tooling (relay-shell, infra, automation) and a self-run home lab with its own OSINT pipeline. A personal site, not a candidate profile: first person, no certificate rows. One availability line (hero `Available` row) states the current job-search status; keep it to role type, mode, and city, and remove it when it stops being true.
+Topic: Systems & Platform Engineer with around ten years of production operations experience, strongest in end-to-end infrastructure integration. Professional experience must remain clearly separated from AI-assisted personal projects. The public site is a restrained personal profile for the Austrian/European market, not a software-developer portfolio or a corporate CV.
 
-Voice and information architecture are deliberate. Write like an experienced operator explaining how he thinks, not like a recruiter, consultant, or SEO profile: concrete systems language, explicit state/authority/failure/recovery concerns, and reasons behind technical choices. Avoid stacked capability nouns, generic claims ("passionate", "results-driven", "cutting-edge"), and turning every interest into a professional competency. The human-facing order is About -> Open source -> Lab -> Experience -> Working set, so personal work precedes the CV timeline. `relay-shell`, `infra`, and `automation` are the deliberate featured trio because they best represent mature systems/platform work; do not replace them solely because another repository is newer or more active.
+Voice and information architecture are deliberate. Use plain first-person systems language and distinguish production experience from personal AI-assisted work. Avoid generic claims, keyword stuffing, or turning interests into competencies. Human-facing order: About -> Experience -> Technical scope -> Personal projects -> Lab. `relay-shell`, `infra`, and `automation` remain representative personal projects, but must not be presented as independently authored professional software-development work.
 
 ## Stack
 

@@ -1,7 +1,7 @@
 {
   "name": "Roman Mednitzer · Systems & Platform Engineer",
   "short_name": "R. Mednitzer",
-  "description": "Systems and platform engineer in Vienna who builds inspectable, recoverable infrastructure across Linux, Kubernetes, observability, automation, and AI systems.",
+  "description": "Personal profile of Roman Mednitzer, a Vienna-based systems and platform engineer focused on end-to-end infrastructure integration and reliable operations.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
@@ -11,7 +11,11 @@
   "theme_color": "#0a0e13",
   "lang": "en",
   "dir": "ltr",
-  "categories": ["technology", "engineering", "professional-profile"],
+  "categories": [
+    "technology",
+    "engineering",
+    "professional-profile"
+  ],
   "icons": [
     {
       "src": "/favicon.svg",

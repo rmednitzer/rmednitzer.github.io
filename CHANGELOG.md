@@ -1,3 +1,11 @@
+# Site Patch Changelog -- 2026-10-07 (honest public positioning)
+
+The public profile is reconciled with the current career source of truth. Professional production experience now appears before personal work, and the technical scope is separated from interests and personal projects. The site explicitly states that personal project implementation, tests, and documentation are substantially AI-assisted and should not be read as professional application-development or ML-research experience.
+
+The profile now describes the actual professional differentiator: end-to-end systems/platform integration across infrastructure layers inside a defined problem space. It also states the preferred direction toward mission-coupled infrastructure such as AI/inference, robotics/autonomy, defence/mission systems, edge, GPU/HPC, and scientific/product infrastructure without claiming those interests as existing professional experience.
+
+Availability is widened from Vienna-hybrid only to full-time systems/platform/integration roles in Vienna or remote from Austria. The Markdown, llms.txt, profile.json, Schema.org data, manifest, repository instructions, and metadata are kept aligned. Cubicure remains absent from the public employment timeline.
+
 # Site Patch Changelog -- 2026-10-05 (batch 54: simplify memberships)
 
 Membership references are narrowed to IEEE only. Society-level IEEE memberships
