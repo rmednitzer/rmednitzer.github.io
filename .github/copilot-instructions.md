@@ -13,8 +13,8 @@ Static personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitz
 ## Conventions
 
 - Voice: first-person, plain, systems-minded, and concrete. Explain why a system exists and how failure/recovery/authority are handled; avoid résumé/SEO noun stacks and generic professional claims.
-- Human-facing section order is deliberate: About -> Open source -> Lab -> Experience -> Working set.
-- `relay-shell`, `infra`, and `automation` are the deliberate featured repositories; do not reorder or replace them solely by recency/activity.
+- Human-facing section order is deliberate: About -> Experience -> Technical scope -> Personal projects -> Lab.
+- `relay-shell`, `infra`, and `automation` are representative personal projects. Keep the explicit AI-assisted-work boundary; do not present them as professional software-development experience.
 - All pages share `style.css` — do not add inline styles or page-specific stylesheets
 - Colours come from the `:root` custom properties; CI holds `--fg`, `--fg-strong`, `--muted`, and `--accent` to 4.5:1 against `--bg` and `--bg-surface` in every palette (`.github/scripts/check_contrast.py`)
 - Editing an inline `<style>`/`<script>` block means recomputing its `sha256` in that page's meta CSP (`.github/scripts/check_csp_hashes.py`)

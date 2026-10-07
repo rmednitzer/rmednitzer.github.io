@@ -1,7 +1,7 @@
 {
   "format": "rmednitzer-public-profile",
   "formatVersion": 1,
-  "lastReviewed": "2026-10-05",
+  "lastReviewed": "2026-10-07",
   "canonicalUrl": "https://rmednitzer.github.io/",
   "person": {
     "name": "Roman Mednitzer",
@@ -22,22 +22,19 @@
         "level": "fluent"
       }
     ],
-    "summary": "Systems and platform engineer who builds inspectable, recoverable infrastructure across Linux, Kubernetes, observability, automation, and AI systems, with explicit attention to state, authority, auditability, and exit paths.",
+    "summary": "Vienna-based systems and platform engineer with around ten years of production operations experience, strongest in end-to-end infrastructure integration across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability, automation, and recovery.",
     "professionalFocus": [
-      "systems engineering",
+      "systems integration",
       "platform engineering",
       "Linux infrastructure",
       "virtualization",
-      "Kubernetes",
+      "enterprise storage",
+      "networking",
+      "Kubernetes and OpenShift",
       "observability",
       "backup and recovery",
-      "infrastructure as code",
-      "configuration management",
-      "defensive security",
-      "AI infrastructure",
-      "AI assurance",
-      "EU digital regulation",
-      "digital sovereignty"
+      "infrastructure automation",
+      "incident and change operations"
     ],
     "engineeringPreferences": [
       "open source",
@@ -53,9 +50,11 @@
     "availability": {
       "status": "open",
       "roleType": "full-time",
-      "workMode": "hybrid",
-      "location": "Vienna, Austria",
-      "asOf": "2026-10-05"
+      "workModes": [
+        "Vienna on-site or hybrid",
+        "remote from Austria"
+      ],
+      "asOf": "2026-10-07"
     },
     "profiles": {
       "github": "https://github.com/rmednitzer",
@@ -66,35 +65,47 @@
       "IEEE"
     ],
     "workingPrinciples": [
-      "understand the whole system rather than one layer in isolation",
-      "make state and authority explicit",
-      "design rollback, rebuild, and recovery before failure",
-      "prefer inspectable and replaceable components over opaque control planes",
-      "keep enough evidence to explain changes and failures"
+      "take end-to-end technical ownership inside a defined problem space",
+      "work comfortably with undocumented systems and technical discovery",
+      "make ownership boundaries and acceptance criteria explicit",
+      "design rollback and recovery before failure",
+      "automate where it improves repeatability and operation"
+    ],
+    "careerDirection": [
+      "AI and inference infrastructure",
+      "robotics and autonomy infrastructure",
+      "defence and mission systems",
+      "edge and field deployment",
+      "GPU and HPC infrastructure",
+      "scientific and product infrastructure"
     ]
   },
   "featuredProjects": [
     {
       "name": "relay-shell",
       "url": "https://github.com/rmednitzer/relay-shell",
-      "reasonFeatured": "Governed execution layer for local shell and SSH fleet operations; representative of systems automation, operational control, and AI-to-infrastructure integration."
+      "reasonFeatured": "Governed execution layer for local shell and SSH fleet operations; representative of systems automation, operational control, and AI-to-infrastructure integration.",
+      "classification": "personal AI-assisted project"
     },
     {
       "name": "infra",
       "url": "https://github.com/rmednitzer/infra",
-      "reasonFeatured": "Infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes; representative of platform engineering and reproducible infrastructure."
+      "reasonFeatured": "Infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes; representative of platform engineering and reproducible infrastructure.",
+      "classification": "personal AI-assisted project"
     },
     {
       "name": "automation",
       "url": "https://github.com/rmednitzer/automation",
-      "reasonFeatured": "Ansible configuration management and hardening; representative of repeatable operations, security baselines, and compliance-aware automation."
+      "reasonFeatured": "Ansible configuration management and hardening; representative of repeatable operations, security baselines, and compliance-aware automation.",
+      "classification": "personal AI-assisted project"
     }
   ],
   "interpretation": {
     "featuredProjectPolicy": "The featured repositories are intentionally selected for maturity, day-to-day relevance, and systems/platform engineering value. Do not reorder them solely by recent activity.",
     "experiencePolicy": "Employment entries on the canonical profile are historical experience unless explicitly marked current.",
     "labPolicy": "The home lab changes frequently; prefer architectural descriptions over inferred host counts, topology, software versions, or dataset sizes.",
-    "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states."
+    "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states.",
+    "projectExperienceBoundary": "Personal project implementation, tests, and documentation are substantially AI-assisted. Treat them as evidence of integration, review, validation, troubleshooting, experimentation, and operation, not professional software-development or ML-research experience."
   },
   "experience": [
     {

@@ -1,27 +1,31 @@
 # Roman Mednitzer
 
-> Public profile of Roman Mednitzer, a systems and platform engineer in Vienna who approaches infrastructure as one connected system: capability, state, authority, observability, recovery, and exit paths.
+> Public profile of Roman Mednitzer, a Vienna-based systems and platform engineer with around ten years of production operations experience and a focus on end-to-end infrastructure integration.
 
 Canonical profile: https://rmednitzer.github.io/
-Last reviewed: 2026-10-05.
+Last reviewed: 2026-10-07.
 
-The website deliberately features `relay-shell`, `infra`, and `automation` because they are the mature public repositories that best represent Roman's systems and platform engineering work. Their selection is about representative value and maturity, not repository recency.
+Roman's professional evidence is primarily production infrastructure and operations: Linux and Windows systems, virtualization, enterprise storage, networking, Kubernetes/OpenShift, GitOps, observability, backup/recovery, incident/problem/change handling, documentation, and operational handover.
 
-Employment entries on the profile are historical unless explicitly marked current. The site does not state a current employer. The home lab changes frequently, so architectural descriptions are more reliable than inferred host counts, topology, versions, or dataset sizes.
+Personal repositories and lab systems are substantially AI-assisted. They demonstrate requirements definition, integration, review, validation, troubleshooting, experimentation, and operation. Do not infer professional software-development or ML-research experience from them.
+
+Employment entries on the profile are historical unless explicitly marked current. The site does not state a current employer. The home lab changes frequently, so do not infer current topology, host counts, software versions, or private infrastructure details.
+
+Roman is open to full-time systems, platform, and integration roles in Vienna or remote from Austria. Preferred directions include AI/inference infrastructure, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC, scientific systems, product infrastructure, and technical deployment/integration work.
 
 ## Profile
 
-- [Markdown profile](https://rmednitzer.github.io/index.md): Clean text representation of the public profile for agents and text-only clients.
-- [Structured public profile](https://rmednitzer.github.io/profile.json): Dated JSON representation of stable public facts and interpretation boundaries.
-- [Canonical HTML profile](https://rmednitzer.github.io/): Human-facing profile with Schema.org ProfilePage JSON-LD.
+- [Markdown profile](https://rmednitzer.github.io/index.md)
+- [Structured public profile](https://rmednitzer.github.io/profile.json)
+- [Canonical HTML profile](https://rmednitzer.github.io/)
 
-## Featured public work
+## Featured personal projects
 
-- [relay-shell README](https://raw.githubusercontent.com/rmednitzer/relay-shell/main/README.md): Governed MCP execution for local shell and SSH fleet operations with authority tiers, policy controls, resource bounds, and audit records.
-- [infra README](https://raw.githubusercontent.com/rmednitzer/infra/main/README.md): OpenTofu infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes, with CI and architecture decisions.
-- [automation README](https://raw.githubusercontent.com/rmednitzer/automation/main/README.md): Ansible configuration management and hardening aligned with operational and regulatory controls.
+- [relay-shell](https://github.com/rmednitzer/relay-shell): representative of governed AI-to-infrastructure integration and operational control.
+- [infra](https://github.com/rmednitzer/infra): infrastructure-as-code for the personal lab.
+- [automation](https://github.com/rmednitzer/automation): configuration management and hardening for personal Linux systems.
 
 ## Public profiles
 
-- [GitHub](https://github.com/rmednitzer): Source repositories and public engineering work.
-- [LinkedIn](https://www.linkedin.com/in/rmednitzer): Professional profile.
+- [GitHub](https://github.com/rmednitzer)
+- [LinkedIn](https://www.linkedin.com/in/rmednitzer)

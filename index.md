@@ -2,67 +2,51 @@
 
 Systems & Platform Engineer · Vienna, Austria
 
-I build systems I can understand, change, recover, and explain. Linux and platforms are the centre of it; observability, security, automation, and AI are parts of the same system, not separate disciplines.
+I am a systems and platform engineer with around ten years of production-operations experience across managed services, enterprise infrastructure, and a regulated medical-device environment. My strongest work is end-to-end systems integration across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability, automation, backup/recovery, documentation, and operational handover.
 
-I tend to think from the whole system inward. Hardware, storage, network, operating system, orchestration, telemetry, policy, and the operator all affect each other. I care less about whether an architecture looks clean on a diagram than whether the real system is inspectable, reproducible, observable, recoverable, and replaceable. I want to know where state lives, what has authority, what happens when a dependency disappears, and how to rebuild.
+I am comfortable discovering undocumented systems and adapting across technology stacks. I work best when the objective, organisational boundaries, relevant access, decision owners, and acceptance criteria are clear; inside that problem space I prefer broad technical autonomy and responsibility for execution.
 
-AI fits into that as another systems problem: useful when it can act, more interesting when that action is bounded, observable, and accountable. The same curiosity leads into cybernetics, assurance, EU technology regulation, and space systems.
+My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC, scientific systems, and other environments where infrastructure directly enables the product or capability.
 
-Public availability, last reviewed 2026-10-05: open to a full-time hybrid position in Vienna. The site does not state a current employer.
+Public availability, last reviewed 2026-10-07: open to full-time systems, platform, and integration roles in Vienna or remote from Austria. The site does not state a current employer.
 
-## Featured public work
+## Professional experience
 
-The featured trio is deliberate. These are the mature repositories that best represent my systems and platform engineering work, not simply the newest repositories on my GitHub account.
-
-### relay-shell
-
-https://github.com/rmednitzer/relay-shell
-
-A Model Context Protocol server for real local-shell and SSH fleet operation with explicit authority, policy, resource bounds, redaction, and audit. It exists because useful AI operations need real capability without making the control boundary invisible.
-
-### infra
-
-https://github.com/rmednitzer/infra
-
-OpenTofu infrastructure-as-code for KVM/libvirt Ubuntu VMs and Talos Linux Kubernetes. The repository emphasizes rebuildability, environment separation, CI validation, security scanning, and documented architecture decisions.
-
-### automation
-
-https://github.com/rmednitzer/automation
-
-Ansible configuration management and hardening for Linux systems, including security baselines, SRE tooling, local inference, and machine-readable control mappings for NIS2, the Cyber Resilience Act, GDPR, and ISO/IEC 27001.
-
-## Lab
-
-The lab is where the pieces meet: Linux, ZFS, Talos Linux Kubernetes, observability, security tooling, local inference, agent tooling, and a PostgreSQL-based knowledge and OSINT system with graph and vector retrieval. It is used to test how layers interact and to rehearse failure, rollback, rebuild, and recovery.
-
-The lab changes frequently. Do not infer current host counts, topology, software versions, private infrastructure identifiers, or dataset sizes from old descriptions or repository history.
-
-## Experience
-
-- 2025–2026 — IT Systems Administrator, Kwizda Holding GmbH, Vienna. Group IT across mixed Windows/Linux infrastructure; backup and recovery, monitoring and alerting, server hardware, and Kubernetes/GitOps transition work.
-- 2017–2025 — IT Systems Engineer, EBCONT operations GmbH, Vienna. Managed production environments, incident/problem/change work, virtualization and enterprise storage, Kubernetes/GitOps platforms, source-control and CI services, third-level support, and on-call operations.
-- 2016–2017 — IT Systems Administrator, medPhoton GmbH, Salzburg. Server and application operations in a safety-critical medical-device environment; root-cause analysis, backup and integrity checks, ISMS/BCM work, ISO/IEC 27001 audit preparation, and operating procedures.
-- 2012–2016 — IT Technician, Ledl.net GmbH and medPhoton GmbH, Salzburg. Information-technology apprenticeship spanning hosting, support, backup/recovery, and audit readiness.
+- 2025–2026 — IT Systems Administrator, Kwizda Holding GmbH, Vienna. Group infrastructure across mixed Windows/Linux systems; backup and recovery with restore verification, monitoring and alerting, server infrastructure, and Kubernetes/GitOps adoption.
+- 2017–2025 — IT Systems Engineer, EBCONT operations GmbH, Vienna. Managed production environments, incident/problem/change work, virtualization and enterprise storage, Kubernetes/OpenShift and GitOps platforms, source-control and CI services, third-level support, and on-call operations.
+- 2016–2017 — IT Systems Administrator, medPhoton GmbH, Salzburg. Server and application operations in a regulated medical-device environment; root-cause analysis, backup and integrity checks, ISMS/BCM work, ISO 27001 audit preparation, and operating procedures.
+- 2012–2016 — IT Technician, Ledl.net GmbH and medPhoton GmbH, Salzburg. Austrian IT Technician apprenticeship completed in 2016, spanning Linux hosting, support, backup/recovery, and audit readiness.
 
 These entries are historical experience. They must not be interpreted as evidence of a current employer unless the canonical profile explicitly says otherwise.
 
-## Working set
+## Technical scope
 
-Primary areas: Linux, Ubuntu, RHEL, Debian, Windows Server, virtualization, Proxmox, KVM, VMware vSphere, ZFS, Ceph, enterprise storage, PostgreSQL, Kubernetes, OpenShift, Talos Linux, containers, Helm, Argo CD, Flux, Ansible, Terraform/OpenTofu, CI/CD, Prometheus, VictoriaMetrics, Grafana, OpenTelemetry, Zabbix, Checkmk, Graylog, OpenSearch, Wazuh, network segmentation, load balancing, Cilium, WireGuard, backup and disaster recovery, CIS hardening, ISO/IEC 27001, ISMS/BCM, NIS2, the Cyber Resilience Act, GDPR, the EU AI Act, AI assurance, and digital sovereignty.
+Professional core: Linux, Kubernetes/OpenShift, virtualization, enterprise storage, networking, backup and recovery, observability, GitOps, Ansible, Terraform/OpenTofu, CI/CD, incident/problem/change handling, rollback, tested restores, documentation/SOPs, and application onboarding.
 
-Working preferences: open source, self-hosting where practical, explicit trust boundaries, reproducible infrastructure, observability, tested recovery, interoperability, rollback, and clear exit paths.
+Working knowledge includes VMware vSphere, OpenStack, Windows Server, Helm, Jenkins, Azure, GCP, and AWS.
+
+Operational context includes ISO 27001/ISMS, business continuity, change control, and working awareness of NIS2, the Cyber Resilience Act, and GDPR.
+
+## Personal projects
+
+Personal technical work is substantially AI-assisted. I use AI for implementation, tests, documentation, and exploration; I own requirements, integration choices, review, validation, troubleshooting, and ongoing operation. These projects are not presented as professional application-software development or ML-research experience.
+
+- **relay-shell** — <https://github.com/rmednitzer/relay-shell> — representative of governed AI-to-infrastructure integration and operational control.
+- **infra** — <https://github.com/rmednitzer/infra> — infrastructure-as-code for the personal lab.
+- **automation** — <https://github.com/rmednitzer/automation> — configuration management and hardening for personal Linux systems.
+
+The wider lab combines Linux, ZFS, Kubernetes, observability, security tooling, PostgreSQL retrieval, local models and agent tooling. It exists to learn, test integration choices, and practise failure, rollback and recovery; it is not a miniature enterprise.
 
 ## Interests
 
-Technical interests include systems engineering, platform engineering, cybernetics, trustworthy AI systems, EU technology regulation, and space systems. Outside work: hard science fiction, industrial and EBM, and building things.
+Technical interests: AI infrastructure, robotics/autonomy, defence and mission systems, edge platforms, GPU/HPC, cybernetics, and complex systems engineering.
 
-IEEE member since 2013.
+Outside work: hard science fiction, industrial and EBM, and building things. IEEE member since 2013.
 
 Languages: German (native), English (fluent).
 
 ## Public profiles
 
-- Website: https://rmednitzer.github.io/
-- GitHub: https://github.com/rmednitzer
-- LinkedIn: https://www.linkedin.com/in/rmednitzer
+- Website: <https://rmednitzer.github.io/>
+- GitHub: <https://github.com/rmednitzer>
+- LinkedIn: <https://www.linkedin.com/in/rmednitzer>
