@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   validate:
+    # GitHub is the CI authority; Forgejo is a passive mirror without a generic runner.
+    if: github.server_url == 'https://github.com'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
