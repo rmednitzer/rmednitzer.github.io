@@ -1,3 +1,7 @@
+# Site Patch Changelog -- 2026-10-14 (secure agent guidance)
+
+- Consolidate Codex, Claude Code and Copilot guidance with repository-specific secure development, STPA traceability and private vulnerability reporting.
+
 # Site Patch Changelog -- 2026-10-07 (honest public positioning)
 
 The public profile is reconciled with the current career source of truth. Professional production experience now appears before personal work, and the technical scope is separated from interests and personal projects. The site explicitly states that personal project implementation, tests, and documentation are substantially AI-assisted and should not be read as professional application-development or ML-research experience.
