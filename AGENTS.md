@@ -3,6 +3,7 @@
 ## Repository-specific workflow
 
 Static public profile on GitHub Pages, HTML/CSS with no application build step. Read relevant `docs/adr/`, `CONTRIBUTING.md`, and `fonts/README.md`.
+
 - Preserve plain semantic HTML, shared `style.css`, design tokens and self-hosted fonts/assets. No framework, bundler, tracking or third-party font/CSS/JS CDN dependency without an explicit design change.
 - Keep dark/light/high-contrast/print palettes, contrast budgets, keyboard navigation, reduced-motion support and no-JS fallback. No inline style attributes or page-specific CSS files; shared patterns belong in style.css.
 - Preserve canonical/description/theme/favicon/manifest/sitemap metadata. Keep index.html/JSON-LD, index.md, llms.txt and profile.json aligned with verified public facts; profile.json carries lastReviewed.
@@ -129,6 +130,7 @@ product, edition, profile and justified exceptions. Preserve existing CTL-/POL- 
 Do not infer legal applicability, ISO conformance or certification from a mapping.
 
 Primary references:
+
 - [NIST SSDF](https://csrc.nist.gov/pubs/sp/800/218/final)
 - [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
 - [MIT STPA handbook](https://psas.scripts.mit.edu/home/books-and-handbooks/)

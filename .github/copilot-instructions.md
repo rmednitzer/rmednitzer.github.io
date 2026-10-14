@@ -26,6 +26,7 @@ and limitations. Documentation edits do not authorize live deployment or testing
 ## Repository essentials
 
 Static public profile on GitHub Pages, HTML/CSS with no application build step. Read relevant `docs/adr/`, `CONTRIBUTING.md`, and `fonts/README.md`.
+
 - Preserve plain semantic HTML, shared `style.css`, design tokens and self-hosted fonts/assets. No framework, bundler, tracking or third-party font/CSS/JS CDN dependency without an explicit design change.
 - Keep dark/light/high-contrast/print palettes, contrast budgets, keyboard navigation, reduced-motion support and no-JS fallback. No inline style attributes or page-specific CSS files; shared patterns belong in style.css.
 - Preserve canonical/description/theme/favicon/manifest/sitemap metadata. Keep index.html/JSON-LD, index.md, llms.txt and profile.json aligned with verified public facts; profile.json carries lastReviewed.
