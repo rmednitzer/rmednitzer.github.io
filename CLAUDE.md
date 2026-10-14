@@ -1,135 +1,15 @@
-# CLAUDE.md — Project Instructions for Claude Code
+# Claude Code guidance: rmednitzer.github.io
 
-## Project
+@AGENTS.md
 
-Static single-page personal website for Roman Mednitzer, hosted on GitHub Pages at `rmednitzer.github.io`.
-Topic: Systems & Platform Engineer with around ten years of production operations experience, strongest in end-to-end infrastructure integration. Professional experience must remain clearly separated from AI-assisted personal projects. The public site is a restrained personal profile for the Austrian/European market, not a software-developer portfolio or a corporate CV.
+## Use of this file
 
-Voice and information architecture are deliberate. Use plain first-person systems language and distinguish production experience from personal AI-assisted work. Avoid generic claims, keyword stuffing, or turning interests into competencies. Human-facing order: About -> Experience -> Technical scope -> Personal projects -> Lab. `relay-shell`, `infra`, and `automation` remain representative personal projects, but must not be presented as independently authored professional software-development work.
+The imported AGENTS.md is the canonical repository workflow and secure development
+contract. Read SECURITY.md before security-sensitive changes and applicable
+source, tests and ADRs before implementation. Read nested CLAUDE.md/AGENTS.md files
+for touched subtrees; do not infer that an import or prompt enforces a runtime
+security control. Keep durable rules in AGENTS.md rather than duplicating them here.
 
-## Stack
-
-- Pure HTML/CSS — no build step, no JavaScript framework, no bundler
-- Self-hosted fonts (Outfit + DM Mono WOFF2) in `fonts/`, loaded via `fonts/fonts.css`
-- `.nojekyll` disables Jekyll processing
-- GitHub Pages serves from the repo root
-
-## Layout
-
-```
-/                              repo root = site root
-├── index.html                  Profile landing page (single-page site)
-├── style.css                   Shared stylesheet (single source of truth)
-├── legal.html                  Impressum / DSGVO / MedienG legal notice
-├── sitemap.xml                 Sitemap for crawlers
-├── robots.txt                  Crawler directives
-├── index.md                    Markdown representation of the public profile
-├── llms.txt                    Concise AI-readable public profile and interpretation notes
-├── profile.json                Dated machine-readable public profile
-├── site.webmanifest            PWA manifest
-├── favicon.{svg,ico}           Favicons (+ favicon-{32,180,192,512}.png)
-├── profile_roman-mednitzer*    Portraits (400px PNG + WebP; 800px PNG master)
-├── fonts/                      Self-hosted WOFF2 fonts + fonts.css + OFL-*.txt
-│                               (README.md explains the redistribution terms)
-├── .well-known/security.txt    Security contact (Expires 2027-09-30 — renew before expiry)
-├── .github/copilot-instructions.md   Mirror of conventions for GitHub Copilot
-├── .github/workflows/validate.yml    CI gate on PRs: html-validate, data files,
-│                                     CSP hashes, contrast budget, internal links
-├── .github/workflows/links.yml       CI: weekly off-site link-rot check
-├── .github/scripts/                  Dependency-free CI checks (CSP, contrast, links)
-├── .editorconfig                     Editor defaults (UTF-8, LF, 2-space)
-├── .claude/settings.json       Claude Code permission policy for this repo
-├── .gitignore                  Ignores ad-hoc local script tooling (scripts/)
-├── renovate.json5              Renovate dependency-update config
-├── docs/adr/                   Architecture decision records (MADR format)
-├── audit/                      Audit reports (2026-06-12 full pass)
-├── BACKLOG.md                  Prioritized deferred findings and proposals
-├── CHANGELOG.md                Site patch log (append-only, dated batches)
-├── SECURITY.md                 Vulnerability reporting policy
-├── CONTRIBUTING.md             What is welcome here, and the local gate
-├── CODE_OF_CONDUCT.md          Contributor Covenant 2.1
-├── LICENSE                     Apache-2.0 (code; content is rights-reserved)
-├── NOTICE                      The code/content split + third-party font terms
-└── README.md                   Public README (page index for repo visitors)
-```
-
-## Conventions
-
-### Styling
-
-- **All shared styles live in `style.css`.** Use the CSS custom properties already defined there (`--fg`, `--bg`, `--accent`, `--font-body`, `--font-mono`, `--radius`, etc.) — do not introduce new colour or font literals.
-- **Colour changes carry a contrast budget.** `--fg`, `--fg-strong`, `--muted`, and `--accent` must stay at or above 4.5:1 against both `--bg` and `--bg-surface`, in every palette the stylesheet defines (dark, light, their `prefers-contrast: more` variants, print). CI enforces this (ADR 0010); run `python3 .github/scripts/check_contrast.py` before pushing a palette edit.
-- A `<style>` block in `<head>` is acceptable only for genuinely page-unique layout (e.g. the index hero grid). If a pattern appears on more than one page, promote it to `style.css`.
-- **No inline `style="…"` attributes.** No page-specific `.css` files.
-- Light/dark mode via `prefers-color-scheme` is already wired in `:root` — keep both palettes in mind when adding tokens.
-- Animations sit behind `@media (prefers-reduced-motion: no-preference)`; preserve that gate.
-
-### Markup
-
-- HTML pages are self-contained — no templating engine. Keep markup clean and semantic (`<main>`, `<nav>`, etc.).
-- Every page must include: canonical link, description meta, theme-color, favicon stack, manifest link, sitemap link, preload of `outfit-latin-400-normal.woff2`, then `fonts/fonts.css`, then `style.css`.
-- Footer year uses `<span id="y">2026</span>` with a JS updater — keep the literal fallback so it renders with JS disabled.
-
-### Assets
-
-- **Fonts:** load only from `fonts/`. Never reference Google Fonts or other CDNs. When adding a weight, add the WOFF2 file, the `@font-face` rule in `fonts/fonts.css`, and (if it's a primary weight) a `<link rel="preload">` in each page. Self-hosting makes this repo a *redistributor*: OFL 1.1 § 2 requires each copy to carry the copyright notice and licence, so a new **family** must ship its upstream `OFL.txt` as `fonts/OFL-<Family>.txt` and be recorded in `NOTICE`. Never edit those files, and never delete one while its `.woff2` files remain. See [`fonts/README.md`](fonts/README.md).
-- **Images:** prefer WebP with a PNG fallback. Optimise before committing. Profile portraits: 400px PNG + WebP serve the page; the 800px PNG is the unreferenced master (ADR 0008).
-- **OG images:** the site OG image is the profile portrait (`profile_roman-mednitzer-400.png`).
-- **Favicons:** `favicon.svg` is the primary; PNG fallbacks at 32/180/192/512. Update all if rebranding.
-
-### Discoverability and machine-readable profile
-
-- When adding or renaming an HTML page, add the URL to `sitemap.xml` (set `lastmod`, `priority`, `changefreq`) and cross-link from `index.html` where appropriate.
-- `index.html` and its JSON-LD are the canonical human/public profile. Keep `index.md`, `llms.txt`, and `profile.json` semantically aligned with them.
-- `index.md` is the clean Markdown representation linked with `rel="alternate"`; keep its public facts aligned with the HTML page.
-- `llms.txt` may explain interpretation boundaries that prevent common model errors (for example, historical employers are not current employment). Keep it concise and factual.
-- `profile.json` must contain public facts only, use an explicit `lastReviewed` date, and avoid volatile versions, fleet counts, topology, or dataset counts unless there is a strong reason to publish them.
-
-### Privacy & legal
-
-- **No private details in this repo:** no phone, no street address, no day-level dates of life events. Public e-mail (`r.mednitzer@ieee.org`) is fine.
-- `legal.html` covers Austrian Impressum (§ 5 ECG), Offenlegung (§ 25 MedienG), and DSGVO. If site content materially changes (e.g. new tracking, new contact channel, new legal entity), update `legal.html`.
-- `.well-known/security.txt` has an `Expires` field — renew before 2027-09-30 and keep the next date less than a year ahead per RFC 9116 guidance.
-
-### Sync points
-
-- `.github/copilot-instructions.md` mirrors a subset of these conventions for GitHub Copilot. Keep it consistent when changing styling or layout rules here.
-- `CHANGELOG.md` is the human-readable patch log — append a dated section for non-trivial changes (style.css additions, new pages, structural HTML changes). Don't rewrite history.
-
-## Local validation
-
-No build step. CI (`.github/workflows/validate.yml`) runs html-validate,
-the data-file checks, the CSP hashes, the contrast budget, and the
-internal-link check on every pull request; keep it green. The whole gate
-runs locally in about a second:
-
-```sh
-npx -y html-validate index.html legal.html
-python3 .github/scripts/check_csp_hashes.py
-python3 .github/scripts/check_contrast.py
-python3 .github/scripts/check_links.py
-```
-
-Off-site links are checked weekly by `.github/workflows/links.yml`, not
-on pull requests; run it on demand with
-`python3 .github/scripts/check_links.py --external`.
-
-For a visual check, serve and click through:
-
-```sh
-python3 -m http.server 8000
-# open http://localhost:8000/
-```
-
-Note: extensionless URLs resolve only on GitHub Pages. Locally, `/legal`
-returns 404; open `/legal.html` instead.
-
-For HTML/structured-data sanity, paste a built page into the [Rich Results Test](https://search.google.com/test/rich-results) or run `npx -y html-validate <file.html>` if you want a quick lint.
-
-## Things to avoid
-
-- Adding a build step, framework, or bundler for the site itself
-- External font/CSS/JS CDNs
-- Inline `style="…"` attributes or per-page `.css` files
-- Committing un-optimised images or anything containing private data
-- Touching `legal.html` boilerplate without confirming the legal context still matches
+Preserve task scope, existing work and required checks. Use deterministic local
+tests by default; verify operation identity and postconditions before retrying a
+timed-out mutation. Report skipped checks and uncertainty explicitly.
