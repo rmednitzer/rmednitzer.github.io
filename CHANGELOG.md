@@ -1,5 +1,9 @@
 # Site Patch Changelog -- 2026-10-14 (secure agent guidance)
 
+## 2026-10-20 — CI run ownership
+
+- Cancel superseded PR validation while keeping each main verification run independent.
+
 ## 2026-10-20 — Repository-owned dependency policy
 
 - Make Renovate policy self-contained in this repository, preserving local update rules and removing cross-repository policy inheritance.
