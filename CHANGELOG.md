@@ -2,7 +2,7 @@
 
 ## 2026-10-20 — CI run ownership
 
-- Cancel superseded PR validation while keeping each main verification run independent.
+- Coalesce initial PR validation, isolate manual reruns, and keep each main verification run independent.
 
 ## 2026-10-20 — Repository-owned dependency policy
 
