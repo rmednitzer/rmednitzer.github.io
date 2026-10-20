@@ -1,5 +1,9 @@
 # Site Patch Changelog -- 2026-10-14 (secure agent guidance)
 
+## 2026-10-20 — Repository-owned dependency policy
+
+- Make Renovate policy self-contained in this repository, preserving local update rules and removing cross-repository policy inheritance.
+
 - Consolidate Codex, Claude Code and Copilot guidance with repository-specific secure development, STPA traceability and private vulnerability reporting.
 
 # Site Patch Changelog -- 2026-10-07 (honest public positioning)
