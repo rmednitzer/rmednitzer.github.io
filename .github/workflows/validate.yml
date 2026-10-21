@@ -31,7 +31,7 @@ jobs:
           node-version: "24"
 
       - name: html-validate
-        run: npx -y html-validate@11.16.4 index.html legal.html
+        run: npx -y html-validate@11.17.0 index.html legal.html
 
       - name: sitemap is well-formed XML
         run: python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('sitemap.xml')"
