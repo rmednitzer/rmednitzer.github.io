@@ -1,2 +1,6 @@
 scripts/node_modules/
 scripts/package-lock.json
+
+# Disposable public artifact and Python test caches.
+_site/
+__pycache__/

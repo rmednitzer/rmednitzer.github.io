@@ -1,5 +1,9 @@
 # Audit Phase 1: Validation Baseline
 
+> Historical repository assessment (2026-06-12), not current deployment
+> assurance or a personal biography. See the canonical website for current
+> profile information and ADR 0011 for the publication boundary.
+
 Date: 2026-06-12
 Reference commit: `c81f903` (branch state before any remediation).
 This baseline is the regression reference for every later change in this

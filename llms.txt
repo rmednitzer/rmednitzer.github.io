@@ -9,6 +9,8 @@ Last reviewed: 2026-10-24.
 
 Roman learns through practical work, independent study and experimentation. His professional focus is infrastructure integration and reliable operations; private projects provide room to explore AI, automation and unfamiliar ideas.
 
+Beyond engineering, his interests include cybernetics and human augmentation, reading hard science fiction and listening to industrial and EBM music.
+
 ## Personal projects and lab
 
 His personal projects are developed with substantial AI assistance. Implementation, testing and documentation are AI-assisted; his contribution covers requirements, integration decisions, review and operational validation. This work is separate from his professional infrastructure experience and does not establish a software-development or ML-research career.

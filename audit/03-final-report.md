@@ -1,5 +1,9 @@
 # Audit Phase 8: Final Report
 
+> Historical repository assessment (2026-06-12), not current deployment
+> assurance or a personal biography. See the canonical website for current
+> profile information and ADR 0011 for the publication boundary.
+
 Date: 2026-06-12
 Branch: `claude/trusting-allen-3s2fh1` (session-mandated; the requested
 `audit/2026-06-12-full-pass` name was unavailable in this managed
