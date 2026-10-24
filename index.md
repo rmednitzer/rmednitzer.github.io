@@ -2,11 +2,39 @@
 
 Senior Systems & Platform Engineer · Vienna, Austria
 
-Systems integration and reliable operations.
+I like understanding how things work, especially where technologies and disciplines meet.
 
-Roman Mednitzer is a senior systems and platform engineer based in Vienna, Austria, with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
+## About me
 
-## How I work
+I’m Roman, a systems and platform engineer based in Vienna. Much of what I know comes from practical work, independent study and experimentation.
+
+Professionally, I work on infrastructure integration and reliable operations. My private projects give me room to explore AI, automation and unfamiliar ideas without treating every experiment as a finished product.
+
+## Selected projects
+
+These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; my contribution covers requirements, integration decisions, review and operational validation.
+
+### [relay-shell](https://github.com/rmednitzer/relay-shell)
+
+A Model Context Protocol (MCP) server that lets compatible AI clients run shell commands and work over SSH. It supports interactive sessions, file transfers, operation records and configurable policy.
+
+Open by default; it runs with the service account’s authority and is not a sandbox. [Documentation and status](https://github.com/rmednitzer/relay-shell/blob/main/README.md).
+
+### [osint-workbench](https://github.com/rmednitzer/osint-workbench)
+
+A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access. It distils part of my private information-processing environment into a smaller reference implementation.
+
+Work in progress: core workflows have documented limits, with a disposable Docker Compose setup for integration testing. Full operational qualification remains open. [Documentation and status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
+
+## Personal lab
+
+My private lab combines virtual machines, a GitOps-managed container platform, database-backed retrieval, local inference, observability and recovery automation. Core infrastructure operation does not depend on external AI providers; routine work is handled by controllers and scheduled automation.
+
+I use it to try integrations, rehearse migrations and recovery, and develop reusable runbooks and automation. Some deliberately complex tasks test how AI agents handle execution feedback and long contexts. That experimental process is not a prescription for everyday production work.
+
+## Professional work
+
+I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work connects technical requirements and hands-on integration with operation, troubleshooting and recovery.
 
 I work with developers, operations, security and compliance teams, service owners and vendors to clarify what a system needs to do. I investigate unfamiliar areas and implement solutions myself, involving specialists when the problem calls for it.
 
@@ -16,8 +44,6 @@ I value clear responsibilities, concise procedures and evidence from actual oper
 2. **Integrate:** Interfaces, implementation and specialist input.
 3. **Verify:** Service behaviour, recovery and handover.
 4. **Improve:** Operational feedback and controlled change.
-
-## Technical work
 
 ### Platforms and integration
 
@@ -60,33 +86,21 @@ Started in Linux hosting and technical support, followed by server operations, b
 These are historical employment entries, not a statement of a current employer.
 Languages: German (native), English (full professional proficiency).
 
-## Selected projects
+## Interests and outlook
 
-These are independent, AI-assisted projects outside employment. I use AI heavily for implementation, testing and documentation; I own the requirements, integration decisions, review and operational validation. They are separate from my professional infrastructure experience, not a claim of a software-development or ML-research career.
+### Technology and human potential
 
-### [relay-shell](https://github.com/rmednitzer/relay-shell)
+I’m interested in how technology can extend human capabilities, from AI and robotics to cybernetics and human augmentation. I enjoy ambitious ideas, but I also want to understand what works, what fails and what remains unknown.
 
-A Model Context Protocol (MCP) server that lets compatible AI clients run shell commands and work over SSH. It supports interactive sessions, file transfers, operation records and configurable policy.
+Understanding and retaining control over the systems we depend on matters to me.
 
-Open by default; it runs with the service account’s authority and is not a sandbox. [Documentation and status](https://github.com/rmednitzer/relay-shell/blob/main/README.md).
+My wider technical interests include defence and mission systems, edge platforms and high-performance computing.
 
-### [osint-workbench](https://github.com/rmednitzer/osint-workbench)
+### Science fiction and music
 
-A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access. It distils part of my private information-processing environment into a smaller reference implementation.
+I read hard science fiction and listen to industrial and electronic body music (EBM).
 
-Work in progress: core workflows have documented limits, with a disposable Docker Compose setup for integration testing. Full operational qualification remains open. [Documentation and status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
-
-## Personal lab
-
-My private lab combines virtual machines, a GitOps-managed container platform, database-backed retrieval, local inference, observability and recovery automation. Core infrastructure operation does not depend on external AI providers; routine work is handled by controllers and scheduled automation.
-
-I use it to try integrations, rehearse migrations and recovery, and develop reusable runbooks and automation. Some deliberately complex tasks test how AI agents handle execution feedback and long contexts. That experimental process is not a prescription for everyday production work.
-
-## Personal interests
-
-I read hard science fiction and listen to industrial and electronic body music (EBM). My technical interests include AI infrastructure, robotics and autonomy, defence and mission systems, edge platforms and high-performance computing.
-
-[My Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py). This is a listening profile, not an artist profile.
+[My Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py).
 
 ## Contact
 

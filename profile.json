@@ -24,7 +24,7 @@
       }
     ],
     "summary": "Roman Mednitzer is a senior systems and platform engineer based in Vienna, Austria, with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.",
-    "description": "Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.",
+    "description": "Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.",
     "professionalFocus": [
       "Platforms and integration",
       "Operations and recovery",
@@ -58,14 +58,20 @@
       "High-performance and scientific computing"
     ],
     "interests": [
+      "AI and robotics",
+      "Cybernetics and human augmentation",
       "Hard science fiction",
       "Listening to industrial and EBM music",
-      "Personal technology projects"
+      "Personal technology projects",
+      "Defence and mission systems",
+      "Edge platforms and high-performance computing"
     ],
     "education": {
       "qualification": "IT Technician — Austrian vocational qualification",
       "completedYear": 2016
-    }
+    },
+    "introduction": "I’m Roman, a systems and platform engineer based in Vienna. Much of what I know comes from practical work, independent study and experimentation. Professionally, I work on infrastructure integration and reliable operations. My private projects give me room to explore AI, automation and unfamiliar ideas without treating every experiment as a finished product.",
+    "outlook": "I’m interested in how technology can extend human capabilities, from AI and robotics to cybernetics and human augmentation. I enjoy ambitious ideas, but I also want to understand what works, what fails and what remains unknown. Understanding and retaining control over the systems we depend on matters to me."
   },
   "featuredProjects": [
     {
@@ -87,11 +93,12 @@
   ],
   "interpretation": {
     "experiencePolicy": "Employment entries describe historical experience. No current employer is asserted.",
-    "projectExperienceBoundary": "These are independent, AI-assisted projects outside employment. I use AI heavily for implementation, testing and documentation; I own the requirements, integration decisions, review and operational validation. They are separate from my professional infrastructure experience, not a claim of a software-development or ML-research career.",
+    "projectExperienceBoundary": "These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; my contribution covers requirements, integration decisions, review and operational validation. This private work is distinct from professional software-development or ML-research experience.",
     "labPolicy": "Private experimentation and operational checks are not enterprise production qualification. Descriptions intentionally omit private topology and deployment details.",
     "careerDirectionPolicy": "Technical interests and desired future environments are distinct from established professional experience.",
     "featuredProjectPolicy": "Only relay-shell and osint-workbench are featured; their repository documentation records current scope and limitations.",
-    "privacyBoundary": "Public professional information only. No private contact details, exact infrastructure topology or confidential employment context is included."
+    "privacyBoundary": "Reviewed public biography, professional history, projects and interests only. No private contact details, exact infrastructure topology or confidential employment context is included.",
+    "interestPolicy": "Interests describe curiosity and personal outlook, not specialist qualifications, professional research, or employment in those fields."
   },
   "experience": [
     {
