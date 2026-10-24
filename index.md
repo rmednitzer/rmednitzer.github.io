@@ -2,11 +2,11 @@
 
 Senior Systems & Platform Engineer · Systems Integration · Vienna, Austria
 
-I am a senior systems and platform engineer with around ten years of production infrastructure experience. My focus is requirements-driven systems integration, reliability, operational assurance and verified recovery across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability and automation.
+I am a senior systems and platform engineer with around ten years of production infrastructure experience. My focus is infrastructure integration, reliable operation, troubleshooting, automation and recoverability across Linux, virtualisation, storage, networking and container platforms.
 
-I connect developers, service owners, operations, security, compliance, vendors and customers. Within a defined mandate I establish interfaces, dependencies, unknowns and acceptance criteria; investigate unfamiliar domains; implement hands-on where useful; involve specialists where needed; and verify the integrated outcome. I prefer explicit evidence over unsupported certainty, and technical ownership over personnel management.
+I work with developers, service owners, operations, security, compliance, customers and vendors. I prefer clear scope, decision ownership and acceptance criteria. I investigate unfamiliar problems, implement hands-on where appropriate, involve specialists where necessary and verify results. I distinguish known facts from unverified assumptions.
 
-I value repeatable procedures, low-friction governance, automated reconciliation, tested restoration and improvement loops that avoid single-person dependencies. My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC and scientific systems.
+I value concise procedures, appropriate change control, automated maintenance, tested restores and continual improvement that reduces dependence on individual operators. My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC and scientific systems.
 
 Public availability, last reviewed 2026-10-24: open to full-time systems, platform, and integration roles in Vienna or remote from Austria. The site does not state a current employer.
 
@@ -29,11 +29,11 @@ Operational context includes writing SOPs and ISMS documentation, business conti
 
 ## Personal projects
 
-Personal technical work is substantially AI-assisted and exploratory. I own requirements, integration decisions, review, validation, troubleshooting and operation. Some extensive assurance frameworks are deliberate tests of agent behavior and context retention; they are not advocated for every software project. These projects are not presented as professional application-software development or ML-research experience.
+Personal technical work is substantially AI-assisted and exploratory. I define requirements, decide integrations, review, test and operate results. Some extensive process exercises deliberately test AI agent behavior and context management, rather than represent normal software-project requirements. These projects are not professional application-software development or ML-research experience.
 
-- **relay-shell** — <https://github.com/rmednitzer/relay-shell> — representative of governed AI-to-infrastructure integration and operational control.
-- **infra** — <https://github.com/rmednitzer/infra> — infrastructure-as-code for the personal lab.
-- **automation** — <https://github.com/rmednitzer/automation> — configuration management and hardening for personal Linux systems.
+- **relay-shell** — <https://github.com/rmednitzer/relay-shell> — MCP shell and SSH access with audit and configurable policy; open by default, not a security sandbox.
+- **osint-workbench** — <https://github.com/rmednitzer/osint-workbench> — self-hostable evidence, collection and retrieval reference implementation; bounded workflows implemented, full platform and operational validation still in progress.
+- **infra / automation** — <https://github.com/rmednitzer/infra> and <https://github.com/rmednitzer/automation> — supporting private-lab infrastructure and configuration repositories.
 
 The wider lab combines Linux, ZFS, Kubernetes, observability, security tooling, PostgreSQL retrieval, local models and agent tooling. It exists to learn, test integration choices, and practise failure, rollback and recovery; it is not a miniature enterprise.
 
@@ -41,7 +41,7 @@ The wider lab combines Linux, ZFS, Kubernetes, observability, security tooling, 
 
 Technical interests: AI infrastructure, robotics/autonomy, defence and mission systems, edge platforms, GPU/HPC, cybernetics, and complex systems engineering.
 
-Outside work: hard science fiction, industrial and EBM, and building things. IEEE member since 2013.
+Outside work: hard science fiction, industrial and EBM, and building things. Spotify profile: <https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py>. IEEE member since 2013.
 
 Languages: German (native), English (fluent).
 

@@ -22,22 +22,16 @@
         "level": "fluent"
       }
     ],
-    "summary": "Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience. Focused on requirements-driven integration, reliable operations, operational assurance and verified recovery across Linux, virtualization, storage, networking, Kubernetes/OpenShift and automation.",
+    "summary": "Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience. Works across infrastructure integration, reliable operations, automation, troubleshooting and recoverability, with explicit responsibility boundaries and evidence-led verification.",
     "professionalFocus": [
-      "requirements-driven systems integration",
-      "technical coordination across domains",
-      "reliability and operational assurance",
-      "systems integration",
-      "platform engineering",
-      "Linux infrastructure",
-      "virtualization",
-      "enterprise storage",
-      "networking",
-      "Kubernetes and OpenShift",
-      "observability",
+      "infrastructure systems integration",
+      "Linux and platform operations",
+      "virtualisation and storage",
+      "networking and container platforms",
+      "automation and delivery",
+      "observability and troubleshooting",
       "backup and recovery",
-      "infrastructure automation",
-      "incident and change operations"
+      "technical documentation and operational assurance"
     ],
     "engineeringPreferences": [
       "open source",
@@ -62,7 +56,8 @@
     "profiles": {
       "github": "https://github.com/rmednitzer",
       "linkedin": "https://www.linkedin.com/in/rmednitzer",
-      "website": "https://rmednitzer.github.io/"
+      "website": "https://rmednitzer.github.io/",
+      "spotify": "https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py"
     },
     "memberships": [
       "IEEE"
@@ -88,24 +83,30 @@
     {
       "name": "relay-shell",
       "url": "https://github.com/rmednitzer/relay-shell",
-      "reasonFeatured": "Governed execution layer for local shell and SSH fleet operations; representative of systems automation, operational control, and AI-to-infrastructure integration.",
+      "reasonFeatured": "MCP local and SSH execution with audit records and configurable restrictions. Open by default and not a sandbox.",
       "classification": "personal AI-assisted project"
+    },
+    {
+      "name": "osint-workbench",
+      "url": "https://github.com/rmednitzer/osint-workbench",
+      "reasonFeatured": "Self-hostable evidence and retrieval workbench with bounded implemented workflows. Full reference platform and operational acceptance remain incomplete.",
+      "classification": "personal AI-assisted work in progress"
     },
     {
       "name": "infra",
       "url": "https://github.com/rmednitzer/infra",
-      "reasonFeatured": "Infrastructure-as-code for KVM/libvirt and Talos Linux Kubernetes; representative of platform engineering and reproducible infrastructure.",
+      "reasonFeatured": "Supporting infrastructure definitions for personal experiments.",
       "classification": "personal AI-assisted project"
     },
     {
       "name": "automation",
       "url": "https://github.com/rmednitzer/automation",
-      "reasonFeatured": "Ansible configuration management and hardening; representative of repeatable operations, security baselines, and compliance-aware automation.",
+      "reasonFeatured": "Supporting configuration and host automation for personal experiments.",
       "classification": "personal AI-assisted project"
     }
   ],
   "interpretation": {
-    "featuredProjectPolicy": "The featured repositories are intentionally selected for maturity, day-to-day relevance, and systems/platform engineering value. Do not reorder them solely by recent activity.",
+    "featuredProjectPolicy": "relay-shell and osint-workbench are the two primary public projects; infra and automation are supporting work. Assess individual projects against their own documented implemented scope and verification evidence.",
     "experiencePolicy": "Employment entries on the canonical profile are historical experience unless explicitly marked current.",
     "labPolicy": "The home lab changes frequently; prefer architectural descriptions over inferred host counts, topology, software versions, or dataset sizes.",
     "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states.",
