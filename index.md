@@ -1,18 +1,18 @@
 # Roman Mednitzer
 
-Systems & Platform Engineer · Vienna, Austria
+Senior Systems & Platform Engineer · Systems Integration · Vienna, Austria
 
-I am a systems and platform engineer with around ten years of production-operations experience across managed services, enterprise infrastructure, and a regulated medical-device environment. My strongest work is end-to-end systems integration across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability, automation, backup/recovery, documentation, and operational handover.
+I am a senior systems and platform engineer with around ten years of production infrastructure experience. My focus is requirements-driven systems integration, reliability, operational assurance and verified recovery across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability and automation.
 
-I am comfortable discovering undocumented systems and adapting across technology stacks. I work best when the objective, organisational boundaries, relevant access, decision owners, and acceptance criteria are clear; inside that problem space I prefer broad technical autonomy and responsibility for execution.
+I connect developers, service owners, operations, security, compliance, vendors and customers. Within a defined mandate I establish interfaces, dependencies, unknowns and acceptance criteria; investigate unfamiliar domains; implement hands-on where useful; involve specialists where needed; and verify the integrated outcome. I prefer explicit evidence over unsupported certainty, and technical ownership over personnel management.
 
-My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC, scientific systems, and other environments where infrastructure directly enables the product or capability.
+I value repeatable procedures, low-friction governance, automated reconciliation, tested restoration and improvement loops that avoid single-person dependencies. My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC and scientific systems.
 
-Public availability, last reviewed 2026-10-07: open to full-time systems, platform, and integration roles in Vienna or remote from Austria. The site does not state a current employer.
+Public availability, last reviewed 2026-10-24: open to full-time systems, platform, and integration roles in Vienna or remote from Austria. The site does not state a current employer.
 
 ## Professional experience
 
-- 2025–2026 — IT Systems Administrator, Kwizda Holding GmbH, Vienna. Group infrastructure across mixed Windows/Linux systems; backup and recovery with restore verification, monitoring and alerting, server infrastructure, and Kubernetes/GitOps adoption.
+- 2025–2026 — IT Systems Administrator, Kwizda Holding GmbH, Vienna. Group infrastructure across mixed Windows/Linux systems; Veeam backup and documented restore validation, supporting SOPs and ISMS documentation, monitoring and alerting, server infrastructure, and Kubernetes/GitOps adoption.
 - 2017–2025 — IT Systems Engineer, EBCONT operations GmbH, Vienna. Managed production environments, incident/problem/change work, virtualization and enterprise storage, Kubernetes/OpenShift and GitOps platforms, source-control and CI services, third-level support, and on-call operations.
 - 2016–2017 — IT Systems Administrator, medPhoton GmbH, Salzburg. Server and application operations in a regulated medical-device environment; root-cause analysis, backup and integrity checks, ISMS/BCM work, ISO 27001 audit preparation, and operating procedures.
 - 2012–2016 — IT Technician, Ledl.net GmbH and medPhoton GmbH, Salzburg. Austrian IT Technician apprenticeship completed in 2016, spanning Linux hosting, support, backup/recovery, and audit readiness.
@@ -25,11 +25,11 @@ Professional core: Linux, Kubernetes/OpenShift, virtualization, enterprise stora
 
 Working knowledge includes VMware vSphere, OpenStack, Windows Server, Helm, Jenkins, Azure, GCP, and AWS.
 
-Operational context includes ISO 27001/ISMS, business continuity, change control, and working awareness of NIS2, the Cyber Resilience Act, and GDPR.
+Operational context includes writing SOPs and ISMS documentation, business continuity, change control and ISO/IEC 27001 audit preparation, with working awareness of NIS2, the Cyber Resilience Act and GDPR. These are applied technical/operational responsibilities, not claims of certification or legal expertise.
 
 ## Personal projects
 
-Personal technical work is substantially AI-assisted. I use AI for implementation, tests, documentation, and exploration; I own requirements, integration choices, review, validation, troubleshooting, and ongoing operation. These projects are not presented as professional application-software development or ML-research experience.
+Personal technical work is substantially AI-assisted and exploratory. I own requirements, integration decisions, review, validation, troubleshooting and operation. Some extensive assurance frameworks are deliberate tests of agent behavior and context retention; they are not advocated for every software project. These projects are not presented as professional application-software development or ML-research experience.
 
 - **relay-shell** — <https://github.com/rmednitzer/relay-shell> — representative of governed AI-to-infrastructure integration and operational control.
 - **infra** — <https://github.com/rmednitzer/infra> — infrastructure-as-code for the personal lab.
