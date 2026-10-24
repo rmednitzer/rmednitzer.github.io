@@ -2,11 +2,14 @@
 
 ## Repository-specific workflow
 
-Static public profile on GitHub Pages, HTML/CSS with no application build step. Read relevant `docs/adr/`, `CONTRIBUTING.md`, and `fonts/README.md`.
+Static public profile on GitHub Pages, HTML/CSS with no application build step.
+Publish only the validated allowlisted artifact (ADR 0011), never the repository root. Read relevant `docs/adr/`, `CONTRIBUTING.md`, and `fonts/README.md`.
 
 - Preserve plain semantic HTML, shared `style.css`, design tokens and self-hosted fonts/assets. No framework, bundler, tracking or third-party font/CSS/JS CDN dependency without an explicit design change.
 - Keep dark/light/high-contrast/print palettes, contrast budgets, keyboard navigation, reduced-motion support and no-JS fallback. No inline style attributes or page-specific CSS files; shared patterns belong in style.css.
 - Preserve canonical/description/theme/favicon/manifest/sitemap metadata. Keep index.html/JSON-LD, index.md, llms.txt and profile.json aligned with verified public facts; profile.json carries lastReviewed.
+- Keep changelog entries technical. Do not record superseded biographical claims or private editorial rationale; public Git history is not private storage.
+- Run `.github/scripts/test_stage_site.py` after publication or asset changes and verify excluded live URLs return 404. Keep `robots.txt` policy separate from publication scope.
 - Never invent qualifications, employers, dates or claims. Distinguish professional infrastructure experience from AI-assisted personal projects. Publish only authorized public information; no private contact, infrastructure or life-event details.
 - Preserve font licenses and NOTICE attribution while redistributing font files. Update sitemap and cross-links when pages move. Keep CSP restrictive and regenerate only hashes for reviewed inline content; never add unsafe-inline to avoid fixing a hash.
 - Validation: use the html-validate version pinned in `.github/workflows/validate.yml` for `index.html legal.html`; run `python3 .github/scripts/check_csp_hashes.py`, `python3 .github/scripts/check_contrast.py`, and `python3 .github/scripts/check_links.py`. Parse changed JSON/XML and check desktop/mobile, keyboard and no-JS behavior for visual edits.

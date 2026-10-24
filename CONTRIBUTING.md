@@ -42,6 +42,8 @@ npx -y html-validate index.html legal.html
 python3 .github/scripts/check_csp_hashes.py
 python3 .github/scripts/check_contrast.py
 python3 .github/scripts/check_links.py
+python3 .github/scripts/check_profile.py
+python3 .github/scripts/test_stage_site.py -v
 ```
 
 Off-site link reachability is checked weekly rather than per pull request, so a
@@ -77,8 +79,10 @@ The full set lives in [`CLAUDE.md`](CLAUDE.md), which is the source of truth for
 conventions in this repository and is mirrored for Copilot in
 `.github/copilot-instructions.md`. Keep the two consistent.
 
-Append a dated section to [`CHANGELOG.md`](CHANGELOG.md) for anything
-non-trivial. Do not rewrite past entries.
+Append a dated technical section to [`CHANGELOG.md`](CHANGELOG.md) for substantive
+changes. Do not copy superseded personal claims, private context or editorial
+rationale into the log. Owner-authorised publication-hygiene condensation is
+recorded explicitly; original revisions remain in Git history.
 
 ## Privacy
 
@@ -117,3 +121,9 @@ needs all required results. Revision identity and signing gates remain separate.
 Publication workflows retain their existing serialization and cache isolation.
 Revert this repository's workflow change to restore the earlier scheduling;
 no service deployment or application-data migration is involved.
+
+## Publication boundary
+
+GitHub Pages receives only the artifact selected by `.github/pages-files.txt`.
+See [publication and retrieval verification](docs/operations/publication.md).
+Do not deploy the repository root. The source repository remains public.

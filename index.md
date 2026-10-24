@@ -10,6 +10,8 @@ I’m Roman, a systems and platform engineer based in Vienna. Much of what I kno
 
 Professionally, I work on infrastructure integration and reliable operations. My private projects give me room to explore AI, automation and unfamiliar ideas without treating every experiment as a finished product.
 
+Beyond engineering, I’m interested in cybernetics and human augmentation, read hard science fiction, and listen to industrial and EBM music.
+
 ## Selected projects
 
 These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; my contribution covers requirements, integration decisions, review and operational validation.

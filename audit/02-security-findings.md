@@ -1,5 +1,9 @@
 # Audit Phases 2 and 3: Findings Register
 
+> Historical repository assessment (2026-06-12), not current deployment
+> assurance or a personal biography. See the canonical website for current
+> profile information and ADR 0011 for the publication boundary.
+
 Date: 2026-06-12
 Reference commit: `c81f903`. Severity scale: critical / high / medium /
 low / info. Effort scale: S / M / L. Every entry cites the session

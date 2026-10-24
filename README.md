@@ -13,6 +13,11 @@ A personal introduction bringing together practical systems engineering, indepen
 
 Plain HTML/CSS, no build step, no framework or runtime package dependencies. Fonts and images are self-hosted; Spotify is an outbound listening-profile link, not an embedded player. Existing public anchors are retained.
 
+Pages deploys only the exact files in `.github/pages-files.txt`, not the repository
+root. Development documentation and editorial history are not website assets.
+The repository and its history are still public. See
+[publication verification](docs/operations/publication.md) and [ADR 0011](docs/adr/0011-allowlisted-publication.md).
+
 ## Validation
 
 Use the HTML validator pinned in `.github/workflows/validate.yml`. Run the dependency-free checks for CSP hashes, colour contrast, links and public-profile consistency. For visual changes, also check desktop/mobile, keyboard navigation, no-JavaScript rendering, light/dark themes and print. See `CONTRIBUTING.md`.

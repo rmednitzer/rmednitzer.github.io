@@ -1,6 +1,6 @@
 # Host on GitHub Pages, serving the repository root with Jekyll disabled
 
-- Status: accepted
+- Status: superseded by ADR 0011 (2026-10-24)
 - Date: 2026-06-12 (backfilled; in force since the repository was
   created as `rmednitzer.github.io`)
 - Deciders: repository owner

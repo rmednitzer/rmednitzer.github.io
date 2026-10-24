@@ -1,5 +1,9 @@
 # Audit Phase 0: Recon and Inventory
 
+> Historical repository assessment (2026-06-12), not current deployment
+> assurance or a personal biography. See the canonical website for current
+> profile information and ADR 0011 for the publication boundary.
+
 Date: 2026-06-12
 Auditor: Claude Code session, branch `claude/trusting-allen-3s2fh1`
 Scope: full repository `rmednitzer/rmednitzer.github.io` at commit `c81f903`
@@ -11,8 +15,8 @@ lives there. Nothing is pushed to `main`.
 
 ## 1. What this repository is
 
-A static single-page personal website (profile of Roman Mednitzer, Senior
-Linux & Platform Engineer) served by GitHub Pages from the repository root at
+A static single-page personal website served, at the assessed revision,
+by GitHub Pages from the repository root at
 https://rmednitzer.github.io/. There is intentionally no build system, no
 JavaScript framework, no bundler, and no dependency manifest. See `CLAUDE.md`
 for the maintained project conventions.
