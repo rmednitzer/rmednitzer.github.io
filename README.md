@@ -1,35 +1,24 @@
-## Roman Mednitzer · Public Profile
+# Roman Mednitzer · Public profile
 
-Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
+Static personal website: **[rmednitzer.github.io](https://rmednitzer.github.io/)**.
 
-Senior systems and platform engineer in Vienna focused on requirements-driven systems integration, reliable operations, operational assurance and recovery. Professional infrastructure experience and exploratory AI-assisted projects are explicitly distinguished.
+The profile describes senior systems/platform operations and infrastructure integration, with professional experience separated from independent AI-assisted projects. The two featured projects are **relay-shell** and **osint-workbench**.
 
----
+## Site
 
-### Pages
+- `index.html`: canonical public profile and matching Person/ProfilePage JSON-LD.
+- `legal.html`: legal notice and privacy information.
+- `style.css`: shared layout, dark/light/high-contrast/print styles.
+- `index.md`, `llms.txt`, `profile.json`: alternative public profile formats. They carry the same factual boundaries; they are not a promise of indexing or AI-search placement.
 
-| Page | URL |
-|------|-----|
-| Profile | [rmednitzer.github.io](https://rmednitzer.github.io/) |
-| Legal notice & privacy | [rmednitzer.github.io/legal](https://rmednitzer.github.io/legal) |
-| Markdown profile | [rmednitzer.github.io/index.md](https://rmednitzer.github.io/index.md) |
-| AI-readable summary | [rmednitzer.github.io/llms.txt](https://rmednitzer.github.io/llms.txt) |
-| Machine-readable profile | [rmednitzer.github.io/profile.json](https://rmednitzer.github.io/profile.json) |
+Plain HTML/CSS, no build step, no framework or runtime package dependencies. Fonts and images are self-hosted; Spotify is an outbound listening-profile link, not an embedded player. Existing public anchors are retained.
 
-### Tech notes
+## Validation
 
-- Static HTML/CSS, no build step required
-- Fonts self-hosted under `fonts/` (Outfit + DM Mono WOFF2), no Google Fonts dependency
-- `.nojekyll` disables Jekyll processing on GitHub Pages
-- `index.md`, `llms.txt`, and `profile.json` provide clean, dated public facts for AI/search consumers; the HTML/JSON-LD remains canonical
-- GitHub Pages serves from the repo root
+Use the HTML validator pinned in `.github/workflows/validate.yml`. Run the dependency-free checks for CSP hashes, colour contrast, links and public-profile consistency. For visual changes, also check desktop/mobile, keyboard navigation, no-JavaScript rendering, light/dark themes and print. See `CONTRIBUTING.md`.
 
-### License & security
+## Privacy and licensing
 
-- Code: [Apache-2.0](LICENSE) · Content: © Roman Mednitzer (see the [legal notice](https://rmednitzer.github.io/legal)) · Fonts: [OFL 1.1](fonts/README.md) — the split is spelled out in [NOTICE](NOTICE)
-- Vulnerability reports: see [SECURITY.md](SECURITY.md) or [`/.well-known/security.txt`](.well-known/security.txt)
-- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md) — bug reports and accessibility findings welcome; content and design are the owner's
+Publish only the reviewed public profile. Do not copy private CVs, phone numbers, addresses, interview notes, hostnames, credentials, topology or operational logs into source, issues, commits or PRs.
 
----
-
-Keep private details out of this repo (no phone, address, or day-level dates).
+Code: [Apache-2.0](LICENSE). Content: © Roman Mednitzer. Fonts: [OFL 1.1](fonts/README.md). See [NOTICE](NOTICE) and the [legal notice](https://rmednitzer.github.io/legal).

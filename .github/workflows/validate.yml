@@ -65,3 +65,6 @@ jobs:
 
       - name: Internal links, assets, and anchors resolve
         run: python3 .github/scripts/check_links.py
+
+      - name: Public profile and search metadata stay consistent
+        run: python3 .github/scripts/check_profile.py

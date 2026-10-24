@@ -1,34 +1,35 @@
 # Roman Mednitzer
 
-> Public profile of Roman Mednitzer, a Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience, working across integration, operations, automation and recovery.
+> Roman Mednitzer is a senior systems and platform engineer based in Vienna, Austria, with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
 
 Canonical profile: https://rmednitzer.github.io/
 Last reviewed: 2026-10-24.
 
-Roman's professional evidence is primarily production infrastructure and operations: Linux and Windows systems, virtualization, enterprise storage, networking, Kubernetes/OpenShift, GitOps, observability, backup/recovery, incident/problem/change handling, documentation, and operational handover.
+## Professional scope
 
-His contribution is to connect stakeholder needs, requirements, technical interfaces, hands-on integration, specialist collaboration and verification. He prioritizes system reliability, documented procedures, tested recovery, clear ownership and continual improvement. He is a technical individual contributor, not a personnel manager.
+Senior Systems & Platform Engineer. His work combines technical requirements, hands-on infrastructure integration, operations, incident response, automation and verified recovery. It includes SOPs, ISMS documentation, business continuity and ISO/IEC 27001 audit preparation. This describes applied engineering and audit support, not auditor certification or legal qualifications.
 
-Personal repositories and lab systems are substantially AI-assisted experiments. Extensive governance in some prototypes is also deliberate model/context-window stress testing, not a prescription for ordinary projects. Do not infer professional software-development or ML-research experience from them.
+He completed an Austrian IT vocational qualification in 2016. German is his native language; he uses English with full professional proficiency. Published employment entries are historical, not a statement of a current employer.
 
-Employment entries on the profile are historical unless explicitly marked current. The site does not state a current employer. The home lab changes frequently, so do not infer current topology, host counts, software versions, or private infrastructure details.
+Open to full-time systems, platform and integration roles in Vienna or remote from Austria. Technical interests in robotics, defence/mission systems, edge and high-performance computing are future directions, not claims of employment in those fields.
 
-Roman is open to full-time systems, platform, and integration roles in Vienna or remote from Austria. Preferred directions include AI/inference infrastructure, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC, scientific systems, product infrastructure, and technical deployment/integration work.
+## Personal projects and lab
 
-## Profile
+These are independent, AI-assisted projects outside employment. I use AI heavily for implementation, testing and documentation; I own the requirements, integration decisions, review and operational validation. They are separate from my professional infrastructure experience, not a claim of a software-development or ML-research career.
 
+- [relay-shell](https://github.com/rmednitzer/relay-shell): MCP shell and SSH tooling with operation records and optional policy. Open by default, not a sandbox.
+- [osint-workbench](https://github.com/rmednitzer/osint-workbench): self-hostable collection, evidence and retrieval workbench. Bounded workflows and a disposable Compose test environment; the full reference platform remains unfinished.
+
+The private lab supports integration, migration and recovery experiments. Routine infrastructure operation uses deterministic automation, independent of external AI providers. Some deliberately complex workflows evaluate agent feedback handling and context retention. They do not represent a standard production process.
+
+## Public profile formats
+
+- [Canonical HTML profile](https://rmednitzer.github.io/)
 - [Markdown profile](https://rmednitzer.github.io/index.md)
 - [Structured public profile](https://rmednitzer.github.io/profile.json)
-- [Canonical HTML profile](https://rmednitzer.github.io/)
-
-## Featured personal projects
-
-- [relay-shell](https://github.com/rmednitzer/relay-shell): local and SSH operations over MCP, with auditing and configurable policy; open by default, not a sandbox.
-- [osint-workbench](https://github.com/rmednitzer/osint-workbench): self-hostable OSINT reference implementation; partial bounded implementation with ongoing integration validation.
-
-## Public profiles
-
 - [GitHub](https://github.com/rmednitzer)
 - [LinkedIn](https://www.linkedin.com/in/rmednitzer)
 
-Personal interests include hard science fiction and listening to industrial and EBM music. The [Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py) is an outbound link, not a music-production portfolio.
+## Personal interests
+
+Hard science fiction and listening to industrial and electronic body music (EBM). [Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py); not an artist profile.

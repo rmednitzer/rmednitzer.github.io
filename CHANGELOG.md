@@ -1834,3 +1834,14 @@ Self-hosted WOFF2 font files replacing Google Fonts dependency.
 ## `README.md`
 
 Added site link, page index table, and tech notes for GitHub repository visitors.
+
+
+## 2026-10-24 — Public profile, readable layout and metadata consistency
+
+- Reworked the introduction, engineering approach, professional experience and private-project descriptions around systems integration and reliable operations. Kept professional history distinct from AI-assisted personal experimentation.
+- Featured only relay-shell and osint-workbench, with project-specific limits. Described the Spotify link explicitly as a listening profile.
+- Replaced dense technology tags and duplicated copy with a four-step approach, three practical work areas, a clearer employment timeline and equal project cards. Kept sentence-case headings and a responsive, keyboard-accessible layout.
+- Consolidated presentation into the shared stylesheet; retained self-hosted fonts, portrait alternatives, dark/light/high-contrast/print modes and no-JavaScript fallback. Removed unused CSS and inline-style CSP allowances.
+- Aligned visible identity with the title, descriptions, social previews, Person/ProfilePage data, Markdown, structured profile, manifest and sitemap. Added a dependency-free CI check for representation drift, project selection and attribution.
+- Public-scope changes only: no private infrastructure inventory, CV attachments, personal contact additions or operational evidence were published.
+- Rollback: revert this change; no application build, database migration or infrastructure configuration change is involved.

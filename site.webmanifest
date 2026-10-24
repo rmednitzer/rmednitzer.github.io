@@ -1,21 +1,15 @@
 {
-  "name": "Roman Mednitzer · Senior Systems & Platform Engineer",
+  "name": "Roman Mednitzer \u00b7 Senior Systems & Platform Engineer",
   "short_name": "R. Mednitzer",
-  "description": "Roman Mednitzer is a Vienna-based senior systems and platform engineer with around ten years of experience in infrastructure integration, operations, automation and recovery.",
+  "description": "Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
-  "orientation": "portrait-primary",
+  "display": "browser",
   "background_color": "#0a0e13",
   "theme_color": "#0a0e13",
   "lang": "en",
   "dir": "ltr",
-  "categories": [
-    "technology",
-    "engineering",
-    "professional-profile"
-  ],
   "icons": [
     {
       "src": "/favicon.svg",
@@ -35,7 +29,5 @@
       "type": "image/png",
       "purpose": "any"
     }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  ]
 }
