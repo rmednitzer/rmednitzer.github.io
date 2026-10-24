@@ -2,7 +2,7 @@
 
 Personal website hosted on GitHub Pages: **[rmednitzer.github.io](https://rmednitzer.github.io/)**
 
-Systems and platform engineer in Vienna focused on end-to-end infrastructure integration across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability, automation, and recovery. Personal projects are explicitly labelled AI-assisted.
+Senior systems and platform engineer in Vienna focused on requirements-driven systems integration, reliable operations, operational assurance and recovery. Professional infrastructure experience and exploratory AI-assisted projects are explicitly distinguished.
 
 ---
 

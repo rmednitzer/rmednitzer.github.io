@@ -1,12 +1,12 @@
 {
   "format": "rmednitzer-public-profile",
   "formatVersion": 1,
-  "lastReviewed": "2026-10-07",
+  "lastReviewed": "2026-10-24",
   "canonicalUrl": "https://rmednitzer.github.io/",
   "person": {
     "name": "Roman Mednitzer",
     "handle": "rmednitzer",
-    "headline": "Systems & Platform Engineer",
+    "headline": "Senior Systems & Platform Engineer · Systems Integration",
     "location": {
       "city": "Vienna",
       "country": "Austria",
@@ -22,8 +22,11 @@
         "level": "fluent"
       }
     ],
-    "summary": "Vienna-based systems and platform engineer with around ten years of production operations experience, strongest in end-to-end infrastructure integration across Linux, virtualization, storage, networking, Kubernetes/OpenShift, observability, automation, and recovery.",
+    "summary": "Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience. Focused on requirements-driven integration, reliable operations, operational assurance and verified recovery across Linux, virtualization, storage, networking, Kubernetes/OpenShift and automation.",
     "professionalFocus": [
+      "requirements-driven systems integration",
+      "technical coordination across domains",
+      "reliability and operational assurance",
       "systems integration",
       "platform engineering",
       "Linux infrastructure",
@@ -65,11 +68,12 @@
       "IEEE"
     ],
     "workingPrinciples": [
-      "take end-to-end technical ownership inside a defined problem space",
-      "work comfortably with undocumented systems and technical discovery",
-      "make ownership boundaries and acceptance criteria explicit",
-      "design rollback and recovery before failure",
-      "automate where it improves repeatability and operation"
+      "translate stakeholder needs into testable technical requirements within authorized scope",
+      "make decision authority, ownership, interfaces, unknowns and acceptance criteria explicit",
+      "integrate across disciplines and collaborate with domain specialists",
+      "contribute hands-on implementation when appropriate and verify the whole system",
+      "prefer concise operational procedures, evidence-led decisions, tested recovery and continual improvement",
+      "reduce single-person dependencies rather than rely on operational heroics"
     ],
     "careerDirection": [
       "AI and inference infrastructure",
@@ -105,7 +109,7 @@
     "experiencePolicy": "Employment entries on the canonical profile are historical experience unless explicitly marked current.",
     "labPolicy": "The home lab changes frequently; prefer architectural descriptions over inferred host counts, topology, software versions, or dataset sizes.",
     "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states.",
-    "projectExperienceBoundary": "Personal project implementation, tests, and documentation are substantially AI-assisted. Treat them as evidence of integration, review, validation, troubleshooting, experimentation, and operation, not professional software-development or ML-research experience."
+    "projectExperienceBoundary": "Personal project implementation, testing and documentation are substantially AI-assisted, sometimes with deliberately extensive process as an agent/context evaluation. Evidence of integration, review, validation, troubleshooting, experimentation and operation—not professional software-development, ML research, or enterprise production qualification."
   },
   "experience": [
     {
