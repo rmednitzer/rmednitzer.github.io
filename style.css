@@ -288,3 +288,13 @@ footer .impressum { flex-basis: 100%; font-size: .72rem; margin-top: .25rem; }
   .section, .spec, .tag-row { break-inside: avoid; }
   .section h2, .spec-name { break-after: avoid; }
 }
+
+/* Restrained profile hierarchy and project cards. */
+.hero-tagline { max-width: 54ch; }
+.section p { line-height: 1.7; }
+.section-lede { line-height: 1.65; }
+.matrix--projects { grid-template-columns: 1fr; }
+.spec--lead { border-color: var(--border-accent); }
+.spec p a, .hero-facts a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--border-accent); }
+.spec p a:hover, .hero-facts a:hover { text-decoration-color: var(--accent); }
+@media (min-width: 640px) { .matrix--projects { grid-template-columns: 1fr; } }

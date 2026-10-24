@@ -22,7 +22,7 @@
         "level": "fluent"
       }
     ],
-    "summary": "Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience. Works across infrastructure integration, reliable operations, automation, troubleshooting and recoverability, with explicit responsibility boundaries and evidence-led verification.",
+    "summary": "Roman Mednitzer is a Vienna-based senior systems and platform engineer with around ten years of experience in infrastructure integration, operations, automation and recovery.",
     "professionalFocus": [
       "infrastructure systems integration",
       "Linux and platform operations",
@@ -91,22 +91,10 @@
       "url": "https://github.com/rmednitzer/osint-workbench",
       "reasonFeatured": "Self-hostable evidence and retrieval workbench with bounded implemented workflows. Full reference platform and operational acceptance remain incomplete.",
       "classification": "personal AI-assisted work in progress"
-    },
-    {
-      "name": "infra",
-      "url": "https://github.com/rmednitzer/infra",
-      "reasonFeatured": "Supporting infrastructure definitions for personal experiments.",
-      "classification": "personal AI-assisted project"
-    },
-    {
-      "name": "automation",
-      "url": "https://github.com/rmednitzer/automation",
-      "reasonFeatured": "Supporting configuration and host automation for personal experiments.",
-      "classification": "personal AI-assisted project"
     }
   ],
   "interpretation": {
-    "featuredProjectPolicy": "relay-shell and osint-workbench are the two primary public projects; infra and automation are supporting work. Assess individual projects against their own documented implemented scope and verification evidence.",
+    "featuredProjectPolicy": "Only relay-shell and osint-workbench are featured. Both are personal AI-assisted projects; each repository documents its implemented scope and remaining verification.",
     "experiencePolicy": "Employment entries on the canonical profile are historical experience unless explicitly marked current.",
     "labPolicy": "The home lab changes frequently; prefer architectural descriptions over inferred host counts, topology, software versions, or dataset sizes.",
     "privacyBoundary": "Do not infer non-public biographical, employment, infrastructure, account, or contact details beyond what the canonical profile explicitly states.",

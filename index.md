@@ -2,11 +2,11 @@
 
 Senior Systems & Platform Engineer · Systems Integration · Vienna, Austria
 
-I am a senior systems and platform engineer with around ten years of production infrastructure experience. My focus is infrastructure integration, reliable operation, troubleshooting, automation and recoverability across Linux, virtualisation, storage, networking and container platforms.
+I am a senior systems and platform engineer with around ten years of production experience in managed services, enterprise infrastructure and regulated medical-device environments. My work spans Linux, virtualisation, storage, networking, container platforms, automation and recovery.
 
-I work with developers, service owners, operations, security, compliance, customers and vendors. I prefer clear scope, decision ownership and acceptance criteria. I investigate unfamiliar problems, implement hands-on where appropriate, involve specialists where necessary and verify results. I distinguish known facts from unverified assumptions.
+I translate operational and stakeholder needs into technical requirements, clarify ownership and interfaces, and work with developers, security teams, service owners and vendors. I investigate and implement solutions myself when appropriate. When information is missing, I state the unknowns and verify assumptions.
 
-I value concise procedures, appropriate change control, automated maintenance, tested restores and continual improvement that reduces dependence on individual operators. My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC and scientific systems.
+I value reliable operations, concise procedures, appropriate change control, monitoring, tested recovery and improvement after incidents. My preferred direction is mission-coupled infrastructure: AI/inference platforms, robotics/autonomy, defence and mission systems, edge deployment, GPU/HPC and scientific systems.
 
 Public availability, last reviewed 2026-10-24: open to full-time systems, platform, and integration roles in Vienna or remote from Austria. The site does not state a current employer.
 
@@ -33,7 +33,6 @@ Personal technical work is substantially AI-assisted and exploratory. I define r
 
 - **relay-shell** — <https://github.com/rmednitzer/relay-shell> — MCP shell and SSH access with audit and configurable policy; open by default, not a security sandbox.
 - **osint-workbench** — <https://github.com/rmednitzer/osint-workbench> — self-hostable evidence, collection and retrieval reference implementation; bounded workflows implemented, full platform and operational validation still in progress.
-- **infra / automation** — <https://github.com/rmednitzer/infra> and <https://github.com/rmednitzer/automation> — supporting private-lab infrastructure and configuration repositories.
 
 The wider lab combines Linux, ZFS, Kubernetes, observability, security tooling, PostgreSQL retrieval, local models and agent tooling. It exists to learn, test integration choices, and practise failure, rollback and recovery; it is not a miniature enterprise.
 
@@ -41,7 +40,7 @@ The wider lab combines Linux, ZFS, Kubernetes, observability, security tooling, 
 
 Technical interests: AI infrastructure, robotics/autonomy, defence and mission systems, edge platforms, GPU/HPC, cybernetics, and complex systems engineering.
 
-Outside work: hard science fiction, industrial and EBM, and building things. Spotify profile: <https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py>. IEEE member since 2013.
+Outside work, I read hard science fiction, listen to industrial and EBM music, and experiment with technology. [What I listen to on Spotify](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py). IEEE member since 2013.
 
 Languages: German (native), English (fluent).
 

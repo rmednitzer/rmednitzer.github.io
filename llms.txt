@@ -25,11 +25,10 @@ Roman is open to full-time systems, platform, and integration roles in Vienna or
 
 - [relay-shell](https://github.com/rmednitzer/relay-shell): local and SSH operations over MCP, with auditing and configurable policy; open by default, not a sandbox.
 - [osint-workbench](https://github.com/rmednitzer/osint-workbench): self-hostable OSINT reference implementation; partial bounded implementation with ongoing integration validation.
-- [infra](https://github.com/rmednitzer/infra) and [automation](https://github.com/rmednitzer/automation): supporting personal-lab repositories.
 
 ## Public profiles
 
 - [GitHub](https://github.com/rmednitzer)
 - [LinkedIn](https://www.linkedin.com/in/rmednitzer)
 
-Personal interest: [Spotify profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py). Linked only; no embedded playback or tracking.
+Personal interests include hard science fiction and listening to industrial and EBM music. The [Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py) is an outbound link, not a music-production portfolio.
