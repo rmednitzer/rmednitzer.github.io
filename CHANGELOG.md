@@ -1852,3 +1852,13 @@ Added site link, page index table, and tech notes for GitHub repository visitors
 - Removed recruitment availability from the homepage, Markdown, AI-readable summary and structured profile without replacing it with another employment-status claim.
 - Kept location and contact links; removed the unused availability CSS rule.
 - Other editorial choices remain unchanged. Rollback: revert this commit.
+
+
+## 2026-10-24 — Personal introduction and independent interests section
+
+- Applied the approved grounded introduction, keeping the professional title as context rather than the entire identity.
+- Moved projects and the personal lab before professional work and the unchanged employment timeline. Retained existing anchors.
+- Added a directly navigable interests section covering technology and human potential, hard science fiction and listening to industrial/EBM music. No new private biographical details or identity labels were introduced.
+- Replaced repeated defensive project wording with a concise account of AI assistance and personal contribution; retained project-specific authority and maturity limits.
+- Aligned descriptions, structured data and text alternatives. Public recruitment availability remains absent.
+- Scope is public editorial content and static layout only. Revert this change to restore the previous presentation; no service configuration or data migration is involved.

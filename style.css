@@ -98,10 +98,15 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 .project .project-kind { font-size: .77rem; }
 .project .project-boundary { margin-top: 1.1rem; padding-top: .95rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .93rem; }
 .project-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: auto; padding-top: 1rem; font-size: .94rem; align-self: flex-start; }
-.personal { margin-top: 1.6rem; padding: 1.3rem 0 0 1.25rem; border-left: 2px solid var(--border-accent); }
-.personal h3 { font-size: 1.1rem; margin-bottom: .65rem; }
-.personal p { max-width: 72ch; font-size: 1rem; }
-.personal > a { display: inline-flex; align-items: center; min-height: 44px; margin-top: .55rem; font-size: .94rem; }
+
+/* Personal interests have their own section, not an aside inside technical work. */
+.section > .capabilities { margin-top: 1.75rem; }
+.interests-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+.interest { min-width: 0; }
+.interest h3 { font-size: 1.1rem; margin-bottom: .75rem; }
+.interest p { max-width: 64ch; }
+.interest p + p { margin-top: .85rem; }
+.interest > a { display: inline-flex; align-items: center; min-height: 44px; margin-top: .7rem; font-size: .95rem; }
 
 footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.25rem; color: var(--muted); font-size: .88rem; }
 footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
@@ -125,7 +130,7 @@ footer .impressum { flex-basis: 100%; }
   .portrait img { border-radius: 18px; }
   .capabilities { grid-template-columns: 1fr; gap: 1.5rem; }
   .capability p { max-width: 72ch; }
-  .projects { grid-template-columns: 1fr; }
+  .projects, .interests-grid { grid-template-columns: 1fr; }
   .site-nav ul { column-gap: 1.2rem; }
 }
 @media (max-width: 480px) {
@@ -157,7 +162,7 @@ footer .impressum { flex-basis: 100%; }
   :root { --fg: #111827; --muted: #414d5c; --border: rgba(15,23,42,.4); --border-accent: #096c62; }
 }
 @media (forced-colors: active) {
-  .button, .project, .work-flow, .personal { border-color: CanvasText; }
+  .button, .project, .work-flow, .interest { border-color: CanvasText; }
   .track-body::before { background: CanvasText; }
 }
 @media print {
@@ -179,8 +184,8 @@ footer .impressum { flex-basis: 100%; }
   .work-flow { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .work-flow li:nth-child(3) { padding-left: 1rem; border-left: 1px solid var(--border); }
   .work-flow li:nth-child(n+3) { border-top: 0; }
-  .projects { grid-template-columns: 1fr; }
-  .project, .track-item, .capability, .work-flow, .personal { break-inside: avoid; }
+  .projects, .interests-grid { grid-template-columns: 1fr; }
+  .project, .track-item, .capability, .work-flow, .interest { break-inside: avoid; }
   .project h3, .track-body h3 { break-after: avoid; }
   .button { min-height: 0; padding: .1rem .5rem; }
   a { color: var(--fg); }

@@ -1,26 +1,34 @@
 # Roman Mednitzer
 
-> Roman Mednitzer is a senior systems and platform engineer based in Vienna, Austria, with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
+> Personal website of Roman Mednitzer, a senior systems and platform engineer based in Vienna, Austria. It brings together professional infrastructure work, AI-assisted personal projects and wider interests.
 
 Canonical profile: https://rmednitzer.github.io/
 Last reviewed: 2026-10-24.
 
-## Professional scope
+## About
 
-Senior Systems & Platform Engineer. His work combines technical requirements, hands-on infrastructure integration, operations, incident response, automation and verified recovery. It includes SOPs, ISMS documentation, business continuity and ISO/IEC 27001 audit preparation. This describes applied engineering and audit support, not auditor certification or legal qualifications.
-
-He completed an Austrian IT vocational qualification in 2016. German is his native language; he uses English with full professional proficiency. Published employment entries are historical, not a statement of a current employer.
-
-Technical interests in robotics, defence/mission systems, edge and high-performance computing are future directions, not claims of employment in those fields.
+Roman learns through practical work, independent study and experimentation. His professional focus is infrastructure integration and reliable operations; private projects provide room to explore AI, automation and unfamiliar ideas.
 
 ## Personal projects and lab
 
-These are independent, AI-assisted projects outside employment. I use AI heavily for implementation, testing and documentation; I own the requirements, integration decisions, review and operational validation. They are separate from my professional infrastructure experience, not a claim of a software-development or ML-research career.
+His personal projects are developed with substantial AI assistance. Implementation, testing and documentation are AI-assisted; his contribution covers requirements, integration decisions, review and operational validation. This work is separate from his professional infrastructure experience and does not establish a software-development or ML-research career.
 
 - [relay-shell](https://github.com/rmednitzer/relay-shell): MCP shell and SSH tooling with operation records and optional policy. Open by default, not a sandbox.
 - [osint-workbench](https://github.com/rmednitzer/osint-workbench): self-hostable collection, evidence and retrieval workbench. Bounded workflows and a disposable Compose test environment; the full reference platform remains unfinished.
 
-The private lab supports integration, migration and recovery experiments. Routine infrastructure operation uses deterministic automation, independent of external AI providers. Some deliberately complex workflows evaluate agent feedback handling and context retention. They do not represent a standard production process.
+The private lab supports integration, migration and recovery experiments. Routine infrastructure operation uses deterministic automation, independent of external AI providers. Some deliberately complex workflows evaluate agent feedback handling and context retention rather than prescribe a normal production process.
+
+## Professional background
+
+Senior Systems & Platform Engineer with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. Responsibilities include requirements clarification, hands-on integration, operations, incident response, automation and verified recovery, with SOPs, ISMS documentation, business continuity and ISO/IEC 27001 audit preparation.
+
+He completed an Austrian IT vocational qualification in 2016. German is his native language; he uses English with full professional proficiency. Published employment entries are historical, not a statement of a current employer. Audit support is distinct from auditor certification or legal qualifications.
+
+## Interests and outlook
+
+Interests include AI and robotics, cybernetics, human augmentation, defence and mission systems, edge platforms and high-performance computing. He is interested in technology that extends human capabilities and in understanding and retaining control over the systems people depend on. These are interests and outlook, not claims of specialist or research credentials.
+
+He reads hard science fiction and listens to industrial and electronic body music (EBM). [My Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py) is a listening profile.
 
 ## Public profile formats
 
@@ -29,7 +37,3 @@ The private lab supports integration, migration and recovery experiments. Routin
 - [Structured public profile](https://rmednitzer.github.io/profile.json)
 - [GitHub](https://github.com/rmednitzer)
 - [LinkedIn](https://www.linkedin.com/in/rmednitzer)
-
-## Personal interests
-
-Hard science fiction and listening to industrial and electronic body music (EBM). [Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py); not an artist profile.

@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; style-src 'self'; script-src 'sha256-gHwrq6JYZI5k3Kps8xGlTPN5s5/EHj1gKKuvk90BxLY='; font-src 'self'; manifest-src 'self'">
   <meta name="referrer" content="no-referrer">
   <link rel="canonical" href="https://rmednitzer.github.io/">
-  <meta name="description" content="Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.">
+  <meta name="description" content="Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0e13">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f9fb">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Roman Mednitzer">
   <meta property="profile:first_name" content="Roman">
   <meta property="profile:last_name" content="Mednitzer">
-  <meta property="og:description" content="Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.">
+  <meta property="og:description" content="Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.">
   <meta property="og:url" content="https://rmednitzer.github.io/">
   <meta property="og:locale" content="en_GB">
   <meta property="og:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
@@ -29,7 +29,7 @@
   <meta property="og:image:height" content="400">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Roman Mednitzer | Senior Systems &amp; Platform Engineer">
-  <meta name="twitter:description" content="Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.">
+  <meta name="twitter:description" content="Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.">
   <meta name="twitter:image" content="https://rmednitzer.github.io/profile_roman-mednitzer-400.png">
   <meta name="twitter:image:alt" content="Portrait of Roman Mednitzer">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -55,7 +55,7 @@
         <h1>Roman Mednitzer</h1>
         <p class="hero-role">Senior Systems &amp; Platform Engineer</p>
         <p class="hero-focus">Systems integration · Reliable operations</p>
-        <p class="hero-intro">I work across infrastructure layers to turn requirements into systems people can operate, maintain and recover.</p>
+        <p class="hero-intro">I like understanding how things work, especially where technologies and disciplines meet.</p>
         <nav class="contact-links" aria-label="Contact and professional profiles">
           <a class="button" href="mailto:r.mednitzer@ieee.org">Email</a>
           <a class="button" rel="me" href="https://www.linkedin.com/in/rmednitzer">LinkedIn</a>
@@ -69,16 +69,47 @@
     </header>
     <nav class="site-nav" aria-label="Page sections">
       <ul>
-        <li><a href="#about">Approach</a></li>
-        <li><a href="#stack">Technical work</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#open-source">Projects</a></li>
         <li><a href="#lab">Personal lab</a></li>
+        <li><a href="#stack">Professional work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#interests">Interests</a></li>
       </ul>
     </nav>
     <main id="content" tabindex="-1">
       <section class="section" id="about" aria-labelledby="about-h">
-        <h2 id="about-h">How I work</h2>
+        <h2 id="about-h">About me</h2>
+        <p>I’m Roman, a systems and platform engineer based in Vienna. Much of what I know comes from practical work, independent study and experimentation.</p>
+        <p>Professionally, I work on infrastructure integration and reliable operations. My private projects give me room to explore AI, automation and unfamiliar ideas without treating every experiment as a finished product.</p>
+      </section>
+      <section class="section" id="open-source" aria-labelledby="oss-h">
+        <h2 id="oss-h">Selected projects</h2>
+        <p>These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; my contribution covers requirements, integration decisions, review and operational validation.</p>
+        <div class="projects">
+          <article class="project" aria-labelledby="project-relay-shell">
+            <p class="project-kind">Shell and SSH tooling</p>
+            <h3 id="project-relay-shell"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
+            <p>A Model Context Protocol (MCP) server that lets compatible AI clients run shell commands and work over SSH. It supports interactive sessions, file transfers, operation records and configurable policy.</p>
+            <p class="project-boundary">Open by default; it runs with the service account’s authority and is not a sandbox.</p>
+            <a class="project-more" href="https://github.com/rmednitzer/relay-shell/blob/main/README.md">Documentation and limits</a>
+          </article>
+          <article class="project" aria-labelledby="project-osint-workbench">
+            <p class="project-kind">Information collection and retrieval</p>
+            <h3 id="project-osint-workbench"><a href="https://github.com/rmednitzer/osint-workbench">osint-workbench</a></h3>
+            <p>A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access. It distils part of my private information-processing environment into a smaller reference implementation.</p>
+            <p class="project-boundary">Work in progress: core workflows have documented limits, with a disposable Docker Compose setup for integration testing. Full operational qualification remains open.</p>
+            <a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md">Implementation status</a>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="lab" aria-labelledby="lab-h">
+        <h2 id="lab-h">Personal lab</h2>
+        <p>My private lab combines virtual machines, a GitOps-managed container platform, database-backed retrieval, local inference, observability and recovery automation. Core infrastructure operation does not depend on external AI providers; routine work is handled by controllers and scheduled automation.</p>
+        <p>I use it to try integrations, rehearse migrations and recovery, and develop reusable runbooks and automation. Some deliberately complex tasks test how AI agents handle execution feedback and long contexts. That experimental process is not a prescription for everyday production work.</p>
+      </section>
+      <section class="section" id="stack" aria-labelledby="stack-h">
+        <h2 id="stack-h">Professional work</h2>
         <p>I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work connects technical requirements and hands-on integration with operation, troubleshooting and recovery.</p>
         <p>I work with developers, operations, security and compliance teams, service owners and vendors to clarify what a system needs to do. I investigate unfamiliar areas and implement solutions myself, involving specialists when the problem calls for it.</p>
         <p>I value clear responsibilities, concise procedures and evidence from actual operation. The aim is a system that people can understand, maintain and recover—not one that depends on a single person holding everything together.</p>
@@ -88,9 +119,6 @@
           <li><strong>Verify</strong><span>Service behaviour, recovery and handover.</span></li>
           <li><strong>Improve</strong><span>Operational feedback and controlled change.</span></li>
         </ol>
-      </section>
-      <section class="section" id="stack" aria-labelledby="stack-h">
-        <h2 id="stack-h">Technical work</h2>
         <div class="capabilities">
           <div class="capability"><h3>Platforms and integration</h3><p>Linux, virtualisation, storage, networking and container platforms. Production work includes Kubernetes and OpenShift, with Ansible and Terraform used for selected automation tasks.</p></div>
           <div class="capability"><h3>Operations and recovery</h3><p>Monitoring, incident response, problem analysis and controlled change. Backup administration, documented restore tests and rollback planning are part of the work, not an afterthought.</p></div>
@@ -135,35 +163,21 @@
         </ol>
         <p class="experience-note">Languages: German (native), English (full professional proficiency).</p>
       </section>
-      <section class="section" id="open-source" aria-labelledby="oss-h">
-        <h2 id="oss-h">Selected projects</h2>
-        <p>These are independent, AI-assisted projects outside employment. I use AI heavily for implementation, testing and documentation; I own the requirements, integration decisions, review and operational validation. They are separate from my professional infrastructure experience, not a claim of a software-development or ML-research career.</p>
-        <div class="projects">
-          <article class="project" aria-labelledby="project-relay-shell">
-            <p class="project-kind">Shell and SSH tooling</p>
-            <h3 id="project-relay-shell"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
-            <p>A Model Context Protocol (MCP) server that lets compatible AI clients run shell commands and work over SSH. It supports interactive sessions, file transfers, operation records and configurable policy.</p>
-            <p class="project-boundary">Open by default; it runs with the service account’s authority and is not a sandbox.</p>
-            <a class="project-more" href="https://github.com/rmednitzer/relay-shell/blob/main/README.md">Documentation and limits</a>
-          </article>
-          <article class="project" aria-labelledby="project-osint-workbench">
-            <p class="project-kind">Information collection and retrieval</p>
-            <h3 id="project-osint-workbench"><a href="https://github.com/rmednitzer/osint-workbench">osint-workbench</a></h3>
-            <p>A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access. It distils part of my private information-processing environment into a smaller reference implementation.</p>
-            <p class="project-boundary">Work in progress: core workflows have documented limits, with a disposable Docker Compose setup for integration testing. Full operational qualification remains open.</p>
-            <a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md">Implementation status</a>
-          </article>
+      <section class="section" id="interests" aria-labelledby="personal-h">
+        <h2 id="personal-h">Interests and outlook</h2>
+        <div class="interests-grid">
+          <div class="interest">
+            <h3>Technology and human potential</h3>
+            <p>I’m interested in how technology can extend human capabilities, from AI and robotics to cybernetics and human augmentation. I enjoy ambitious ideas, but I also want to understand what works, what fails and what remains unknown.</p>
+            <p>Understanding and retaining control over the systems we depend on matters to me.</p>
+            <p>My wider technical interests include defence and mission systems, edge platforms and high-performance computing.</p>
+          </div>
+          <div class="interest">
+            <h3>Science fiction and music</h3>
+            <p>I read hard science fiction and listen to industrial and electronic body music (EBM).</p>
+            <a href="https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py" rel="noreferrer">My Spotify listening profile</a>
+          </div>
         </div>
-      </section>
-      <section class="section" id="lab" aria-labelledby="lab-h">
-        <h2 id="lab-h">Personal lab</h2>
-        <p>My private lab combines virtual machines, a GitOps-managed container platform, database-backed retrieval, local inference, observability and recovery automation. Core infrastructure operation does not depend on external AI providers; routine work is handled by controllers and scheduled automation.</p>
-        <p>I use it to try integrations, rehearse migrations and recovery, and develop reusable runbooks and automation. Some deliberately complex tasks test how AI agents handle execution feedback and long contexts. That experimental process is not a prescription for everyday production work.</p>
-        <aside class="personal" aria-labelledby="personal-h">
-          <h3 id="personal-h">Beyond day-to-day work</h3>
-          <p>I read hard science fiction and listen to industrial and electronic body music (EBM). My technical interests include AI infrastructure, robotics and autonomy, defence and mission systems, edge platforms and high-performance computing.</p>
-          <a href="https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py" rel="noreferrer">My Spotify listening profile</a>
-        </aside>
       </section>
     </main>
     <footer>
@@ -183,7 +197,7 @@
   "@id": "https://rmednitzer.github.io/#profile",
   "url": "https://rmednitzer.github.io/",
   "name": "Roman Mednitzer | Senior Systems & Platform Engineer",
-  "description": "Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.",
+  "description": "Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.",
   "dateCreated": "2026-03-07T00:00:00Z",
   "dateModified": "2026-10-24T00:00:00Z",
   "mainEntity": {
@@ -194,7 +208,7 @@
     "familyName": "Mednitzer",
     "alternateName": "rmednitzer",
     "jobTitle": "Senior Systems & Platform Engineer",
-    "description": "Roman Mednitzer, a senior systems and platform engineer in Vienna, Austria. Infrastructure integration, reliable operations, automation and tested recovery.",
+    "description": "Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.",
     "url": "https://rmednitzer.github.io/",
     "image": {
       "@type": "ImageObject",

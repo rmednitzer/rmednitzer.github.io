@@ -2,7 +2,7 @@
 
 Static personal website: **[rmednitzer.github.io](https://rmednitzer.github.io/)**.
 
-The profile describes senior systems/platform operations and infrastructure integration, with professional experience separated from independent AI-assisted projects. The two featured projects are **relay-shell** and **osint-workbench**.
+A personal introduction bringing together practical systems engineering, independent AI-assisted projects and interests in technology, science fiction and music. Projects precede professional experience; interests have a dedicated section. The two featured projects are **relay-shell** and **osint-workbench**. Professional history, private experiments and personal interests remain distinct.
 
 ## Site
 

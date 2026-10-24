@@ -23,6 +23,7 @@ class ProfilePage(HTMLParser):
         self.ids: list[str] = []
         self.hrefs: list[str] = []
         self.headings: list[int] = []
+        self.sections: list[str] = []
         self.visible: list[str] = []
         self.title: list[str] = []
         self.in_title = False
@@ -34,6 +35,8 @@ class ProfilePage(HTMLParser):
         a = {key: value or '' for key, value in attributes}
         if 'id' in a:
             self.ids.append(a['id'])
+        if tag == 'section' and 'id' in a:
+            self.sections.append(a['id'])
         if tag == 'meta':
             self.meta[a.get('name', a.get('property', a.get('http-equiv', '')))] = a.get('content', '')
         if tag == 'link':
@@ -104,6 +107,18 @@ def validate(root: Path) -> list[str]:
     check(person['headline'] in visible and person['name'] in visible, 'Identity absent from visible content')
     check('noindex' not in page.meta.get('robots', '').lower(), 'Profile unexpectedly excludes indexing')
     check('unsafe-inline' not in page.meta.get('Content-Security-Policy', ''), 'CSP allows unsafe inline content')
+    check('interests' in page.sections and '#interests' in page.hrefs,
+          'Personal interests must remain a directly linked section')
+    check('open-source' in page.sections and 'experience' in page.sections,
+          'Projects or professional experience section is missing')
+    if 'open-source' in page.sections and 'experience' in page.sections:
+        check(page.sections.index('open-source') < page.sections.index('experience'),
+              'Projects must precede the employment timeline')
+    check('availability' not in person, 'Public recruitment availability must remain absent')
+    recruitment = re.compile(r'open to (?:full-time )?systems,\s*platform and integration roles', re.I)
+    for filename in ('index.html', 'index.md', 'llms.txt', 'profile.json'):
+        check(not recruitment.search((root / filename).read_text(encoding='utf-8')),
+              f'{filename}: public recruitment wording reintroduced')
 
     blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)]
     pages = [b for b in blocks if b.get('@type') == 'ProfilePage']
