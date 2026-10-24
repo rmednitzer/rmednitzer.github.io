@@ -268,7 +268,7 @@
         <h1>Roman Mednitzer</h1>
         <p class="hero-role">Senior Systems &amp; Platform Engineer · Systems Integration</p>
         <p class="hero-where">Vienna, Austria</p>
-        <p class="hero-tagline">I turn defined requirements and constraints into integrated, reliable infrastructure. I work across platforms, interfaces and disciplines—from discovery and architecture to hands-on implementation, verified recovery and operational handover.</p>
+        <p class="hero-tagline">I work on infrastructure integration and operations: clarifying requirements, connecting systems, resolving problems, and checking that services can be operated and recovered.</p>
         <nav class="hero-links" aria-label="Contact links">
           <a class="btn" href="mailto:r.mednitzer@ieee.org">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
@@ -287,7 +287,7 @@
           <dt>Available</dt><dd>Open to full-time systems, platform, and integration roles in Vienna or remote from Austria</dd>
           <dt>Working style</dt><dd>Requirements &amp; technical coordination · explicit ownership · evidence-led decisions · tested recovery</dd>
           <dt>Interested in</dt><dd>AI infrastructure · robotics/autonomy · defence/mission systems · edge and HPC</dd>
-          <dt>Outside work</dt><dd>Hard science fiction · industrial and EBM · building things</dd>
+          <dt>Outside work</dt><dd>Hard science fiction · industrial and EBM · <a href="https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py" rel="noopener noreferrer">Music on Spotify</a> · building things</dd>
           <dt>Languages</dt><dd>German (native) · English (fluent)</dd>
         </dl>
       </div>
@@ -306,9 +306,9 @@
     <!-- ── About ── -->
     <section class="section" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
-      <p>I am a senior systems and platform engineer with around ten years of production experience in managed services, enterprise infrastructure, and a regulated medical-device environment. I connect stakeholder needs with technical requirements, architecture, integration, operation and verification across Linux, virtualization, storage, networking, Kubernetes/OpenShift, automation and recovery.</p>
-      <p>I work across development, operations, information security, compliance, service owners and vendors to clarify requirements and expose conflicting constraints. Given an authorized scope and accountable business owner, I can investigate unfamiliar domains, contribute hands-on implementation, coordinate specialist input and validate the resulting system. I distinguish known facts from hypotheses rather than speculate past the available evidence.</p>
-      <p>My priority is operational reliability: clear ownership, concise and usable procedures, observable behavior, tested recovery and improvement loops that reduce dependence on individual heroes. I want to remain a hands-on technical contributor, not a personnel manager. I am especially interested in infrastructure close to the product or mission: AI/inference platforms, robotics, defence/mission systems, edge and scientific computing.</p>
+      <p>I have around ten years of production experience in systems and platform operations, including managed services, enterprise infrastructure and a regulated medical-device environment. My work spans Linux, virtualisation, storage, networking, container platforms, automation, monitoring and recovery.</p>
+      <p>I prefer a defined scope, clear decision ownership and explicit acceptance criteria. I work with developers, operators, security and compliance teams, customers and vendors. I investigate unfamiliar domains and contribute hands-on work where appropriate; I ask specialists for help when needed and distinguish what I know from what still needs verification.</p>
+      <p>I care about reliable operations, concise procedures, change control, verified recovery and continuous improvement. I prefer technical responsibility and collaboration over personnel management. Areas I'd like to work in include AI infrastructure, robotics, mission systems, edge and scientific computing.</p>
       <p>Outside work I read hard science fiction, listen to industrial and EBM, and build things. I have been an IEEE member since 2013.</p>
     </section>
 
@@ -355,7 +355,7 @@
     <!-- ── Technical scope ── -->
     <section class="section" id="stack" aria-labelledby="stack-h">
       <h2 id="stack-h">Technical scope</h2>
-      <p class="section-lede">My professional focus is end-to-end integration: understand the need, establish interfaces and constraints, work with specialists, implement where appropriate, and verify that the whole system behaves as required.</p>
+      <p class="section-lede">My work combines hands-on infrastructure operations with requirements clarification, integration, troubleshooting and recovery. Technologies below indicate experience or familiarity, not equal specialist depth.</p>
       <dl class="taglist">
         <div class="tag-row">
           <dt>Professional work</dt>
@@ -366,9 +366,9 @@
             <span class="tag">Enterprise storage</span>
             <span class="tag">Server hardware</span>
             <span class="tag">Networking</span>
-            <span class="tag">Kubernetes / OpenShift</span>
+            <span class="tag">Container platforms</span>
             <span class="tag">GitOps</span>
-            <span class="tag">Ansible / Terraform</span>
+            <span class="tag">Infrastructure as code</span>
             <span class="tag">Source control &amp; CI</span>
             <span class="tag">Monitoring &amp; alerting</span>
             <span class="tag">Backup &amp; recovery</span>
@@ -390,11 +390,11 @@
         <div class="tag-row">
           <dt>Working knowledge</dt>
           <dd>
-            <span class="tag">VMware vSphere</span>
+            <span class="tag">Virtualisation platforms</span>
             <span class="tag">OpenStack</span>
             <span class="tag">Helm</span>
             <span class="tag">Jenkins</span>
-            <span class="tag">AWS</span>
+            <span class="tag">Cloud infrastructure</span>
           </dd>
         </div>
       </dl>
@@ -403,28 +403,28 @@
     <!-- ── Open source ── -->
     <section class="section" id="open-source" aria-labelledby="oss-h">
       <h2 id="oss-h">Personal projects</h2>
-      <p class="section-lede">These are private AI-assisted prototypes and engineering experiments, not professional software-development or ML-research experience. I define the requirements and integration approach, direct and review AI-assisted implementation, validate results and operate the systems. Some deliberately extensive engineering frameworks test agent reasoning and context management, not a recommended process for every project.</p>
+      <p class="section-lede">These are personal, substantially AI-assisted engineering projects. I define requirements, make integration decisions, review implementation, test and operate the results. They are not evidence of professional software-development or ML-research experience. Some deliberately demanding process and assurance exercises also test how AI agents handle complex tasks and long contexts.</p>
       <div class="spec spec--lead">
         <div class="spec-head">
           <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/relay-shell">relay-shell</a></h3>
           <span class="spec-tag">Apache-2.0 · MCP</span>
         </div>
-        <p><code>relay-shell</code> exists because I do not want AI that can only suggest commands. It gives an AI client a real local shell and SSH fleet access—commands, PTYs, transfers, port forwards, and fan-out—then puts authority, policy, limits, redaction, and audit around that capability. Every action is classified and bounded. The interesting problem is not whether an agent can operate a machine; it is whether it can do so without making the control boundary disappear.</p>
+        <p>An MCP server providing local shell and remote SSH operations, including interactive sessions and file transfer. It adds operation classification, audit records and configurable restrictions. Its default policy is open, not a sandbox: connected clients can exercise the service account's authority. I use it to experiment with agent execution and operational feedback.</p>
       </div>
       <div class="matrix">
         <div class="spec">
           <div class="spec-head">
-            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/infra">infra</a></h3>
-            <span class="spec-tag">Apache-2.0 · OpenTofu</span>
+            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/osint-workbench">osint-workbench</a></h3>
+            <span class="spec-tag">Python · PostgreSQL · MCP</span>
           </div>
-          <p><code>infra</code> is the rebuildable substrate: OpenTofu for KVM/libvirt Ubuntu VMs and Talos Linux Kubernetes. Environments are separated, state can be remote, locked, and encrypted, and CI checks formatting, lint, security, secrets, and module behaviour. If a host disappears, I want the code and documented decisions to be enough to make the next one.</p>
+          <p>A self-hostable reference workbench for collecting, preserving and searching public information, with controlled enrichment and read-only assistant access. Core workflows are implemented within stated limits; the complete platform remains unfinished, with integration and operational qualification ongoing. See its <a href="https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md">status and evidence</a>.</p>
         </div>
         <div class="spec">
           <div class="spec-head">
-            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/automation">automation</a></h3>
-            <span class="spec-tag">Apache-2.0 · Ansible</span>
+            <h3 class="spec-name spec-name--code"><a href="https://github.com/rmednitzer/infra">infra</a> / <a href="https://github.com/rmednitzer/automation">automation</a></h3>
+            <span class="spec-tag">Supporting projects</span>
           </div>
-          <p><code>automation</code> is what turns a fresh Linux host into one I am willing to operate: a CIS-based baseline, configuration, SRE tooling, local inference, and machine-readable control mappings to NIS2, the Cyber Resilience Act, GDPR, and ISO/IEC 27001. I would rather encode a control and test the result than leave it as prose.</p>
+          <p>Infrastructure definitions and configuration automation for my private lab. These support reproducible experiments, system setup and operational maintenance; deployment-specific guarantees are documented in their respective repositories.</p>
         </div>
       </div>
       <p class="repos-note">More at <a href="https://github.com/rmednitzer">github.com/rmednitzer</a></p>
@@ -434,28 +434,12 @@
     <section class="section" id="lab" aria-labelledby="lab-h">
       <h2 id="lab-h">The lab</h2>
       <p>The lab is a personal, experimental engineering environment, not a production-enterprise claim. It combines Linux, storage, Kubernetes, automation, observability, local models and agent tooling to explore how systems respond to change and failure.</p>
-      <p>One branch is a self-hosted knowledge and OSINT system built around PostgreSQL, graph and vector retrieval, vulnerability intelligence, and local inference. I use it because I want the data, retrieval path, and model boundary under my control, not because every workload needs to be local.</p>
-      <p>Flux, Semaphore and host-level automation maintain routine state independently of external AI providers. AI tools assist with experiments and unfamiliar engineering problems, with execution boundaries and operational evidence. I use the lab to test assumptions, recovery and rebuildability—not to claim every prototype is production-qualified.</p>
+      <p>One part is a self-hosted information-processing system using a database, search and optional local inference. The public osint-workbench repository captures a smaller, more portable subset of that work.</p>
+      <p>Declarative workload controllers, scheduled automation and host-level checks handle routine maintenance without external AI services. I use AI assistance for exploration and engineering changes; I test recovery and rebuildability where practical. The lab is not a production qualification claim.</p>
       <dl class="taglist lab-parts">
         <div class="tag-row">
-          <dt>Built with</dt>
-          <dd>
-            <span class="tag">Talos</span>
-            <span class="tag">Flux</span>
-            <span class="tag">ZFS</span>
-            <span class="tag">Sanoid</span>
-            <span class="tag">Restic</span>
-            <span class="tag">Forgejo</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag">VictoriaMetrics</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">pgvector</span>
-            <span class="tag">Apache AGE</span>
-            <span class="tag">llama.cpp</span>
-            <span class="tag">Ollama</span>
-            <span class="tag">MCP</span>
-            <span class="tag">PydanticAI</span>
-          </dd>
+          <dt>Areas explored</dt>
+          <dd><span class="tag">Linux and virtualisation</span><span class="tag">GitOps and automation</span><span class="tag">Storage and recovery</span><span class="tag">Observability and security</span><span class="tag">Databases and retrieval</span><span class="tag">Local inference and agent tools</span></dd>
         </div>
       </dl>
     </section>

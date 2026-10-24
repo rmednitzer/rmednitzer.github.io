@@ -1,6 +1,6 @@
 # Roman Mednitzer
 
-> Public profile of Roman Mednitzer, a Vienna-based senior systems and platform engineer with around ten years of production experience, focused on requirements-driven integration, reliability and operational assurance.
+> Public profile of Roman Mednitzer, a Vienna-based senior systems and platform engineer with around ten years of production infrastructure experience, working across integration, operations, automation and recovery.
 
 Canonical profile: https://rmednitzer.github.io/
 Last reviewed: 2026-10-24.
@@ -23,11 +23,13 @@ Roman is open to full-time systems, platform, and integration roles in Vienna or
 
 ## Featured personal projects
 
-- [relay-shell](https://github.com/rmednitzer/relay-shell): representative of governed AI-to-infrastructure integration and operational control.
-- [infra](https://github.com/rmednitzer/infra): infrastructure-as-code for the personal lab.
-- [automation](https://github.com/rmednitzer/automation): configuration management and hardening for personal Linux systems.
+- [relay-shell](https://github.com/rmednitzer/relay-shell): local and SSH operations over MCP, with auditing and configurable policy; open by default, not a sandbox.
+- [osint-workbench](https://github.com/rmednitzer/osint-workbench): self-hostable OSINT reference implementation; partial bounded implementation with ongoing integration validation.
+- [infra](https://github.com/rmednitzer/infra) and [automation](https://github.com/rmednitzer/automation): supporting personal-lab repositories.
 
 ## Public profiles
 
 - [GitHub](https://github.com/rmednitzer)
 - [LinkedIn](https://www.linkedin.com/in/rmednitzer)
+
+Personal interest: [Spotify profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py). Linked only; no embedded playback or tracking.
