@@ -88,9 +88,9 @@ I read hard science fiction and listen to industrial and electronic body music (
 
 [My Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py). This is a listening profile, not an artist profile.
 
-## Contact and availability
+## Contact
 
-Open to full-time systems, platform and integration roles in Vienna (on-site or hybrid) or remote from Austria. Last reviewed: 2026-10-24.
+Profile last reviewed: 2026-10-24.
 
 - [Website](https://rmednitzer.github.io/)
 - [LinkedIn](https://www.linkedin.com/in/rmednitzer)

@@ -1845,3 +1845,10 @@ Added site link, page index table, and tech notes for GitHub repository visitors
 - Aligned visible identity with the title, descriptions, social previews, Person/ProfilePage data, Markdown, structured profile, manifest and sitemap. Added a dependency-free CI check for representation drift, project selection and attribution.
 - Public-scope changes only: no private infrastructure inventory, CV attachments, personal contact additions or operational evidence were published.
 - Rollback: revert this change; no application build, database migration or infrastructure configuration change is involved.
+
+
+## 2026-10-24 — Remove recruitment availability from the public profile
+
+- Removed recruitment availability from the homepage, Markdown, AI-readable summary and structured profile without replacing it with another employment-status claim.
+- Kept location and contact links; removed the unused availability CSS rule.
+- Other editorial choices remain unchanged. Rollback: revert this commit.
