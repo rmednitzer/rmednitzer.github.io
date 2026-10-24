@@ -43,7 +43,7 @@ Operated mixed Windows and Linux infrastructure for business-critical applicatio
 
 EBCONT operations GmbH · Vienna, Austria
 
-Progressed from junior to senior-level work in managed services. Built and operated Kubernetes and OpenShift platforms; maintained virtualisation, enterprise storage, database clusters and source-control and CI services. Handled production incidents and changes with documented rollback and verified restores.
+Progressed from junior to senior-level work in managed services. Built and operated Kubernetes and OpenShift platforms; maintained virtualisation, enterprise storage, document-database clusters and source-control and CI services. Handled production incidents and changes with documented rollback and verified restores.
 
 ### 2016–2017 — IT System Administrator
 
