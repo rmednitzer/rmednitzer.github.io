@@ -109,16 +109,27 @@ def validate(root: Path) -> list[str]:
     check('unsafe-inline' not in page.meta.get('Content-Security-Policy', ''), 'CSP allows unsafe inline content')
     check('interests' in page.sections and '#interests' in page.hrefs,
           'Personal interests must remain a directly linked section')
-    check('open-source' in page.sections and 'experience' in page.sections,
-          'Projects or professional experience section is missing')
-    if 'open-source' in page.sections and 'experience' in page.sections:
-        check(page.sections.index('open-source') < page.sections.index('experience'),
-              'Projects must precede the employment timeline')
+    check('open-source' in page.sections and 'stack' in page.sections,
+          'Projects or professional work summary is missing')
+    check('experience' not in page.sections and 'track-item' not in html,
+          'Employment timeline must remain absent')
+    check('experience' not in profile and 'education' not in person,
+          'Employment chronology and education records must remain absent')
+    check(profile.get('formatVersion') == 2, 'Unexpected public profile format')
+    check(profile['professionalWork']['background'] in visible,
+          'Professional background differs from the visible summary')
+    for capability in profile['professionalWork']['capabilities']:
+        check(capability['area'] in visible and capability['description'] in visible,
+              'Professional capability differs from visible content')
     check('availability' not in person, 'Public recruitment availability must remain absent')
     recruitment = re.compile(r'open to (?:full-time )?systems,\s*platform and integration roles', re.I)
     for filename in ('index.html', 'index.md', 'llms.txt', 'profile.json'):
         check(not recruitment.search((root / filename).read_text(encoding='utf-8')),
               f'{filename}: public recruitment wording reintroduced')
+        content = (root / filename).read_text(encoding='utf-8')
+        check(not re.search(r'(?m)^#{1,3} (?:Professional experience|Education|Employment history)', content),
+              f'{filename}: detailed CV section reintroduced')
+
 
     blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)]
     pages = [b for b in blocks if b.get('@type') == 'ProfilePage']
@@ -129,7 +140,8 @@ def validate(root: Path) -> list[str]:
         check(entity.get('name') == person['name'], 'JSON-LD name mismatch')
         check(entity.get('jobTitle') == person['headline'], 'JSON-LD role mismatch')
         check(entity.get('description') == description, 'JSON-LD description mismatch')
-        check('worksFor' not in entity, 'No current employer is asserted by this profile')
+        check(not any(key in entity for key in ('worksFor', 'alumniOf', 'memberOf')),
+              'Structured identity must not add employment, education or memberships')
         check(pages[0]['dateModified'].startswith(profile['lastReviewed']), 'JSON-LD review date mismatch')
         for url in entity.get('sameAs', []):
             check(url in page.hrefs, f'Identity link is not visible: {url}')
@@ -151,9 +163,6 @@ def validate(root: Path) -> list[str]:
     check('AI-assisted' in visible, 'Visible AI attribution missing')
     check('My Spotify listening profile' in visible, 'Spotify must be described as listening')
     check(person['profiles']['spotify'] in page.hrefs, 'Listening link mismatch')
-    for entry in profile['experience']:
-        check(entry['status'] == 'historical', 'Employment entry must remain historical')
-        check(entry['organization'] in visible and entry['period'] in visible, 'Experience absent from visible page')
     manifest = json.loads((root / 'site.webmanifest').read_text(encoding='utf-8'))
     check(manifest['description'] == description, 'Manifest description mismatch')
     sitemap = ElementTree.parse(root / 'sitemap.xml')
