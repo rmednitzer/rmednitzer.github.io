@@ -87,8 +87,10 @@ def main() -> int:
                         f'{name}: {fg_token} or {bg_token} is undefined')
                     continue
                 fg, bg = fg.strip(), bg.strip()
-                if not (fg.startswith('#') and bg.startswith('#')):
-                    continue  # non-hex tokens carry no text
+                if not all(re.fullmatch(r'#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?', value)
+                           for value in (fg, bg)):
+                    failures.append(f'{name}: unsupported colour syntax for {fg_token} or {bg_token}; use #RGB or #RRGGBB')
+                    continue
                 ratio = contrast(fg, bg)
                 checked += 1
                 if ratio < minimum:
@@ -96,6 +98,9 @@ def main() -> int:
                         f'{name}: {fg_token} ({fg}) on {bg_token} ({bg}) is '
                         f'{ratio:.2f}:1, below the {minimum}:1 budget')
 
+    expected = len(PALETTES) * len(FOREGROUNDS) * len(BACKGROUNDS)
+    if checked != expected:
+        failures.append(f'Incomplete contrast checks: {checked} of {expected} pairs')
     if failures:
         print('\n'.join(failures))
         return 1

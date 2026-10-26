@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Fail CI when an inline <script>/<style> no longer matches the hash
-allow-listed in the page's meta Content-Security-Policy (ADR 0007).
+"""Check inline executable content against its effective CSP directive.
 
-A stale hash fails closed in browsers: the year script or the index
-style block would silently stop working. JSON-LD data blocks are not
-executed and need no allowance, so only bare <script>/<style> tags are
-checked.
+JSON-LD is data, not executable JavaScript. HTML attributes must not hide
+executable blocks from this check. This is a site policy check, not a CSP engine.
 """
 import base64
 import hashlib
-import re
+from html.parser import HTMLParser
 import sys
+from urllib.parse import urlsplit
 
 PAGES = ('index.html', 'legal.html')
 
@@ -20,29 +18,74 @@ def sha256_token(content: str) -> str:
     return "'sha256-" + base64.b64encode(digest).decode() + "'"
 
 
+class InlineContent(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.policies = []
+        self.blocks = []
+        self.current = None
+        self.errors = []
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == 'meta' and a.get('http-equiv', '').lower() == 'content-security-policy':
+            self.policies.append(a.get('content', ''))
+        if tag == 'link' and a.get('rel') == 'stylesheet':
+            if urlsplit(a.get('href', '')).path not in ('/style.css', '/fonts/fonts.css'):
+                self.errors.append('Only the shared site and font stylesheets are allowed')
+        if 'style' in a or any(key.startswith('on') for key in a):
+            self.errors.append('Inline style attributes and event handlers are not allowed')
+        if tag in ('script', 'style'):
+            if a.get('src'):
+                self.errors.append('External scripts are not allowed')
+            if tag == 'script' and a.get('type', '').lower().strip() == 'application/ld+json':
+                return
+            self.current = (tag, [])
+
+    def handle_data(self, data):
+        if self.current:
+            self.current[1].append(data)
+
+    def handle_endtag(self, tag):
+        if self.current and self.current[0] == tag:
+            kind, parts = self.current
+            self.blocks.append((kind, ''.join(parts)))
+            self.current = None
+
+
+def validate(html: str) -> list[str]:
+    page = InlineContent()
+    page.feed(html)
+    failures = list(page.errors)
+    if len(page.policies) != 1:
+        return failures + ['Expected exactly one meta Content-Security-Policy']
+    directives = {}
+    for item in page.policies[0].split(';'):
+        words = item.split()
+        if not words:
+            continue
+        name = words[0].lower()
+        if name in directives:
+            failures.append(f'Duplicate CSP directive: {name}')
+        directives.setdefault(name, words[1:])
+    for kind, content in page.blocks:
+        effective = directives.get(kind + '-src-elem',
+                    directives.get(kind + '-src', directives.get('default-src', [])))
+        token = sha256_token(content)
+        if token not in effective:
+            failures.append(f'Inline {kind} hash {token} missing from effective CSP directive')
+    return failures
+
+
 def main() -> int:
     failures = []
     for page in PAGES:
-        html = open(page, encoding='utf-8').read()
-        meta = re.search(
-            r'<meta http-equiv="Content-Security-Policy" content="([^"]+)">',
-            html)
-        if not meta:
-            failures.append(f'{page}: no meta Content-Security-Policy found')
-            continue
-        policy = meta.group(1)
-        for kind, pattern in (('script', r'<script>(.*?)</script>'),
-                              ('style', r'<style>(.*?)</style>')):
-            for content in re.findall(pattern, html, re.S):
-                token = sha256_token(content)
-                if token not in policy:
-                    failures.append(
-                        f'{page}: inline {kind} hash {token} missing from CSP')
-
+        with open(page, encoding='utf-8') as source:
+            failures.extend(f'{page}: {message}' for message in validate(source.read()))
     if failures:
         print('\n'.join(failures))
         return 1
-    print('CSP hashes match all inline content')
+    print('CSP hashes match all inline executable content')
     return 0
 
 

@@ -16,27 +16,21 @@ batch 33, which added `CONTRIBUTING.md` (plus `CODE_OF_CONDUCT.md`,
 of the repository-paperwork pass — see that batch for the current
 rationale.
 
-One item remains, narrowed to Renovate installation verification. The
-current OAuth token can administer the repository but cannot list GitHub App
-installations, so that point cannot be proven from this environment.
+## Current follow-up (2026-10-26)
 
-## Security
+The earlier Renovate uncertainty is resolved as operational evidence: PRs #98,
+#99, #100 and #104 were authored by Renovate, including extracted npm validator
+and GitHub Actions updates. This is observed operation, not verification of
+current account-level installation permissions.
 
-### B-02 Verify Renovate app installation
-- Findings: S-04. Severity: info. Effort: S.
-- Resolved 2026-10-05: GitHub Pages reports HTTPS enforcement enabled; the
-  active `main-protection` ruleset prevents deletion/non-fast-forward pushes,
-  requires linear history and pull requests, and requires the `validate` status
-  check; repository secret scanning and push protection are enabled. Issues
-  were enabled to match the existing issue templates and `CONTRIBUTING.md`.
-- Resolved 2026-10-05: `.well-known/security.txt` was renewed to
-  2027-09-30T00:00:00Z, keeping the expiry less than a year ahead.
-- Remaining: Renovate app installation is unverified. `GET /user/installations`
-  returns HTTP 403 for the current OAuth token because it is not a GitHub App
-  user access token. No Renovate-authored pull request is present in the
-  repository history inspected here, which is not proof of absence.
-- Suggested approach: verify the Renovate GitHub App under account Settings >
-  Applications > Installed GitHub Apps, or authorize a token that can list app
-  installations.
-- Dependencies: account-level GitHub App visibility.
-- Suggested owner role: repository admin.
+The repository review corrections now cover public-format consistency, validator
+regressions, documentation reconciliation and obsolete CSS. See CHANGELOG.md.
+
+Remaining scope limits:
+- Fresh mobile, dark/high-contrast, print and assistive-technology runtime checks
+  remain necessary after substantive presentation changes.
+- The notice makes no categorical ECG exemption or comprehensive GDPR-compliance
+  claim. Confirm legal applicability separately; correspondence-provider and
+  retention facts must be established before documenting email processing.
+- Current-source credential patterns and GitHub scanning are not a renewed
+  full-history secret scan.

@@ -70,4 +70,4 @@ jobs:
         run: python3 .github/scripts/check_profile.py
 
       - name: Publication allowlist and staged-site regression tests
-        run: python3 .github/scripts/test_stage_site.py -v
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v

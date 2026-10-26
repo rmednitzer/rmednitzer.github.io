@@ -32,7 +32,7 @@ jobs:
           python3 .github/scripts/check_contrast.py
           python3 .github/scripts/check_links.py
           python3 .github/scripts/check_profile.py
-          python3 .github/scripts/test_stage_site.py -v
+          python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
       - name: Stage only approved public files
         run: |
           python3 .github/scripts/stage_site.py

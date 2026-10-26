@@ -35,15 +35,15 @@ No build step, no dependencies to install. Edit the file, then run the gate.
 
 ### The gate
 
-CI runs these on every pull request and they all run locally in about a second:
+CI runs these checks on every pull request. Use the validator version pinned in the workflow:
 
 ```sh
-npx -y html-validate index.html legal.html
+npx -y html-validate@11.17.0 index.html legal.html
 python3 .github/scripts/check_csp_hashes.py
 python3 .github/scripts/check_contrast.py
 python3 .github/scripts/check_links.py
 python3 .github/scripts/check_profile.py
-python3 .github/scripts/test_stage_site.py -v
+python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
 ```
 
 Off-site link reachability is checked weekly rather than per pull request, so a
@@ -53,14 +53,14 @@ rate-limited host never blocks a merge. Run it on demand with
 For a visual check:
 
 ```sh
-python3 -m http.server 8000
+python3 -m http.server --bind 127.0.0.1 8000
 # open http://localhost:8000/
 ```
 
 Extensionless URLs such as `/legal` resolve only on GitHub Pages. Locally, open
 `/legal.html`.
 
-### Things that will fail CI
+### Enforced checks and review requirements
 
 - **Editing an inline `<style>` or `<script>` without updating the CSP hash.**
   `check_csp_hashes.py` catches this. It is the most common surprise.
@@ -68,16 +68,17 @@ Extensionless URLs such as `/legal` resolve only on GitHub Pages. Locally, open
   palette drops below 4.5:1 against `--bg` or `--bg-surface`. The budget is
   enforced across dark, light, both `prefers-contrast: more` variants, and
   print.
-- **Adding an inline `style="…"` attribute** or a per-page `.css` file. Shared
-  styles belong in `style.css`, using the custom properties already defined
-  there.
-- **Adding a page without adding it to `sitemap.xml`.**
+- **Adding an inline `style="…"` attribute** or referencing a stylesheet other than the shared site/font stylesheets. Shared styles belong in `style.css`.
+- **Changing shared public-profile statements in only one format.** The profile check compares professional capabilities, project descriptions and limitations, attribution, lab context and personal perspective.
+- **Missing a local image source, manifest icon or destination fragment.**
+
+New pages require review of the page lists in the validators, the publication allowlist, sitemap and navigation; CI does not discover arbitrary new pages automatically.
 
 ## Conventions
 
-The full set lives in [`CLAUDE.md`](CLAUDE.md), which is the source of truth for
-conventions in this repository and is mirrored for Copilot in
-`.github/copilot-instructions.md`. Keep the two consistent.
+The canonical workflow and conventions live in [`AGENTS.md`](AGENTS.md).
+`CLAUDE.md` imports it; `.github/copilot-instructions.md` points to it and
+summarises repository essentials. Keep those references consistent.
 
 Append a dated technical section to [`CHANGELOG.md`](CHANGELOG.md) for substantive
 changes. Do not copy superseded personal claims, private context or editorial

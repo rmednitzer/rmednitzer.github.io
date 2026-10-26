@@ -34,3 +34,7 @@ backlog B-02).
 - Neutral: until such files exist, the config does nothing.
 - Action: owner should confirm the Renovate app is actually installed,
   or the config is dead weight.
+
+## Implementation amendment (2026-10-26)
+
+Renovate has produced dependency PRs #98, #99, #100 and #104 for GitHub Actions and the exact npm validator pin. The earlier no-op observation is historical. Policy is repository-owned in renovate.json5; account-level installation permissions are not inferred from PR evidence.

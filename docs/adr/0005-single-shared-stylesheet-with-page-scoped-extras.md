@@ -36,3 +36,7 @@ the index `<style>` block contents.
   script.
 - Bad: the boundary "page-unique vs shared" needs judgement; dead rules
   can linger in `style.css` after page removals (audit finding Q-06).
+
+## Implementation amendment (2026-10-26)
+
+All site styling now lives in the shared style.css (with self-hosted font-face declarations in fonts/fonts.css). Page-unique head style blocks are no longer the adopted pattern. This amendment supersedes the earlier allowance; inline style attributes and additional page stylesheets remain prohibited.

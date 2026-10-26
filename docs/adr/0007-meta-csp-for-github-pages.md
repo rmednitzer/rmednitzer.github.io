@@ -52,3 +52,7 @@ stays an accepted residual (documented in the audit register, S-01).
   blocked client-side.
 - Bad: hash maintenance on every inline-content edit; meta CSP still
   cannot prevent framing.
+
+## Implementation amendment (2026-10-26)
+
+There are no inline style blocks or style hashes in the current pages. The year script retains its hash. Validation parses inline executable elements with attributes, excludes JSON-LD data, and checks the effective script-src-elem/style-src-elem directive or its fallback. This prevents stale hashes from escaping the gate merely by adding an element attribute; it is not a complete browser CSP implementation.

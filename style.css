@@ -67,27 +67,10 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 .section h2 { font-size: 1.65rem; letter-spacing: -.02em; margin-bottom: 1.3rem; }
 .section > p { max-width: 76ch; }
 .section > p + p { margin-top: .85rem; }
-.work-flow { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin: 1.75rem 0 0; padding: 0; list-style: none; counter-reset: steps; border-block: 1px solid var(--border); }
-.work-flow li { counter-increment: steps; padding: 1.15rem .85rem 1.2rem 0; position: relative; }
-.work-flow li + li { padding-left: 1rem; border-left: 1px solid var(--border); }
-.work-flow li::before { content: counter(steps, decimal-leading-zero); display: block; font: .75rem/1.4 var(--font-mono); color: var(--accent); margin-bottom: .5rem; }
-.work-flow strong { display: block; font-weight: 500; color: var(--fg-strong); }
-.work-flow span { display: block; font-size: .92rem; line-height: 1.5; color: var(--muted); margin-top: .35rem; }
 .capabilities { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.75rem; }
 .capability { min-width: 0; }
 .capability h3 { font-size: 1.08rem; margin-bottom: .7rem; }
 .capability p { font-size: 1rem; }
-
-.track { list-style: none; margin: 0; padding: 0; }
-.track-item { display: grid; grid-template-columns: 7rem minmax(0,1fr); gap: 1.75rem; }
-.track-when { color: var(--muted); font: .83rem/1.6 var(--font-mono); padding-top: .2rem; }
-.track-body { padding: 0 0 1.75rem 1.5rem; border-left: 1px solid var(--border); position: relative; }
-.track-body::before { content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); top: .55rem; left: -4px; }
-.track-body h3 { font-size: 1.12rem; }
-.track-org { font-size: .94rem; color: var(--muted); margin: .4rem 0 .65rem; }
-.track-body > p:last-child { max-width: 70ch; font-size: 1rem; }
-.track-item:last-child .track-body { padding-bottom: .25rem; }
-.experience-note { margin-top: 1.5rem; color: var(--muted); font-size: .94rem; }
 
 .projects { margin-top: 1.75rem; border-top: 1px solid var(--border); }
 .project { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr); gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
@@ -102,14 +85,9 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 .project-context h3 { font-size: 1.1rem; margin-bottom: .65rem; }
 .project-context p { font-size: 1rem; }
 
-/* Personal interests have their own section, not an aside inside technical work. */
+/* Separate capability groups from the surrounding professional summary. */
 .section > .capabilities { margin-top: 1.75rem; }
-.interests-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; }
-.interest { min-width: 0; }
-.interest h3 { font-size: 1.1rem; margin-bottom: .75rem; }
-.interest p { max-width: 64ch; }
-.interest p + p { margin-top: .85rem; }
-.interest > a { display: inline-flex; align-items: center; min-height: 44px; margin-top: .7rem; font-size: .95rem; }
+.work-support { margin-top: 1.5rem; }
 
 footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.25rem; color: var(--muted); font-size: .88rem; }
 footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
@@ -133,7 +111,7 @@ footer .impressum { flex-basis: 100%; }
   .portrait img { border-radius: 18px; }
   .capabilities { grid-template-columns: 1fr; gap: 1.5rem; }
   .capability p { max-width: 72ch; }
-  .project, .interests-grid { grid-template-columns: 1fr; }
+  .project { grid-template-columns: 1fr; }
   .project { gap: 1rem; }
   .site-nav ul { column-gap: 1.2rem; }
 }
@@ -148,11 +126,6 @@ footer .impressum { flex-basis: 100%; }
   .site-nav { margin-top: 1.75rem; }
   .section { margin-top: 2rem; }
   .section + .section { padding-top: 1.75rem; }
-  .work-flow { grid-template-columns: 1fr 1fr; }
-  .work-flow li:nth-child(3) { padding-left: 0; border-left: 0; }
-  .work-flow li:nth-child(n+3) { border-top: 1px solid var(--border); }
-  .track-item { grid-template-columns: minmax(0,1fr); gap: .6rem; }
-  .track-when { padding-left: 1.5rem; }
   .project { padding: 1.5rem 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -166,8 +139,7 @@ footer .impressum { flex-basis: 100%; }
   :root { --fg: #111827; --muted: #414d5c; --border: rgba(15,23,42,.4); --border-accent: #096c62; }
 }
 @media (forced-colors: active) {
-  .button, .project, .work-flow, .interest { border-color: CanvasText; }
-  .track-body::before { background: CanvasText; }
+  .button, .project { border-color: CanvasText; }
 }
 @media print {
   :root {
@@ -185,13 +157,10 @@ footer .impressum { flex-basis: 100%; }
   .section { margin-top: 1.4rem; }
   .section + .section { padding-top: 1.2rem; }
   .section h2 { font-size: 17pt; break-after: avoid; }
-  .work-flow { grid-template-columns: repeat(4,minmax(0,1fr)); }
-  .work-flow li:nth-child(3) { padding-left: 1rem; border-left: 1px solid var(--border); }
-  .work-flow li:nth-child(n+3) { border-top: 0; }
-  .project, .interests-grid { grid-template-columns: 1fr; }
+  .project { grid-template-columns: 1fr; }
   .project { gap: 1rem; }
-  .project, .track-item, .capability, .work-flow, .interest { break-inside: avoid; }
-  .project h3, .track-body h3 { break-after: avoid; }
+  .project, .capability { break-inside: avoid; }
+  .project h3 { break-after: avoid; }
   .button { min-height: 0; padding: .1rem .5rem; }
   a { color: var(--fg); }
   footer { margin-top: 1.5rem; }
