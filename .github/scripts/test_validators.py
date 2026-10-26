@@ -2,6 +2,8 @@
 """Regression cases for demonstrated false passes, using disposable site copies."""
 import contextlib
 import io
+import hashlib
+import re
 import json
 from pathlib import Path
 import shutil
@@ -14,6 +16,8 @@ from stage_site import ROOT, public_paths
 import check_csp_hashes as csp
 import check_links as links
 import check_profile as profile
+import check_asset_versions as assets
+import validate_site as gate
 
 
 class ValidatorTests(unittest.TestCase):
@@ -38,10 +42,33 @@ class ValidatorTests(unittest.TestCase):
 
     def test_current_site_passes(self):
         self.assertEqual(profile.validate(self.root), [])
-        for script in ('check_links.py', 'check_contrast.py', 'check_csp_hashes.py'):
+        for script in ('check_links.py', 'check_contrast.py', 'check_csp_hashes.py', 'check_asset_versions.py'):
             with self.subTest(script=script):
                 result = self.run_check(script)
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_stylesheet_change_requires_new_version_on_both_pages(self):
+        self.mutate('style.css', 'max-width: 1024px', 'max-width: 1020px')
+        self.assertEqual(len(assets.validate(self.root)), 2)
+        digest = hashlib.sha256((self.root / 'style.css').read_bytes()).hexdigest()[:12]
+        for name in ('index.html', 'legal.html'):
+            path = self.root / name
+            path.write_text(re.sub(r'/style.css\?v=[a-f0-9]+', '/style.css?v=' + digest, path.read_text()))
+        self.assertEqual(assets.validate(self.root), [])
+
+    def test_missing_or_duplicate_stylesheet_version_is_refused(self):
+        path = self.root / 'legal.html'
+        original = path.read_text()
+        for replacement in ('/style.css', '/style.css?v=old', '/style.css?v=old&v=other'):
+            with self.subTest(replacement=replacement):
+                path.write_text(re.sub(r'/style.css\?v=[a-f0-9]+', replacement, original))
+                self.assertTrue(assets.validate(self.root))
+        path.write_text(original)
+
+    def test_validation_stops_after_failed_command(self):
+        with patch.object(gate.subprocess, 'run', side_effect=subprocess.CalledProcessError(1, ['fixture'])), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(gate.main(), 1)
+            self.assertEqual(gate.subprocess.run.call_count, 1)
 
     def test_project_description_drift(self):
         path = self.root / 'profile.json'

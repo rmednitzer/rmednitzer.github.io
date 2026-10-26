@@ -8,6 +8,13 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-10-26 — Validation and presentation polish
+
+- Share one complete validation entry point across local, PR and publication use; keep the exact CLI pin discoverable by Renovate.
+- Enforce stylesheet content digests on both pages and add stale/missing-version and failure-propagation regressions.
+- Adjust desktop project proportions, remove overlapping introduction wording, align locale metadata and remove an unused font preload.
+- Preserve the static-site architecture, publication allowlist and responsive stacking rules.
+
 ## 2026-10-26 — Platform-neutral capability description
 
 - Align the integration summary and structured topic metadata around infrastructure, services and applications.

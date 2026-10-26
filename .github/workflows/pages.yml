@@ -26,13 +26,7 @@ jobs:
         with:
           node-version: "24"
       - name: Validate reviewed source and publication contract
-        run: |
-          npx -y html-validate@11.17.0 index.html legal.html
-          python3 .github/scripts/check_csp_hashes.py
-          python3 .github/scripts/check_contrast.py
-          python3 .github/scripts/check_links.py
-          python3 .github/scripts/check_profile.py
-          python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
+        run: python3 .github/scripts/validate_site.py
       - name: Stage only approved public files
         run: |
           python3 .github/scripts/stage_site.py
@@ -40,6 +34,7 @@ jobs:
           cd _site
           python3 ../.github/scripts/check_links.py
           python3 ../.github/scripts/check_csp_hashes.py
+          python3 ../.github/scripts/check_asset_versions.py
       - name: Upload the public artifact only
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

@@ -20,7 +20,7 @@ The repository and its history are still public. See
 
 ## Validation
 
-Use the HTML validator pinned in `.github/workflows/validate.yml`. Run the dependency-free checks for CSP hashes, colour contrast, links and public-profile consistency. For visual changes, also check desktop/mobile, keyboard navigation, no-JavaScript rendering, light/dark themes and print. See `CONTRIBUTING.md`.
+Run `python3 .github/scripts/validate_site.py` for the same complete gate used by CI and publication. It includes the exact HTML validator pin, dependency-free Python checks and regression tests. Node.js 24/npx and Python 3 are required. For visual changes, also check desktop/mobile, keyboard navigation, no-JavaScript rendering, light/dark themes and print. See `CONTRIBUTING.md`.
 
 ## Privacy and licensing
 
