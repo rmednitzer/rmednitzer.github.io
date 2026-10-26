@@ -8,6 +8,15 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-10-26 — Repository control reconciliation
+
+- Align shared profile statements across HTML, Markdown and structured formats; clarify capability and project descriptions.
+- Parse picture references and destination fragments; check manifest icons and distinguish inconclusive external probes.
+- Validate attributed executable elements against effective CSP directives and fail closed on unsupported contrast syntax or incomplete pair coverage.
+- Add regression fixtures to PR and publication gates, reconcile active guidance and amend historical implementation decisions.
+- Remove unused presentation selectors, retain the legacy about anchor and version the shared stylesheet.
+- Narrow legal wording to observed behaviour and referenced provider practices; retain explicit applicability limits in the publication notes.
+
 ## 2026-10-26 — Project layout and personal perspective
 
 - Simplify profile sections and project descriptions; align public profile formats and remove the listening-profile link.

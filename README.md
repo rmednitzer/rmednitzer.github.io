@@ -2,7 +2,7 @@
 
 Static personal website: **[rmednitzer.github.io](https://rmednitzer.github.io/)**.
 
-A personal introduction bringing together practical systems engineering, independent AI-assisted projects and interests in technology, science fiction and music. Projects precede professional experience; interests have a dedicated section. The two featured projects are **relay-shell** and **osint-workbench**. Professional history, private experiments and personal interests remain distinct.
+A personal introduction bringing together practical systems engineering, independent AI-assisted projects and interests in technology, science fiction and music. Professional work, projects and interests each have a dedicated section. The two featured projects are **relay-shell** and **osint-workbench**. Professional experience, private experiments and personal interests remain distinct.
 
 ## Site
 
@@ -11,7 +11,7 @@ A personal introduction bringing together practical systems engineering, indepen
 - `style.css`: shared layout, dark/light/high-contrast/print styles.
 - `index.md`, `llms.txt`, `profile.json`: alternative public profile formats. They carry the same factual boundaries; they are not a promise of indexing or AI-search placement.
 
-Plain HTML/CSS, no build step, no framework or runtime package dependencies. Fonts and images are self-hosted; Spotify is an outbound listening-profile link, not an embedded player. Existing public anchors are retained.
+Plain HTML/CSS, no build step, no framework or runtime package dependencies. Fonts and images are self-hosted. The former `#about` anchor resolves to the professional summary.
 
 Pages deploys only the exact files in `.github/pages-files.txt`, not the repository
 root. Development documentation and editorial history are not website assets.

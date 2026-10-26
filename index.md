@@ -12,37 +12,39 @@ I work with developers, operations, security teams and service owners to clarify
 
 ### Platforms and integration
 
-Linux, virtualisation, storage and networking, including production work with Kubernetes and OpenShift. My focus is how the components fit together and operate as a whole.
+I integrate Linux systems, virtualisation, storage and networking, including production environments using Kubernetes and OpenShift.
 
 ### Operations and recovery
 
-Monitoring, incident analysis and controlled change, with backup administration, documented restore tests and rollback planning.
+My work includes monitoring, incident analysis, controlled changes and backup administration, with documented restore tests and rollback planning.
 
 ### Automation and documentation
 
-Selected automation with Ansible and Terraform, runbooks and operational handover, plus ISMS documentation, business continuity and ISO/IEC 27001 audit preparation.
+I use Ansible and Terraform for infrastructure automation and write operational runbooks and handover documentation.
+
+My experience also includes supporting information security management, business continuity and preparation for ISO/IEC 27001 audits.
 
 ## Selected projects
 
-These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation, and take responsibility for requirements, integration decisions, review and operational validation.
+These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation. I define requirements, make integration decisions, review the results and validate their operation.
 
 ### [relay-shell](https://github.com/rmednitzer/relay-shell)
 
-Connects AI clients to shell commands, SSH and interactive sessions through the Model Context Protocol (MCP), with operation records and configurable policy. It is open by default, runs with the service account’s authority and is not a sandbox.
+Connects AI clients to shell commands, SSH and interactive sessions through the Model Context Protocol (MCP), with operation records and configurable policy. Command restrictions are opt-in. The server runs with its service account’s permissions and does not provide a sandbox.
 
 [Documentation and limits](https://github.com/rmednitzer/relay-shell/blob/main/README.md).
 
 ### [osint-workbench](https://github.com/rmednitzer/osint-workbench)
 
-Brings public-information collection, evidence preservation and search into a self-hostable workbench, with optional enrichment and read-only assistant access.
+A self-hostable workbench for collecting public information, retaining source evidence and searching the collected material. Optional AI processing and read-only access for AI assistants support further exploration.
 
-Work in progress, with bounded workflows and a disposable integration-test environment. Broader operational use still needs validation.
+Experimental. Implemented workflows are tested in disposable environments; the complete system has not been validated for operational use.
 
 [Implementation status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
 
 ### Personal experimentation
 
-In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. Some experiments also test how AI agents handle execution feedback and long contexts.
+In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. I also examine whether AI agents use command results correctly and remain consistent across longer tasks.
 
 ## Interests
 

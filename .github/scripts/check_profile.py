@@ -11,6 +11,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -33,6 +34,11 @@ class ProfilePage(HTMLParser):
 
     def handle_starttag(self, tag: str, attributes: list[tuple[str, str | None]]) -> None:
         a = {key: value or '' for key, value in attributes}
+        if 'style' in a or tag == 'style':
+            self.remote_embeds.append('inline style')
+        if tag == 'link' and a.get('rel') == 'stylesheet':
+            if urlsplit(a.get('href', '')).path not in ('/style.css', '/fonts/fonts.css'):
+                self.remote_embeds.append('unexpected stylesheet')
         if 'id' in a:
             self.ids.append(a['id'])
         if tag == 'section' and 'id' in a:
@@ -140,11 +146,38 @@ def validate(root: Path) -> list[str]:
         check(entity.get('name') == person['name'], 'JSON-LD name mismatch')
         check(entity.get('jobTitle') == person['headline'], 'JSON-LD role mismatch')
         check(entity.get('description') == description, 'JSON-LD description mismatch')
-        check(not any(key in entity for key in ('worksFor', 'alumniOf', 'memberOf')),
-              'Structured identity must not add employment, education or memberships')
+        check(not any(key in entity for key in ('worksFor', 'alumniOf', 'memberOf', 'knowsLanguage')),
+              'Structured identity must not add employment, education, memberships or language records')
         check(pages[0]['dateModified'].startswith(profile['lastReviewed']), 'JSON-LD review date mismatch')
         for url in entity.get('sameAs', []):
             check(url in page.hrefs, f'Identity link is not visible: {url}')
+
+    # Text formats retain Markdown links; compare their visible labels, not markup.
+    def normalise(text: str) -> str:
+        text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+        return ' '.join(text.split())
+
+    shared = [profile['professionalWork']['background'],
+              profile['professionalWork']['approach'],
+              profile['professionalWork']['governanceSupport'],
+              profile['interpretation']['projectExperienceBoundary'],
+              profile['personalLab']['description'], *person['personalPerspective']]
+    shared.extend(c['description'] for c in profile['professionalWork']['capabilities'])
+    for project in profile['featuredProjects']:
+        shared.extend((project['reasonFeatured'], project['boundary']))
+    check(person['summary'] == profile['professionalWork']['background'],
+          'Structured summary differs from professional background')
+    check(person['outlook'] in person['personalPerspective'],
+          'Structured outlook differs from personal perspective')
+    for filename, content in [('index.html', visible),
+                              *[(name, (root / name).read_text(encoding='utf-8'))
+                                for name in ('index.md', 'llms.txt')]]:
+        for statement in shared:
+            check(normalise(statement) in normalise(content),
+                  f'{filename}: shared profile statement missing or changed: {statement}')
+    for label, url in person['profiles'].items():
+        check(url in page.hrefs or url == canonical,
+              f'Structured profile link absent from page: {label}')
 
     names = [p['name'] for p in profile['featuredProjects']]
     check(names == ['relay-shell', 'osint-workbench'], 'Unexpected featured project selection')

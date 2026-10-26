@@ -34,3 +34,7 @@ surface is zero and there is nothing to build or break.
   must be kept in sync by hand (audit finding Q-03 was exactly this
   class of drift).
 - Bad: nothing enforces validity automatically; see ADR 0009 (proposed).
+
+## Implementation amendment (2026-10-26)
+
+The site has no application package dependencies. CI does execute third-party tooling and official actions, so the earlier zero-surface wording must not be read as a current supply-chain assurance claim. ADR 0009 introduced CI; ADR 0011 introduced allowlisted packaging. No application compilation or generator has been added.

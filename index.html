@@ -44,7 +44,7 @@
   <link rel="preload" href="/fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/dm-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="/style.css?v=a1153ed0586f">
+  <link rel="stylesheet" href="/style.css?v=6d6502b02174">
 </head>
 <body>
   <a class="sr-only" href="#content">Skip to content</a>
@@ -76,18 +76,20 @@
     </nav>
     <main id="content" tabindex="-1">
       <section class="section" id="stack" aria-labelledby="stack-h">
+        <span id="about" aria-hidden="true"></span>
         <h2 id="stack-h">Professional work</h2>
         <p>I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.</p>
         <p>I work with developers, operations, security teams and service owners to clarify requirements, integrate infrastructure and keep systems maintainable.</p>
         <div class="capabilities">
-          <div class="capability"><h3>Platforms and integration</h3><p>Linux, virtualisation, storage and networking, including production work with Kubernetes and OpenShift. My focus is how the components fit together and operate as a whole.</p></div>
-          <div class="capability"><h3>Operations and recovery</h3><p>Monitoring, incident analysis and controlled change, with backup administration, documented restore tests and rollback planning.</p></div>
-          <div class="capability"><h3>Automation and documentation</h3><p>Selected automation with Ansible and Terraform, runbooks and operational handover, plus ISMS documentation, business continuity and ISO/IEC 27001 audit preparation.</p></div>
+          <div class="capability"><h3>Platforms and integration</h3><p>I integrate Linux systems, virtualisation, storage and networking, including production environments using Kubernetes and OpenShift.</p></div>
+          <div class="capability"><h3>Operations and recovery</h3><p>My work includes monitoring, incident analysis, controlled changes and backup administration, with documented restore tests and rollback planning.</p></div>
+          <div class="capability"><h3>Automation and documentation</h3><p>I use Ansible and Terraform for infrastructure automation and write operational runbooks and handover documentation.</p></div>
         </div>
+        <p class="work-support">My experience also includes supporting information security management, business continuity and preparation for ISO/IEC 27001 audits.</p>
       </section>
       <section class="section" id="open-source" aria-labelledby="open-source-h">
         <h2 id="open-source-h">Selected projects</h2>
-        <p>These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation, and take responsibility for requirements, integration decisions, review and operational validation.</p>
+        <p>These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation. I define requirements, make integration decisions, review the results and validate their operation.</p>
         <div class="projects">
           <article class="project" aria-labelledby="project-relay-shell">
             <header class="project-heading">
@@ -96,7 +98,7 @@
             </header>
             <div class="project-content">
               <p>Connects AI clients to shell commands, SSH and interactive sessions through the Model Context Protocol (MCP), with operation records and configurable policy.</p>
-              <p class="project-boundary">Open by default; it runs with the service account’s authority and is not a sandbox.</p>
+              <p class="project-boundary">Command restrictions are opt-in. The server runs with its service account’s permissions and does not provide a sandbox.</p>
               <a class="project-more" href="https://github.com/rmednitzer/relay-shell/blob/main/README.md">Documentation and limits</a>
             </div>
           </article>
@@ -106,15 +108,15 @@
               <h3 id="project-osint-workbench"><a href="https://github.com/rmednitzer/osint-workbench">osint-workbench</a></h3>
             </header>
             <div class="project-content">
-              <p>Brings public-information collection, evidence preservation and search into a self-hostable workbench, with optional enrichment and read-only assistant access.</p>
-              <p class="project-boundary">Work in progress, with bounded workflows and a disposable integration-test environment. Broader operational use still needs validation.</p>
+              <p>A self-hostable workbench for collecting public information, retaining source evidence and searching the collected material. Optional AI processing and read-only access for AI assistants support further exploration.</p>
+              <p class="project-boundary">Experimental. Implemented workflows are tested in disposable environments; the complete system has not been validated for operational use.</p>
               <a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md">Implementation status</a>
             </div>
           </article>
         </div>
         <div class="project-context">
           <h3>Personal experimentation</h3>
-          <p>In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. Some experiments also test how AI agents handle execution feedback and long contexts.</p>
+          <p>In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. I also examine whether AI agents use command results correctly and remain consistent across longer tasks.</p>
         </div>
       </section>
       <section class="section" id="interests" aria-labelledby="interests-h">
@@ -170,10 +172,6 @@
       "addressLocality": "Vienna",
       "addressCountry": "AT"
     },
-    "knowsLanguage": [
-      "de",
-      "en"
-    ],
     "knowsAbout": [
       "Infrastructure systems integration",
       "Linux",
