@@ -87,7 +87,6 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 
 /* Separate capability groups from the surrounding professional summary. */
 .section > .capabilities { margin-top: 1.75rem; }
-.work-support { margin-top: 1.5rem; }
 
 footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.25rem; color: var(--muted); font-size: .88rem; }
 footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
