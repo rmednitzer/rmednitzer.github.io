@@ -8,6 +8,10 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-10-26 — Platform-neutral capability description
+
+- Align the integration summary and structured topic metadata around infrastructure, services and applications.
+
 ## 2026-10-26 — Public profile focus
 
 - Shorten the professional summary and project context while keeping contribution and maturity boundaries explicit.
