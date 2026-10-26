@@ -1,7 +1,7 @@
 {
   "format": "rmednitzer-public-profile",
-  "formatVersion": 1,
-  "lastReviewed": "2026-10-24",
+  "formatVersion": 2,
+  "lastReviewed": "2026-10-26",
   "canonicalUrl": "https://rmednitzer.github.io/",
   "person": {
     "name": "Roman Mednitzer",
@@ -13,22 +13,12 @@
       "country": "Austria",
       "countryCode": "AT"
     },
-    "languages": [
-      {
-        "name": "German",
-        "level": "native"
-      },
-      {
-        "name": "English",
-        "level": "full professional proficiency"
-      }
-    ],
-    "summary": "Roman Mednitzer is a senior systems and platform engineer based in Vienna, Austria, with around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.",
-    "description": "Personal website of Roman Mednitzer, a senior systems and platform engineer in Vienna. Infrastructure, AI experiments, cybernetics, science fiction and music.",
+    "summary": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work spans Linux, virtualisation, storage, networking and container platforms.",
+    "description": "Roman Mednitzer is a senior systems and platform engineer in Vienna, Austria, focused on infrastructure integration, reliable operations and recovery.",
     "professionalFocus": [
       "Platforms and integration",
       "Operations and recovery",
-      "Documentation and assurance"
+      "Automation and documentation"
     ],
     "engineeringPreferences": [
       "Open source and interoperability",
@@ -44,19 +34,6 @@
       "linkedin": "https://www.linkedin.com/in/rmednitzer",
       "spotify": "https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py"
     },
-    "workingPrinciples": [
-      "Clarify: Needs, constraints, ownership and unknowns.",
-      "Integrate: Interfaces, implementation and specialist input.",
-      "Verify: Service behaviour, recovery and handover.",
-      "Improve: Operational feedback and controlled change."
-    ],
-    "careerDirection": [
-      "AI infrastructure",
-      "Robotics and autonomy",
-      "Defence and mission systems",
-      "Edge platforms",
-      "High-performance and scientific computing"
-    ],
     "interests": [
       "AI and robotics",
       "Cybernetics and human augmentation",
@@ -66,72 +43,52 @@
       "Defence and mission systems",
       "Edge platforms and high-performance computing"
     ],
-    "education": {
-      "qualification": "IT Technician — Austrian vocational qualification",
-      "completedYear": 2016
-    },
-    "introduction": "I’m Roman, a systems and platform engineer based in Vienna. Much of what I know comes from practical work, independent study and experimentation. Professionally, I work on infrastructure integration and reliable operations. My private projects give me room to explore AI, automation and unfamiliar ideas without treating every experiment as a finished product. Beyond engineering, I’m interested in cybernetics and human augmentation, read hard science fiction, and listen to industrial and EBM music.",
-    "outlook": "I’m interested in how technology can extend human capabilities, from AI and robotics to cybernetics and human augmentation. I enjoy ambitious ideas, but I also want to understand what works, what fails and what remains unknown. Understanding and retaining control over the systems we depend on matters to me."
+    "introduction": "I’m Roman, a systems and platform engineer based in Vienna. I work across infrastructure layers, connecting requirements and hands-on integration with reliable operation, troubleshooting and recovery.",
+    "outlook": "I’m interested in technology that extends human capabilities, while retaining the ability to understand, operate and recover the systems we depend on."
   },
   "featuredProjects": [
     {
       "name": "relay-shell",
       "url": "https://github.com/rmednitzer/relay-shell",
-      "reasonFeatured": "A Model Context Protocol (MCP) server that lets compatible AI clients run shell commands and work over SSH. It supports interactive sessions, file transfers, operation records and configurable policy.",
+      "reasonFeatured": "A Model Context Protocol (MCP) server for shell commands, SSH and interactive sessions, with operation records and configurable policy. It is open by default, runs with the service account’s authority and is not a sandbox.",
       "classification": "Personal, AI-assisted project",
-      "boundary": "Open by default; it runs with the service account’s authority and is not a sandbox.",
+      "boundary": "Open by default; service-account authority; not a sandbox.",
       "statusUrl": "https://github.com/rmednitzer/relay-shell/blob/main/README.md"
     },
     {
       "name": "osint-workbench",
       "url": "https://github.com/rmednitzer/osint-workbench",
-      "reasonFeatured": "A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access. It distils part of my private information-processing environment into a smaller reference implementation.",
+      "reasonFeatured": "A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access.",
       "classification": "Personal, AI-assisted work in progress",
-      "boundary": "Work in progress: core workflows have documented limits, with a disposable Docker Compose setup for integration testing. Full operational qualification remains open.",
+      "boundary": "Work in progress, with bounded workflows and a disposable integration-test environment. Full operational qualification remains open.",
       "statusUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md"
     }
   ],
   "interpretation": {
-    "experiencePolicy": "Employment entries describe historical experience. No current employer is asserted.",
-    "projectExperienceBoundary": "These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; my contribution covers requirements, integration decisions, review and operational validation. This private work is distinct from professional software-development or ML-research experience.",
-    "labPolicy": "Private experimentation and operational checks are not enterprise production qualification. Descriptions intentionally omit private topology and deployment details.",
-    "careerDirectionPolicy": "Technical interests and desired future environments are distinct from established professional experience.",
-    "featuredProjectPolicy": "Only relay-shell and osint-workbench are featured; their repository documentation records current scope and limitations.",
-    "privacyBoundary": "Reviewed public biography, professional history, projects and interests only. No private contact details, exact infrastructure topology or confidential employment context is included.",
-    "interestPolicy": "Interests describe curiosity and personal outlook, not specialist qualifications, professional research, or employment in those fields."
+    "projectExperienceBoundary": "These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; I own requirements, integration decisions, review and operational validation.",
+    "interestPolicy": "Technical interests describe areas of curiosity, not established specialist qualifications or professional research experience.",
+    "privacyBoundary": "This public profile summarises professional background without employment chronology, education records or private infrastructure details."
   },
-  "experience": [
-    {
-      "period": "2025–2026",
-      "role": "IT System Administrator",
-      "organization": "Kwizda Holding GmbH",
-      "location": "Vienna, Austria",
-      "status": "historical",
-      "summary": "Operated mixed Windows and Linux infrastructure for business-critical applications. Maintained backup and recovery with documented restore verification, monitoring and alerting. Contributed to Kubernetes and GitOps adoption, change documentation and compliance evidence."
-    },
-    {
-      "period": "2017–2025",
-      "role": "IT Systems Engineer",
-      "organization": "EBCONT operations GmbH",
-      "location": "Vienna, Austria",
-      "status": "historical",
-      "summary": "Progressed from junior to senior-level work in managed services. Built and operated Kubernetes and OpenShift platforms; maintained virtualisation, enterprise storage, document-database clusters and source-control and CI services. Handled production incidents and changes with documented rollback and verified restores."
-    },
-    {
-      "period": "2016–2017",
-      "role": "IT System Administrator",
-      "organization": "medPhoton GmbH",
-      "location": "Salzburg, Austria",
-      "status": "historical",
-      "summary": "Operated servers, applications and virtualisation in a regulated medical-device environment. Performed root-cause analysis, wrote runbooks and contributed to information security management, business continuity and ISO/IEC 27001 audit preparation."
-    },
-    {
-      "period": "2012–2016",
-      "role": "IT Technician apprenticeships",
-      "organization": "Ledl.net GmbH and medPhoton GmbH",
-      "location": "Salzburg, Austria",
-      "status": "historical",
-      "summary": "Started in Linux hosting and technical support, followed by server operations, backup and recovery. Completed the Austrian vocational qualification in IT in 2016."
-    }
-  ]
+  "professionalWork": {
+    "background": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work spans Linux, virtualisation, storage, networking and container platforms.",
+    "approach": "I work with developers, operations, security teams and service owners to clarify requirements, resolve integration problems and make systems maintainable. I value clear responsibilities, reproducible configuration, useful documentation and evidence from actual operation.",
+    "capabilities": [
+      {
+        "area": "Platforms and integration",
+        "description": "Linux systems, virtualisation, storage and networking, including production work with Kubernetes and OpenShift. I focus on how components fit together and behave as an operational system."
+      },
+      {
+        "area": "Operations and recovery",
+        "description": "Monitoring, incident analysis and controlled change, with backup administration, documented restore tests and rollback planning. Recovery needs to be demonstrated, not assumed."
+      },
+      {
+        "area": "Automation and documentation",
+        "description": "Selected automation with Ansible and Terraform, alongside runbooks and operational handover. My experience also includes ISMS documentation, business continuity and ISO/IEC 27001 audit preparation."
+      }
+    ]
+  },
+  "personalLab": {
+    "description": "My private lab gives me room to explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. Some deliberately complex experiments examine how AI agents handle execution feedback and long contexts.",
+    "classification": "Private experimentation"
+  }
 }

@@ -8,6 +8,12 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-10-26 — Concise public profile
+
+- Align HTML, Markdown, structured profile v2 and discovery metadata around a concise profile.
+- Update consistency checks for summary-based professional content and project attribution.
+- Preserve the publication allowlist, static layout, self-hosted assets and contact links.
+
 ## 2026-10-24 — Explicit publication boundary
 
 - Package only exact paths listed in `.github/pages-files.txt` for GitHub Pages.
