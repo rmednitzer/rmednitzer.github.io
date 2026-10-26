@@ -8,6 +8,12 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-10-26 — Project layout and personal perspective
+
+- Use responsive project rows with consistent description, boundary and documentation placement.
+- Give the experimentation note its own spacing and align personal perspective across profile formats.
+- Retain semantic headings, keyboard links, contrast tokens and the existing publication scope.
+
 ## 2026-10-26 — Concise public profile
 
 - Align HTML, Markdown, structured profile v2 and discovery metadata around a concise profile.
