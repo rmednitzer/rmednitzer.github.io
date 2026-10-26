@@ -21,6 +21,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+from urllib.parse import urlsplit
 
 PAGES = ('index.html', 'legal.html')
 CSS_FILES = ('style.css', 'fonts/fonts.css')
@@ -51,6 +52,7 @@ def css_urls(css: str):
 
 def resolve(path: str, relative_to: str) -> str | None:
     """Map a site path to a file on disk the way GitHub Pages would."""
+    path = urlsplit(path).path
     if path.startswith('/'):
         base = path.lstrip('/')
     else:
