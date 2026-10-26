@@ -31,20 +31,23 @@ content. You do not need permission for that, and you do not need to ask.
 
 ## Making a change
 
-No build step, no dependencies to install. Edit the file, then run the gate.
+There is no application build step or application dependency installation. The gate requires Python 3 and Node.js 24 with npx; npx obtains the exact pinned HTML validator when needed. Edit the file, then run the gate.
 
 ### The gate
 
-CI runs these checks on every pull request. Use the validator version pinned in the workflow:
+CI and publication run the same complete gate:
 
 ```sh
-npx -y html-validate@11.17.0 index.html legal.html
-python3 .github/scripts/check_csp_hashes.py
-python3 .github/scripts/check_contrast.py
-python3 .github/scripts/check_links.py
-python3 .github/scripts/check_profile.py
-python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
+python3 .github/scripts/validate_site.py
 ```
+
+The HTML validator version lives in that script and is tracked by Renovate.
+The gate checks HTML, JSON/XML and JSON-LD, CSP, contrast, local references,
+profile consistency, stylesheet versions and the publication/validator regressions.
+
+When editing `style.css`, calculate its SHA-256 digest and use the first 12 hex
+characters in `/style.css?v=<digest>` on both HTML pages. The gate rejects stale,
+missing or duplicate version values. It checks content identity, not CDN state.
 
 Off-site link reachability is checked weekly rather than per pull request, so a
 rate-limited host never blocks a merge. Run it on demand with

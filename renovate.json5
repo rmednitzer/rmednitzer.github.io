@@ -103,6 +103,19 @@
       ],
       "datasourceTemplate": "npm",
       "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "Track the HTML validator release used by the shared validation entry point.",
+      "managerFilePatterns": [
+        "/^\\.github/scripts/validate_site\\.py$/"
+      ],
+      "matchStrings": [
+        "HTML_VALIDATE_VERSION = '(?<currentValue>\\d+\\.\\d+\\.\\d+)'"
+      ],
+      "depNameTemplate": "html-validate",
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "semver"
     }
   ],
   "pruneStaleBranches": true,

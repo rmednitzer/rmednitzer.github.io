@@ -4,8 +4,8 @@
 
 1. Edit only reviewed public facts; keep the HTML and text/JSON representations aligned.
 2. Review `.github/pages-files.txt` when an intended asset is added or removed.
-3. Run the pinned HTML validator from `.github/workflows/validate.yml` and the existing Python checks.
-4. Run `python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v`.
+3. Run `python3 .github/scripts/validate_site.py` (the shared local/CI/publication gate).
+4. Confirm both stylesheet URLs use the first 12 hex characters of the CSS SHA-256 digest.
 5. Run `python3 .github/scripts/stage_site.py` into a new, disposable `_site` directory.
 6. Review the staged page and verify it contains only the approved file list.
 7. Merge through the protected main-branch PR workflow.
@@ -78,3 +78,20 @@ applicability before adding commercial services or other materially different us
 Source references checked on 2026-10-26:
 - https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection
 - https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+
+## Validation entry point and presentation maintenance (2026-10-26)
+
+The complete source gate is `.github/scripts/validate_site.py`. Its exact HTML
+validator pin is maintained by Renovate. The Pages package step and PR workflow
+call this entry point; staged references, CSP and stylesheet digest are checked
+again against the artifact. No build, generator or browser dependency is added.
+
+A stylesheet content edit without matching version URLs is now a gate failure.
+The project grid uses 28%/72% desktop tracks and still stacks at the existing
+mobile breakpoint. The preceding professional introduction avoids repeating the
+integration capability. The legal page does not preload an unused mono font,
+and both pages use the same Open Graph locale.
+
+Viewport/media emulation is unavailable in the current browser connection.
+Desktop inspection is not a substitute for the outstanding narrow-screen,
+enlarged-text, dark/high-contrast, print and no-JavaScript runtime checks.

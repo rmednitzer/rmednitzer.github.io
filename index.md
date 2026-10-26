@@ -8,7 +8,7 @@ I like understanding how things work, especially where technologies and discipli
 
 I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
 
-I connect infrastructure layers and work with developers, operations and security teams to make systems work as a whole, from integration and troubleshooting to reliable operation and recovery.
+I work with developers, operations and security teams to clarify requirements and carry changes through to operation.
 
 ### Platforms and integration
 

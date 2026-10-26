@@ -41,7 +41,7 @@ class PublicationTests(unittest.TestCase):
         for name in ('CHANGELOG.md', 'AGENTS.md', 'audit/private.md', '.env'):
             self.assertFalse((self.output / name).exists())
         # Existing validators run against the packaged site, not the repository.
-        for script in ('check_links.py', 'check_csp_hashes.py'):
+        for script in ('check_links.py', 'check_csp_hashes.py', 'check_asset_versions.py'):
             subprocess.run(['python3', str(ROOT / '.github/scripts' / script)],
                            cwd=self.output, check=True, capture_output=True, text=True)
         spec = importlib.util.spec_from_file_location('profile_check',

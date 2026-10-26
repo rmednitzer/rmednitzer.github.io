@@ -12,14 +12,9 @@
 
 ## Gate
 
-Run the complete gate using the version pinned in the workflow:
-
-- [ ] `npx -y html-validate@11.17.0 index.html legal.html`
-- [ ] `python3 .github/scripts/check_csp_hashes.py`
-- [ ] `python3 .github/scripts/check_contrast.py`
-- [ ] `python3 .github/scripts/check_links.py`
-- [ ] `python3 .github/scripts/check_profile.py`
-- [ ] `python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v`
+- [ ] `python3 .github/scripts/validate_site.py`
+- [ ] Both stylesheet URLs match the current CSS digest, if CSS changed
+- [ ] Relevant browser checks completed; missing modes reported explicitly
 
 ## Checklist
 

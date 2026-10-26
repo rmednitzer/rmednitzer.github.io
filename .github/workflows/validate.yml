@@ -30,44 +30,5 @@ jobs:
         with:
           node-version: "24"
 
-      - name: html-validate
-        run: npx -y html-validate@11.17.0 index.html legal.html
-
-      - name: sitemap is well-formed XML
-        run: python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('sitemap.xml')"
-
-      - name: manifest and settings are valid JSON
-        run: |
-          python3 - <<'EOF'
-          import json
-          json.load(open('site.webmanifest'))
-          json.load(open('profile.json'))
-          json.load(open('.claude/settings.json'))
-          EOF
-
-      - name: JSON-LD blocks parse
-        run: |
-          python3 - <<'EOF'
-          import re, json
-          for page in ('index.html', 'legal.html'):
-              html = open(page).read()
-              blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
-              assert blocks, f'no JSON-LD found in {page}'
-              for b in blocks:
-                  json.loads(b)
-          EOF
-
-      - name: CSP hashes match inline content
-        run: python3 .github/scripts/check_csp_hashes.py
-
-      - name: Palette meets its contrast budget
-        run: python3 .github/scripts/check_contrast.py
-
-      - name: Internal links, assets, and anchors resolve
-        run: python3 .github/scripts/check_links.py
-
-      - name: Public profile and search metadata stay consistent
-        run: python3 .github/scripts/check_profile.py
-
-      - name: Publication allowlist and staged-site regression tests
-        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py' -v
+      - name: Complete site validation
+        run: python3 .github/scripts/validate_site.py

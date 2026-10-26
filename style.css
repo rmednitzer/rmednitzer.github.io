@@ -73,7 +73,7 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 .capability p { font-size: 1rem; }
 
 .projects { margin-top: 1.75rem; border-top: 1px solid var(--border); }
-.project { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr); gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+.project { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.8fr); gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
 .project-heading, .project-content { min-width: 0; }
 .project-kind { color: var(--muted); font: .77rem/1.6 var(--font-mono); margin-bottom: .65rem; }
 .project h3 { font: 500 1.17rem/1.4 var(--font-mono); }
