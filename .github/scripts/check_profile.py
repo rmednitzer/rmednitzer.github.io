@@ -159,7 +159,6 @@ def validate(root: Path) -> list[str]:
 
     shared = [profile['professionalWork']['background'],
               profile['professionalWork']['approach'],
-              profile['professionalWork']['governanceSupport'],
               profile['interpretation']['projectExperienceBoundary'],
               profile['personalLab']['description'], *person['personalPerspective']]
     shared.extend(c['description'] for c in profile['professionalWork']['capabilities'])

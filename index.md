@@ -8,37 +8,35 @@ I like understanding how things work, especially where technologies and discipli
 
 I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
 
-I work with developers, operations, security teams and service owners to clarify requirements, integrate infrastructure and keep systems maintainable.
+I connect infrastructure layers and work with developers, operations and security teams to make systems work as a whole, from integration and troubleshooting to reliable operation and recovery.
 
 ### Platforms and integration
 
-I integrate Linux systems, virtualisation, storage and networking, including production environments using Kubernetes and OpenShift.
+My work spans Linux, virtualisation, storage, networking and Kubernetes/OpenShift, with a focus on how the parts fit together.
 
 ### Operations and recovery
 
-My work includes monitoring, incident analysis, controlled changes and backup administration, with documented restore tests and rollback planning.
+I troubleshoot production systems, manage changes and backups, and verify recovery through restore tests and rollback planning.
 
 ### Automation and documentation
 
-I use Ansible and Terraform for infrastructure automation and write operational runbooks and handover documentation.
-
-My experience also includes supporting information security management, business continuity and preparation for ISO/IEC 27001 audits.
+I automate infrastructure tasks and write the documentation needed to operate, maintain and hand over systems.
 
 ## Selected projects
 
-These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation. I define requirements, make integration decisions, review the results and validate their operation.
+These are personal, AI-assisted projects outside employment. My contribution centres on requirements, integration decisions, review, validation and operations. I use AI substantially for implementation, testing and documentation.
 
 ### [relay-shell](https://github.com/rmednitzer/relay-shell)
 
-Connects AI clients to shell commands, SSH and interactive sessions through the Model Context Protocol (MCP), with operation records and configurable policy. Command restrictions are opt-in. The server runs with its service account’s permissions and does not provide a sandbox.
+Gives AI clients shell and SSH access through the Model Context Protocol (MCP), including interactive sessions, operation records and configurable execution policy. Command restrictions are opt-in. The server runs with its service account’s permissions and does not provide a sandbox.
 
 [Documentation and limits](https://github.com/rmednitzer/relay-shell/blob/main/README.md).
 
 ### [osint-workbench](https://github.com/rmednitzer/osint-workbench)
 
-A self-hostable workbench for collecting public information, retaining source evidence and searching the collected material. Optional AI processing and read-only access for AI assistants support further exploration.
+Collects public information, keeps the source evidence and makes it searchable. A self-hostable workbench with optional AI processing and read-only access for AI assistants.
 
-Experimental. Implemented workflows are tested in disposable environments; the complete system has not been validated for operational use.
+Experimental; current capabilities and limitations are documented in the repository.
 
 [Implementation status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
 
@@ -50,7 +48,7 @@ In my private lab I explore AI infrastructure and automation, test integrations,
 
 I tend to follow a question across disciplines rather than stop where one field ends. AI, robotics and cybernetics interest me because they connect engineering with questions about intelligence, identity and how people might live. Human augmentation and space exploration appeal to the same curiosity: what could we become capable of, and what would it take to get there?
 
-I like ambitious ideas and difficult problems, and I want room to question assumptions and change my mind. Open systems and digital sovereignty matter to me because I want to understand, adapt and retain control of the technology I use.
+Open systems and digital sovereignty matter to me because I want to understand, adapt and retain control of the technology I use.
 
 Hard science fiction gives me another way to explore those possibilities and their consequences. My musical tastes lean towards industrial, electronic body music (EBM) and dark ambient.
 
