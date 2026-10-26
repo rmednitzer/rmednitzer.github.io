@@ -54,9 +54,7 @@ I tend to follow a question across disciplines rather than stop where one field 
 
 That curiosity comes with a need to understand the mechanisms and consequences. I like ambitious ideas and difficult problems, but I want assumptions made visible and room to change my mind. Open systems and digital sovereignty matter to me because being able to inspect, adapt and retain control of technology is part of having meaningful agency.
 
-Hard science fiction gives me another way to explore those possibilities and their consequences. My musical tastes lean towards industrial, electronic body music (EBM) and dark ambient.
-
-[My Spotify listening profile](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py).
+Hard science fiction gives me another way to explore those possibilities and their consequences. My musical tastes lean towards [industrial, electronic body music (EBM) and dark ambient](https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py).
 
 ## Contact
 

@@ -161,7 +161,7 @@ def validate(root: Path) -> list[str]:
             check(project['url'] in text, f'{filename}: missing featured project')
         check('AI-assisted' in text, f'{filename}: missing attribution boundary')
     check('AI-assisted' in visible, 'Visible AI attribution missing')
-    check('My Spotify listening profile' in visible, 'Spotify must be described as listening')
+    check('My musical tastes lean towards' in visible, 'Spotify must retain its listening context')
     check(person['profiles']['spotify'] in page.hrefs, 'Listening link mismatch')
     manifest = json.loads((root / 'site.webmanifest').read_text(encoding='utf-8'))
     check(manifest['description'] == description, 'Manifest description mismatch')
