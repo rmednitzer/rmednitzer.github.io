@@ -12,7 +12,7 @@ I connect infrastructure layers and work with developers, operations and securit
 
 ### Platforms and integration
 
-My work spans Linux, virtualisation, storage, networking and Kubernetes/OpenShift, with a focus on how the parts fit together.
+I connect infrastructure layers, services and applications, translating requirements into systems that can be operated and maintained. My focus is how components, interfaces and dependencies work together.
 
 ### Operations and recovery
 
