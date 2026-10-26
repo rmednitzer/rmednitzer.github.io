@@ -13,7 +13,7 @@
       "country": "Austria",
       "countryCode": "AT"
     },
-    "summary": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work spans Linux, virtualisation, storage, networking and container platforms.",
+    "summary": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.",
     "description": "Roman Mednitzer is a senior systems and platform engineer in Vienna, Austria, focused on infrastructure integration, reliable operations and recovery.",
     "professionalFocus": [
       "Platforms and integration",
@@ -31,8 +31,7 @@
     "profiles": {
       "website": "https://rmednitzer.github.io/",
       "github": "https://github.com/rmednitzer",
-      "linkedin": "https://www.linkedin.com/in/rmednitzer",
-      "spotify": "https://open.spotify.com/user/31wopsyuay2v65wyqqngc47hv3py"
+      "linkedin": "https://www.linkedin.com/in/rmednitzer"
     },
     "interests": [
       "AI, robotics and cybernetics",
@@ -42,11 +41,10 @@
       "Hard science fiction",
       "Listening to industrial, EBM and dark ambient music"
     ],
-    "introduction": "I’m Roman, a systems and platform engineer based in Vienna. I work across infrastructure layers, connecting requirements and hands-on integration with reliable operation, troubleshooting and recovery.",
-    "outlook": "That curiosity comes with a need to understand the mechanisms and consequences. I like ambitious ideas and difficult problems, but I want assumptions made visible and room to change my mind. Open systems and digital sovereignty matter to me because being able to inspect, adapt and retain control of technology is part of having meaningful agency.",
+    "outlook": "I like ambitious ideas and difficult problems, and I want room to question assumptions and change my mind. Open systems and digital sovereignty matter to me because I want to understand, adapt and retain control of the technology I use.",
     "personalPerspective": [
       "I tend to follow a question across disciplines rather than stop where one field ends. AI, robotics and cybernetics interest me because they connect engineering with questions about intelligence, identity and how people might live. Human augmentation and space exploration appeal to the same curiosity: what could we become capable of, and what would it take to get there?",
-      "That curiosity comes with a need to understand the mechanisms and consequences. I like ambitious ideas and difficult problems, but I want assumptions made visible and room to change my mind. Open systems and digital sovereignty matter to me because being able to inspect, adapt and retain control of technology is part of having meaningful agency.",
+      "I like ambitious ideas and difficult problems, and I want room to question assumptions and change my mind. Open systems and digital sovereignty matter to me because I want to understand, adapt and retain control of the technology I use.",
       "Hard science fiction gives me another way to explore those possibilities and their consequences. My musical tastes lean towards industrial, electronic body music (EBM) and dark ambient."
     ]
   },
@@ -54,7 +52,7 @@
     {
       "name": "relay-shell",
       "url": "https://github.com/rmednitzer/relay-shell",
-      "reasonFeatured": "A Model Context Protocol (MCP) server for shell commands, SSH and interactive sessions, with operation records and configurable policy.",
+      "reasonFeatured": "Connects AI clients to shell commands, SSH and interactive sessions through the Model Context Protocol (MCP), with operation records and configurable policy.",
       "classification": "Personal, AI-assisted project",
       "boundary": "Open by default; it runs with the service account’s authority and is not a sandbox.",
       "statusUrl": "https://github.com/rmednitzer/relay-shell/blob/main/README.md"
@@ -62,37 +60,37 @@
     {
       "name": "osint-workbench",
       "url": "https://github.com/rmednitzer/osint-workbench",
-      "reasonFeatured": "A self-hostable workbench for collecting public information, preserving evidence and searching it, with optional enrichment and read-only assistant access.",
+      "reasonFeatured": "Brings public-information collection, evidence preservation and search into a self-hostable workbench, with optional enrichment and read-only assistant access.",
       "classification": "Personal, AI-assisted work in progress",
-      "boundary": "Work in progress, with bounded workflows and a disposable integration-test environment. Full operational qualification remains open.",
+      "boundary": "Work in progress, with bounded workflows and a disposable integration-test environment. Broader operational use still needs validation.",
       "statusUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md"
     }
   ],
   "interpretation": {
-    "projectExperienceBoundary": "These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation; I own requirements, integration decisions, review and operational validation.",
+    "projectExperienceBoundary": "These are personal, AI-assisted projects outside employment. I use AI substantially for implementation, testing and documentation, and take responsibility for requirements, integration decisions, review and operational validation.",
     "interestPolicy": "Technical interests describe areas of curiosity, not established specialist qualifications or professional research experience.",
     "privacyBoundary": "This public profile summarises professional background without employment chronology, education records or private infrastructure details."
   },
   "professionalWork": {
-    "background": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment. My work spans Linux, virtualisation, storage, networking and container platforms.",
-    "approach": "I work with developers, operations, security teams and service owners to clarify requirements, resolve integration problems and make systems maintainable. I value clear responsibilities, reproducible configuration, useful documentation and evidence from actual operation.",
+    "background": "I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.",
+    "approach": "I work with developers, operations, security teams and service owners to clarify requirements, integrate infrastructure and keep systems maintainable.",
     "capabilities": [
       {
         "area": "Platforms and integration",
-        "description": "Linux systems, virtualisation, storage and networking, including production work with Kubernetes and OpenShift. I focus on how components fit together and behave as an operational system."
+        "description": "Linux, virtualisation, storage and networking, including production work with Kubernetes and OpenShift. My focus is how the components fit together and operate as a whole."
       },
       {
         "area": "Operations and recovery",
-        "description": "Monitoring, incident analysis and controlled change, with backup administration, documented restore tests and rollback planning. Recovery needs to be demonstrated, not assumed."
+        "description": "Monitoring, incident analysis and controlled change, with backup administration, documented restore tests and rollback planning."
       },
       {
         "area": "Automation and documentation",
-        "description": "Selected automation with Ansible and Terraform, alongside runbooks and operational handover. My experience also includes ISMS documentation, business continuity and ISO/IEC 27001 audit preparation."
+        "description": "Selected automation with Ansible and Terraform, runbooks and operational handover, plus ISMS documentation, business continuity and ISO/IEC 27001 audit preparation."
       }
     ]
   },
   "personalLab": {
-    "description": "My private lab gives me room to explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. Some deliberately complex experiments examine how AI agents handle execution feedback and long contexts.",
+    "description": "In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. Some experiments also test how AI agents handle execution feedback and long contexts.",
     "classification": "Private experimentation"
   }
 }
