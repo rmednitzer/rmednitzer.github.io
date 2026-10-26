@@ -10,6 +10,8 @@ history; this is not a history rewrite or an erasure claim.
 
 ## 2026-10-26 — Project layout and personal perspective
 
+- Simplify profile sections and project descriptions; align public profile formats and remove the listening-profile link.
+
 - Version the shared stylesheet URL to avoid stale presentation after deployment.
 - Use responsive project rows with consistent description, boundary and documentation placement.
 - Give the experimentation note its own spacing and align personal perspective across profile formats.
