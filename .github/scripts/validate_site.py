@@ -8,7 +8,7 @@ import sys
 from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[2]
-HTML_VALIDATE_VERSION = '11.17.0'
+HTML_VALIDATE_VERSION = '11.18.0'
 
 
 def main() -> int:
