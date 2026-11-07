@@ -11,14 +11,6 @@
   ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": [
-      "before 5am on monday"
-    ],
-    "automerge": false,
-    "description": "Complete lock refreshes require review because they can change transitive dependencies across version boundaries."
-  },
   "vulnerabilityAlerts": {
     "labels": [
       "dependencies",
@@ -77,6 +69,20 @@
         "dependencies",
         "major-review"
       ]
+    },
+    {
+      "description": "Organize the dashboard without changing PR grouping or update eligibility.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "dependencyDashboardCategory": "CI actions"
+    },
+    {
+      "description": "Organize the dashboard without changing PR grouping or update eligibility.",
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "dependencyDashboardCategory": "Validation tooling"
     }
   ],
   "customManagers": [
@@ -119,5 +125,7 @@
     }
   ],
   "pruneStaleBranches": true,
-  "pruneBranchAfterAutomerge": true
+  "pruneBranchAfterAutomerge": true,
+  "dependencyDashboard": true,
+  "dependencyDashboardHeader": "Renovate dependency maintenance.\n\nRoutine updates run Monday 00:00–04:00 Europe/Vienna. Non-major updates have a three-day release-age hold and may be merged by Renovate after checks pass. Major updates require review.\n\n- **Awaiting Schedule** lists work queued for its next eligible window.\n- **Pending Status Checks** can include release-age holds. Inspect the PR checks and any Renovate stability status; green CI alone does not clear the age policy.\n- Checkboxes request bot work, such as creation or rebasing; they do not approve a merge. Required checks and review still apply."
 }
