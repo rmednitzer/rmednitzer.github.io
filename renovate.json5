@@ -1,131 +1,133 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":semanticCommits",
-    "schedule:weekly"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:best-practices',
+    ':semanticCommits',
+    'schedule:weekly',
   ],
-  "timezone": "Europe/Vienna",
-  "labels": [
-    "dependencies"
+  timezone: 'Europe/Vienna',
+  labels: [
+    'dependencies',
   ],
-  "prConcurrentLimit": 10,
-  "prHourlyLimit": 2,
-  "vulnerabilityAlerts": {
-    "labels": [
-      "dependencies",
-      "security"
+  prConcurrentLimit: 10,
+  prHourlyLimit: 2,
+  vulnerabilityAlerts: {
+    labels: [
+      'dependencies',
+      'security',
     ],
-    "schedule": [
-      "at any time"
+    schedule: [
+      'at any time',
     ],
-    "minimumReleaseAge": null,
-    "description": "Security remediation bypasses the routine update window and release-age delay; update-type review rules still apply."
+    minimumReleaseAge: null,
+    description: 'Security remediation bypasses the routine update window and release-age delay; update-type review rules still apply.',
   },
-  "osvVulnerabilityAlerts": true,
-  "packageRules": [
+  osvVulnerabilityAlerts: true,
+  packageRules: [
     {
-      "description": "Allow Renovate itself to merge only after all checks, including its minimum-release-age status, pass; GitHub platform auto-merge does not reliably gate on this non-required status.",
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "digest",
-        "pin",
-        "pinDigest"
+      description: 'Allow Renovate itself to merge only after all checks, including its minimum-release-age status, pass; GitHub platform auto-merge does not reliably gate on this non-required status.',
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'digest',
+        'pin',
+        'pinDigest',
       ],
-      "automerge": true,
-      "platformAutomerge": false,
-      "minimumReleaseAge": "3 days"
+      automerge: true,
+      platformAutomerge: false,
+      minimumReleaseAge: '3 days',
     },
     {
-      "description": "Group all GitHub Actions updates so concurrent bumps do not collide on the same workflow files. separateMajorMinor is on by default, so majors still split into their own 'github-actions (major)' PR, which the major rule below labels and keeps out of automerge.",
-      "matchManagers": [
-        "github-actions"
+      description: "Group all GitHub Actions updates so concurrent bumps do not collide on the same workflow files. separateMajorMinor is on by default, so majors still split into their own 'github-actions (major)' PR, which the major rule below labels and keeps out of automerge.",
+      matchManagers: [
+        'github-actions',
       ],
-      "groupName": "github-actions"
+      groupName: 'github-actions',
     },
     {
-      "description": "Group non-major Python dependency updates into a single PR.",
-      "matchManagers": [
-        "pep621",
-        "pip_requirements",
-        "pip-compile",
-        "poetry",
-        "setup-cfg"
+      description: 'Group non-major Python dependency updates into a single PR.',
+      matchManagers: [
+        'pep621',
+        'pip_requirements',
+        'pip-compile',
+        'poetry',
+        'setup-cfg',
       ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
+      matchUpdateTypes: [
+        'minor',
+        'patch',
       ],
-      "groupName": "python dependencies"
+      groupName: 'python dependencies',
     },
     {
-      "description": "Major updates: separate, labelled, never automerged, across every manager. Majors already fail to match the automerge rule above, so automerge is false by default; it is stated for the same reason as lockFileMaintenance. This rule deliberately carries no matchManagers so that a major GitHub Actions, Docker, or Terraform bump is labelled for review like a major code dependency.",
-      "matchUpdateTypes": [
-        "major"
+      description: 'Major updates: separate, labelled, never automerged, across every manager. Majors already fail to match the automerge rule above, so automerge is false by default; it is stated for the same reason as lockFileMaintenance. This rule deliberately carries no matchManagers so that a major GitHub Actions, Docker, or Terraform bump is labelled for review like a major code dependency.',
+      matchUpdateTypes: [
+        'major',
       ],
-      "automerge": false,
-      "labels": [
-        "dependencies",
-        "major-review"
-      ]
+      automerge: false,
+      labels: [
+        'dependencies',
+        'major-review',
+      ],
     },
     {
-      "description": "Organize the dashboard without changing PR grouping or update eligibility.",
-      "matchManagers": [
-        "github-actions"
+      description: 'Organize the dashboard without changing PR grouping or update eligibility.',
+      matchManagers: [
+        'github-actions',
       ],
-      "dependencyDashboardCategory": "CI actions"
+      dependencyDashboardCategory: 'CI actions',
     },
     {
-      "description": "Organize the dashboard without changing PR grouping or update eligibility.",
-      "matchManagers": [
-        "custom.regex"
+      description: 'Organize the dashboard without changing PR grouping or update eligibility.',
+      matchManagers: [
+        'custom.regex',
       ],
-      "dependencyDashboardCategory": "Validation tooling"
-    }
+      dependencyDashboardCategory: 'Validation tooling',
+    },
   ],
-  "customManagers": [
+  customManagers: [
     {
-      "customType": "regex",
-      "description": "Track exact Python package pins embedded in CI workflow commands.",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
+      customType: 'regex',
+      description: 'Track exact Python package pins embedded in CI workflow commands.',
+      managerFilePatterns: [
+        '/^\\.github/workflows/[^/]+\\.ya?ml$/',
       ],
-      "matchStrings": [
-        "\\b(?<depName>[A-Za-z][A-Za-z0-9_.-]*)(?:\\[[A-Za-z0-9_,.-]+\\])?==(?<currentValue>\\d+\\.\\d+(?:\\.[0-9A-Za-z-]+)*)"
+      matchStrings: [
+        '\\b(?<depName>[A-Za-z][A-Za-z0-9_.-]*)(?:\\[[A-Za-z0-9_,.-]+\\])?==(?<currentValue>\\d+\\.\\d+(?:\\.[0-9A-Za-z-]+)*)',
       ],
-      "datasourceTemplate": "pypi",
-      "versioningTemplate": "pep440"
+      datasourceTemplate: 'pypi',
+      versioningTemplate: 'pep440',
     },
     {
-      "customType": "regex",
-      "description": "Track exact npm CLI pins invoked through npx in CI workflows.",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
+      customType: 'regex',
+      description: 'Track exact npm CLI pins invoked through npx in CI workflows.',
+      managerFilePatterns: [
+        '/^\\.github/workflows/[^/]+\\.ya?ml$/',
       ],
-      "matchStrings": [
-        "npx\\s+(?:-y|--yes)\\s+(?:--package\\s+)?(?<depName>[A-Za-z0-9_.-]+)@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      matchStrings: [
+        'npx\\s+(?:-y|--yes)\\s+(?:--package\\s+)?(?<depName>[A-Za-z0-9_.-]+)@(?<currentValue>\\d+\\.\\d+\\.\\d+)',
       ],
-      "datasourceTemplate": "npm",
-      "versioningTemplate": "semver"
+      datasourceTemplate: 'npm',
+      versioningTemplate: 'semver',
     },
     {
-      "customType": "regex",
-      "description": "Track the HTML validator release used by the shared validation entry point.",
-      "managerFilePatterns": [
-        "/^\\.github/scripts/validate_site\\.py$/"
+      customType: 'regex',
+      description: 'Track the HTML validator release used by the shared validation entry point.',
+      managerFilePatterns: [
+        '/^\\.github/scripts/validate_site\\.py$/',
       ],
-      "matchStrings": [
-        "HTML_VALIDATE_VERSION = '(?<currentValue>\\d+\\.\\d+\\.\\d+)'"
+      matchStrings: [
+        "HTML_VALIDATE_VERSION = '(?<currentValue>\\d+\\.\\d+\\.\\d+)'",
       ],
-      "depNameTemplate": "html-validate",
-      "datasourceTemplate": "npm",
-      "versioningTemplate": "semver"
-    }
+      depNameTemplate: 'html-validate',
+      datasourceTemplate: 'npm',
+      versioningTemplate: 'semver',
+    },
   ],
-  "pruneStaleBranches": true,
-  "pruneBranchAfterAutomerge": true,
-  "dependencyDashboard": true,
-  "dependencyDashboardHeader": "Renovate dependency maintenance.\n\nRoutine updates run Monday 00:00–04:00 Europe/Vienna. Non-major updates have a three-day release-age hold and may be merged by Renovate after checks pass. Major updates require review.\n\n- **Awaiting Schedule** lists work queued for its next eligible window.\n- **Pending Status Checks** can include release-age holds. Inspect the PR checks and any Renovate stability status; green CI alone does not clear the age policy.\n- Checkboxes request bot work, such as creation or rebasing; they do not approve a merge. Required checks and review still apply."
+  pruneStaleBranches: true,
+  pruneBranchAfterAutomerge: true,
+  dependencyDashboard: {
+    enabled: true,
+    header: 'Renovate dependency maintenance.\n\nRoutine updates run Monday 00:00–04:00 Europe/Vienna. Non-major updates have a three-day release-age hold and may be merged by Renovate after checks pass. Major updates require review.\n\n- **Awaiting Schedule** lists work queued for its next eligible window.\n- **Pending Status Checks** can include release-age holds. Inspect the PR checks and any Renovate stability status; green CI alone does not clear the age policy.\n- Checkboxes request bot work, such as creation or rebasing; they do not approve a merge. Required checks and review still apply.',
+  },
 }
