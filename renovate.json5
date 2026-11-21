@@ -38,26 +38,14 @@
       "minimumReleaseAge": "3 days"
     },
     {
-      "description": "Group all GitHub Actions updates so concurrent bumps do not collide on the same workflow files. separateMajorMinor is on by default, so majors still split into their own 'github-actions (major)' PR, which the major rule below labels and keeps out of automerge.",
+      "description": "Group action pins across workflows. Keep the Node.js runtime upgrade in its own PR.",
       "matchManagers": [
         "github-actions"
       ],
+      "matchDepTypes": [
+        "action"
+      ],
       "groupName": "github-actions"
-    },
-    {
-      "description": "Group non-major Python dependency updates into a single PR.",
-      "matchManagers": [
-        "pep621",
-        "pip_requirements",
-        "pip-compile",
-        "poetry",
-        "setup-cfg"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "groupName": "python dependencies"
     },
     {
       "description": "Major updates: separate, labelled, never automerged, across every manager. Majors already fail to match the automerge rule above, so automerge is false by default; it is stated for the same reason as lockFileMaintenance. This rule deliberately carries no matchManagers so that a major GitHub Actions, Docker, or Terraform bump is labelled for review like a major code dependency.",
@@ -75,7 +63,7 @@
       "matchManagers": [
         "github-actions"
       ],
-      "dependencyDashboardCategory": "CI actions"
+      "dependencyDashboardCategory": "CI actions and runtimes"
     },
     {
       "description": "Organize the dashboard without changing PR grouping or update eligibility.",
@@ -86,30 +74,6 @@
     }
   ],
   "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Track exact Python package pins embedded in CI workflow commands.",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
-      ],
-      "matchStrings": [
-        "\\b(?<depName>[A-Za-z][A-Za-z0-9_.-]*)(?:\\[[A-Za-z0-9_,.-]+\\])?==(?<currentValue>\\d+\\.\\d+(?:\\.[0-9A-Za-z-]+)*)"
-      ],
-      "datasourceTemplate": "pypi",
-      "versioningTemplate": "pep440"
-    },
-    {
-      "customType": "regex",
-      "description": "Track exact npm CLI pins invoked through npx in CI workflows.",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
-      ],
-      "matchStrings": [
-        "npx\\s+(?:-y|--yes)\\s+(?:--package\\s+)?(?<depName>[A-Za-z0-9_.-]+)@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "datasourceTemplate": "npm",
-      "versioningTemplate": "semver"
-    },
     {
       "customType": "regex",
       "description": "Track the HTML validator release used by the shared validation entry point.",
