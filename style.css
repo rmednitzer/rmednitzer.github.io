@@ -68,9 +68,12 @@ a.sr-only:focus { position: fixed; top: .75rem; left: .75rem; width: auto; heigh
 .section > p { max-width: 76ch; }
 .section > p + p { margin-top: .85rem; }
 .capabilities { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.75rem; }
-.capability { min-width: 0; }
+.capability { min-width: 0; display: flex; flex-direction: column; }
 .capability h3 { font-size: 1.08rem; margin-bottom: .7rem; }
 .capability p { font-size: 1rem; }
+/* Keep evidence links on one baseline across a card row. */
+.capability p:last-of-type { flex-grow: 1; }
+.capability .project-more { align-self: flex-start; }
 
 .projects { margin-top: 1.75rem; border-top: 1px solid var(--border); }
 .project { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.8fr); gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
@@ -156,6 +159,7 @@ footer .impressum { flex-basis: 100%; }
   .section { margin-top: 1.4rem; }
   .section + .section { padding-top: 1.2rem; }
   .section h2 { font-size: 17pt; break-after: avoid; }
+  .section > h2 + p { break-inside: avoid; break-after: avoid; }
   .project { grid-template-columns: 1fr; }
   .project { gap: 1rem; }
   .project, .capability { break-inside: avoid; }
