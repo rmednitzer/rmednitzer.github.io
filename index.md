@@ -8,41 +8,41 @@ I like understanding how things work, especially where technologies and discipli
 
 I have around ten years of production infrastructure experience across managed services, enterprise infrastructure and a regulated medical-device environment.
 
-I work with developers, operations and security teams to clarify requirements and carry changes through to operation.
+I work between development, operations and security: I turn requirements into changes that run in production and stay with them until they run reliably.
 
 ### Platforms and integration
 
-I connect infrastructure layers, services and applications, translating requirements into systems that can be operated and maintained. My focus is how components, interfaces and dependencies work together.
+I connect infrastructure layers, services and applications into systems that can be operated and maintained. Most problems live at the interfaces, so that is where I focus: how components, dependencies and failure modes interact.
 
 ### Operations and recovery
 
-I troubleshoot production systems, manage changes and backups, and verify recovery through restore tests and rollback planning.
+I troubleshoot production systems and run changes and backups. A backup is not done until a restore test has proved it, and every change I plan has a way back.
 
 ### Automation and documentation
 
-I automate infrastructure tasks and write the documentation needed to operate, maintain and hand over systems.
+I automate repetitive infrastructure work and write the documentation that lets others operate, maintain and take over the systems I build.
 
 ## Selected projects
 
-These are personal, AI-assisted projects outside employment. My contribution centres on requirements, integration decisions, review, validation and operations. I use AI substantially for implementation, testing and documentation.
+These are personal, AI-assisted projects I build outside work. I set the requirements and design, make the integration decisions, and review, validate and operate the result; AI does much of the implementation, testing and documentation.
 
 ### [relay-shell](https://github.com/rmednitzer/relay-shell)
 
-Gives AI clients shell and SSH access through the Model Context Protocol (MCP), including interactive sessions, operation records and configurable execution policy. Command restrictions are opt-in. The server runs with its service account’s permissions and does not provide a sandbox.
+A Model Context Protocol (MCP) server that gives AI clients the full reach of a shell: local commands, interactive sessions, SSH fleet operation, file transfer and port forwarding, with a per-call audit record and risk classification for every action. Built as operator infrastructure for hosts you own: open by default, with opt-in refusal modes and no sandbox.
 
 [Documentation and limits](https://github.com/rmednitzer/relay-shell/blob/main/README.md).
 
 ### [osint-workbench](https://github.com/rmednitzer/osint-workbench)
 
-Collects public information, keeps the source evidence and makes it searchable. A self-hostable workbench with optional AI processing and read-only access for AI assistants.
+A self-hostable workbench that collects open-source information, preserves it as immutable evidence and makes it searchable, with optional local or governed cloud AI and read-only access for AI assistants.
 
-Experimental; current capabilities and limitations are documented in the repository.
+Collection, evidence, search and recovery paths work today; the full platform is still in development.
 
 [Implementation status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
 
 ### Personal experimentation
 
-In my private lab I explore AI infrastructure and automation, test integrations, and rehearse migrations and recovery. I also examine whether AI agents use command results correctly and remain consistent across longer tasks.
+My private lab is where I try ideas before I trust them: I run AI infrastructure and automation, test integrations, and rehearse migrations and recovery. I also study how AI agents behave in real operations: whether they act on command results correctly and stay consistent over long tasks.
 
 ## Interests
 
@@ -59,4 +59,4 @@ Hard science fiction gives me another way to explore those possibilities and the
 - Email: r.mednitzer@ieee.org
 
 Canonical public profile: https://rmednitzer.github.io/
-Profile reviewed: 2026-10-26.
+Profile reviewed: 2026-11-23.
