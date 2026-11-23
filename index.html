@@ -70,6 +70,7 @@
     <nav class="site-nav" aria-label="Page sections">
       <ul>
         <li><a href="#stack">Professional work</a></li>
+        <li><a href="#approach">How I work</a></li>
         <li><a href="#open-source">Projects</a></li>
         <li><a href="#interests">Interests</a></li>
       </ul>
@@ -84,6 +85,18 @@
           <div class="capability"><h3>Platforms and integration</h3><p>I connect infrastructure layers, services and applications into systems that can be operated and maintained. Most problems live at the interfaces, so that is where I focus: how components, dependencies and failure modes interact.</p></div>
           <div class="capability"><h3>Operations and recovery</h3><p>I troubleshoot production systems and run changes and backups. A backup is not done until a restore test has proved it, and every change I plan has a way back.</p></div>
           <div class="capability"><h3>Automation and documentation</h3><p>I automate repetitive infrastructure work and write the documentation that lets others operate, maintain and take over the systems I build.</p></div>
+        </div>
+      </section>
+      <section class="section" id="approach" aria-labelledby="approach-h">
+        <h2 id="approach-h">How I work</h2>
+        <p>These habits shape how I build systems. My public projects show them in practice, so each one links to the evidence.</p>
+        <div class="capabilities">
+          <div class="capability"><h3>Decisions in writing</h3><p>I record significant design decisions before building them: the context, the alternatives considered and the consequences, so the reasoning survives the person who made it.</p><a class="project-more" href="https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/README.md">relay-shell decision records</a></div>
+          <div class="capability"><h3>Failure analysis first</h3><p>Before a system acts on its own or holds sensitive data, I work out which losses are unacceptable and how they could happen, using STPA alongside threat modelling at trust boundaries.</p><a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/docs/assurance/stpa.md">osint-workbench STPA analysis</a></div>
+          <div class="capability"><h3>Records you can trust</h3><p>Actions should leave evidence. relay-shell writes an audit record for every call and chains the records by hash, so later tampering is detectable.</p><a class="project-more" href="https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/0007-audit-hash-chain.md">Audit hash-chain decision</a></div>
+          <div class="capability"><h3>Recovery is proved</h3><p>A backup counts once it has been restored. osint-workbench checkpoints restore into an isolated database and are checked against an integrity receipt.</p><a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/docs/recovery.md">Checkpoint and recovery procedure</a></div>
+          <div class="capability"><h3>Honest status</h3><p>Each project separates what is implemented, what has been verified and what is still open, so nobody has to guess what works.</p><a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md">osint-workbench status</a></div>
+          <div class="capability"><h3>Control stays local</h3><p>I prefer open, self-hostable technology. osint-workbench runs locally by default; cloud AI needs an explicit, approved route and denies everything otherwise.</p><a class="project-more" href="https://github.com/rmednitzer/osint-workbench/blob/main/docs/cloud-routes.md">Governed cloud routes</a></div>
         </div>
       </section>
       <section class="section" id="open-source" aria-labelledby="open-source-h">

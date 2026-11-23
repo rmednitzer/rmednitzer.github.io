@@ -8,6 +8,11 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-11-23 — Working principles
+
+- Add a "How I work" section with six principles, each linked to public repository evidence, across HTML, Markdown, llms.txt and profile.json.
+- Extend profile consistency checks to the principles and their evidence links; add a drift regression.
+
 ## 2026-11-23 — Profile wording
 
 - State professional capabilities and project contributions directly; keep the AI-assistance boundary explicit.
