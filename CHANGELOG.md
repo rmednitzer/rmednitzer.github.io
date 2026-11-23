@@ -8,6 +8,12 @@ were condensed into the technical summary below so superseded personal wording
 is not repeated in the current documentation. Prior revisions remain in Git
 history; this is not a history rewrite or an erasure claim.
 
+## 2026-11-23 — Profile wording
+
+- State professional capabilities and project contributions directly; keep the AI-assistance boundary explicit.
+- Align relay-shell and osint-workbench summaries with their current repository documentation.
+- Add AI in operations to the focus line and structured topics; update the review date across all public formats.
+
 ## 2026-10-26 — Validation and presentation polish
 
 - Share one complete validation entry point across local, PR and publication use; keep the exact CLI pin discoverable by Renovate.
