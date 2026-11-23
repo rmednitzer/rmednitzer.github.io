@@ -77,6 +77,15 @@ class ValidatorTests(unittest.TestCase):
         path.write_text(json.dumps(data))
         self.assertTrue(any('shared profile statement' in f for f in profile.validate(self.root)))
 
+    def test_working_principle_drift(self):
+        data = json.loads((self.root / 'profile.json').read_text())
+        principle = data['workingPrinciples']['principles'][2]
+        self.mutate('llms.txt', principle['description'], 'Synthetic unsupported claim.')
+        self.mutate('index.html', principle['evidenceUrl'], 'https://example.invalid/')
+        failures = profile.validate(self.root)
+        self.assertTrue(any('llms.txt: shared profile statement' in f for f in failures))
+        self.assertTrue(any('Principle evidence link absent' in f for f in failures))
+
     def test_markdown_background_drift(self):
         data = json.loads((self.root / 'profile.json').read_text())
         self.mutate('index.md', data['professionalWork']['background'], 'Synthetic contradictory background.')

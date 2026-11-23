@@ -40,6 +40,47 @@
       "Hard science fiction gives me another way to explore those possibilities and their consequences. My musical tastes lean towards industrial, electronic body music (EBM) and dark ambient."
     ]
   },
+  "workingPrinciples": {
+    "introduction": "These habits shape how I build systems. My public projects show them in practice, so each one links to the evidence.",
+    "principles": [
+      {
+        "principle": "Decisions in writing",
+        "description": "I record significant design decisions before building them: the context, the alternatives considered and the consequences, so the reasoning survives the person who made it.",
+        "evidenceLabel": "relay-shell decision records",
+        "evidenceUrl": "https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/README.md"
+      },
+      {
+        "principle": "Failure analysis first",
+        "description": "Before a system acts on its own or holds sensitive data, I work out which losses are unacceptable and how they could happen, using STPA alongside threat modelling at trust boundaries.",
+        "evidenceLabel": "osint-workbench STPA analysis",
+        "evidenceUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/docs/assurance/stpa.md"
+      },
+      {
+        "principle": "Records you can trust",
+        "description": "Actions should leave evidence. relay-shell writes an audit record for every call and chains the records by hash, so later tampering is detectable.",
+        "evidenceLabel": "Audit hash-chain decision",
+        "evidenceUrl": "https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/0007-audit-hash-chain.md"
+      },
+      {
+        "principle": "Recovery is proved",
+        "description": "A backup counts once it has been restored. osint-workbench checkpoints restore into an isolated database and are checked against an integrity receipt.",
+        "evidenceLabel": "Checkpoint and recovery procedure",
+        "evidenceUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/docs/recovery.md"
+      },
+      {
+        "principle": "Honest status",
+        "description": "Each project separates what is implemented, what has been verified and what is still open, so nobody has to guess what works.",
+        "evidenceLabel": "osint-workbench status",
+        "evidenceUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md"
+      },
+      {
+        "principle": "Control stays local",
+        "description": "I prefer open, self-hostable technology. osint-workbench runs locally by default; cloud AI needs an explicit, approved route and denies everything otherwise.",
+        "evidenceLabel": "Governed cloud routes",
+        "evidenceUrl": "https://github.com/rmednitzer/osint-workbench/blob/main/docs/cloud-routes.md"
+      }
+    ]
+  },
   "featuredProjects": [
     {
       "name": "relay-shell",

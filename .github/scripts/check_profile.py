@@ -164,6 +164,16 @@ def validate(root: Path) -> list[str]:
     shared.extend(c['description'] for c in profile['professionalWork']['capabilities'])
     for project in profile['featuredProjects']:
         shared.extend((project['reasonFeatured'], project['boundary']))
+    principles = profile['workingPrinciples']
+    shared.append(principles['introduction'])
+    shared.extend(p['description'] for p in principles['principles'])
+    check('approach' in page.sections and '#approach' in page.hrefs,
+          'Working principles must remain a directly linked section')
+    for principle in principles['principles']:
+        check(principle['principle'] in visible, f"Principle not visible: {principle['principle']}")
+        check(principle['evidenceUrl'] in page.hrefs, f"Principle evidence link absent: {principle['principle']}")
+        check(principle['evidenceUrl'].startswith('https://github.com/rmednitzer/'),
+              f"Principle evidence must be public repository content: {principle['principle']}")
     check(person['summary'] == profile['professionalWork']['background'],
           'Structured summary differs from professional background')
     check(person['outlook'] in person['personalPerspective'],
@@ -191,6 +201,8 @@ def validate(root: Path) -> list[str]:
         check(profile['lastReviewed'] in text, f'{filename}: stale review date')
         for project in profile['featuredProjects']:
             check(project['url'] in text, f'{filename}: missing featured project')
+        for principle in profile['workingPrinciples']['principles']:
+            check(principle['evidenceUrl'] in text, f"{filename}: missing principle evidence: {principle['principle']}")
         check('AI-assisted' in text, f'{filename}: missing attribution boundary')
     check('AI-assisted' in visible, 'Visible AI attribution missing')
     check('My musical tastes lean towards' in visible, 'Personal music interests are missing')

@@ -23,6 +23,46 @@ I troubleshoot production systems and run changes and backups. A backup is not d
 
 I automate repetitive infrastructure work and write the documentation that lets others operate, maintain and take over the systems I build.
 
+## How I work
+
+These habits shape how I build systems. My public projects show them in practice, so each one links to the evidence.
+
+### Decisions in writing
+
+I record significant design decisions before building them: the context, the alternatives considered and the consequences, so the reasoning survives the person who made it.
+
+[relay-shell decision records](https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/README.md).
+
+### Failure analysis first
+
+Before a system acts on its own or holds sensitive data, I work out which losses are unacceptable and how they could happen, using STPA alongside threat modelling at trust boundaries.
+
+[osint-workbench STPA analysis](https://github.com/rmednitzer/osint-workbench/blob/main/docs/assurance/stpa.md).
+
+### Records you can trust
+
+Actions should leave evidence. relay-shell writes an audit record for every call and chains the records by hash, so later tampering is detectable.
+
+[Audit hash-chain decision](https://github.com/rmednitzer/relay-shell/blob/main/docs/adr/0007-audit-hash-chain.md).
+
+### Recovery is proved
+
+A backup counts once it has been restored. osint-workbench checkpoints restore into an isolated database and are checked against an integrity receipt.
+
+[Checkpoint and recovery procedure](https://github.com/rmednitzer/osint-workbench/blob/main/docs/recovery.md).
+
+### Honest status
+
+Each project separates what is implemented, what has been verified and what is still open, so nobody has to guess what works.
+
+[osint-workbench status](https://github.com/rmednitzer/osint-workbench/blob/main/STATUS.md).
+
+### Control stays local
+
+I prefer open, self-hostable technology. osint-workbench runs locally by default; cloud AI needs an explicit, approved route and denies everything otherwise.
+
+[Governed cloud routes](https://github.com/rmednitzer/osint-workbench/blob/main/docs/cloud-routes.md).
+
 ## Personal projects
 
 These are personal, AI-assisted projects I build outside work. I set the requirements and design, make the integration decisions, and review, validate and operate the result; AI does much of the implementation, testing and documentation.
